@@ -21,10 +21,10 @@
 \renewcommand{\sfdefault}{phv}
 
 % plr added
-\newcommand{\mutrate}{\lambda_\mbox{mut}}
-\newcommand{\migrate}{\lambda_\mbox{mig}}
-\newcommand{\Trate}{T_\mbox{mig}}
-\newcommand{\Trate}{T_\mbox{mig}}
+\newcommand{\mutrate}{\lambda_{\text{mut}}}
+\newcommand{\migrate}{\lambda_{\text{mig}}}
+\newcommand{\Tmut}{T_{\text{mut}}}
+\newcommand{\Tmig}{T_{\text{mig}}}
 
 \usepackage{fancyhdr}
 \pagestyle{fancy}
@@ -51,7 +51,7 @@
 \definecolor{mattgreen} {rgb} {0,0.6,0}
 \newcommand{\mbhcom}[1]{\textcolor{mattgreen}{ \em{\scriptsize  #1}} }
 \definecolor{peterpurple}{rgb}{.6,0,.6}
-\newcommand{\plr}[1]{\textcolor{peterpurple}{ \emph{(#1)}} }
+\newcommand{\plr}[1]{\textcolor{peterpurple}{ \emph{\scriptsize (#1)}} }
 
 \usepackage[normalem]{ulem}
 \def\dt{\bgroup
@@ -388,7 +388,7 @@ While genetic positions were initially only available for the MaizeSNP50 data se
 
 
 %%%% PLR:
-\subsection{Migration and new mutation of adaptive alleles}
+\subsection*{Migration and new mutation of adaptive alleles}
 
 We suggest below that many of these high-$F_{ST}$ alleles are locally adaptive,
 and the degree of coincidence between highland regions informs us about 
@@ -402,12 +402,12 @@ in both cases assuming it is slightly deleterious at lower altitude.
 These numbers depend most strongly on the population density, 
 the selection coefficient,
 and the rate at which seed is transported long distances and replanted.
-We evaluated these rates using theory validated by simulation.
+We evaluated these rates using new and existing theory, and validated by simulation.
 
 \plr{
 A note here on why we assume it is deleterious?  
 It would be possible to say convincing things about the case where it is neutral at low elevation,
-but will require significant thinking (which I'd like to do\dots).
+but will require significant thinking (which I've begun to do\dots).
 }
 
 To calculate the rate at which new mutations appear and fix in the highland population, $\mutrate$,
@@ -415,19 +415,18 @@ we simply used the total population size of the highlands
 multiplied by the mutation rate per generation
 and by the chance that a single such mutation successfully fixes
 (i.e.\ is not lost to drift).
-The latter probability that a single new mutant allele providing benefit $s$ to heterozygotes at high elevation
-will increase in frequency and fix in the high elevation patch
-is approximately $2s$ divided by the variance in offspring number \citep{jaegers}.
+The latter probability, that a single new mutant allele providing benefit $s_b$ to heterozygotes at high elevation
+will increase in frequency and fix in the high elevation patch,
+is approximately $2s_b$ divided by the variance in offspring number \citep{jagers1975branching}.
 This is not quite right, since such a mutation could occur at low elevation,
 where it is deleterious,
 and its offspring could then migrate to high elevation and fix there.
 Similarly, if we use the selection coefficient for high elevation,
 this ignores the fact that some of the seeds from the high-elevation plants may be grown at low elevation,
-reducing the chance of fixation of an allele arising there.
-This scenario has been well-studied in theoretical models by \citet{pollack} and \citet{barton},
-but it is not immediately obvious how the demographic details of maize 
-(an altitudinal gradient; high variance in number of offspring; both discrete and continuous population structure)
-affects the analyses in this work.
+reducing the chance of fixation of an allele that appears at high elevation.
+This scenario has been well-studied in theoretical models by \citet{polk} and \citet{barton1987establishment},
+but it is not immediately obvious how well their approximations apply to maize,
+as it grows across an altitudinal gradient (rather than an abrubt transition) and has high variance in number of offspring.
 As described in Appendix XX, 
 we built on the demographic model used in \citet{joost} to numerically calculate the chance of fixation of a beneficial allele
 as a function of the location it first appears,
@@ -442,17 +441,17 @@ is a function of the density of maize per unit area $\rho$,
 the selective benefit $s_b$ it provides,
 the mutation rate $\mu$,
 and the variance in offspring number $\xi^2$.
-Denoting this probability by $\mutrate$,
+In terms of these parameters, the rate of appearance is
 \begin{align}
-  \mutrate = \frac{2 \mu \rho A s_b$}{\xi^2} .
+  \mutrate = \frac{2 \mu \rho A s_b}{\xi^2} .
 \end{align}
 
-The corresponding chance that an allele moves from one highland population to another is less intuitive,
-and the subject of \citep{ralphcoop2013}.
+A corresponding expression for the chance that an allele moves from one highland population to another is harder to intuit,
+and is addressed in more depth in \citep{ralphcoop2013patches}.
 If an allele is beneficial at high elevation, and fixed in the Mexican highlands,
 but deleterious at low elevations,
 then it will be present at low frequency in nearby lowland populations,
-maintained at migration-selection balance \citep{slatkin}.
+maintained at migration-selection balance \citep{slatkin1973geneflow}.
 (Here ``migration'' is mediated by farmer exchange of seed stocks.)
 This equilibrium frequency decays exponentially with distance,
 being present at distance $R$ from the highlands at frequency $C \exp(- R \sqrt{2s_m} / \sigma)$,
@@ -663,7 +662,7 @@ Recently, the lines of evidence for selection from standing variation is increas
 In summary, the progenitor populations of highland maize (lowland maize and \emph{parviglumis}) contain both genotypes of highly differentiated SNPs implying adaptation from standing variation.
 However, standing variation may be difficult to distinguish from gene flow between lowland and highland populations due to their recent divergence in units of $N_A$.
 An additional caveat is that our inference of adaptation from standing variation assumes that our highly differentiated SNPs are causal and not merely linked to the targets of adaptation.  Given the previously documented rapid decay of linkage disequilibrium in maize \cite[]{Tenaillon_2001_11470895,Remington_2001_11562485} that is also apparent in our data (supp fig.~X) we may, in many instances, be detecting SNPs that are hitch-hiking along with a true target of adaptation; a target that may or may not be derived from standing variation.
-\plr{Doesn't ``rapid decay'' make you less worried about hitchhiking?}
+\plr{Doesn't ``rapid decay'' make you less worried about hitchhiking, rather than more? or am I misreading?}
 
 \mbhcom{Please note that I've commented out a large amount of text and comments at this point in the manuscript.  Probably a good idea to read through this to make sure there are not parts that you would like to bring back.}
 
@@ -884,7 +883,7 @@ NS                                & 250   &  17,401    & 0.014\\[1mm]
 \renewcommand{\arraystretch}{1}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection*{Peter's parallel adaptation}
+\subsection*{Comparison to theory}
 Add Peter's result here.  I wonder whether our assumption that selected alleles in highland is deleterious in lowland is true.  If almost all selected alleles are from standing variation, these alleles may be neutral in lowlands because they were not lost (or just time is very short).\com{I think this section will be very important.  we need to mention in intro, work peter's stuff into methods, and above all make sure we understand his results/methods.  it should not be hard for him to redo modeling with neutral alleles inthe lowland if we think that explains the data.}
 \plr{peter: well, it is do-able\dots}
 
@@ -997,7 +996,7 @@ brabrabra...
 
 
 
-\bibliography{MZpara1,MZpara2}
+\bibliography{MZpara1,MZpara2,plr-hilo}
 \bibliographystyle{geneticsT2}
 
 \end{document}
