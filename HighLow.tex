@@ -20,6 +20,12 @@
 \renewcommand{\dblfloatpagefraction}{0.80}
 \renewcommand{\sfdefault}{phv}
 
+% plr added
+\newcommand{\mutrate}{\lambda_\mbox{mut}}
+\newcommand{\migrate}{\lambda_\mbox{mig}}
+\newcommand{\Trate}{T_\mbox{mig}}
+\newcommand{\Trate}{T_\mbox{mig}}
+
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
@@ -36,7 +42,6 @@
 \newcommand{\jri}[1]{\textcolor{blue}{\bf #1}}
 \newcommand{\com}[1]{\textcolor{blue}{ \em{\scriptsize  #1}} }
 
-\newcommand{\plr}[1]{\textcolor{purple}{ \emph{(#1)}} }
 
 \newcommand{\st}[1]{\textcolor{red}{#1}}
 \newcommand{\comst}[1]{\textcolor{red}{ \em{\scriptsize  #1}} }
@@ -45,6 +50,8 @@
 %\newcommand{\mbhcom}[1]{\textcolor{green}{ \em{\scriptsize  #1}} }
 \definecolor{mattgreen} {rgb} {0,0.6,0}
 \newcommand{\mbhcom}[1]{\textcolor{mattgreen}{ \em{\scriptsize  #1}} }
+\definecolor{peterpurple}{rgb}{.6,0,.6}
+\newcommand{\plr}[1]{\textcolor{peterpurple}{ \emph{(#1)}} }
 
 \usepackage[normalem]{ulem}
 \def\dt{\bgroup
@@ -378,6 +385,98 @@ While genetic positions were initially only available for the MaizeSNP50 data se
   \end{center}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
+
+
+%%%% PLR:
+\subsection{Migration and new mutation of adaptive alleles}
+
+We suggest below that many of these high-$F_{ST}$ alleles are locally adaptive,
+and the degree of coincidence between highland regions informs us about 
+whether these adaptations occurred indpendently (in parallel), or if alleles transited between the two.
+To see if the abundance and degree of coincidence is consistent with what is known about the population history of maize,
+we evaluated the rate at which we expect an allele that provides a selective advantage at higher altitude
+to arise by new mutation in a highland region ($\mutrate$),
+and the rate at which such an allele already present in the Mexican highlands
+would transit the intervening lowlands and fix in the Andean highlands ($\migrate$),
+in both cases assuming it is slightly deleterious at lower altitude.
+These numbers depend most strongly on the population density, 
+the selection coefficient,
+and the rate at which seed is transported long distances and replanted.
+We evaluated these rates using theory validated by simulation.
+
+\plr{
+A note here on why we assume it is deleterious?  
+It would be possible to say convincing things about the case where it is neutral at low elevation,
+but will require significant thinking (which I'd like to do\dots).
+}
+
+To calculate the rate at which new mutations appear and fix in the highland population, $\mutrate$,
+we simply used the total population size of the highlands
+multiplied by the mutation rate per generation
+and by the chance that a single such mutation successfully fixes
+(i.e.\ is not lost to drift).
+The latter probability that a single new mutant allele providing benefit $s$ to heterozygotes at high elevation
+will increase in frequency and fix in the high elevation patch
+is approximately $2s$ divided by the variance in offspring number \citep{jaegers}.
+This is not quite right, since such a mutation could occur at low elevation,
+where it is deleterious,
+and its offspring could then migrate to high elevation and fix there.
+Similarly, if we use the selection coefficient for high elevation,
+this ignores the fact that some of the seeds from the high-elevation plants may be grown at low elevation,
+reducing the chance of fixation of an allele arising there.
+This scenario has been well-studied in theoretical models by \citet{pollack} and \citet{barton},
+but it is not immediately obvious how the demographic details of maize 
+(an altitudinal gradient; high variance in number of offspring; both discrete and continuous population structure)
+affects the analyses in this work.
+As described in Appendix XX, 
+we built on the demographic model used in \citet{joost} to numerically calculate the chance of fixation of a beneficial allele
+as a function of the location it first appears,
+but found that the simple approximation is quite good.
+
+\plr{could alternatively: (a) describe demographic model in more detail; (b) describe the math; or (c) cut that down further.  
+Should probably describe demographic model at least a bit.}
+
+Concretely, the probability that a new mutation destined for fixation
+will arise in a patch of high-elevation habitat of area $A$ in a given generation
+is a function of the density of maize per unit area $\rho$,
+the selective benefit $s_b$ it provides,
+the mutation rate $\mu$,
+and the variance in offspring number $\xi^2$.
+Denoting this probability by $\mutrate$,
+\begin{align}
+  \mutrate = \frac{2 \mu \rho A s_b$}{\xi^2} .
+\end{align}
+
+The corresponding chance that an allele moves from one highland population to another is less intuitive,
+and the subject of \citep{ralphcoop2013}.
+If an allele is beneficial at high elevation, and fixed in the Mexican highlands,
+but deleterious at low elevations,
+then it will be present at low frequency in nearby lowland populations,
+maintained at migration-selection balance \citep{slatkin}.
+(Here ``migration'' is mediated by farmer exchange of seed stocks.)
+This equilibrium frequency decays exponentially with distance,
+being present at distance $R$ from the highlands at frequency $C \exp(- R \sqrt{2s_m} / \sigma)$,
+where $s_m$ is the deleterious selection coefficient for the allele in low elevation,
+$\sigma$ is the mean dispersal distance (mean distance between parent and offspring),
+and $C$ is a constant depending on geography ($C\approx 1/2$ is close).
+Multiplying by the population density gets the predicted number of individuals,
+which at large distances can be less than 1;
+this is possible because this is the average density of selected alleles across a large number of generations.
+Therefore, in a lowland population of size $N$ at distance $R$ from the highlands,
+$N/2  \exp(- R \sqrt{2s_m} / \sigma)$ is equal to the probability that there are any highland alleles present at distance $R$
+multiplied by the mean number of these, given that there are some present.
+Since the latter is at least 1,
+the chance there are any present in a given generation is no more than $N/2 \exp(- R \sqrt{2s_m} / \sigma)$.
+Therefore, we would need to wait around $\Tmig = (2/N)\exp(R \sqrt{2s_m} / \sigma)$ generations 
+for a rare such excursion to occur.
+This allows us to put an upper bound on the rate of migration of high altitude-adapted alleles between two highlands.
+(Such migrant alleles still need to fix; however, 
+since such alleles arrive by migration, which are planted out into a field,
+it is not too bad, and conservative, to neglect the factor of $2s_b/\xi^2$,
+if we use the number of ears used to plant the region for $N$.)
+
+We then computed $\mutrate$ and $\migrate$ at various paramter values.
+
 
 \section*{Results and Discussion}
 
@@ -786,7 +885,62 @@ NS                                & 250   &  17,401    & 0.014\\[1mm]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection*{Peter's parallel adaptation}
-Add Peter's result here.  I wonder whether our assumption that selected alleles in highland is deleterious in lowland is true.  If almost all selected alleles are from standing variation, these alleles may be neutral in lowlands because they were not lost (or just time is very short).\com{I think this section will be very important.  we need to mention in intro, work peter's stuff into methods, and above all make sure we understand his results/methods.  it should not be hard for him to redo modeling with neutral alleles int he lowland if we think that explains the data.}
+Add Peter's result here.  I wonder whether our assumption that selected alleles in highland is deleterious in lowland is true.  If almost all selected alleles are from standing variation, these alleles may be neutral in lowlands because they were not lost (or just time is very short).\com{I think this section will be very important.  we need to mention in intro, work peter's stuff into methods, and above all make sure we understand his results/methods.  it should not be hard for him to redo modeling with neutral alleles inthe lowland if we think that explains the data.}
+\plr{peter: well, it is do-able\dots}
+
+
+Paragraph on rough parameter values.
+Probably a figure?
+
+% # \mutrate computation:
+% A <- 500; rho <- 5000; sb <- 10^(-(1:4)); xisq <- 50
+% sapply( 10^c(-5,-8), function (mu) mu * (2 * rho * A * sb)/xisq )
+
+Computing the rate $\mutrate$ at which newly adapted alleles arise in the population,
+with at total population of $A \rho = 2.5 \times 10^6$ and an offspring variance of $\xi^2 = 50$,
+we get that with $10^{-1} \le s_b \le 10^{-4}$,
+a single-base mutation with mutation rate $\mu=10^{-8}$ would still take at least 10,000 generations to appear and fix.
+A kilobase-sized target with mutation rate of $\mu=10^{-5}$
+with strong selection $s=.1$ would fix in only 10 generations,
+while weakly selected alleles would take hundreds or thousands of generations.
+(Note that at these values $\Tmut = 1/\mutrate = \mu s_b \times 10^5$.)
+\plr{describe this better.}
+
+% # Tmig computation:
+% A <- 500; rho <- 5000; sm <- 10^(-(1:4)); xisq <- 50; sigma <- 2
+% 1/(sqrt(2*sm)/sigma)
+% sapply( 1000*(1:4), function (R) 1 / ( A * rho * ( sqrt(2*sm) / xisq ) * exp(- sqrt(2*sm)*R/sigma ) ) )
+% Ne <- (561/10^5)*A*rho 
+% Ne  # = 14025
+% sapply( 1000*(1:4), function (R) 1 / ( Ne * exp(- sqrt(2*sm)*R/sigma ) ) )
+
+From the demographic model above
+\plr{uh-oh, better describe it more up there}
+we have estimated that $\sigma \approx 2$ kilometers per generation,
+so with $10^{-1} \ge s_m \ge 10^{-4}$ the distance $\sigma/\sqrt{2s_m}$ is between 4 and 150 kilometers.
+\plr{put bounds on $\sigma$}
+The area of the Andean highlands is about 500 km$^2$ \plr{is this really it?}
+which we estimate was planted from around $N=14,000$ plants each year \plr{add more details}.
+Since the Mexican and Andean highlands are around 4,000 km apart,
+at $s_m=10^{-3}$ the time needed for this to occur is $\Tmig \approx 5 \times 10^34$ generations.
+In other words, it is unlikely that an allele that is deleterious at low elevation with $s_m=10^{-3}$ 
+would ever transit from the Mexican to the Andean highlands.
+If $s_m=10^{-4}$ it is still expected to take $\Tmig = 1.8 \times 10^8$ generations.
+Shorter distances could be transited by very weakly deleterious alleles --
+if $R$ is 1,000 km (or if $\sigma$ is four times larger)
+then with $s_m=10^{-4}$ the time $\Tmig$ is about 1.6 generations --
+so, adaptation by migration is certain.
+However, with even $s_m=10^{-3}$ it is still $2.3 \times 10^6$ generations.
+
+\plr{Here's my conclusions from these calculations.  But, maybe I'm missing something; I want to check more; tell me if anything seems awry.}
+It seems unlikely that any alleles that are adaptive in the highlands and deleterious at all in the lowlands
+would have transited central America by undirected (diffusive) sharing of seed.
+The conclusions could change if we drastically underestimate the rate of very long distance sharing of seed,
+e.g.\ if sharing across hundreds of kilometers was common at some point.
+
+Both calculations are very pessimistic about the chance of shared single-base changes through either migration or independent mutation.
+However, independent mutations could be expected in kilobase-size targets,
+suggesting there might be signal for genes that share adaptive changes.
 
 
 \section*{Conclusions}
