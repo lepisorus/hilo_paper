@@ -109,6 +109,19 @@ We discuss the significance of these results in the context of the molecular bas
 
 \maketitle
 
+%Once concern repeatedly raise by G. Coop is how many selected loci we may be missing. Is this a reasonable back-of-the-envelop?:
+%
+%width<-function(s,c){ return(0.01*s/c) } ##uses width of diversity reduction in sweep result. better result to use?
+%
+%prob<-function(s,c){ return(width(s,c)*snps*2/2.3E9) }
+%twice width to include either side of SNP
+%
+%loci=1:100
+%pbinom(round(loci/2,0),loci,prob(0.01,1E-8))
+%
+%that gives us that we should pick up majority of strongly selected sites (s=0.01) but for weaker selection (s=0.001) our chance of missing all the sites remains substantial until number of selected sites >>50
+
+
 
 
 %   INTRODUCTION   %
