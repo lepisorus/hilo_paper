@@ -42,9 +42,6 @@
 \newcommand{\jri}[1]{\textcolor{blue}{ \emph{\scriptsize  #1}} }
 \newcommand{\st}[1]{\textcolor{red}{#1}}
 \newcommand{\comst}[1]{\textcolor{red}{ \em{\scriptsize  #1}} }
-
-%\newcommand{\mbh}[1]{\textcolor{green}{\bf #1}}
-%\newcommand{\mbh}[1]{\textcolor{green}{ \em{\scriptsize  #1}} }
 \definecolor{mattgreen} {rgb} {0,0.6,0}
 \newcommand{\mbh}[1]{\textcolor{mattgreen}{ \em{\scriptsize  #1}} }
 \definecolor{peterpurple}{rgb}{.6,0,.6}
@@ -65,14 +62,12 @@
 
 %%%%
 
-%\title{The molecular basis of parallel adaptation to highland climate\\ in maize domesticated populations}
 \title{The molecular basis of parallel adaptation to\\ highland climate in domesticated maize}
 \author{
  \small\sfbf{Shohei Takuno$^{\ast}$, Peter Ralph$^{\dag, \ddag}$, Sofiane Mezmouk$^{\ast}$, Kelly Swarts$^{\S}$, Rob J. Elshire$^{\S}$, Jeffrey C. Glaubitz$^{\S}$,}\\
    \small\sfbf{Edward S. Buckler$^{\S, \ast\ast}$, Matthew B. Hufford$^{\ast}$, and Jeffrey Ross-Ibarra$^{\ast,\dag\dag,}$}\thanks{
 Corresponding author:  Department of Plant Sciences, University of California, Davis, California 95616, USA. 
     E-mail: \mbox{rossibarra@ucdavis.edu}}\\[0.3cm]
-   % \jri{note change to author order}
    \small\sf $^{\ast}$Department of Plant Sciences, University of California, Davis, California 95616, USA,\\
    \small\sf $^\dag$ Department of Evolution and Ecology, University of California, Davis, California 95616, USA,\\
    \small\sf $^\ddag$Department of Biological Sciences, University of Southern California,  Los Angeles,California 90089-0371, USA,\\
@@ -80,22 +75,18 @@ Corresponding author:  Department of Plant Sciences, University of California, D
    \small\sf $^{\ast\ast}$US Department of Agriculture–Agriculture Research Service (USDA-ARS) \st{address},\\
    \small\sf $^{\dag\dag}$The Center for Population Biology and the Genome Center, University of California, Davis, California 95616 , USA\\
 }
-%\begin{flushright}
-%\end{flushright}
-   
+
+ 
 \date{Revised manuscript for \emph{Genetics}, \today}
 
 \abstract{
-Parallel adaptation is defined as independent colonization of multiple species/subpopulations to similar environments via adaptive mutations in the same gene.
-To understand the molecular basis of parallel adaptation, the adaptive process to highland climates of domesticated maize (\emph{Zea mays} ssp. \emph{mays}) in Mexico and South America was investigated.
-After its domestication in the Balsas River Valley in the Mexico lowlands, maize spread quickly across the Americas.  
-Adaptation to highland climates in Mexico and South America occurred independently from locally-adapted lowland maize.  
-Here, we show the result of a genome scan to identify loci involved in parallel adaptation to highland climates.  
-To do this, we generated two large SNP data sets of 94 maize landraces, sampled from Mexico and South America.  
-We first inferred the demographic history of these lowland and highland populations.  
-We used the inferred demographic history to then perform a genome scan to identify highly differentiated loci that may have contributed to adaptation to highland climates.  
-The majority of loci identified showed evidence of selection in highland habitats from standing variation, yet we saw little evidence of parallel adaptation.  
-%insert the result of GWAS by Sofiane, here
+Parallel adaptation is defined as the independent evolution of multiple species/subpopulations to similar environments via adaptive mutations in the same locus.
+We investigate here the molecular basis of maize adaptation to highland climates in Mexico and South America using genome-wide SNP data. 
+Taking advantage of arachaeolgoical data on the arrival of maize to the highlands, we infer demographic models for both populations, identifying evidence of a strong bottleneck and rapid expansion in South America.  
+We use these models to then identify loci showing an excess of differentiation as a means of identifying putative targets of natural selection, and compare our results to expectations from recently developed theory on parallel adaptation.  
+In spite of similar morphologies, we see limited evidence of selection on quantitative traits, and, consistent with predictions across a wide array of paramater space, we see few SNPs showing signs of parallel adaptation.
+%need to tweak this for Sofiane's GWAS
+Instead, we show that selection appears to have prediminantly acted on standing genetic variation, and that introgression from wild teosinte populations appears to have played a role in adaptation in Mexican maize.
 We discuss the significance of these results in the context of the molecular basis of adaptation to new environments. }
 
 \usepackage{natbib}
@@ -109,73 +100,26 @@ We discuss the significance of these results in the context of the molecular bas
 
 \maketitle
 
-%Once concern repeatedly raise by G. Coop is how many selected loci we may be missing. Is this a reasonable back-of-the-envelop?:
-%
-%width<-function(s,c){ return(0.01*s/c) } ##uses width of diversity reduction in sweep result. better result to use?
-%
-%prob<-function(s,c){ return(width(s,c)*snps*2/2.3E9) }
-%twice width to include either side of SNP
-%
-%loci=1:100
-%pbinom(round(loci/2,0),loci,prob(0.01,1E-8))
-%
-%that gives us that we should pick up majority of strongly selected sites (s=0.01) but for weaker selection (s=0.001) our chance of missing all the sites remains substantial until number of selected sites >>50
-
-
-
-
 %   INTRODUCTION   %
-\noindent Parallel adaptation is defined as a process in which multiple species or subpopulations adapt to similar environments independently. %can we really say "independently" under the second scenario of standing variation? is it independent if they use the same standing variant? do we need to call it something else?
-Parallel adaptation occurs via independent beneficial mutations at the same locus, whereas adaptation via beneficial mutations producing the same phenotypic effect through different genes can be referred to as convergent evolution \cite[]{Wood_2005_15881688,Arendt_2008_18022278,Elmer_2011_21459472}.  
-Recent molecular studies have provided evidence for parallel adaptation in a wide range of species, \emph{e.g.}, malaria resistance \cite[]{Currat_2002_11741197,Kwiatkowski_2005_16001361} and lactase persistence \cite[]{Tishkoff_2007_17159977} in humans, adaptation to freshwater environments in three-spined sticklebacks \cite[]{Colosimo_2005_15790847}, and insecticide resistance in several species  \cite[]{Ffrench_2000}.
+\noindent Parallel adaptation is defined as a process in which multiple species or subpopulations independently adapt to similar environments via mutations at the same loci. 
+Evolutonary genetic analysis of wide range of species have provided evidence for multiple pathways to parallel adaptation. 
+One route to parallel adaptaiton, for example, occurs when identical beneficial mutations arise and fix via natural selection independently in multiple populations. 
+In humans, for example, malaria resistance due to mutations from Glu to Val at the sixth codon of the $\beta$-globin gene have arisen independently on multiple unique haplotypes  \cite[]{Currat_2002_11741197,Kwiatkowski_2005_16001361}.  
+We may also consider as parallel adaptation cases in which different mutations arise within the same locus, producing identical phenotypic effects. 
+Similar grain fragrance phenotypes in rice across several parts of East Asia, for example, are due to at least eight distinct loss-of-function alleles in the gene \emph{BADH2}\cite[]{Kovach_2009_19706531}.  
+Finally, parallel adaptation may arise from natural selection in independent populations acting on standing genetic variation in the ancestral population.  
+Natural selection in multiple threespine sticklebacks, for example, has repeatedly acted to reduce armor plating during colonizations of freshwater environments.  
+In most cases, adaptation in these populations took advantage of standing variation at the \emph{XXXXXXX} locus in marine populations \cite[]{Colosimo_2005_15790847}.  
+% are there more we are missing and should mention?
+iWhile these examples of single-locus selection are relatively simple, in reality an organism must adapt to a number of abiotic and biotic conditions and the genetic architecture of adaptive phenotypes may be complex.  
+A number of questions regarding the nature of parallel adaptation remain to be studied at this scale, including how often parallelism at the phenotypic level is reflected by parallel adaptation at the molecular level, and whether parallel adaptation occurs primarily via new mutations or from standing variation.   
 
-At the molecular level, parallel adaptation can be achieved in at least three ways.  
-To explain these, we introduce a simple population divergence model (Figure~\ref{fig1}).  
-We consider that two derived populations are differentiated from a parental population and adapt to similar environments.  
-In our first example, a beneficial mutation independently arises and reaches fixation by natural selection in the two derived populations (Pattern A in Figure~\ref{fig1}).  
-Malarial resistance in humans is an example of this first scenario, as mutations from Glu to Val at the sixth codon of the $\beta$-globin gene have occurred on multiple unique haplotypes  \cite[]{Currat_2002_11741197,Kwiatkowski_2005_16001361}.  
-Secondly, parallel adaptation can occur from standing variation (Pattern B). %see comment above about whether this is "independent"
-In threespine sticklebacks, for example, selection has repeatedly acted to reduce armor plating during colonizations of freshwater environments.  In most cases, adaptation in these populations took advantage of standing variation for the low-plated morph in marine populations \cite[]{Colosimo_2005_15790847}.  
-Lastly, in Pattern C, different adaptive mutations arise within the same gene in each population to produce the same phenotypic effect.  
-Similar grain fragrance phenotypes in rice across several parts of East Asia, for example, are due to at least eight distinct loss-of-function alleles in the gene \emph{BADH2}\cite[]{Kovach_2009_19706531}:  
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
-\begin{figure}[tb]   
-  \begin{center}
-   \vspace{-0mm}
-   %\includegraphics[width=0.23\textwidth]{figs/model}
-   \includegraphics[width=0.4\textwidth]{fig/Fig1-4}
-   \renewcommand{\baselinestretch}{0.9}
-   \vspace{-3mm}
-   \caption{Summary of the molecular mechanisms of parallel adaptation.  Boxes represent a gene.  Letters in the boxed represent nucleotides.  \st{Red or magenta letters represent adaptive variants.}  See text for details.
-   }
-\vspace{-6mm}
-    \label{fig1}
-  \end{center}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
-
-%%%JEFF EDITS STOP HERE
-
-The scenarios presented in Figure~\ref{fig1} assume relatively simple genetic systems.  
-In reality an organism must adapt to a number of abiotic and biotic conditions and adaptive traits are likely controlled by multiple genes.  
-A number of questions regarding the nature of parallel adaptation remain to be studied at the genome level.  
-Do parallel adaptations occur primarily via new mutations or from standing variation?  
-What proportion of the genome contributes to parallel adaptation? 
-Are parallel adaptations common and does their probability depend strongly on mutational target size?  \comst{add some sentences later}  \cite[]{Orr_2005_15792240,Unckless_2009_19142201,Ralph_2010_20660645}. %have some issue here. Peter and Graham's paper shows that it does, and we don't answer that question here. 
-
-Motivated by these questions \mbh{Hmm...this kind of makes it sound like we were trying to answer all of the questions mentioned above in the current manuscript but we don't address the proportion of the genome contributing or the dependence on mutational target size}, we sought to reveal the molecular basis of parallel adaptation to highland conditions in domesticated maize (\emph{Zea mays} ssp. \emph{mays}).  
-Adaptation to high altitude has previously been observed in a number of species (\emph{e.g.}, toleration of hypoxic conditions in humans and yaks  \cite[]{Yi_2010_20595611,Simonson_2010_20466884,Storz_2007_17397259,Qiu_2012_22751099}).
-Environmental gradients from lowlands to highlands include temperature, precipitation and exposure to ultraviolet radiation.  
-Substantial genomic changes may be required for adaptation across these varying conditions.
-
-
-The history of maize domestication and spread has been well characterized in molecular and archaeological studies.  Maize was domesticated $\sim$9,000 years before the present (BP) in the Balsas River Valley of southwest Mexico from its wild progenitor, the lowland teosinte taxon \emph{Zea mays} ssp. \emph{parviglumis} (hereafter \emph{parviglumis}) \cite[]{Matsuoka_2002_11983901,Piperno_2009_19307570,vanHeerwaarden_2011_21189301}.  
-Following domestication maize likely spread rapidly across the Americas. 
-By $\sim$6,000 BP, maize had adapted to the highlands of Central Mexico, and almost at the same time, spread to the lowlands of South America \cite[]{Piperno_2006_69}.  
-By $\sim$4,000 BP, maize was being grown in the Andean highlands of South America \cite[]{Perry_2006_16511492,Grobman_2012_22307642}.  
+Motivated by these questions we sought to investigate the molecular basis of parallel adaptation to highland conditions in domesticated maize (\emph{Zea mays} ssp. \emph{mays}).  
+Maize was domesticated from the wild teosinte \emph{Zea mays} ssp. \emph{parviglumis} in the lowlands of southwest Mexico $\sim$9,000 years before present (BP) \cite[]{Matsuoka_2002_11983901,Piperno_2009_19307570,vanHeerwaarden_2011_21189301}. 
+After domestication, maize spread rapidly across the Americas, reaching the lowlands of South America and the high altitudes of the Mexican central plateau by $\sim$6,000 BP \cite[]{Piperno_2006_69}, and the Andean highlands $\sim$2,000 years later \cite[]{Perry_2006_16511492,Grobman_2012_22307642}.  
 The adaptation of maize from lowland to highland conditions spanned similar environmental gradients in Mexico and South America (supp fig.~\st{X}). 
 
+Colonization of high altitude environments provides a host of novel challenges, including different temperatures, precipitation, ultraviolet radiation, and hypoxia. 
 
 Introgression from the highland wild relative, \emph{Zea mays} ssp. \emph{mexicana} (hereafter \emph{mexicana}) may have played a role during the adaptation of maize to highland conditions in Mexico.  
 It has been reported that \emph{mexicana} and highland Mexican maize share morphological features including traits presumably involved in highland adaptation.  \cite[]{Collins_1921,Wilkes1967:book,Wilkes_1977,Lauter_2004_15342532}
@@ -196,7 +140,7 @@ Here, we generated two large data sets of SNPs, inferred demographic histories o
    \vspace{-3mm}
    \caption{(A) The sampling locations of landraces.  Red, blue, yellow and light blue dots represent Mexico lowland, Mexico highland, SA lowland and SA highland populations, respectively.  (B) The results of {\sf STRUCTURE} analysis with $K=2\sim4$.  The top panel shows the altitude of sampling locations of landraces, ranging from 0 to 4,000 m on the \emph{y}-axes.  The colors in $K=4$ correspond to those in panel (A).    }
 \vspace{-6mm}
-    \label{fig2}
+    \label{map}
   \end{center}
 \end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
@@ -204,7 +148,7 @@ Here, we generated two large data sets of SNPs, inferred demographic histories o
 \section*{Materials and Methods}
 
 \subsection*{Materials and DNA extraction}
-We included 94 landraces (24, 24, 23 and 23 landraces sampled from Mexico lowland, Mexico highland, SA lowland and SA highland (Andean) populations).  These lines were provided by USDA and Major Goodman (supp Table S1).  Sampling locations are shown in Figure~\ref{fig2}A (see also supp table S1).   Lowland landraces were sampled from altitudes $<$1,700 m and highland landraces from  $>$1,700 m (supp table S1).  \comst{Matt, there is no information of the origin for some landraces (NA in supp table S1.  Do you have an idea?}  \mbh{I've saved a spreadsheet in the main folder of the dropbox with all the information I have on the accessions}Seeds were germinated on filter paper following fungicide treatment and grown in standard potting mix.  Leaf tips were harvested from plants at the five leaf stage.  Following storage at $-80{}^\circ$C overnight, leaf tips were lyophilized for 48 hours.  Tissue was then homogenized with a Mini-Beadbeater-8 (BioSpec Products, Inc., Bartlesville, OK, USA).  DNA was extracted using a modified CTAB protocol \cite[]{CTAB}.  The quality of DNA was ensured using methods described in \cite{vanHeerwaarden_2011_21189301}.
+We included 94 landraces (24, 24, 23 and 23 landraces sampled from Mexico lowland, Mexico highland, SA lowland and SA highland (Andean) populations).  These lines were provided by USDA and Major Goodman (supp Table S1).  Sampling locations are shown in Figure~\ref{map}A (see also supp table S1).   Lowland landraces were sampled from altitudes $<$1,700 m and highland landraces from  $>$1,700 m (supp table S1).  \comst{Matt, there is no information of the origin for some landraces (NA in supp table S1.  Do you have an idea?}  \mbh{I've saved a spreadsheet in the main folder of the dropbox with all the information I have on the accessions}Seeds were germinated on filter paper following fungicide treatment and grown in standard potting mix.  Leaf tips were harvested from plants at the five leaf stage.  Following storage at $-80{}^\circ$C overnight, leaf tips were lyophilized for 48 hours.  Tissue was then homogenized with a Mini-Beadbeater-8 (BioSpec Products, Inc., Bartlesville, OK, USA).  DNA was extracted using a modified CTAB protocol \cite[]{CTAB}.  The quality of DNA was ensured using methods described in \cite{vanHeerwaarden_2011_21189301}.
 
 %Purity of extracted DNA was measured with a NanoDrop spectrophotometer (NanoDrop Technologies, Inc., Wilmington, DE, USA).  Samples with 260:280 ratios $\geq$1.8 were deemed acceptable for genotyping.  Concentrations of DNA extractions were determined with a Wallac VICTOR2 fluorescence plate reader (Perkin-Elmer Life and Analytical Sciences, Torrance, CA, USA) using the Quant-iT$^{TM}$ Picogreen(R) dsDNA Assay Kit (Invitrogen, Grand Island, NY, USA). \jri{we don't need to repeat all this, we can just cite van Heerwaarden 2012 PNAS or  Pyh\"aj\"arvi or Hufford (submitted) or maybe even Cook 2012 Plant Phys. for methods}
 
@@ -548,7 +492,7 @@ Finally, Mexican and South American highland landraces were consistently assigne
 %\jri{ testing to see if model is robust to amount of gene flow might be easy to do?}
 %\comst{check fst with $P_{mex} = 10\%$!!}
 
-%{\sf STRUCTURE} results in Fig.~\ref{fig2}B suggest the level of divergence between low- and highland populations may be higher in South America than in Mexico.
+%{\sf STRUCTURE} results in Fig.~\ref{map}B suggest the level of divergence between low- and highland populations may be higher in South America than in Mexico.
 %We next calculated average $F_{ST}$ values among populations at noncoding and synonymous sites from GBS data ($2n\geq20$ for each population; Table~\ref{FstP}).
 %Consistent with the results of {\sf STRUCTURE}, the South American highland population showed a relatively high level of differentiation from the other populations.
 %\jri{why silent? i don't see it used much anymore, i think because people have enough data that they can separate out synonymous... thoughts?}
@@ -955,12 +899,10 @@ suggesting there might be signal for genes that share adaptive changes.
 
 2. The main conclusion is parallel adaptation is rare in maize highland adaptation.
 
-brabrabra...
-%I wanna be the minority$\sim$ \jri{????} \mbh{Green Day fan?}\comst{Yup}
 
 \begin{acknowledgments}
-  We appreciate P. Morrell and the members of R-I lab and Coop lab for helpful comments.  
-  Funding: USDA.
+  We appreciate the helpful comments of P. Morrell and the members of Ross-Ibarra lab and Coop labs.   
+%add in formal acknowledgement of USDA. use grant number from Joost's 2012 PNAS paper.
 \end{acknowledgments}
 
 
