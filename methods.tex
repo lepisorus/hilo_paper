@@ -1,18 +1,19 @@
 \section*{Materials and Methods}
 
 \subsection*{Materials and DNA extraction}
-We included 94 landraces (24, 24, 23 and 23 landraces sampled from Mexico lowland, Mexico highland, SA lowland and SA highland (Andean) populations).  These lines were provided by USDA and Major Goodman (supp Table S1).  Sampling locations are shown in Figure~\ref{map}A (see also supp table S1).   Lowland landraces were sampled from altitudes $<$1,700 m and highland landraces from  $>$1,700 m (supp table S1).  \comst{Matt, there is no information of the origin for some landraces (NA in supp table S1.  Do you have an idea?}  \mbh{I've saved a spreadsheet in the main folder of the dropbox with all the information I have on the accessions}Seeds were germinated on filter paper following fungicide treatment and grown in standard potting mix.  Leaf tips were harvested from plants at the five leaf stage.  Following storage at $-80{}^\circ$C overnight, leaf tips were lyophilized for 48 hours.  Tissue was then homogenized with a Mini-Beadbeater-8 (BioSpec Products, Inc., Bartlesville, OK, USA).  DNA was extracted using a modified CTAB protocol \cite[]{CTAB}.  The quality of DNA was ensured using methods described in \cite{vanHeerwaarden_2011_21189301}.
-
-%Purity of extracted DNA was measured with a NanoDrop spectrophotometer (NanoDrop Technologies, Inc., Wilmington, DE, USA).  Samples with 260:280 ratios $\geq$1.8 were deemed acceptable for genotyping.  Concentrations of DNA extractions were determined with a Wallac VICTOR2 fluorescence plate reader (Perkin-Elmer Life and Analytical Sciences, Torrance, CA, USA) using the Quant-iT$^{TM}$ Picogreen(R) dsDNA Assay Kit (Invitrogen, Grand Island, NY, USA). \jri{we don't need to repeat all this, we can just cite van Heerwaarden 2012 PNAS or  Pyh\"aj\"arvi or Hufford (submitted) or maybe even Cook 2012 Plant Phys. for methods}
+We included one individual from each of 94 open-pollinated landrace maize accessions from high and low elevation sites in Mexico and South America (Table S1).  Accessions were provided by USDA germplasm repository or kindly donated by Major Goodman (NCState).  
+Sampling locations are shown in Figure~\ref{map}A (see also supp table S1).  
+%shouldn't we put table refs in case these change?
+Landraces sampled from altitudes $<$1,700 m were considered lowland, while accessions from $>$1,700 m were considered highland (supp table S1).  
+%Please fill in information in table S1 from Matt's excel file (dropbox).  
+Seeds were germinated on filter paper following fungicide treatment and grown in standard potting mix.  Leaf tips were harvested from plants at the five leaf stage.  Following storage at $-80{}^\circ$C overnight, leaf tips were lyophilized for 48 hours.  Tissue was then homogenized with a Mini-Beadbeater-8 (BioSpec Products, Inc., Bartlesville, OK, USA).  DNA was extracted using a modified CTAB protocol \cite[]{CTAB}.  The quality of DNA was ensured using methods described in \cite{vanHeerwaarden_2011_21189301}.
 
 \subsection*{SNP data}
 We used the maize B73 genome sequence RefGen version 2 as a reference \cite[]{Schnable_2009_19965430}.  
 The filtered gene set (version 5b\_FGS) was retrieved from MaizeSequence.org for SNP annotations.  
-We excluded transposable elements and pseudogenes from the filtered gene set. 
-%\jri{we excluded TEs? TEs aren't in the FGS are they? What did you do to exclude these?}
-%\comst{Jeff - there are 39249 protein coding genes, 323 pseudogenes and 84 transposable element in the FGS.} 
-%\mbh{Sho, did you filter the FGS yourself for pseudogenes and TE's? If so, probably need to briefly describe your method.  If not, where did these annotations come from?  My understanding is these should be excluded from the FGS.}
-Results were qualitatively similar when using the less stringently filtered working gene set (not shown).
+%isn't it 5b_60?
+We excluded genes annotated as transposable elements (84) and pseudogenes (323) from the filtered gene set, resulting in a total of 38,842 genes.
+%I think the above needs to go after the SNP50 information perhaps in separate section. we didn't use the FGS to call SNPs (Kelly may have to mention refgen2 in her section).
 
 We generated two complementary SNP data sets for the sampled maize landraces. 
 The first set was generated using the Illumina MaizeSNP50 BeadChip platform, including 56,110
@@ -21,46 +22,36 @@ Clustering for each SNP was then visually inspected and manually adjusted.
 These data are referred to as "MaizeSNP50" hereafter.  
 MaizeSNP50 data have high reproducibility and a low proportion of missing data but are subject to ascertainment bias. 
 This array contains SNPs discovered in five ascertainment schemes \cite[]{Ganal_2011_22174790}; however, the vast majority of SNPs come from two panels: the Syngenta set (14,810 SNPs), derived from polymorphisms distinguishing the parents of the IBM mapping population (the maize lines B73 and Mo17), and the Panzea set, including 40,594 SNPs identified during sequencing of the 25 parents of the NAM mapping population.  
-%\comst{numbers of panzea and syngenta SNPs will be added later}
 
 The second data set was generated utilizing high-throughput Illumina sequencing data in a method referred to as \underline{g}enotyping-\underline{b}y-\underline{s}equencing (GBS).  \textcolor{red}{Kelly is up for details.}
-Average coverage was relatively low \textcolor{red}{(5X?)} \jri{think more like 1X at best} resulting in heterozygotes often being miscalled as homozygotes.  However, this data set is relatively free from ascertainment bias.       
-GBS data were obtained for a subset of 23, 23, 20 and 21 lines for Mexico lowland, Mexico highland, SA lowland and SA highland populations respectively (supp table S1).
+Average coverage was relatively low \textcolor{red}{(XXX)}, likely resulting in heterozygotes often being miscalled as homozygotes.  However, this data set is relatively free from ascertainment bias.       
+%please fill in X
+GBS data were obtained for a subset of 87 of the landrace accessions (Supp. Table 1). 
 
-%\subsection*{Quality of SNP data sets}
-
-We compared SNP genotypes in the GBS and MaizeSNP50 data sets to assess data quality. 
-Previous work has shown 2.45\% discordance in SNP genotypes between the maize HapMap2 data set and the MaizeSNP50 array. 
-Most errors were due to mis-calling of heterozygous SNPs as homozygotes in the low coverage Hapmap2 data set \cite[]{Hufford_2012_22660546}. 
-Our GBS data are also at low coverage which will likely result in an under-calling of heterozygotes.
-We found that 7,197 SNPs overlapped between the MaizeSNP50 and GBS data sets. 
-Excluding missing data, we compared 229,937 genotypes in the two data sets. 
-While only 0.8\% of 173,670 homozygous loci in the MaizeSNP50 data set differed from GBS genotypes,
-88.6\% of 56,267 MaizeSNP50 heterozygotes had different genotypes in the GBS data, being homozygous in nearly all cases. 
+To assess data quality, we compared genotypes at the 7,197 SNPs that overlap between the MaizeSNP50 and GBS data sets. 
+Excluding missing data, we compared 229,937 genotypes. 
+While only 0.8\% of 173,670 homozygous loci in the MaizeSNP50 data set differed from GBS genotypes, 88.6\% of 56,267 MaizeSNP50 heterozygotes had different genotypes in the GBS data, being homozygous in nearly all cases. 
 Despite an extremely high heterozygote error rate, our GBS data should be informative given the high correlation in allele frequencies between data sets ($r=0.89$; Supp fig. X) and a lack of major allele or reference bias (data not shown).
-
+%please fill in X
 
 \subsection*{Structure analysis}
 We performed {\sf STRUCTURE} analysis \cite[]{Pritchard_2000_10835412,Falush_2003_12930761} using  synonymous and noncoding SNPs from the MaizeSNP50 data. 
 We assumed free recombination between SNPs without missing data and randomly pruned SNPs closer than 10 kb (alternative distances were tried with nearly identical results). 
-Additionally, we removed SNPs showing an extreme excess of heterozygosity, a signal likely caused by paralogy. 
-We also excluded SNPs in which the number of heterozygous individuals exceeded homozygotes and where the \emph{P}-value for departure from Hardy-Weinberg Equilibrium (HWE) based on a \emph{G}-test was smaller than 0.5\% using all individuals. 
+We excluded SNPs in which the number of heterozygous individuals exceeded homozygotes and where the \emph{P}-value for departure from Hardy-Weinberg Equilibrium (HWE) based on a \emph{G}-test was smaller than 0.5\% using all individuals. 
+% i removed sentence on paralogy. is "extreme heterozygosity" different from the above?
 Following these data thinning measures, 17,013 biallelic SNPs remained. 
 We conducted three replicate runs of {\sf STRUCTURE} using the correlated allele frequency model with admixture for \emph{K} = 2$\sim$6 populations, a burn-in length of 50,000 iterations and a run length of 100,000 iterations. 
 Results across replicates were nearly identical.
- 
 
 \subsection*{Inference of demography}
-
 We tested three demographic models in which maize was differentiated into high- and lowland populations subsequent to domestication (Figure~\ref{model}). 
 Observed joint frequency distributions (JFDs) were calculated using the GBS data set due to its lower level of ascertainment bias. 
 A subset of silent SNPs were utilized that had $\geq15$ individuals without missing data in both low- and highland populations and did not violate HWE.  
 An HWE cut-off of $P<0.005$ was used for each subpopulation due to our under-calling of heterozygotes. 
 In total, we included 18,745 silent SNPs for the Mexican populations in Models I and II, 14,508 for the South American populations in Model I and 11,305 for the Mexican lowland population and the South American populations in Model III.  
 We obtained similar results under more or less stringent thresholds for significance ($P < 0.05\sim0.0005$; data not shown), though the number of SNPs was very small when $P<0.05$.  
-%\jri{not sure a reviewer will buy this.  the data are worse, so we are less stringent for HWE? I think we need to rephrase or rethink? are results similar if you use p<0.05?}  
 Demographic parameters were inferred using the software {\sf dadi} \cite[]{Gutenkunst_2009_19851460}.  We calculated an expected JFD given parameters from a diffusion method and the likelihood obtained from the expected and observed JFDs in the multinomial approach of this software. \\
-
+%any other dadi parameters etc. we need to report?
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
 \begin{figure}[tb]   
@@ -83,7 +74,7 @@ This model is applied to the Mexico and SA populations.
 We assume the ancestral diploid population representing \emph{parviglumis} follows a standard Wright-Fisher model with constant size.  The size of the ancestral population is denoted by $N_A$.
 At $t_D$ generations ago, the bottleneck event begins at domestication, and at $t_E$ generations ago, the bottleneck ends.  The population size and duration of bottleneck are denoted by $N_B$ and $t_B=t_D-t_E$, respectively.  The population size recovers to $N_C=\alpha N_A$ in the lowlands.  
 Then, the highland population is differentiated from the lowland population at $t_F$ generations ago.  The size of the low- and highland populations at time $t_F$ is determined by a parameter, $\beta$ such that the population is divided by $\beta N_C$ and $(1-\beta)N_C$.  
-We assume that, whereas the population size in the lowlands is constant, the highland population experiences exponential expansion after divergence: the current population size is $\gamma$ times larger than that at $t_F$.  \\
+We assume that the population size in the lowlands is constant but that the highland population experiences exponential expansion after divergence: its current population size is $\gamma$ times larger than that at $t_F$.  \\
 
 \subsubsection{Model II}
 We expand Model I for the Mexico populations.  We incorporate admixture from \emph{mexicana} to the highland Mexican maize population.  The time of differentiation between \emph{parviglumis} and \emph{mexicana} occurs at $t_{mex}$ generations ago.  The size of the \emph{mexicana} population is denoted by $N_{mex}$ and this size is assumed to be constant.  At $t_F$ generations ago, the Mexico highland population is derived from the Mexico lowland population and admixture with \emph{mexicana}.  The proportion of admixture with \emph{mexicana} is denoted by $P_{mex}$.  \\
@@ -100,42 +91,36 @@ The final model is for the Mexico lowland, SA lowland and SA highland population
    \includegraphics[width=0.5\textwidth]{fig/Fig4}
    \renewcommand{\baselinestretch}{0.9}
    \vspace{-3mm}
-   \caption{Joined distributions of minor allele frequencies in low- and highland populations in (A) Mexico and (B) South America.  Observed JFDs, expected JFD and residuals are shown.  The scale bars of allele frequency and residual are also shown.     }
+   \caption{Observed and expected joint distributions of minor allele frequencies in low- and highland populations in (A) Mexico and (B) South America. }
 \vspace{-6mm}
     \label{JFD}
   \end{center}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
 
-Several parameters in our demographic model were based on previous studies.  
+Estimates of a number of our model parameters were available from previous work.    
 $N_A$ was determined using estimates of the composite parameter $4N_A\mu$ and a separate estimate of mutation rate, $\mu$, per site per generation.  $4N_A\mu$ was estimated in \emph{parviglumis} to be $\sim$0.018  \cite[]{Eyre-Walker_1998_9539756,Tenaillon_2001_11470895,Tenaillon_2004_15014173,Wright_2005_15919994,Ross-Ibarra_2009_19153259}.  
 The mutation rate in maize has been estimated to be $2.9\sim 3.3\times 10^{-8}$, so we assume $\mu=3\times 10^{-8}$ \cite[]{Clark_2005_16079248}.  
 Thus, $N_A$ was set to $0.018/4/(3\times 10^{-8}) = 150,000$.
-The severity of the domestication bottleneck is represented by $k=N_B/t_B$ \cite[]{Eyre-Walker_1998_9539756,Wright_2005_15919994}, and following \cite{Wright_2005_15919994}, we assumed $k=2.45$ and $t_B=1,000$ generations.  
+The severity of the domestication bottleneck is represented by $k=N_B/t_B$ \cite[]{Eyre-Walker_1998_9539756,Wright_2005_15919994}, and following \cite{Wright_2005_15919994} we assumed $k=2.45$ and $t_B=1,000$ generations.  
 Taking into account archaeological evidence \cite[]{Piperno_2009_19307570}, we assume $t_D=9,000$ and $t_E=8,000$.  
 We further assumed $t_F=6,000$ for Mexican populations in Models I and II \cite[]{Piperno_2006_69}, $t_F=4,000$ for South American populations in Model I \cite[]{Perry_2006_16511492}, and $t_{mex}=60,000$, $N_{mex}=160,000$ \cite[]{Ross-Ibarra_2009_19153259}, and $P_{mex}=0.2$ \cite[]{vanHeerwaarden_2011_21189301} for Model II. 
-Note that \cite{Profford_2013} recently estimated $P_{mex}=0.12$, \mbh{my overall estimate of $P_{mex}$ in STRUCTURE was $\sim$0.19, very similar to Joost's.  Estimates from HAPMIX were lower but were based on pretty ad hoc criteria} and we obtained very similar null distributions of $F_{ST}$ between Mexico low- and highland populations given $P_{mex}=0.1\sim0.2$.
-Hereafter, we will show the result with  $P_{mex}=0.2$.
 For both Models I and II, we inferred three parameters ($\alpha$, $\beta$ and $\gamma$), and, for Model III, we fixed $t_F=6,000$ and $t_G=4,000$ \cite[]{Piperno_2006_69,Perry_2006_16511492} and estimated the remaining four parameters ($\alpha$, $\beta_1$, $\beta_2$ and $\gamma$).
 
-%We used GBS data for the observed JFDs because this data set is relatively free from ascertainment bias.  We screened silent SNPs with $\geq15$ individuals having no missing data in both low- and highland populations.  We further screened out SNPs departure from Hardy-Weinberg equilibrium.  Because of the low coverage of GBS data, a large proportion of heterozygotes were missed as shown above.  Thus, we used less strict cut-off, $P<0.005$ for each subpopulation.  In total, we used 18,745 silent SNPs for Mexico populations in Model I and II, 14,508 for SA populations in Model I and 11,305 for Mexico lowland population and SA populations in Model III.  When we used another cut-off such as $P<0.001$ or $P<0.0005$, we obtained similar estimations (not shown).  
- 
 \subsection*{Differentiation between low- and highland populations}
-Based on inferred demography, we generated a null distribution of $F_{ST}$ by using {\sf ms} software \cite[]{Hudson_2002_11847089}.   
+We used our inferred demographic model to generate a null distribution of $F_{ST}$ via simulation using the software {\sf ms} \cite[]{Hudson_2002_11847089}.   
 The command line options for {\sf ms} are provided in supp Table 2.  
-For each combination of sample sizes in low- and highland populations, we generated $10^7$ $F_{ST}$ values given sample sizes and used these as a null distribution in order to evaluate our GBS data.   We calculated $F_{ST}$ values for all SNPs that had $\geq10$ individuals with no missing data in all four populations and showed no departure from HWE at the 0.5\% level. 
+For each combination of sample sizes in low- and highland populations, we generated $10^7$ $F_{ST}$ values and used these as a null distribution in order to evaluate our GBS data.   We calculated $F_{ST}$ values for all SNPs that had $\geq10$ individuals with no missing data in all four populations and showed no departure from HWE at the 0.5\% level. 
 
-Calculation of differentiation using the MaizeSNP50 data is more complicated due to ascertainment bias.  
-We addressed this problem by applying a simple method.  
-The SNPs in this data set were discovered in a panel of maize inbred lines.  
-These inbred lines appear to be derived from the Mexican lowland maize population based on examination of an NJ tree of inbred lines and our landrace samples constructed using our GBS data and SNPs in the Hapmap v2 data set \cite[]{Hufford_2012_22660546}. 
-Therefore, we added two additional individuals to the Mexican lowland population and used only SNPs where the two individuals had different alleles.   
-We used all SNPs where $\geq10$ individuals had no missing data in all four populations and where there was no departure from HWE at the 5\% level. As mentioned above, SNPs in this data set were discovered from multiple ascertainment schemes.  In the Results and Discussion, we demonstrate that the effect of different ascertainment schemes was not large.
+Generating the null distribution of differentiation ufor the MaizeSNP50 data requires accounting for ascertainment bias. Evaluation of genetic clustering in our data (not shown) coincides with previous work \cite[]{Hufford_2012_22660546} in suggesting that the two lines most important in the ascertainment panel are most closely related to Mexican lowland maize.  
+We thus added two additional individuals to the Mexican lowland population and generated our null distribution using only SNPs where the two individuals had different alleles. 
+We used all SNPs where $\geq10$ individuals had no missing data in all four populations and where there was no departure from HWE at the 5\% level. i
 
 \subsection*{Haplotype scoring test}
 We performed a \underline{p}airwise \underline{h}aplotype \underline{s}coring (PHS) test to detect further evidence of selection, following \cite{Toomajian_2006_16623598}.  
 To conduct this test, we first imputed and phased the combined SNP data (both GBS and MaizeSNP50) using the {\sf fastphase} software ver. 1.4.0 \cite[]{Scheet_2006_16532393}.  
 As a reference for phasing, we used data (excluding heterozygous SNPs) from an Americas-wide sample of 23 partially inbred landraces that were included in the Hapmap v2 data set  \cite[]{Hufford_2012_22660546}.  
+%should really cite Chia here instead of Hufford. 
 {\sf fastphase} was run with default parameter settings.  PHS was calculated for an allele \emph{A} at position $x$ by
 
 \begin{equation}
@@ -163,14 +148,16 @@ Z_{ijx} = \frac{ d_{ijx} - \bar{d_{ij}} }{ \sigma_{ij} }
 
 \noindent where $d_{ijx}$ is the genetic distance over which individuals $i$ and $j$ are identical surrounding position $x$, $\bar{d_{ij}}$ is the genome-wide mean of distances over which individuals are identical, and $\sigma_{ij}$ is the standard deviation of the distribution of distances.  
 The \emph{P}-value for an allele $A$ with frequency $p$ at position $x$ was calculated such that Pr($PHA_{xA}\leq PHA_{null|p}$), where $PHA_{null|p}$ are the PHS values for all alleles with frequency $p$ across the genome. 
-%\mbh{so is $PHA_{p}$ a mean?}
-%\mbh{The previous sentence needs to be clarified}
+%is $PHA_{p}$ a mean? The previous sentence needs to be clarified.
 
 Genetic distances were obtained from the IBM mapping population \cite[]{Ganal_2011_22174790}.  
 While genetic positions were initially only available for the MaizeSNP50 data set, we fit genetic (cM) and physical (bp) distances to a tenth degree polynomial curve, and calculated cM for all SNPs. 
-%\jri{ should we provide this data online or in supp.? not sure}
-%\comst{you mean PHS?}
+%please provide the genetic map positions for all SNPs. probably not needed in the paper, but I would like this data.
  
+
+%^JRI EDITS STOP HERE^
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
 \begin{figure}[tb]   
   \begin{center}
