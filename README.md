@@ -1,5 +1,10 @@
 # Highland/Lowland popgen in maize in Mexico and S. America
 
+## Data Files
+
+- highlow_gbs_hapmaps.gz (not tracked by git) -- all GBS data from all individuals. on Farm and on JRI laptop.
+- dat5.zip, list of SNPs with very high Fst values. see data_readme.md for description
+
 ##Notes
 
 ###Define parallel adaptation

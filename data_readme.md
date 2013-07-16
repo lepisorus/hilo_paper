@@ -1,10 +1,7 @@
 File is dat5.zip, the list of SNPs with very high Fst values.
 You find chr1-10.out that are tab-delimited files.
 Each line contains the information of each SNP.
-SNPs are divided into "Genetic Unit" defined in our manuscript by "###".
-As shown below, the list is too complicated and messy.
-Tell me what kind of information you need.  I will extract the information that you need.
-
+SNPs are divided by "###" into "Genetic Unit" as defined in our manuscript 
 
 # Columns:
 1st: chromosome
