@@ -2,7 +2,8 @@
 
 ## Data Files
 
-- highlow_gbs_hapmaps.gz (not tracked by git) -- all GBS data from all individuals. on Farm and on JRI laptop.
+- highlow_gbs_hapmaps.gz (not tracked by git) 
+- raw GBS data can be found here: http://files.figshare.com/1120798/highlow_gbs_hapmaps.gz 
 - dat5.zip, list of SNPs with very high Fst values. see data_readme.md for description
 
 ##Notes
