@@ -1,9 +1,42 @@
-File is dat5.zip, the list of SNPs with very high Fst values.
+# Filtered SNPs
+
+file = filteredSNPs.zip
+List of all SNPs used in study after filtering for quality, HWE, missing data, etc. 
+
+### Column:
+
+1st: chromosome
+2nd: SNP ID (start with S1-10_: GBS, others: 55-k SNP)
+3rd: allele 1/2 in Mexico pops (only allele 1 is shown if monomorphic)
+4th: Position
+5th: Sample size in Mex low (-9 if monomorphic)
+6th: Sample size in Mex high
+7th: Freq allele 1 in Mex low
+8th: Freq allele 2 in Mex low
+9th: Freq allele 1 in Mex high
+10th: Freq allele 2 in Mex high
+11th: Fst between Mex low and high
+12th: Fst P-value under Model I
+13th: Fst P-value under Model II
+14th: allele 1/2 in SA pops (only allele 1 is shown if monomorphic)
+15th: Sample size in SA low
+16th: Sample size in SA high
+17th: Freq allele 1 in SA low
+18th: Freq allele 2 in SA low
+19th: Freq allele 1 in SA high
+20th: Freq allele 2 in SA high
+21th: Fst between SA low and high
+22th: Fst P-value under Model I
+23th: Fst P-value under Model III
+
+#Outlier SNPs
+
+File is fst_outlier_snps.zip, the list of SNPs with very high Fst values.
 You find chr1-10.out that are tab-delimited files.
 Each line contains the information of each SNP.
 SNPs are divided by "###" into "Genetic Unit" as defined in our manuscript 
 
-# Columns:
+### Columns:
 1st: chromosome
 2nd: position on a chromosome ver. 2
 3rd: First/Second alleles (allele 1 and 2 below)
