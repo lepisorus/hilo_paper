@@ -1,12 +1,11 @@
 \section*{Results and Discussion}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\arraystretch}{1.1}
 \begin{table}[tb]
 
 \begin{center}
- \caption[]{Pairwise $F_{ST}$ among populations \hspace*{2.3cm}}
+ \caption[]{Silent site $F_{ST}$ from GBS SNPs \hspace*{2.3cm}}
   \textbf{}\\[-2mm]
 {\fontsize{7}{9}\sf
     \begin{tabular}{llccccccl}
@@ -21,7 +20,6 @@ Mexico	&	Lowlands	&	--	&		&		&		\\
 SA	&	Lowlands	&	0.0227	&	0.0343	&	--	&		\\
 	&	Highlands	&	0.0466	&	0.0534	&	0.0442	&	--	\\ [1mm]
     \hline
-	\multicolumn{6}{l}{SNPs from GBS data were used with $2n\geq20$ for each population.}
     \end{tabular}
     \label{FstP}  % caption is needed to make this work
 }
@@ -30,109 +28,36 @@ SA	&	Lowlands	&	0.0227	&	0.0343	&	--	&		\\
 \renewcommand{\arraystretch}{1}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%Matt, please add a sentence or two at the start say "we sampled X, genotyped using Y etc.?? You can use stast from the paragraph below on total number of SNPs
+%
+%Sho, please move some of the other numbers below (SNPs tested etc.) to methods.
+%
+%\subsubsection{Joint data set}In total, 91,779 SNPs remained in our joint, filtered GBS and MaizeSNP50 data set ($2n\geq20$ and HWE $P\geq0.005$ \mbh{need to keep track of how this is reported: sometimes 0.005, sometimes 0.5\%} for GBS or $P\geq0.05$ for MaizeSNP50 for all four populations).  For the Mexican and South American populations, we calculated \emph{P}-values for 76,989 and 63,160 SNPs respectively with the remaining SNPs being monomorphic. The reduced number of polymorphic SNPs in South America relative to Mexico is likely due to a lower effective population size in the South American populations.  48,370 SNPs were polymorphic in both Mexico and South America. 
+
 \subsection*{Population structure}
 
-We performed a {\sf STRUCTURE} analysis  \cite[]{Pritchard_2000_10835412,Falush_2003_12930761} 
-using MaizeSNP50 data due to its lower error rate for genotyping heterozygotes. 
-Accurate estimates of allele frequencies are necessary for this analysis because populations are inferred by minimizing deviations from HWE.
-The number of groups was varied from $K=2\sim6$ and the likelihood given $K$ reached a plateau at $K=3$ (Supp FigX).
-Several observations can be made based on results from $K=2\sim4$. 
-First, most landraces were assigned to groups consistent with our \emph{a priori} population definitions.
-Second, while admixture between highland and lowland groups was apparent at intermediate elevations ($\sim1700$m) in both Mexico and South America, greater highland/lowland differentiation was observed in South America.  
-Strong divergence of South American highland landraces was supported by their relatively high level of differentiation ($F_{ST}$) from other populations at noncoding and synonymous sites in the GBS data set and may be indicative of a strong bottleneck during colonization of this region.
-Third, the Mexican lowland population shared ancestry with both the Mexican highland and South American lowland populations, consistent with a previously described scenario for maize diffusion \cite[]{Piperno_2006_69}.  
-Finally, Mexican and South American highland landraces were consistently assigned to separate groups suggesting strong differentiation between maize in these regions.
-
-%\jri{ testing to see if model is robust to amount of gene flow might be easy to do?}
-%\comst{check fst with $P_{mex} = 10\%$!!}
-
-%{\sf STRUCTURE} results in Fig.~\ref{map}B suggest the level of divergence between low- and highland populations may be higher in South America than in Mexico.
-%We next calculated average $F_{ST}$ values among populations at noncoding and synonymous sites from GBS data ($2n\geq20$ for each population; Table~\ref{FstP}).
-%Consistent with the results of {\sf STRUCTURE}, the South American highland population showed a relatively high level of differentiation from the other populations.
-%\jri{why silent? i don't see it used much anymore, i think because people have enough data that they can separate out synonymous... thoughts?}
-%\st{When using only noncoding SNPs, we obtained almost the same result.
-%When using only synonymous SNPs, $F_{ST}$ values became slightly smaller (not shown or supp?). Finally, when using non-synonymous SNPs, Fst decreased even further.}
-%The JFD calculated from silent sites of GBS data ($2n\geq30$ for each population) showed a similar trend.  Moreover, as is apparent in Figure ~\ref{JFD}, the variance of change in allele frequency between low- and highland populations is much larger in South America than in Mexico.
-%Archaeological evidence suggests that population divergence occurred more recently in South America  \cite[]{Piperno_2006_69,Perry_2006_16511492,Grobman_2012_22307642}.  Combined these factors suggest that the South American highland population may have experienced a stronger bottleneck than the Mexican highland population.
- 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\arraystretch}{1.1}
-\begin{table}[tb]
-
-\begin{center}
- \caption[]{Inference of demographic parameters\hspace*{0.3cm}}
-  \textbf{}\\[-2mm]
-{\fontsize{7}{11}\sf
-    \begin{tabular}{lcccccccl} \hline
-       & & \\[-3mm]
-     Mexico  & \multicolumn{2}{c}{Model I}  &\multicolumn{2}{c}{Model II}\\[0.1cm]
-    \hline
-    & & \\[-3mm]
-   & Likelihood & $-$5590.33 & Likelihood &  $-$4641.28 \\
-  &$\alpha$    & 0.92  & $\alpha$    & 1.5 \\
-  &$\beta$ & 0.38  & $\beta$  & 0.75\\ 
-  &$\gamma$   & 1        &  $\gamma$   & 1\\ 
-      \hline
-    & & \\[-3mm]
-    South America  & \multicolumn{2}{c}{Model I}  &\multicolumn{2}{c}{Model III}\\[0.1cm]
-        \hline
-    & & \\[-3mm]
-     & Likelihood &  $-$3858.48 & Likelihood &  $-$8016.88 \\
-      &$\alpha$    & 0.55           & $\alpha$       & 1.0 \\
-      &$\beta$ & 0.97           & $\beta_1$   & 0.64\\ 
-      &$\gamma$   & $\geq$60   &  $\beta_2$  & 0.95\\ 
-      &                &                     &  $\gamma$       & $\geq$55\\ [1mm]
-    \hline
-%    \multicolumn{9}{l}{$^{a}$ The groups were based on phylogenetic analysis in fig.~\ref{tree}\emph{A}}\\
-    \end{tabular}
-    \label{param}  % caption is needed to make this work
-}
-\end{center}
-\end{table}
-\renewcommand{\arraystretch}{1}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% When P_mex=0.1, alpha=1.1, beta = 0.67
-
-
+We performed a {\sf STRUCTURE} analysis \cite[]{Pritchard_2000_10835412,Falush_2003_12930761} of our landrace sample, varying the number of groups from $K=2\sim 6$ (Figure \ref{map}, Supp FigX). 
+%cite supp. figure with likelihood plot from STRUCTURE
+Most landraces were assigned to groups consistent with \emph{a priori} population definitions, but admixture between highland and lowland populations was evidence at intermediate elevations ($\sim1700$m).  Consistent with previously described scenarios for maize diffusion \cite[]{Piperno_2006_69}, we find evidence of shared ancestry between lowland Mexican maize and both Mexican highland and South American lowland populations.  Pairwise $F_{ST}$ among populations reveals low overall differentiation (Table \label{FstP}), and the higher $F_{ST}$ values observed in S. America are consistent with decreased admixture seen in STRUCTURE.  Archaeological evidence supports a more recent colonization of the highlands in S. America  \cite[]{Piperno_2006_69,Perry_2006_16511492,Grobman_2012_22307642}, suggesting that the observed differentiation may be the result of a stronger  bottleneck during colonization of the S. American highlands. 
 
 \subsection*{Population differentiation under inferred demography}
 
-Demographic parameters were estimated for lowland and highland populations in both Mexico and South America in order to provide a neutral expectation for population differentiation.  
-Models were fit (Fig.~\ref{model}) to the observed JFDs using the maximum likelihood method implemented in {\sf dadi} \cite[]{Gutenkunst_2009_19851460}.  
-Estimated parameters are listed in Table~\ref{param} and expected JFDs and residuals are shown in Fig.~\ref{JFD}.  
-Overall, the observed and expected JFDs were similar in the two models in both Mexico and South America.
-However, residuals indicated an excess of rare variants in the observed JFDs in all cases.  We demonstrate below that this factor should not greatly affect our analysis of population differentiation.
+To provide a null expectation for allele frequency differentiation, we used the joint site frequency distribution (JFD) of lowland and highland populations to estimate parameters of two demographic models (Fig.~\ref{model}) using the maximum likelihood method implemented in {\sf dadi} \cite[]{Gutenkunst_2009_19851460}.  
+Estimated parameter values are listed in Table~\ref{param}; while the observed and expected JFDs were quite similar for both models,  residuals indicated an excess of rare variants in the observed JFDs in all cases (Fig.~\ref{JFD}). 
+%parameter table now in supplement.
+Under both models IA and IB,  we found expansion in the highland population in Mexico to be unlikely, but a strong bottleneck followed by population expansion is supported in S. American maize in both models IA and II.  
+The likelihood value of model lB ($-$4641.28) was much higher than the likelihood of model IA ($-$5590.33) (Table~\ref{param}), consistent with analyses suggesting that introgression from \emph{mexicana} played a significant role during the spread of maize into the Mexican highlands \cite{Profford_2013}. 
 
-Under both Models I and II In Mexico, we found expansion in the highland population to be unlikely.  
-The likelihood value of Model lI ($-$4641.28) was much higher than the likelihood of Model I ($-$5590.33) (Table~\ref{param}), providing evidence that introgression from \emph{mexicana} may have been an important factor during the spread of maize into the Mexican highlands. \mbh{It may be worth running an AIC test on these two models to see if the addition of an introgression parameter significantly improves the likelihood}%However, expected JFDs are visually similar. 
-%\jri{i have a bit of trouble understanding this.  if the likelihood is much higher, why would the JFDs be identical?  or does "similar" simply mean in some gross overall sense?}  
-%\comst{Jeff - JFDs are not identical, though they look identical. } 
-A very strong bottleneck followed by population expansion is supported in maize from the South American highlands based on parameterization of Models I and III.  
+In addition to the parameters listed in Fig.~\ref{model}, we investigated the impact of varying the domestication bottleneck size ($N_B$).  
+Surprisingly, $N_B$ was estimated to be equal to $N_C$, the population size at the end of the bottleneck, and the likelihood $N_B<N_C$ was much smaller than for alternative parameterizations (Table~\ref{param}, supp table~3) 
+%please go through and check we have these supp. tables and they are cited in the correct order.
+This result appears to contradict earlier work using sequences from coding regions to infer a maize domestication bottleneck \cite{Wright_2005_15919994, Tenaillon2004}.   A recent genome-wide analysis, however, found strikingly different patterns of rare variants in genic compared to nongenic regions of the genome, a result hypothesized to be due purifying selection slowing the recovery of diversity in genes \cite{Hufford_2012_22660546}. Our genome-wide SNP data also show an excess of rare variants relative to expectations under \cite{Wright_2005_15919994}'s bottleneck model (Fig.~\ref{JFD}), consistent with a weaker bottleneck or rapid population growth and recovery slowed by the effects of purifying selection.  
 
-\subsubsection{GBS data}We identified significantly differentiated SNPs between low- and highland populations by comparing our empirical $F_{ST}$ values to the neutral expectation given inferred demography.
-We simulated $10^7$ SNPs using {\sf ms} software \cite[]{Hudson_2002_11847089} and our inferred demographic parameters and calculated \emph{P}-values for population differentiation in our empirical data using simulated $F_{ST}$ values as a null distribution.  
-Two parameter sets were employed for both Mexico (Model I and II) and South America (Model I and III) (Table~\ref{param}).
-Model choice had little effect in both Mexico and South America (\emph{i.e.,} we obtained very similar null distributions of $F_{ST}$ values (Figure~\ref{FstDist}A)).
-Moreover, null and observed distributions of $F_{ST}$ values were quite similar under our tested models (Figure~\ref{FstDist}A).
-Thus, although we observed an excess of rare variants in the observed JFDs (Figure~\ref{JFD}), our results should be conservative.
+Comparing our empirical $F_{ST}$ values to the null expectation simulated under our demographic models allowed us to identify significantly differentiated SNPs between low- and highland populations. In all cases, observed $F_{ST}$ values were quite similar to those generated under our null models  (Figure~\ref{FstDist}A)), and model choice -- including the parameterization of the domestication bottleneck -- had little impact on the distribution of estimated of p-values (Supp Figure~4). We chose $P<0.01$ as an arbitrary cut-off for significant differentiation between low- and highland populations, and identified 1,040 outliers SNPs in Mexico (1,040/76,989=0.0135) and 756 in South America (756/63,160=0.0120).  
 
-We also tested the robustness of our analysis of population differentiation to the specification of the model.  
-%The distributions of calculated \emph{P}-values were also similar between the models both in Mexico and South America (Supp Figure~4).
-In addition to the parameters listed in Fig.~\ref{model}, we treated the size of the domestication bottleneck  ($N_B$) as a variable parameter.  
-Surprisingly, $N_B$ was estimated to be equal to the population size at the end of the bottleneck, $N_C$ (\emph{i.e.,} no bottleneck was most likely; supp Table~3).  
-Moreover, the likelihood was much smaller for a bottleneck model (supp table~3) than for alternative models described in Table~\ref{param}, suggesting a domestication bottleneck did not occur.
-This result may at first seem surprising given previous work regarding the demography of maize during domestication.  For example, \cite{Wright_2005_15919994} inferred the strength of the domestication bottleneck by analyzing coding regions and found these to have an excess of SNPs with intermediate allele frequencies, a population signature consistent with a recent bottleneck.  
-In contrast, \cite{Hufford_2012_22660546} demonstrated that intergenic regions in maize, unlike coding regions, showed an excess of rare variants.
-Our JFDs using SNPs from across the genome (\emph{i.e.}, both genic and intergenic) also showed an excess of rare variants from the expectation under \cite{Wright_2005_15919994}'s bottleneck model.
-%Higher density data may be necessary to adequately infer the domestication bottleneck.
-The effects of the maize domestication bottleneck may therefore be most apparent in coding regions.
- Nevertheless, presence versus absence of a bottleneck had little effect on distributions of \emph{P}-values for differentiation between highland and lowland maize as shown in supp figure~5.  %, though \emph{P}-values became a bit bigger without the bottleneck. 
-%\mbh{what is meant by bigger p-value? More significant (i.e., smaller value)?  Is this really negligible?  Not sure it's necessary to tag this on to the end.}  
- 
-%\st{Need to explain why?  Stephen used coding regions, but we use SNPs from whole genome.    Oh, this is beyond the scope of our paper!!} \jri{no this is a cool result that needs to stay in the discussion}
-
-
-\subsubsection{MaizeSNP50 data}To overcome ascertainment bias in the MaizeSNP50 data set, we employed a simple method in which we added two individuals to the Mexican lowland population representing the maize lines B73 and Mo17. For Model I in South America we added two individuals at time $t_F$ to the ancestral population of the South American low- and highland populations because the Mexican lowland population was not incorporated into this model.  Without this modification of our demographic model, we underestimated \emph{P}-values, but the effect was very small (Supp Figure~6).   Furthermore, the empirical and null distributions of $F_{ST}$ values were very similar in the MaizeSNP50 data set despite the fact that multiple ascertainment schemes were used (Figure~\ref{FstDist}B; Supp Figure~6). 
+%\subsubsection{MaizeSNP50 data} Without this modification of our demographic model, we underestimated \emph{P}-values, but the effect was very small (Supp Figure~6).   Furthermore, the empirical and null distributions of $F_{ST}$ values were very similar in the MaizeSNP50 data set despite the fact that multiple ascertainment schemes were used (Figure~\ref{FstDist}B; Supp Figure~6). 
+%
+%I vote to delete the above. we do the correction, so no need to say it's a small effect if we don't do it is there?
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
 \begin{figure}[tb]   
@@ -142,23 +67,14 @@ The effects of the maize domestication bottleneck may therefore be most apparent
    \includegraphics[width=0.4\textwidth]{fig/Fig6}
    \renewcommand{\baselinestretch}{0.9}
    \vspace{-3mm}
-   \caption{Scatter plot for \emph{P}-values of population differentiation between low- and highland populations in Mexico ($P_X$ on \emph{x}-axes) and South America ($P_S$ on \emph{y}-axes).  $P_M$ and $P_S$ are scaled by --log$_{10}$.  Red, blue, orange and gray dots represents SNPs showing significance in both Mexico and South America, only in Mexico, only in South America, respectively.} \jri{do we know what that clear outlier red SNP is? anything interesting?}
+   \caption{Scatter plot for \emph{P}-values of population differentiation between low- and highland populations in Mexico ($P_X$ on \emph{x}-axes) and South America ($P_S$ on \emph{y}-axes).  $P_M$ and $P_S$ are scaled by --log$_{10}$.  Red, blue, orange and gray dots represents SNPs showing significance in both Mexico and South America, only in Mexico, only in South America, respectively.} 
 \vspace{-6mm}
     \label{PvDist}
   \end{center}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
-
-
-
-
-\subsubsection{Joint data set}In total, 91,779 SNPs remained in our joint, filtered GBS and MaizeSNP50 data set ($2n\geq20$ and HWE $P\geq0.005$ \mbh{need to keep track of how this is reported: sometimes 0.005, sometimes 0.5\%} for GBS or $P\geq0.05$ for MaizeSNP50 for all four populations).  For the Mexican and South American populations, we calculated \emph{P}-values for 76,989 and 63,160 SNPs respectively with the remaining SNPs being monomorphic. The reduced number of polymorphic SNPs in South America relative to Mexico is likely due to a lower effective population size in the South American populations.  48,370 SNPs were polymorphic in both Mexico and South America. 
-
-
-We chose $P<0.01$ as an arbitrary cut-off for significant differentiation between low- and highland populations.  
-We found 1,040 SNPs with $P<0.01$ in Mexico (1,040/76,989=0.0135) and 756 in South America (756/63,160=0.0120).  
-Expected and observed numbers of significance were almost equal.  
-In total, 1,740 SNPs showed significant differentiation in Mexico and/or South America.
+%
+%do we know what that clear outlier red SNP is? anything interesting?
 
 \subsection*{Patterns of adaptation}
 
@@ -301,98 +217,14 @@ Why?  We can simply say the difference of effective population sizes is the caus
 %Effective population size low $<$ high in Mexico and low $>$ high in South America
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
-\begin{figure}[tb]   
-  \begin{center}
-   \vspace{-0mm}
-   %\includegraphics[width=0.23\textwidth]{figs/model}
-   \includegraphics[width=0.49\textwidth]{fig/Fig7}
-   \renewcommand{\baselinestretch}{0.9}
-   \vspace{-3mm}
-   \caption{Illustration for the typical patterns of allele frequency changes in teosinte and maize populations.  Red and blue bars represent the frequencies of putative ancestral and derived alleles, respectively.  (A) The pattern of allele frequencies in the SNPs with Mexico-specific significant $F_{ST}$ \emph{P}-values.  (B) The pattern of allele frequencies in the SNPs with significant $F_{ST}$ \emph{P}-values both in Mexico and South America.}
-\vspace{-6mm}
-    \label{tes2}
-  \end{center}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
 
-
-
-
-
-
+%Would be good to have a figure showing observed and expected overlap in SNPs and Genes.
 
 
 
 %We obtained teosinte (both  and \emph{mexicana}) SNPs in 46 of 56 SNPs from .  39 SNPs exhibited polymorphisms in teosinte, indicating selective sweep from standing genetic variation.  The other seven SNPs showed monomorphic in teosinte.  Only in two of seven SNPs, the frequencies of derived alleles were increased in highland populations. 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\arraystretch}{1.1}
-\begin{table}[tb]
-
-\begin{center}
- \caption[]{Introgression from \emph{mexicana}\hspace*{0.3cm}}
-  \textbf{}\\[-2mm]
-{\fontsize{7}{11}\sf
-    \begin{tabular}{lcccccccl} 
-    \hline
-       & & \\[-3mm]
-Mexico     & \multicolumn{3}{c}{Number of SNPs}  \\
-                                  & Significant & NS & Proportion  \\
-Introgressed regions & 149   &   1,918     & 0.072\\ 
-Others                        & 872   &  73,578    & 0.011\\
-      \hline
-    & & \\[-3mm]
-South America     & \multicolumn{3}{c}{Number of SNPs} \\
-                                  & Significant & NS & Proportion  \\
-Introgressed regions & 44   &   1703     & 0.025\\ 
-Others      &703   &  60342    & 0.012\\[1mm]
-    \hline
-  %\multicolumn{4}{l}{$^{a}$ \textcolor{red}{Maybe we should use the number of genetic unit.}}\\
-  % \multicolumn{4}{l}{$^{a}$ \textcolor{red}{Sum of the number of SNPs != 91,779 because I excluded SNPs exhibiting}}\\[-0.5mm]
-  % \multicolumn{4}{l}{ \textcolor{red}{     monomorphic in Mexico or in South America.}}\\
-    \end{tabular}
-    \label{mex}  % caption is needed to make this work
-}
-\end{center}
-\end{table}
-\renewcommand{\arraystretch}{1}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\arraystretch}{1.1}
-\begin{table}[tb]
-
-\begin{center}
- \caption[]{Tanja's $F_{CT}$ between \emph{parviglumis} and \emph{mexicana}\hspace*{0.3cm}}
-  \textbf{}\\[-2mm]
-{\fontsize{7}{11}\sf
-    \begin{tabular}{lcccccccl} 
-    \hline
-       & & \\[-3mm]
-Mexico     & \multicolumn{3}{c}{Number of SNPs}  \\
-                                  & Significant & NS & Proportion  \\
-Significant $F_{CT}$ & 31   &   331     & 0.086\\ 
-NS                        & 373   &  18,419    & 0.020\\
-      \hline
-    & & \\[-3mm]
-South America     & \multicolumn{3}{c}{Number of SNPs} \\
-                                  & Significant & NS & Proportion  \\
-Significant $F_{CT}$ & 12   &   325     & 0.036\\ 
-NS                                & 250   &  17,401    & 0.014\\[1mm]
-    \hline
-  %\multicolumn{4}{l}{$^{a}$ \textcolor{red}{Maybe we should use the number of genetic unit.}}\\
-  % \multicolumn{4}{l}{$^{a}$ \textcolor{red}{Sum of the number of SNPs != 91,779 because I excluded SNPs exhibiting}}\\[-0.5mm]
-  % \multicolumn{4}{l}{ \textcolor{red}{     monomorphic in Mexico or in South America.}}\\
-    \end{tabular}
-    \label{tanja}  % caption is needed to make this work
-}
-\end{center}
-\end{table}
-\renewcommand{\arraystretch}{1}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection*{Comparison to theory}
 \plr{need discussion of choices of selection coefficients?}

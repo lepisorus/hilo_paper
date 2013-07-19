@@ -1,3 +1,20 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
+\begin{figure*}[tb]   
+  \begin{center}
+   \vspace{-0mm}
+   %\includegraphics[width=0.23\textwidth]{figs/model}
+   \includegraphics[width=0.8\textwidth]{fig/Fig2}
+   \renewcommand{\baselinestretch}{0.9}
+   \vspace{-3mm}
+   \caption{(A) Sampling locations of landraces.  Red, blue, yellow and light blue dots represent Mexico lowland, Mexico highland, SA lowland and SA highland populations, respectively.  (B) Results of {\sf STRUCTURE} analysis of the maizeSNP50 SNPs with $K=2\sim4$.  The top panel shows the altitude, ranging from 0 to 4,000 m on the \emph{y}-axes.  The colors in $K=4$ correspond to those in panel (A).    }
+\vspace{-6mm}
+    \label{map}
+  \end{center}
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
+
+
 \section*{Materials and Methods}
 
 \subsection*{Materials and DNA extraction}
@@ -43,12 +60,12 @@ Following these data thinning measures, 17,013 biallelic SNPs remained.
 We conducted three replicate runs of {\sf STRUCTURE} using the correlated allele frequency model with admixture for \emph{K} = 2$\sim$6 populations, a burn-in length of 50,000 iterations and a run length of 100,000 iterations. 
 Results across replicates were nearly identical.
 
-\subsection*{Inference of demography}
+\subsection*{Demographic inference}
 We tested three demographic models in which maize was differentiated into high- and lowland populations subsequent to domestication (Figure~\ref{model}). 
 Observed joint frequency distributions (JFDs) were calculated using the GBS data set due to its lower level of ascertainment bias. 
 A subset of silent SNPs were utilized that had $\geq15$ individuals without missing data in both low- and highland populations and did not violate HWE.  
 An HWE cut-off of $P<0.005$ was used for each subpopulation due to our under-calling of heterozygotes. 
-In total, we included 18,745 silent SNPs for the Mexican populations in Models I and II, 14,508 for the South American populations in Model I and 11,305 for the Mexican lowland population and the South American populations in Model III.  
+In total, we included 18,745 silent SNPs for the Mexican populations in Models IA and IB, 14,508 for the South American populations in Model I and 11,305 for the Mexican lowland population and the South American populations in Model II.  
 We obtained similar results under more or less stringent thresholds for significance ($P < 0.05\sim0.0005$; data not shown), though the number of SNPs was very small when $P<0.05$.  
 Demographic parameters were inferred using the software {\sf dadi} \cite[]{Gutenkunst_2009_19851460}.  We calculated an expected JFD given parameters from a diffusion method and the likelihood obtained from the expected and observed JFDs in the multinomial approach of this software. \\
 %any other dadi parameters etc. we need to report?
@@ -61,7 +78,7 @@ Demographic parameters were inferred using the software {\sf dadi} \cite[]{Guten
    \includegraphics[width=0.5\textwidth]{fig/Fig3}
    \renewcommand{\baselinestretch}{0.9}
    \vspace{-3mm}
-   \caption{Three demographic models of maize low- and highland populations.  Parameters provided in bold were estimated in this study.  See text for details.
+   \caption{ Demographic models of maize low- and highland populations.  Parameters provided in bold were estimated in this study.  See text for details.
    }
 \vspace{-6mm}
     \label{model}
@@ -69,18 +86,20 @@ Demographic parameters were inferred using the software {\sf dadi} \cite[]{Guten
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
 
-\subsubsection{Model I}
+%Sho please change so it says Model 1A and 1B and II.
+
+\subsubsection{Model IA}
 This model is applied to the Mexico and SA populations.
 We assume the ancestral diploid population representing \emph{parviglumis} follows a standard Wright-Fisher model with constant size.  The size of the ancestral population is denoted by $N_A$.
 At $t_D$ generations ago, the bottleneck event begins at domestication, and at $t_E$ generations ago, the bottleneck ends.  The population size and duration of bottleneck are denoted by $N_B$ and $t_B=t_D-t_E$, respectively.  The population size recovers to $N_C=\alpha N_A$ in the lowlands.  
 Then, the highland population is differentiated from the lowland population at $t_F$ generations ago.  The size of the low- and highland populations at time $t_F$ is determined by a parameter, $\beta$ such that the population is divided by $\beta N_C$ and $(1-\beta)N_C$.  
 We assume that the population size in the lowlands is constant but that the highland population experiences exponential expansion after divergence: its current population size is $\gamma$ times larger than that at $t_F$.  \\
 
-\subsubsection{Model II}
-We expand Model I for the Mexico populations.  We incorporate admixture from \emph{mexicana} to the highland Mexican maize population.  The time of differentiation between \emph{parviglumis} and \emph{mexicana} occurs at $t_{mex}$ generations ago.  The size of the \emph{mexicana} population is denoted by $N_{mex}$ and this size is assumed to be constant.  At $t_F$ generations ago, the Mexico highland population is derived from the Mexico lowland population and admixture with \emph{mexicana}.  The proportion of admixture with \emph{mexicana} is denoted by $P_{mex}$.  \\
+\subsubsection{Model IB}
+We expand Model IA for the Mexico populations.  We incorporate admixture from \emph{mexicana} to the highland Mexican maize population.  The time of differentiation between \emph{parviglumis} and \emph{mexicana} occurs at $t_{mex}$ generations ago.  The size of the \emph{mexicana} population is denoted by $N_{mex}$ and this size is assumed to be constant.  At $t_F$ generations ago, the Mexico highland population is derived from the Mexico lowland population and admixture with \emph{mexicana}.  The proportion of admixture with \emph{mexicana} is denoted by $P_{mex}$.  \\
 
-\subsubsection{Model III}
-The final model is for the Mexico lowland, SA lowland and SA highland populations.  This model was used for simulating SNPs with ascertainment bias (see below).  At time $t_F$, the Mexico and SA lowland populations are differentiated, and the sizes of populations after splitting are determined by $\beta_1$.  At time $t_G$, SA lowland and highland populations are differentiated, and the sizes of populations at this time are determined by $\beta_2$.  As in Model I, the SA highland population is assumed to experience population growth with the parameter, $\gamma$.\\
+\subsubsection{Model II}
+The final model is for the Mexico lowland, SA lowland and SA highland populations.  This model was used for simulating SNPs with ascertainment bias (see below).  At time $t_F$, the Mexico and SA lowland populations are differentiated, and the sizes of populations after splitting are determined by $\beta_1$.  At time $t_G$, SA lowland and highland populations are differentiated, and the sizes of populations at this time are determined by $\beta_2$.  As in Model IA, the SA highland population is assumed to experience population growth with the parameter, $\gamma$.\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
@@ -104,17 +123,13 @@ The mutation rate in maize has been estimated to be $2.9\sim 3.3\times 10^{-8}$,
 Thus, $N_A$ was set to $0.018/4/(3\times 10^{-8}) = 150,000$.
 The severity of the domestication bottleneck is represented by $k=N_B/t_B$ \cite[]{Eyre-Walker_1998_9539756,Wright_2005_15919994}, and following \cite{Wright_2005_15919994} we assumed $k=2.45$ and $t_B=1,000$ generations.  
 Taking into account archaeological evidence \cite[]{Piperno_2009_19307570}, we assume $t_D=9,000$ and $t_E=8,000$.  
-We further assumed $t_F=6,000$ for Mexican populations in Models I and II \cite[]{Piperno_2006_69}, $t_F=4,000$ for South American populations in Model I \cite[]{Perry_2006_16511492}, and $t_{mex}=60,000$, $N_{mex}=160,000$ \cite[]{Ross-Ibarra_2009_19153259}, and $P_{mex}=0.2$ \cite[]{vanHeerwaarden_2011_21189301} for Model II. 
-For both Models I and II, we inferred three parameters ($\alpha$, $\beta$ and $\gamma$), and, for Model III, we fixed $t_F=6,000$ and $t_G=4,000$ \cite[]{Piperno_2006_69,Perry_2006_16511492} and estimated the remaining four parameters ($\alpha$, $\beta_1$, $\beta_2$ and $\gamma$).
+We further assumed $t_F=6,000$ for Mexican populations in Models IA and II \cite[]{Piperno_2006_69}, $t_F=4,000$ for South American populations in Mode lI \cite[]{Perry_2006_16511492}, and $t_{mex}=60,000$, $N_{mex}=160,000$ \cite[]{Ross-Ibarra_2009_19153259}, and $P_{mex}=0.2$ \cite[]{vanHeerwaarden_2011_21189301} for Model IB. 
+For both Models IA and IB, we inferred three parameters ($\alpha$, $\beta$ and $\gamma$), and, for Model II, we fixed $t_F=6,000$ and $t_G=4,000$ \cite[]{Piperno_2006_69,Perry_2006_16511492} and estimated the remaining four parameters ($\alpha$, $\beta_1$, $\beta_2$ and $\gamma$).
 
 \subsection*{Differentiation between low- and highland populations}
 We used our inferred demographic model to generate a null distribution of $F_{ST}$ via simulation using the software {\sf ms} \cite[]{Hudson_2002_11847089}.   
-The command line options for {\sf ms} are provided in supp Table 2.  
-For each combination of sample sizes in low- and highland populations, we generated $10^7$ $F_{ST}$ values and used these as a null distribution in order to evaluate our GBS data.   We calculated $F_{ST}$ values for all SNPs that had $\geq10$ individuals with no missing data in all four populations and showed no departure from HWE at the 0.5\% level. 
-
-Generating the null distribution of differentiation ufor the MaizeSNP50 data requires accounting for ascertainment bias. Evaluation of genetic clustering in our data (not shown) coincides with previous work \cite[]{Hufford_2012_22660546} in suggesting that the two lines most important in the ascertainment panel are most closely related to Mexican lowland maize.  
-We thus added two additional individuals to the Mexican lowland population and generated our null distribution using only SNPs where the two individuals had different alleles. 
-We used all SNPs where $\geq10$ individuals had no missing data in all four populations and where there was no departure from HWE at the 5\% level. i
+The command line options for {\sf ms} are provided in supp Table 2.  Generating the null distribution of differentiation for the MaizeSNP50 data requires accounting for ascertainment bias. Evaluation of genetic clustering in our data (not shown) coincides with previous work \cite[]{Hufford_2012_22660546} in suggesting that the two lines most important in the ascertainment panel are most closely related to Mexican lowland maize.  
+We thus added two additional individuals to the Mexican lowland population and generated our null distribution using only SNPs for which the two individuals had different alleles. For model IA in South America we added two individuals at time $t_F$ to the ancestral population of the South American low- and highland populations because the Mexican lowland population was not incorporated into this model. For each combination of sample sizes in low- and highland populations, we generated $10^7$ $F_{ST}$ values and used these as a null distribution in order to evaluate our data.   We calculated $F_{ST}$ values for all SNPs that had $\geq10$ individuals with no missing data in all four populations and showed no departure from HWE at the 0.5\% (GBS) or 5\% (MaizeSNP50) level. 
 
 \subsection*{Haplotype scoring test}
 We performed a \underline{p}airwise \underline{h}aplotype \underline{s}coring (PHS) test to detect further evidence of selection, following \cite{Toomajian_2006_16623598}.  
