@@ -153,23 +153,11 @@ In addition to evaluating parallel adaptation at the SNP level, we investigated 
 We classified SNPs showing significance in Mexico, South America or in both regions into 1,277 GUs. 
 Of these, 95 GUs contained at least one SNP with a pattern of differentiation suggesting parallel adaptation, whereas only 12 GUs contained both Mexico-specific and SA-specific significant SNPs. 
 %I don't understand what these 95 show. 1 significant and one nonsignficiant SNP? whereas the 12 are significant in both?
-%JRI STOPS
-700 and 470 GUs possessed only Mexico-specific and SA-specific significant SNPs, respectively.  
-We performed a permutation test to evaluate whether the observed number of GUs under Pattern C in Fig. 1 can be explained by chance.
-First, we randomly picked 959 and 664 SNPs that represent Mexico- and SA-specific differentiation (see above) from 91,779 positions and counted the number of GUs under Pattern C.
-\plr{What SNPs go into this set of 91,779?}
-Our observed number of Pattern-C GUs (12) is much lower than the random expectation 
-%($P<10^{-5}$)
-even after removing tightly linked SNPs from our random sample ($P<0.005$).
-%However, some significant SNPs are tightly linked.
-%To address this, we reduced the number of SNPs picked to 720 and 492 (the number of GUs showing Mexico- and SA-specific adaptation).
-%We again obtained a small \emph{P}-value ($P<0.005$).
-In conclusion, despite very similar climatic gradients between the low- and highlands of Mexico and South America, adaptation does not appear to have occurred overwhelmingly in parallel (8.3\% of GUs). 
-\jri{ i'm not sure what 8.3\% means.  it's 8.3\% of GUs with significant SNPs show parallel adaptation.  but how many do we expect? }
-\comst{(95+12)/1,277 = 0.083}\\
-
-%man this is weird. LESS than expected by random chance? that seems hard to explain (and we probably need to explain it, right?)
-
+Overall, fewer GUs showed evidence of parallel adaptation than expected by chance ($P<10^{-5}$), with more than 700 and 470 GUs showing Mexico-specific and SA-specific significant SNPs, respectively.  
+Despite similar phenotypes and environments, we thus see little evidence for parallel adaptation at either the SNP or the gene (GU) leve.  
+%perhaps below should be moved to methods or supp? seems out of place here.
+%First, we randomly picked 959 and 664 SNPs that represent Mexico- and SA-specific differentiation (see above) from 91,779 positions and counted the number of GUs under Pattern C.
+%JRI stops
 \textcolor{red}{from introduction}
 While some have hypothesized that pre-adapted highland maize was transported through Central America to the Andes based on analysis of the \emph{Adh2} locus \cite[]{Freitas_2003_68}, analysis of larger sets of molecular markers suggests \emph{de novo} highland adaptation in South America \cite[]{Vigouroux_2008_21632329,vanHeerwaarden_2011_21189301}.  Our result of rare parallel adaptation may be consistent with independent origins of highland populations, not gene flow between the two highland populations.
 \plr{This doesn't really mesh with previous paragraph.}
@@ -190,17 +178,15 @@ Why?  We can simply say the difference of effective population sizes is the caus
 %This can happen by recombination.  
 %Or there may be some climate features that show the opposite pattern between Mexico and South America except for temperature or precipitation.}
 
-
-
 \subsection*{Comparison to theory}
-\plr{need discussion of choices of selection coefficients?}
+%\plr{need discussion of choices of selection coefficients?}
 
 % # \mutrate computation:
 % A <- 500; rho <- 5000; sb <- 10^(-(1:4)); xisq <- 50
 % sapply( 10^c(-5,-8), function (mu) mu * (2 * rho * A * sb)/xisq )
 
-Computing the rate $\mutrate$ at which newly adapted alleles arise in the population,
-with at total population of $A \rho = 2.5 \times 10^6$ and an offspring variance of $\xi^2 = 50$,
+As a final analysis, we sought to assess whether  SNP data reveal little evidence for parallel adaptation between Mexico and S. America. Computing the rate $\mutrate$ at which newly adapted alleles arise in the population,
+with a total population of $A \rho = 2.5 \times 10^6$ and an offspring variance of $\xi^2 = 50$,
 we get that even if there is strong selection for the allele at high elevation ($s_b=0.1$),
 then a single-base mutation with mutation rate $\mu=10^{-8}$ would still take at least 10,000 generations to appear and fix.
 On the other hand, a kilobase-sized target with mutation rate $\mu=10^{-5}$
