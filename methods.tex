@@ -18,7 +18,7 @@
 \section*{Materials and Methods}
 
 \subsection*{Materials and DNA extraction}
-We included one individual from each of 94 open-pollinated landrace maize accessions from high and low elevation sites in Mexico and South America (Table S1).  Accessions were provided by the USDA germplasm repository or kindly donated by Major Goodman (NCState).  
+We included one individual from each of 94 open-pollinated landrace maize accessions from high and low elevation sites in Mexico and South America (Table S1).  Accessions were provided by the USDA germplasm repository or kindly donated by Major Goodman (North Carolina State University).  
 Sampling locations are shown in Figure~\ref{map}A (see also supp table S1).  
 %shouldn't we put table refs in case these change?
 %
@@ -33,13 +33,13 @@ Seeds were germinated on filter paper following fungicide treatment and grown in
 
 \subsection*{SNP data}
 We used the maize B73 genome sequence RefGen version 2 as a reference \cite[]{Schnable_2009_19965430}.  
-The filtered gene set (version 5b\_FGS) was retrieved from MaizeSequence.org for SNP annotations.  
+The filtered gene set (release 5b.60) was retrieved from MaizeSequence.org for SNP annotations.  
 %isn't it 5b_60?
 %
 % I downloaded ZmB73_5b_FGS.gff from http://ftp.maizesequence.org/current/filtered-set/
 %                                                                 http://ftp.maizesequence.org/current/README.txt 
 %       Not sure this ver is 5b_"60" or not  -ST
-%
+%  I changed this to "release 5b.60" since this is how it appears on maizesequence.org
 We excluded genes annotated as transposable elements (84) and pseudogenes (323) from the filtered gene set, resulting in a total of 38,842 genes.
 %I think the above needs to go after the SNP50 information perhaps in separate section. we didn't use the FGS to call SNPs (Kelly may have to mention refgen2 in her section).
 % OK - ST
@@ -67,7 +67,7 @@ Despite an extremely high heterozygote error rate, our GBS data should be inform
 %
 
 \subsection*{Structure analysis}
-We performed {\sf STRUCTURE} analysis \cite[]{Pritchard_2000_10835412,Falush_2003_12930761} using  synonymous and noncoding SNPs from the MaizeSNP50 data. 
+We performed a {\sf STRUCTURE} analysis \cite[]{Pritchard_2000_10835412,Falush_2003_12930761} using  synonymous and noncoding SNPs from the MaizeSNP50 data. 
 We assumed free recombination between SNPs without missing data and randomly pruned SNPs closer than 10 kb (alternative distances were tried with nearly identical results). 
 We excluded SNPs in which the number of heterozygous individuals exceeded homozygotes and where the \emph{P}-value for departure from Hardy-Weinberg Equilibrium (HWE) based on a \emph{G}-test was smaller than 0.5\% using all individuals. 
 % i removed sentence on paralogy. is "extreme heterozygosity" different from the above?
@@ -84,7 +84,7 @@ Observed joint frequency distributions (JFDs) were calculated using the GBS data
 A subset of silent SNPs were utilized that had $\geq15$ individuals without missing data in both low- and highland populations and did not violate HWE.  
 An HWE cut-off of $P<0.005$ was used for each subpopulation due to our under-calling of heterozygotes. 
 In total, we included 18,745 silent SNPs for the Mexican populations in Models IA and IB, 14,508 for the South American populations in Model I and 11,305 for the Mexican lowland population and the South American populations in Model II.  
-We obtained similar results under more or less stringent thresholds for significance ($P < 0.05\sim0.0005$; data not shown), though the number of SNPs was very small when $P<0.05$.  
+We obtained similar results under more or less stringent thresholds for significance ($P < 0.05\sim0.0005$; data not shown), though the number of SNPs was very small at $P<0.05$.  
 Demographic parameters were inferred using the software {\sf dadi} \cite[]{Gutenkunst_2009_19851460}.  We calculated an expected JFD given parameters from a diffusion method and the likelihood obtained from the expected and observed JFDs in the multinomial approach of this software. \\
 %any other dadi parameters etc. we need to report?
 %
@@ -147,7 +147,7 @@ The mutation rate in maize has been estimated to be $2.9\sim 3.3\times 10^{-8}$,
 Thus, $N_A$ was set to $0.018/4/(3\times 10^{-8}) = 150,000$.
 The severity of the domestication bottleneck is represented by $k=N_B/t_B$ \cite[]{Eyre-Walker_1998_9539756,Wright_2005_15919994}, and following \cite{Wright_2005_15919994} we assumed $k=2.45$ and $t_B=1,000$ generations.  
 Taking into account archaeological evidence \cite[]{Piperno_2009_19307570}, we assume $t_D=9,000$ and $t_E=8,000$.  
-We further assumed $t_F=6,000$ for Mexican populations in Models IA and II \cite[]{Piperno_2006_69}, $t_F=4,000$ for South American populations in Mode lI \cite[]{Perry_2006_16511492}, and $t_{mex}=60,000$, $N_{mex}=160,000$ \cite[]{Ross-Ibarra_2009_19153259}, and $P_{mex}=0.2$ \cite[]{vanHeerwaarden_2011_21189301} for Model IB. 
+We further assumed $t_F=6,000$ for Mexican populations in Models IA and II \cite[]{Piperno_2006_69}, $t_F=4,000$ for South American populations in Model lI \cite[]{Perry_2006_16511492}, and $t_{mex}=60,000$, $N_{mex}=160,000$ \cite[]{Ross-Ibarra_2009_19153259}, and $P_{mex}=0.2$ \cite[]{vanHeerwaarden_2011_21189301} for Model IB. 
 For both Models IA and IB, we inferred three parameters ($\alpha$, $\beta$ and $\gamma$), and, for Model II, we fixed $t_F=6,000$ and $t_G=4,000$ \cite[]{Piperno_2006_69,Perry_2006_16511492} and estimated the remaining four parameters ($\alpha$, $\beta_1$, $\beta_2$ and $\gamma$).
 
 \subsection*{Differentiation between low- and highland populations}
@@ -226,20 +226,21 @@ we evaluated the rate at which we expect an allele that provides a selective adv
 to arise by new mutation in a highland region ($\mutrate$),
 and the rate at which such an allele already present in the Mexican highlands
 would transit the intervening lowlands and fix in the Andean highlands ($\migrate$). 
-In each case we assume alleles adaptie in the highland are slightly deleterious at lower altitude.
+In each case we assume alleles adapted in the highlands are slightly deleterious at lower altitude.  This assumption is consistent with empirical findings in reciprocal transplants of highland and lowland maize in Mexico (CITE).
 These numbers depend most strongly on the population density, 
 the selection coefficient,
 and the rate at which seed is transported long distances and replanted.
 We evaluated these rates using new and existing theory, and validated by simulation.
 
 %Matt please add a few lines (cite Mercer?) about why we assume deleterious
+%See above, Shohei.  The citation is Mercer, K, A. Mart’nez-V‡squez, H. R. Perales. 2008. Asymmetrical local adaptation of maize landraces along an altitudinal gradient. Evolutionary Applications 1: 489-500
 
-To calculate the rate at which new mutations appear and fix in the highland population, $\mutrate$,
+To calculate the rate at which new mutations appear and fix in a highland population, $\mutrate$,
 we multiplied the total population size of the highlands by the mutation rate per generation
 and by the chance that a single such mutation successfully fixes
 (i.e.\ is not lost to drift).
 The latter probability, that a single new mutant allele providing benefit $s_b$ to heterozygotes at high elevation
-will increase in frequency and fix in the high elevation patch,
+will increase in frequency and fix in the high elevation population,
 is approximately $2s_b$ divided by the variance in offspring number \citep{jagers1975branching}.
 This is not quite right, since such a mutation could occur at low elevation,
 where it is deleterious,
@@ -255,7 +256,7 @@ as it grows across an altitudinal gradient (rather than an abrupt transition) an
 Therefore, we used the following more detailed demographic model (following \citet{vanHeerwaarden2010}) 
 %cite van Heerwaarden  2010 Heredity
 to numerically calculate the chance of fixation of a beneficial allele
-as a function of the location it first appears.
+as a function of the location where it first appears.
 We found that the simple approximation is quite good,
 although the demographic model was necessary to find the variance in offspring number,
 as well as the migration rate, which we will need later.
@@ -296,14 +297,14 @@ Since the latter is at least 1,
 %don't follow. "latter" is expected number? why is that at least one? didn't you say above it could be 0<x<1 because it's an average density?
 the chance there are any present in a given generation is no more than $(N/2) \exp(- R \sqrt{2s_m} / \sigma)$,
 and so this puts an upper bound on $\migrate$.
-Therefore, we would need to wait around $\Tmig = (2/N)\exp(R \sqrt{2s_m} / \sigma)$ generations 
+Therefore, we would need to wait $\Tmig = (2/N)\exp(R \sqrt{2s_m} / \sigma)$ generations 
 for a rare such excursion to occur.
 Concretely, we can use that
 \begin{align}
   \migrate \le (N/2)  \exp(- R \sqrt{2s_m} / \sigma) ,
 \end{align}
 with $N$ the total size of the unadapted highland population,
-and $R$ the distance from the adapted to the yet-undapted highland populations.
+and $R$ the distance from the adapted to the yet-unadapted highland populations.
 Another factor this omits is the probability that such an allele fixes ($\approx 2s_b/\xi^2$), but since such alleles arrive by migration this omission is unlikely a large effect and is conservative.
 %Peter please check if simplification to sentence above OK. OK to include \approx?
 
