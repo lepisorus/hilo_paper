@@ -190,14 +190,14 @@ This contrasts with data from humans \cite{Tennessen_2011_21698142} showing freq
 % A <- 500; rho <- 5000; sb <- 10^(-(1:4)); xisq <- 50
 % sapply( 10^c(-5,-8), function (mu) mu * (2 * rho * A * sb)/xisq )
 
-As a final analysis, we sought to assess whether  SNP data reveal little evidence for parallel adaptation between Mexico and S. America. Computing the rate $\mutrate$ at which newly adapted alleles arise in the population,
+As a final analysis, we assessed whether  SNP data reveal little evidence for parallel adaptation between Mexico and S. America. Computing the rate $\mutrate$ at which newly adapted alleles arise in the population,
 with a total population of $A \rho = 2.5 \times 10^6$ and an offspring variance of $\xi^2 = 50$,
-we get that even if there is strong selection for the allele at high elevation ($s_b=0.1$),
-then a single-base mutation with mutation rate $\mu=10^{-8}$ would still take at least 10,000 generations to appear and fix.
+we observe that even if there is strong selection for an allele at high elevation ($s_b=0.1$),
+a single-base mutation with mutation rate $\mu=10^{-8}$ would still take at least 10,000 generations to appear and fix.
 On the other hand, a kilobase-sized target with mutation rate $\mu=10^{-5}$
 with this selection coefficient would fix in only 10 generations,
-while more weakly selected alleles with $s_b$ of $10^{-2}$ or $10^{-3}$ would take hundreds or thousands of generations, respectively.
-(note: at these values $\Tmut = 1/\mutrate = \mu s_b \times 10^5$.)
+while more weakly selected alleles with $s_b$ of $10^{-2}$ or $10^{-3}$ would take hundreds or thousands of generations, respectively
+(note: at these values $\Tmut = 1/\mutrate = \mu s_b \times 10^5$).
 
 % # Tmig computation:
 % A <- 500; rho <- 5000; sm <- 10^(-(1:4)); xisq <- 50; sigma <- 2
@@ -214,6 +214,7 @@ is still short: between 4 and 150 kilometers.
 \plr{put bounds on $\sigma$}
 The area of the Andean highlands is about 500 km$^2$ \plr{is this right???}
 which we estimate would be planted from around $N=14,000$ plants each year \plr{add more details here or above}.
+%MBH: This seems like a pretty low planting density
 Since the Mexican and Andean highlands are around 4,000 km apart,
 at $s_m=10^{-3}$ the time needed for this to occur is $\Tmig \approx 5 \times 10^{34}$ generations.
 In other words, from these calculations it is almost impossible that an allele that is deleterious at low elevation with $s_m=10^{-3}$ 
@@ -226,7 +227,7 @@ so, adaptation by migration is certain.
 However, with even $s_m=10^{-3}$ it is still $2.3 \times 10^6$ generations.
 
 \plr{Neutrality: pasted in from email.}
-The calculations I've done assume that the time the allele takes to reach equilibrium, after appearing in one patch, is small relative to the time it takes to transit between patches.  If it is neutral between patches, then 'equilibrium' is fixation, everywhere; so the relevant calculation is how long it would take for drift to take a neutral allele between patches.  The distance a diffusing lineage moves in T generations is about sqrt(T)*sigma; so with sigma=2 we'd still need millions of generations to move 4,000 km.  But, there's not just one lineage that we might follow back from the andes to the mexican highlands; any lineage from the andes will do.  If we start out with 14,000 of these, they'd coalesce down to a few hundred within a hundred generations in a panmictic population, so maybe we'd need to follow hundreds of lineages.  Looking at the maximum distance among N lineages multiplies the distance by a factor of sqrt(N); this would only get us down to hundreds of thousands of generations.  So, neutral diffusion probably wouldn't do it.
+Our calculations assume that the time the allele takes to reach equilibrium, after appearing in one patch, is small relative to the time it takes to transit between patches.  If it is neutral between patches, then 'equilibrium' is fixation everywhere.  The relevant calculation is therefore how long it would take for drift to take a neutral allele between patches.  The distance a diffusing lineage moves in T generations is approximately sqrt(T)*sigma; so with sigma=2 we would still need millions of generations to move 4,000 km.  But, there's not just one lineage that we might follow back from the andes to the mexican highlands; any lineage from the andes will do.  If we start out with 14,000 of these, they'd coalesce down to a few hundred within a hundred generations in a panmictic population, so maybe we'd need to follow hundreds of lineages.  Looking at the maximum distance among N lineages multiplies the distance by a factor of sqrt(N); this would only get us down to hundreds of thousands of generations.  So, neutral diffusion probably wouldn't do it.
 
 \plr{Here's my conclusions from these calculations.  But, maybe I'm missing something; I want to check more; tell me if anything seems awry.}
 It seems unlikely that any alleles that are adaptive in the highlands and deleterious at all in the lowlands
