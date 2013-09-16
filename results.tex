@@ -30,6 +30,7 @@ SA	&	Lowlands	&	0.0227	&	0.0343	&	--	&		\\
 
 %Matt, please add a sentence or two at the start say "we sampled X, genotyped using Y etc.?? You can use stats from the paragraph below on total number of SNPs
 %MBH: So this is already in the Methods.  Do we need to recapitulate here?
+%Yes, think so. For PLOS, results goes before methods. A brief summary so someone has a basic idea what we did. If you don't think it's needed, I can be convinced otherwise.
 %Sho, please move some of the other numbers below (SNPs tested etc.) to methods.
 %
 %\subsubsection{Joint data set}In total, 91,779 SNPs remained in our joint, filtered GBS and MaizeSNP50 data set ($2n\geq20$ and HWE $P\geq0.005$ \mbh{need to keep track of how this is reported: sometimes 0.005, sometimes 0.5\%} for GBS or $P\geq0.05$ for MaizeSNP50 for all four populations).  For the Mexican and South American populations, we calculated \emph{P}-values for 76,989 and 63,160 SNPs respectively with the remaining SNPs being monomorphic. The reduced number of polymorphic SNPs in South America relative to Mexico is likely due to a lower effective population size in the South American populations.  48,370 SNPs were polymorphic in both Mexico and South America. 
@@ -44,7 +45,6 @@ Most landraces were assigned to groups consistent with \emph{a priori} populatio
 
 To provide a null expectation for allele frequency differentiation, we used the joint site frequency distribution (JFD) of lowland and highland populations to estimate parameters of two demographic models (Fig.~\ref{model}) using the maximum likelihood method implemented in {\sf dadi} \cite[]{Gutenkunst_2009_19851460}.  
 Estimated parameter values are listed in Table~\ref{param}; while the observed and expected JFDs were quite similar for both models,  residuals indicated an excess of rare variants in the observed JFDs in all cases (Fig.~\ref{JFD}). 
-%parameter table now in supplement.
 Under both models IA and IB,  we found expansion in the highland population in Mexico to be unlikely, but a strong bottleneck followed by population expansion is supported in S. American maize in both models IA and II.  
 The likelihood value of model lB ($-$4641.28) was much higher than the likelihood of model IA ($-$5590.33) (Table~\ref{param}), consistent with analyses suggesting that introgression from \emph{mexicana} played a significant role during the spread of maize into the Mexican highlands \cite{Profford_2013}. 
 
@@ -56,15 +56,10 @@ This result appears to contradict earlier work using sequences from coding regio
 
 Comparing our empirical $F_{ST}$ values to the null expectation simulated under our demographic models allowed us to identify significantly differentiated SNPs between low- and highland populations. In all cases, observed $F_{ST}$ values were quite similar to those generated under our null models  (Figure~\ref{FstDist}A)), and model choice -- including the parameterization of the domestication bottleneck -- had little impact on the distribution of estimated of p-values (Supp Figure~4). We chose $P<0.01$ as an arbitrary cut-off for significant differentiation between low- and highland populations, and identified 1,040 SNPs in Mexico (1,040/76,989=0.0135) and 756 SNPs in South America (756/63,160=0.0120) as outliers.  
 
-%\subsubsection{MaizeSNP50 data} Without this modification of our demographic model, we underestimated \emph{P}-values, but the effect was very small (Supp Figure~6).   Furthermore, the empirical and null distributions of $F_{ST}$ values were very similar in the MaizeSNP50 data set despite the fact that multiple ascertainment schemes were used (Figure~\ref{FstDist}B; Supp Figure~6). 
-%
-%I vote to delete the above commented out section. we do the correction, so no need to say it's a small effect if we don't do it right?
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
 \begin{figure}[tb]   
   \begin{center}
    \vspace{-0mm}
-   %\includegraphics[width=0.23\textwidth]{figs/model}
    \includegraphics[width=0.4\textwidth]{fig/Fig6}
    \renewcommand{\baselinestretch}{0.9}
    \vspace{-3mm}
@@ -150,9 +145,7 @@ For a subset of 67 of the SNPs showing putative evidence of parallel adaptation 
 %
 %Can we just skip the above commented-out text?
 %
-In addition to evaluating parallel adaptation at the SNP level, we investigated how often different SNPs in the same gene may have been targeted by selection. To search for this pattern, we asked whefor the target of adaptation. 
-%MBH: Not sure what happened to the end of the previous sentence.
-We define a "genetic unit" or GU as all SNPs within 10kb of a transcript.  SNPs in an miRNA or second transcript within 10kb of the transcript of interest were excluded.  
+In addition to evaluating parallel adaptation at the SNP level, we investigated how often different SNPs in the same gene may have been targeted by selection. To search for this pattern, we define a "genetic unit" or GU as all SNPs within 10kb of a transcript.  SNPs in an miRNA or second transcript within 10kb of the transcript of interest were excluded.  
 We classified SNPs showing significance in Mexico, South America or in both regions into 1,277 GUs. 
 Of these, 95 GUs contained at least one SNP with a pattern of differentiation suggesting parallel adaptation, whereas only 12 GUs contained both Mexico-specific and SA-specific significant SNPs. 
 %I don't understand what these 95 show. 1 significant and one nonsignficiant SNP? whereas the 12 are significant in both?
@@ -164,8 +157,6 @@ This contrasts with data from humans \cite{Tennessen_2011_21698142} showing freq
 %genomic architecture differences? local adaptation uses regulary in teo (cite Tanja)? But what about Fraser (finds same in humans)
 % More likely: taget siez
 
-
-
 %perhaps below should be moved to methods or supp? seems out of place here.
 %First, we randomly picked 959 and 664 SNPs that represent Mexico- and SA-specific differentiation (see above) from 91,779 positions and counted the number of GUs under Pattern C.
 
@@ -173,8 +164,6 @@ This contrasts with data from humans \cite{Tennessen_2011_21698142} showing freq
 %CUTME
 %While some have hypothesized that pre-adapted highland maize was transported through Central America to the Andes based on analysis of the \emph{Adh2} locus \cite[]{Freitas_2003_68}, analysis of larger sets of molecular markers suggests \emph{de novo} highland adaptation in South America \cite[]{Vigouroux_2008_21632329,vanHeerwaarden_2011_21189301}.  Our result of rare parallel adaptation may be consistent with independent origins of highland populations, not gene flow between the two highland populations.
 %MBH:Like the discussion above...any way we could include this somewhere?
-
-%JRI stops
 
 %Fig.~\ref{tes2}B shows the segregation patterns expected under parallel adaptation in the highlands and the lowlands.
 %If there is not teosinte data, we cannot distinguish between high- and lowland adaptation.
@@ -215,6 +204,7 @@ is still short: between 4 and 150 kilometers.
 The area of the Andean highlands is about 500 km$^2$ \plr{is this right???}
 which we estimate would be planted from around $N=14,000$ plants each year \plr{add more details here or above}.
 %MBH: This seems like a pretty low planting density
+%This should be 14K plants per acre, or ~30-35K per hectare. Good catch Matt!!
 Since the Mexican and Andean highlands are around 4,000 km apart,
 at $s_m=10^{-3}$ the time needed for this to occur is $\Tmig \approx 5 \times 10^{34}$ generations.
 In other words, from these calculations it is almost impossible that an allele that is deleterious at low elevation with $s_m=10^{-3}$ 
