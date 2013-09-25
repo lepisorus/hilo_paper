@@ -19,12 +19,12 @@
 
 \subsection*{Materials and DNA extraction}
 We included one individual from each of 94 open-pollinated landrace maize accessions from high and low elevation sites in Mexico and South America (Table S1).  Accessions were provided by the USDA germplasm repository or kindly donated by Major Goodman (North Carolina State University).  
-Sampling locations are shown in Figure~\ref{map}A (see also supp table S1).  
+Sampling locations are shown in Figure~\ref{map}A (see also table S1).  
 %shouldn't we put table refs in case these change?
 %
 % You mean supp table?  I don't know how to refer to a table in a different tex file. - ST
 % That's the cool thing, you just use the lable like any table, as these all end up in the main file!
-Landraces sampled from altitudes $<$1,700 m were considered lowland, while accessions from $>$1,700 m were considered highland (supp table S1).  
+Landraces sampled from altitudes $<$1,700 m were considered lowland, while accessions from $>$1,700 m were considered highland (table S1).  
 Seeds were germinated on filter paper following fungicide treatment and grown in standard potting mix.  Leaf tips were harvested from plants at the five leaf stage.  Following storage at $-80{}^\circ$C overnight, leaf tips were lyophilized for 48 hours.  Tissue was then homogenized with a Mini-Beadbeater-8 (BioSpec Products, Inc., Bartlesville, OK, USA).  DNA was extracted using a modified CTAB protocol \cite[]{CTAB}.  The quality of DNA was ensured using methods described in \cite{vanHeerwaarden_2011_21189301}.
 
 \subsection*{SNP data}
@@ -63,10 +63,12 @@ Results across replicates were nearly identical.
 We tested three demographic models in which maize was differentiated into high- and lowland populations subsequent to domestication (Figure~\ref{model}). 
 Observed joint frequency distributions (JFDs) were calculated using the GBS data set due to its lower level of ascertainment bias. 
 A subset of silent SNPs were utilized that had $\geq15$ individuals without missing data in both low- and highland populations and did not violate HWE.  
-An HWE cut-off of $P<0.005$ was used for each subpopulation due to our under-calling of heterozygotes. 
+A HWE cut-off of $P<0.005$ was used for each subpopulation due to our under-calling of heterozygotes. 
 In total, we included 18,745 silent SNPs for the Mexican populations in Models IA and IB, 14,508 for the South American populations in Model I and 11,305 for the Mexican lowland population and the South American populations in Model II.  
 We obtained similar results under more or less stringent thresholds for significance ($P < 0.05\sim0.0005$; data not shown), though the number of SNPs was very small at $P<0.05$.  
-Demographic parameters were inferred using the software {\sf dadi} \cite[]{Gutenkunst_2009_19851460}.  We calculated an expected JFD given parameters from a diffusion method and the likelihood obtained from the expected and observed JFDs in the multinomial approach of this software. \\
+Demographic parameters were inferred using the software {\sf dadi} \cite[]{Gutenkunst_2009_19851460},
+which uses a diffusion method to calculate an expected JFD 
+and evaluates the likelihood of the data using a multinomial assumption.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
 \begin{figure}[tb]   
@@ -87,7 +89,7 @@ Demographic parameters were inferred using the software {\sf dadi} \cite[]{Guten
 \subsubsection{Model IA}
 This model is applied to the Mexico and SA populations.
 We assume the ancestral diploid population representing \emph{parviglumis} follows a standard Wright-Fisher model with constant size.  The size of the ancestral population is denoted by $N_A$.
-At $t_D$ generations ago, the bottleneck event begins at domestication, and at $t_E$ generations ago, the bottleneck ends.  The population size and duration of bottleneck are denoted by $N_B$ and $t_B=t_D-t_E$, respectively.  The population size recovers to $N_C=\alpha N_A$ in the lowlands.  
+At $t_D$ generations ago, the bottleneck event begins at domestication, and at $t_E$ generations ago, the bottleneck ends.  The population size and duration of the bottleneck are denoted by $N_B$ and $t_B=t_D-t_E$, respectively.  The population size recovers to $N_C=\alpha N_A$ in the lowlands.  
 Then, the highland population is differentiated from the lowland population at $t_F$ generations ago.  The size of the low- and highland populations at time $t_F$ is determined by a parameter, $\beta$ such that the population is divided by $\beta N_C$ and $(1-\beta)N_C$.  
 We assume that the population size in the lowlands is constant but that the highland population experiences exponential expansion after divergence: its current population size is $\gamma$ times larger than that at $t_F$.  \\
 
@@ -123,12 +125,12 @@ For both Models IA and IB, we inferred three parameters ($\alpha$, $\beta$ and $
 
 \subsection*{Differentiation between low- and highland populations}
 We used our inferred demographic model to generate a null distribution of $F_{ST}$ via simulation using the software {\sf ms} \cite[]{Hudson_2002_11847089}.   
-The command line options for {\sf ms} are provided in supp Table 2.  Generating the null distribution of differentiation for the MaizeSNP50 data requires accounting for ascertainment bias. Evaluation of genetic clustering in our data (not shown) coincides with previous work \cite[]{Hufford_2012_22660546} in suggesting that the two lines most important in the ascertainment panel are most closely related to Mexican lowland maize.  
+The command line options for {\sf ms} are provided in Table S2.  Generating the null distribution of differentiation for the MaizeSNP50 data requires accounting for ascertainment bias. Evaluation of genetic clustering in our data (not shown) coincides with previous work \cite[]{Hufford_2012_22660546} in suggesting that the two lines most important in the ascertainment panel are most closely related to Mexican lowland maize.  
 We thus added two additional individuals to the Mexican lowland population and generated our null distribution using only SNPs for which the two individuals had different alleles. For model IA in South America we added two individuals at time $t_F$ to the ancestral population of the South American low- and highland populations because the Mexican lowland population was not incorporated into this model. For each combination of sample sizes in low- and highland populations, we generated $10^7$ $F_{ST}$ values and used these as a null distribution in order to evaluate our data.   We calculated $F_{ST}$ values for all SNPs that had $\geq10$ individuals with no missing data in all four populations and showed no departure from HWE at the 0.5\% (GBS) or 5\% (MaizeSNP50) level. 
 
 \subsection*{Haplotype scoring test}
 We performed a \underline{p}airwise \underline{h}aplotype \underline{s}coring (PHS) test to detect further evidence of selection, following \cite{Toomajian_2006_16623598}.  
-To conduct this test, we first imputed and phased the combined SNP data (both GBS and MaizeSNP50) using the {\sf fastphase} software ver. 1.4.0 \cite[]{Scheet_2006_16532393}.  
+To conduct this test, we first imputed and phased the combined SNP data (both GBS and MaizeSNP50) using the {\sf fastphase} software version 1.4.0 \cite[]{Scheet_2006_16532393}.  
 As a reference for phasing, we used data (excluding heterozygous SNPs) from an Americas-wide sample of 23 partially inbred landraces that were included in the Hapmap v2 data set  \cite[]{Chia_2012_22660545}.  
 {\sf fastphase} was run with default parameter settings.  PHS was calculated for an allele \emph{A} at position $x$ by
 
@@ -157,6 +159,7 @@ Z_{ijx} = \frac{ d_{ijx} - \bar{d_{ij}} }{ \sigma_{ij} }
 
 \noindent where $d_{ijx}$ is the genetic distance over which individuals $i$ and $j$ are identical surrounding position $x$, $\bar{d_{ij}}$ is the genome-wide mean of distances over which individuals are identical, and $\sigma_{ij}$ is the standard deviation of the distribution of distances.  
 The \emph{P}-value for an allele $A$ with frequency $p$ at position $x$ was calculated such that Pr($PHA_{xA}\leq PHA_{null|p}$), where $PHA_{null|p}$ are the PHS values for all alleles with frequency $p$ across the genome. 
+\plr{Do you mean that the $P$-value for allele $x$ is the proportion of alleles of the same frequency genome-wide that have a larger PHS value? (and, should be PHS, not PHA?)}
 
 Genetic distances were obtained from the IBM mapping population \cite[]{Ganal_2011_22174790}.  
 While genetic positions were initially only available for the MaizeSNP50 data set, we fit genetic (cM) and physical (bp) distances to a tenth degree polynomial curve, and calculated cM for all SNPs. 
@@ -179,48 +182,52 @@ While genetic positions were initially only available for the MaizeSNP50 data se
 
 
 %%%% PLR:
-\subsection*{Theoretical valuation of parallel adaptation }
+\subsection*{Theoretical evaluation of parallel adaptation }
 
-We suggest below that many of these high-$F_{ST}$ alleles are locally adaptive,
+We suggest below that many of the high-$F_{ST}$ alleles are locally adaptive,
 and the degree of coincidence between highland regions informs us about 
-whether these adaptations occurred independently (in parallel), or if alleles transited between the two.
+whether these adaptations occurred in parallel, 
+or if alleles were transmitted between the two by migration.
 To see if the abundance and degree of coincidence is consistent with what is known about the population history of maize,
 we evaluated the rate at which we expect an allele that provides a selective advantage at higher altitude
 to arise by new mutation in a highland region ($\mutrate$),
 and the rate at which such an allele already present in the Mexican highlands
 would transit the intervening lowlands and fix in the Andean highlands ($\migrate$). 
-In each case we assume alleles adapted in the highlands are slightly deleterious at lower altitude.  This assumption is consistent with empirical findings in reciprocal transplants of highland and lowland maize in Mexico (CITE).
+In each case we assume alleles adapted in the highlands are slightly deleterious at lower altitude (but see later discussion).  
+This assumption is consistent with empirical findings in reciprocal transplants of highland and lowland maize in Mexico \citep{Mercer2008}.
 These numbers depend most strongly on the population density, 
 the selection coefficient,
 and the rate at which seed is transported long distances and replanted.
-We evaluated these rates using new and existing theory, and validated by simulation.
-%See above, Shohei.  The citation is Mercer, K, A. Mart’nez-V‡squez, H. R. Perales. 2008. Asymmetrical local adaptation of maize landraces along an altitudinal gradient. Evolutionary Applications 1: 489-500
 
-To calculate the rate at which new mutations appear and fix in a highland population, $\mutrate$,
-we multiplied the total population size of the highlands by the mutation rate per generation
+The rate at which new mutations appear and fix in a highland population, which we denote $\mutrate$,
+is equal to the total population size of the highlands, multiplied by the mutation rate per generation
 and by the chance that a single such mutation successfully fixes
 (i.e.\ is not lost to drift).
 The latter probability, that a single new mutant allele providing benefit $s_b$ to heterozygotes at high elevation
 will increase in frequency and fix in the high elevation population,
 is approximately $2s_b$ divided by the variance in offspring number \citep{jagers1975branching}.
-This is not quite right, since such a mutation could occur at low elevation,
-where it is deleterious,
-and its offspring could then migrate to high elevation and fix there.
-%but we use this assumption anyway?
-Similarly, if we use the selection coefficient for high elevation,
-this ignores the fact that some of the seeds from the high-elevation plants may be grown at low elevation,
-reducing the chance of fixation of an allele that appears at high elevation.
-This scenario has been well-studied in theoretical models by \citet{polk} and \citet{barton1987establishment},
-% missing reference for Polk.
-but it is not immediately obvious how well their approximations apply to maize 
-as it grows across an altitudinal gradient (rather than an abrupt transition) and has high variance in number of offspring.
-Therefore, we used the following more detailed demographic model (following \citet{vanHeerwaarden2010}) 
-%cite van Heerwaarden  2010 Heredity
-to numerically calculate the chance of fixation of a beneficial allele
-as a function of the location where it first appears.
-We found that the simple approximation is quite good,
-although the demographic model was necessary to find the variance in offspring number,
-as well as the migration rate, which we will need later.
+To determine the latter variance (and the migration rate, which we will need later),
+we followed \citet{vanHeerwaarden2010} in constructing a detailed demographic model for domesticated maize.
+The calculation above is not quite right, as it neglects migration across the altitudinal gradient,
+but numerical calculation of the chance of fixation of an mutation as a function of the location where it first appears
+indicates that the approximation is quite good (see figure \ref{sfig:prob_estab});
+\plr{add supplemental figure}
+for theoretical treatment see \citet{pollak1966survival} or \citet{barton1987establishment}.
+
+The demographic model is as follows.
+Fields of $N=10^5$ plants are replanted each year from $N_f=561$ ears,
+either from completely new stock (with probability $p_e=0.068$),
+from partially new stock (a proportion $r_m=0.2$ with probability $p_m=0.02$),
+or entirely from the same field otherwise.
+Plants have an average of $\mu_E=3$ ears per plant, and ears have an average of $N/N_f$ kernels;
+each of these numbers are Poisson distributed.
+Each plant is seed parent to all kernels of its own ears, but can be pollen parent to kernels in many other ears;
+a proportion $m_g=0.0083$ of the pollen-parent kernels are in other fields.
+Migration is mediated by seed exchange --
+when fields are replanted, the seed is chosen from a random distance away with mean $\sigma_s=50$km,
+but pollen is assumed to only pollinate other fields in the same village.
+
+
 
 %TODO: describe demographic model in words.  (including migration which we need later.)
 %Reference math and more detail in appendix.
