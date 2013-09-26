@@ -12,15 +12,17 @@ iterroot <- function (genfn,tol=sqrt(.Machine$double.eps),maxiter=1000,...) {
     return(p)
 }
 
+for (clinewidth in c(26,62,500)) {
+# clinewidth <- 500           # a much wider cline
+# clinewidth <- 26            # altitudinal cline width (km): S.Am
+# clinewidth <- 62            # altitudinal cline width (km): Mexico
+
 dx <- 15            # distance between demes (km)
 rangesize <- 1000   # half-length of range (km)
 xx <- seq(-rangesize,rangesize,by=dx)  # deme locations (km)
-sb <- .1
-sd <- .00001
+sb <- 0.1
+sd <- 0.00001
 elevends <- c(500,2500)     # endpoints of elevation (m)
-clinewidth <- 500           # a much wider cline
-clinewidth <- 26            # altitudinal cline width (km): S.Am
-clinewidth <- 62            # altitudinal cline width (km): Mexico
 alpha <- (sb+sd)/clinewidth      # slope of selection with altitude (units of s per km)
 selfn <- function (x) { pmin( sb, pmax( -sd, alpha*x ) ) }
 selx <- selfn(xx)
@@ -93,23 +95,6 @@ ff <- matrix(NA,ncol=niter,nrow=length(xx))
 ff[,1] <- f(xx)
 for (k in 2:niter) { ff[,k] <- genfn(ff[,k-1],selx) }
 
-layout(t(1:2))
-matplot(xx,ff[,floor(seq(2,ncol(ff),length.out=100))],type='l',ylim=1-2*rev(1-eqvals),col=rainbow(120)[1:100],xlab="distance (km)", ylab="prob of exinction")
-lines(xx,ff[,1],col='red')
-abline( h=eqvals[2], lty=2, lwd=2 )
-text( min(xx), eqvals[2], labels="equilibrium value", adj=c(0,0) )
-abline(v=0,col='green')
-# par(new=TRUE)
-# plot(xx,selfn(xx),col='green',type='l',yaxt='n',ylab='')
-# axis(4)
-plot(xx,1-ff[,niter],type='l',lwd=2,ylim=c(0,max(1-ff[,niter],2*sb/varoff)),xlab="distance (km)", ylab="prob of survival")
-abline(h=1-eqvals[2], lty=2, lwd=2, col='red')
-text( min(xx), 1-eqvals[2], labels="equilibrium value", adj=c(0,0) )
-abline(v=c(0,xx[min(which(selx>-sd))],xx[max(which(selx<sb))]),col='green')
-lines(xx,1-iterroot( genfn, selx=selx ), col='red', lty=2 )
-lines(xx,2*selx/varoff)
-
-
 pdf(paste("prob-estab-",clinewidth,".pdf",sep=''), width=3, height=3, pointsize=10)
 par(mar=c(5,4,1,1)+.1)
 plot(xx,1-ff[,niter],type='l',lwd=2,ylim=c(0,max(1-ff[,niter],2*sb/varoff)),xlab="distance (km)", ylab="prob of survival")
@@ -120,26 +105,49 @@ lines(xx,2*selx/varoff)
 legend('topleft',legend=c('truth','2*s/var','cline location'),lty=c(1,1,1),col=c('black','black','green'),lwd=c(2,1,1),bg='white')
 dev.off()
 
-## Look at the fixed-s generating functions
-layout(t(1:2))
-tmpx <- seq(0,1,length.out=1000)
-diffx <- 1-c(.00001,0)
-plot( tmpx, genfn(tmpx,selx=0,migr=0), ylim=c(0,1), type='l', col='blue' ) # deleterious
-tmpsl <- diff(genfn(diffx,selx=0,migr=0))/diff(diffx); abline( 1-tmpsl, tmpsl, col='blue', lty=3 )
-lines( tmpx, genfn(tmpx,selx=-sd,migr=0), col='red' ) # neutral
-tmpsl <- diff(genfn(diffx,selx=-sd,migr=0))/diff(diffx); abline( 1-tmpsl, tmpsl, col='red', lty=3 )
-lines( tmpx, genfn(tmpx,selx=sb,migr=0), col='green' )  # beneficial
-tmpsl <- diff(genfn(diffx,selx=sb,migr=0))/diff(diffx); abline( 1-tmpsl, tmpsl, col='green', lty=3 )
-tmpvar <- (1/2)*diff(genfn(1-c(.00002,.00001,0),selx=sb,migr=0),differences=2)/prod(diff(1-c(.00002,.00001,0))) - tmpsl^2
-abline(0,1,lty=2)
-legend("bottomright",lty=1,col=c('green','blue','red'),legend=paste("s=",c(sb,0,-sd)))
-tmpx <- seq(1-2*(1-eqvals[2]),1,length.out=1000)
-plot( tmpx, genfn(tmpx,selx=sb,migr=0)-tmpx, type='l', col='green' )
-lines( tmpx, genfn(tmpx,selx=0,migr=0)-tmpx, col='blue' )
-lines( tmpx, genfn(tmpx,selx=-sd,migr=0)-tmpx, col='red' )
-points( c(eqvals[2],1-2*(tmpsl-1)/tmpvar), c(0,0), pch="*", cex=2, col=c("black","red") )
-legend("topright",pch="*",col=c("black","red"),legend=c("true","approx"))
-abline(h=0,lty=2)
+# end iterate over clinewidth
+}
+
+
+if (interactive()) {
+    layout(t(1:2))
+    matplot(xx,ff[,floor(seq(2,ncol(ff),length.out=100))],type='l',ylim=1-2*rev(1-eqvals),col=rainbow(120)[1:100],xlab="distance (km)", ylab="prob of exinction")
+    lines(xx,ff[,1],col='red')
+    abline( h=eqvals[2], lty=2, lwd=2 )
+    text( min(xx), eqvals[2], labels="equilibrium value", adj=c(0,0) )
+    abline(v=0,col='green')
+    # par(new=TRUE)
+    # plot(xx,selfn(xx),col='green',type='l',yaxt='n',ylab='')
+    # axis(4)
+    plot(xx,1-ff[,niter],type='l',lwd=2,ylim=c(0,max(1-ff[,niter],2*sb/varoff)),xlab="distance (km)", ylab="prob of survival")
+    abline(h=1-eqvals[2], lty=2, lwd=2, col='red')
+    text( min(xx), 1-eqvals[2], labels="equilibrium value", adj=c(0,0) )
+    abline(v=c(0,xx[min(which(selx>-sd))],xx[max(which(selx<sb))]),col='green')
+    lines(xx,1-iterroot( genfn, selx=selx ), col='red', lty=2 )
+    lines(xx,2*selx/varoff)
+
+    ## Look at the fixed-s generating functions
+    layout(t(1:2))
+    tmpx <- seq(0,1,length.out=1000)
+    diffx <- 1-c(.00001,0)
+    plot( tmpx, genfn(tmpx,selx=0,migr=0), ylim=c(0,1), type='l', col='blue' ) # deleterious
+    tmpsl <- diff(genfn(diffx,selx=0,migr=0))/diff(diffx); abline( 1-tmpsl, tmpsl, col='blue', lty=3 )
+    lines( tmpx, genfn(tmpx,selx=-sd,migr=0), col='red' ) # neutral
+    tmpsl <- diff(genfn(diffx,selx=-sd,migr=0))/diff(diffx); abline( 1-tmpsl, tmpsl, col='red', lty=3 )
+    lines( tmpx, genfn(tmpx,selx=sb,migr=0), col='green' )  # beneficial
+    tmpsl <- diff(genfn(diffx,selx=sb,migr=0))/diff(diffx); abline( 1-tmpsl, tmpsl, col='green', lty=3 )
+    tmpvar <- (1/2)*diff(genfn(1-c(.00002,.00001,0),selx=sb,migr=0),differences=2)/prod(diff(1-c(.00002,.00001,0))) - tmpsl^2
+    abline(0,1,lty=2)
+    legend("bottomright",lty=1,col=c('green','blue','red'),legend=paste("s=",c(sb,0,-sd)))
+    tmpx <- seq(1-2*(1-eqvals[2]),1,length.out=1000)
+    plot( tmpx, genfn(tmpx,selx=sb,migr=0)-tmpx, type='l', col='green' )
+    lines( tmpx, genfn(tmpx,selx=0,migr=0)-tmpx, col='blue' )
+    lines( tmpx, genfn(tmpx,selx=-sd,migr=0)-tmpx, col='red' )
+    points( c(eqvals[2],1-2*(tmpsl-1)/tmpvar), c(0,0), pch="*", cex=2, col=c("black","red") )
+    legend("topright",pch="*",col=c("black","red"),legend=c("true","approx"))
+    abline(h=0,lty=2)
+}
+
 
 ########
 ## old stuff

@@ -198,6 +198,8 @@ This assumption is consistent with empirical findings in reciprocal transplants 
 These numbers depend most strongly on the population density, 
 the selection coefficient,
 and the rate at which seed is transported long distances and replanted.
+Here we describe the mathematical details;
+readers may skip to the results without loss of continuity.
 
 To do this,
 we followed \citet{vanHeerwaarden2010} in constructing a detailed demographic model for domesticated maize.
@@ -211,14 +213,14 @@ a proportion $m_g=0.0083$ of the pollen-parent kernels are in other fields.
 Wild-type plants have an average of $\mu_E=3$ ears per plant, and ears have an average of $N/N_f$ kernels;
 each of these numbers are Poisson distributed.
 The mean number of pollen-parent kernels, and the mean number of kernels per ear, 
-is assumed to be $(1+s)$ times larger for individuals heterozygous for the selected allele.
+is assumed to be $(1+s_b)$ times larger for individuals heterozygous for the selected allele.
 Migration is mediated by seed exchange --
 when fields are replanted, the seed is chosen from a random distance away with mean $\sigma_s=50$km,
 but plants only pollinate other plants belonging to the same village (distance 0).
 Each individual can have offspring in three categories: local seed, local pollen, and migrant seed;
 the mean numbers of each of these are determined by the condition that the population is stable
 (so wild-type, diploid individuals have on average 2 offspring)
-except that heterozygotes have on average $(1+s)$ offspring that carry the selected allele.
+except that heterozygotes have on average $(1+s_b)$ offspring that carry the selected allele.
 Each ear has a small chance of being chosen for replanting,
 so the number of ears replanted of a given individual is Poisson,
 and assuming that pollen is well-mixed, the number of pollen-parent kernels is Poisson as well.
@@ -229,6 +231,10 @@ these means, and more details of the computations, are found in Appendix \ref{ap
 
 \plr{got a better term than ``pollen-parent kernels''??}
 
+At these parameter values, we compute that the variance in number of offspring, $\xi^2$, is between 20 (for wild-type) and 30 (for $s_b=0.1$), 
+and the dispersal distance (mean distance between parent and offspring)
+is $\sigma=1.8$km.
+
 The rate at which new mutations appear and fix in a highland population, which we denote $\mutrate$,
 is equal to the total population size of the highlands, multiplied by the mutation rate per generation
 and by the chance that a single such mutation successfully fixes
@@ -237,13 +243,13 @@ The latter probability, that a single new mutant allele providing benefit $s_b$ 
 will fix locally in the high elevation population,
 is approximately $2s_b$ divided by the variance in offspring number \citep{jagers1975branching}.
 The calculation above is not quite right, as it neglects migration across the altitudinal gradient,
-but numerical calculation of the chance of fixation of an mutation as a function of the location where it first appears
+but exact numerical calculation of the chance of fixation of an mutation as a function of the location where it first appears
 indicates that the approximation is quite good (see figure \ref{sfig:prob_estab});
 for theoretical treatment see \citet{pollak1966survival} or \citet{barton1987establishment}.
 
-
 %\plr{could alternatively: (a) describe the math; or (b) cut this down further.}
 %I actually like this as is, but think we should expand math as separate appendix. my thinking is math will be of interest to a subset of audience, so perhaps best presented fully but at end. thoughts?
+%\plr{added a signpost for non-mathey readers to skip this at the start}
 
 Concretely, the probability that a new mutation destined for fixation
 will arise in a patch of high-elevation habitat of area $A$ in a given generation
@@ -265,7 +271,7 @@ maintained at migration-selection balance \citep{slatkin1973geneflow}.
 This equilibrium frequency decays exponentially with distance,
 so that the highland allele is present at distance $R$ from the highlands at frequency $C \exp(- R \sqrt{2s_m} / \sigma)$,
 where $s_m$ is the deleterious selection coefficient for the allele in low elevation,
-$\sigma$ is the mean dispersal distance (mean distance between parent and offspring),
+$\sigma$ is the mean dispersal distance,
 and $C$ is a constant depending on geography ($C\approx 1/2$ is close).
 Multiplying this frequency by a population size gets the predicted number (average density across a large number of generations) of individuals carrying the allele in that population.
 Therefore, in a lowland population of size $N$ at distance $R$ from the highlands,
@@ -277,14 +283,14 @@ the chance there are any present in a given generation is no more than $(N/2) \e
 and so this puts an upper bound on $\migrate$.
 Therefore, we would need to wait $\Tmig = (2/N)\exp(R \sqrt{2s_m} / \sigma)$ generations 
 for a rare such excursion to occur.
-Concretely, we can use that
+In other words, we can bound the rate of migration by
 \begin{align}
   \migrate \le (N/2)  \exp(- R \sqrt{2s_m} / \sigma) ,
 \end{align}
 with $N$ the total size of the unadapted highland population,
 and $R$ the distance from the adapted to the yet-unadapted highland populations.
-Another factor this omits is the probability that such an allele fixes ($\approx 2s_b/\xi^2$), but since such alleles arrive by migration this omission is unlikely a large effect and is conservative.
-%Peter please check if simplification to sentence above OK. OK to include \approx?
+This also omits the probability that such an allele fixes ($\approx 2s_b/\xi^2$), 
+but since such alleles arrive by migration, this omission is unlikely a large effect and is conservative.
 
 To obtain specific predictions,
 we then computed $\mutrate$ and $\migrate$ at various parameter values.
