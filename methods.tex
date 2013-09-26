@@ -199,38 +199,48 @@ These numbers depend most strongly on the population density,
 the selection coefficient,
 and the rate at which seed is transported long distances and replanted.
 
+To do this,
+we followed \citet{vanHeerwaarden2010} in constructing a detailed demographic model for domesticated maize.
+\plr{this is long-ish?  could perhaps summarize this more/better?}
+Fields of $N=10^5$ plants are replanted each year from $N_f=561$ ears,
+either from completely new stock (with probability $p_e=0.068$),
+from partially new stock (a proportion $r_m=0.2$ with probability $p_m=0.02$),
+or entirely from the same field otherwise.
+Each plant is seed parent to all kernels of its own ears, but can be pollen parent to kernels in many other ears;
+a proportion $m_g=0.0083$ of the pollen-parent kernels are in other fields.
+Wild-type plants have an average of $\mu_E=3$ ears per plant, and ears have an average of $N/N_f$ kernels;
+each of these numbers are Poisson distributed.
+The mean number of pollen-parent kernels, and the mean number of kernels per ear, 
+is assumed to be $(1+s)$ times larger for individuals heterozygous for the selected allele.
+Migration is mediated by seed exchange --
+when fields are replanted, the seed is chosen from a random distance away with mean $\sigma_s=50$km,
+but plants only pollinate other plants belonging to the same village (distance 0).
+Each individual can have offspring in three categories: local seed, local pollen, and migrant seed;
+the mean numbers of each of these are determined by the condition that the population is stable
+(so wild-type, diploid individuals have on average 2 offspring)
+except that heterozygotes have on average $(1+s)$ offspring that carry the selected allele.
+Each ear has a small chance of being chosen for replanting,
+so the number of ears replanted of a given individual is Poisson,
+and assuming that pollen is well-mixed, the number of pollen-parent kernels is Poisson as well.
+Each of these numbers of offspring has a mean that depends on whether the field is replanted with new stock,
+and whether ears are chosen from this field to replant other fields,
+so the total number of offspring is actually a mixture of Poissons;
+these means, and more details of the computations, are found in Appendix \ref{apx:demographic_model}.
+
+\plr{got a better term than ``pollen-parent kernels''??}
+
 The rate at which new mutations appear and fix in a highland population, which we denote $\mutrate$,
 is equal to the total population size of the highlands, multiplied by the mutation rate per generation
 and by the chance that a single such mutation successfully fixes
 (i.e.\ is not lost to drift).
 The latter probability, that a single new mutant allele providing benefit $s_b$ to heterozygotes at high elevation
-will increase in frequency and fix in the high elevation population,
+will fix locally in the high elevation population,
 is approximately $2s_b$ divided by the variance in offspring number \citep{jagers1975branching}.
-To determine the latter variance (and the migration rate, which we will need later),
-we followed \citet{vanHeerwaarden2010} in constructing a detailed demographic model for domesticated maize.
 The calculation above is not quite right, as it neglects migration across the altitudinal gradient,
 but numerical calculation of the chance of fixation of an mutation as a function of the location where it first appears
 indicates that the approximation is quite good (see figure \ref{sfig:prob_estab});
-\plr{add supplemental figure}
 for theoretical treatment see \citet{pollak1966survival} or \citet{barton1987establishment}.
 
-The demographic model is as follows.
-Fields of $N=10^5$ plants are replanted each year from $N_f=561$ ears,
-either from completely new stock (with probability $p_e=0.068$),
-from partially new stock (a proportion $r_m=0.2$ with probability $p_m=0.02$),
-or entirely from the same field otherwise.
-Plants have an average of $\mu_E=3$ ears per plant, and ears have an average of $N/N_f$ kernels;
-each of these numbers are Poisson distributed.
-Each plant is seed parent to all kernels of its own ears, but can be pollen parent to kernels in many other ears;
-a proportion $m_g=0.0083$ of the pollen-parent kernels are in other fields.
-Migration is mediated by seed exchange --
-when fields are replanted, the seed is chosen from a random distance away with mean $\sigma_s=50$km,
-but pollen is assumed to only pollinate other fields in the same village.
-
-
-
-%TODO: describe demographic model in words.  (including migration which we need later.)
-%Reference math and more detail in appendix.
 
 %\plr{could alternatively: (a) describe the math; or (b) cut this down further.}
 %I actually like this as is, but think we should expand math as separate appendix. my thinking is math will be of interest to a subset of audience, so perhaps best presented fully but at end. thoughts?
