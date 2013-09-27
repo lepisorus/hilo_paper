@@ -240,22 +240,31 @@ gene flow will not result in shared adaptations.
 The situation where they are neutral in the lowlands is harder to model,
 but we can make some informed guesses.
 Maize in the Andean highlands, say, would have inherited a neutral, highland-adapted allele from the Mexican highlands 
-if some of the ancestral lineages along which the modern Andean plants have inherited at that locus trace back to the Mexican highlands in the required amount of time
-(i.e.\ since the appearance of the allele in Mexico).
+if some of the ancestral lineages along which the modern Andean plants have inherited at that locus trace back to the Mexican highlands 
+at some point since the appearance of the allele in Mexico.
 If the allele is neutral in the lowlands, we can treat this as a neutral process,
-using standard coalescent theory \citep{wakeley2005coalescent}.
+using the framework of coalescent theory \citep{wakeley2005coalescent}.
+To do this, we need to follow \emph{all} of the $N \approx 2.5 \times 10^6$ lineages backwards --
+but, these quickly coalesce to many fewer -- to $m$ lineages
+in approximately $\sum_{k=m}^N \frac{2N}{\xi^2 k(k+1)} \approx 1.25 \times 10^5/m$ generations;
+leaving about 1000 lineages after 100 generations.
+These lineages are starting to be spread out over a larger area.
+The displacement of a lineage after $m$ generations has variance $m \sigma^2$ and perhaps approximately Gaussian;
+if we assume that $n$ of them are independent, and $Z_n$ is the distance to the furthest one,
+then $\P\{ Z_n / \sqrt{m \sigma^2} \le x /\sqrt{2 \log n} + \sqrt{2 \log n} - (1/2) (\log \log n + \log 4 \pi)/\sqrt{2 \log n} \} \approx \exp( - e^{-x} )$
+\citep{berman1964limit}.
+With $n=1000$, the typical distance to the furthest displacement is after $m=1000$ generations is $\sqrt{2 \sigma^2 m \log n} 212$km;
+after $m=6000$ generations it is $\approx 518$km.
+In either case the chance that the maximum is larger than even 1,000km after 6,000 generations is well less than $10^{-4}$.
+Of course, this is under an equilibrium population model; and maize reached the Andean highlands only around 4,000 years ago.
+Nonetheless, this suggests that even highland-adapted allele that are merely neutral in the lowlands
+would have difficulty moving between the Andean and Mexican highlands in a few thousand generations.
 
-
-Our calculations assume that the time the allele takes to reach equilibrium, after appearing in one patch, is small relative to the time it takes to transit between patches.  If it is neutral between patches, then ``equilibrium'' is fixation everywhere.  The relevant calculation is therefore how long it would take for drift to take a neutral allele between patches.  The distance a diffusing lineage moves in T generations is approximately sqrt(T)*sigma; so with sigma=2 we would still need millions of generations to move 4,000 km.  But, there's not just one lineage that we might follow back from the andes to the mexican highlands; any lineage from the andes will do.  If we start out with 14,000 of these, they'd coalesce down to a few hundred within a hundred generations in a panmictic population, so maybe we'd need to follow hundreds of lineages.  Looking at the maximum distance among N lineages multiplies the distance by a factor of sqrt(N); this would only get us down to hundreds of thousands of generations.  So, neutral diffusion probably wouldn't do it.
-
-\plr{Here's my conclusions from these calculations.  But, maybe I'm missing something; I want to check more; tell me if anything seems awry.}
-It seems unlikely that any alleles that are adaptive in the highlands and deleterious at all in the lowlands
-would have transited central America by undirected (diffusive) sharing of seed.
+In conclusion, population genetics theory suggests that
+parallel adaptation involving identical nucleotide changes is quite unlikely under either scenarios of independent mutation 
+or transit of central America by undirected (diffusive) sharing of seed.
+However, independent mutations could be expected in kilobase-size targets,
+suggesting there might be signal for genes that share adaptive changes.
 The conclusions could change if we drastically underestimate the rate of very long distance sharing of seed,
 e.g.\ if sharing across hundreds of kilometers was common at some point.
 
-Both calculations are very pessimistic about the chance of shared single-base changes through either migration or independent mutation.
-However, independent mutations could be expected in kilobase-size targets,
-suggesting there might be signal for genes that share adaptive changes.
-
-\plr{mesh this with data analysis\dots}
