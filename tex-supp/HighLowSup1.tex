@@ -217,6 +217,48 @@ RIMMA0668	&	Ames 28668	&		&	Granada	&	Puno, Peru	&	-14.9 	&	-70.6 	&	3925	&	Good
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\arraystretch}{1.1}
+\begin{table}[tb]
+
+\begin{center}
+ \caption[]{Inference of demographic parameters\hspace*{0.3cm}}
+  \textbf{}\\[-2mm]
+{\fontsize{8}{11}\sf
+    \begin{tabular}{ccccccccl} \hline
+       & & \\[-3mm]
+     Mexico  & \multicolumn{2}{c}{Model I}  \\[0.1cm]
+    \hline
+    & & \\[-3mm]
+   & Likelihood & $-$3050.84  \\
+  &$\alpha$ & 0.99 \\
+  &$\beta$ & 0.42 \\ 
+  &$\gamma$   & 1        \\ 
+  & $\sigma$ & 1\\
+      \hline
+    & & \\[-3mm]
+    South America  & \multicolumn{2}{c}{Model I}  \\[0.1cm]
+        \hline
+    & & \\[-3mm]
+     & Likelihood &  $-$2737.80  \\
+       &$\alpha$ & 0.6 \\
+      &$\beta$ & 0.97           \\ 
+      &$\gamma$   & $\geq$55   \\
+        & $\sigma$ & 1\\ [1mm]
+    \hline
+\multicolumn{3}{l}{The description of $\alpha, \beta$ and $\gamma$ is in Figure~3.}\\
+\multicolumn{3}{l}{$\sigma$ is a relative size of $N_B$ to $N_C$ ($N_B=\sigma N_C$).}\\
+    \end{tabular}
+    \label{param}  % caption is needed to make this work
+}
+\end{center}
+\end{table}
+\renewcommand{\arraystretch}{1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\arraystretch}{1.1}
 \begin{table}[tb]
@@ -263,46 +305,6 @@ RIMMA0668	&	Ames 28668	&		&	Granada	&	Puno, Peru	&	-14.9 	&	-70.6 	&	3925	&	Good
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\arraystretch}{1.1}
-\begin{table}[tb]
-
-\begin{center}
- \caption[]{Inference of demographic parameters\hspace*{0.3cm}}
-  \textbf{}\\[-2mm]
-{\fontsize{8}{11}\sf
-    \begin{tabular}{ccccccccl} \hline
-       & & \\[-3mm]
-     Mexico  & \multicolumn{2}{c}{Model I}  \\[0.1cm]
-    \hline
-    & & \\[-3mm]
-   & Likelihood & $-$3050.84  \\
-  &$\alpha$ & 0.99 \\
-  &$\beta$ & 0.42 \\ 
-  &$\gamma$   & 1        \\ 
-  & $\sigma$ & 1\\
-      \hline
-    & & \\[-3mm]
-    South America  & \multicolumn{2}{c}{Model I}  \\[0.1cm]
-        \hline
-    & & \\[-3mm]
-     & Likelihood &  $-$2737.80  \\
-       &$\alpha$ & 0.6 \\
-      &$\beta$ & 0.97           \\ 
-      &$\gamma$   & $\geq$55   \\
-        & $\sigma$ & 1\\ [1mm]
-    \hline
-\multicolumn{3}{l}{The description of $\alpha, \beta$ and $\gamma$ is in Figure~3.}\\
-\multicolumn{3}{l}{$\sigma$ is a relative size of $N_B$ to $N_C$ ($N_B=\sigma N_C$).}\\
-    \end{tabular}
-    \label{param}  % caption is needed to make this work
-}
-\end{center}
-\end{table}
-\renewcommand{\arraystretch}{1}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t]
   \begin{center}
     \includegraphics[width=0.6\columnwidth]{fig/bioclm.pdf}
@@ -336,13 +338,13 @@ RIMMA0668	&	Ames 28668	&		&	Granada	&	Puno, Peru	&	-14.9 	&	-70.6 	&	3925	&	Good
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[t]
-  \begin{center}
-    \includegraphics[width=0.6\columnwidth]{fig/GBSP.pdf}
-    \caption{Q-Q plot for $-$log$_{10}$-scaled \emph{P}-values of population differentiation between models in GBS data. The results of Mexico (A) and South America (B) are shown. The solid lines represent \emph{y}=\emph{x}.}
-    \label{colfreq}
-  \end{center}
-\end{figure}
+%\begin{figure}[t]
+%  \begin{center}
+%    \includegraphics[width=0.6\columnwidth]{fig/GBSP.pdf}
+%    \caption{Q-Q plot for $-$log$_{10}$-scaled \emph{P}-values of population differentiation between models in GBS data. The results of Mexico (A) and South America (B) are shown. The solid lines represent \emph{y}=\emph{x}.}
+%    \label{colfreq}
+%  \end{center}
+%\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -356,13 +358,13 @@ RIMMA0668	&	Ames 28668	&		&	Granada	&	Puno, Peru	&	-14.9 	&	-70.6 	&	3925	&	Good
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[t]
-  \begin{center}
-    \includegraphics[width=0.6\columnwidth]{fig/MZ50P.pdf}
-    \caption{Q-Q plot for $-$log$_{10}$-scaled \emph{P}-values in MaizeSNP50 data.  (A, B) Q-Q plot of \emph{P}-values with and without correlation of ascertainment bias (on the \emph{x}- and \emph{y}-axes, respectively) in Mexico (A) and South America (B).   (C, D) Q-Q plot of \emph{P}-values from Syngenta SNPs on the \emph{x}-axes and from Panzea SNPs on the \emph{y}-axes in Mexico (C) and South America (D).  The solid lines represent \emph{y}=\emph{x}.}
-    \label{colfreq}
-  \end{center}
-\end{figure}
+%\begin{figure}[t]
+%  \begin{center}
+%    \includegraphics[width=0.6\columnwidth]{fig/MZ50P.pdf}
+%    \caption{Q-Q plot for $-$log$_{10}$-scaled \emph{P}-values in MaizeSNP50 data.  (A, B) Q-Q plot of \emph{P}-values with and without correlation of ascertainment bias (on the \emph{x}- and \emph{y}-axes, respectively) in Mexico (A) and South America (B).   (C, D) Q-Q plot of \emph{P}-values from Syngenta SNPs on the \emph{x}-axes and from Panzea SNPs on the \emph{y}-axes in Mexico (C) and South America (D).  The solid lines represent \emph{y}=\emph{x}.}
+%    \label{colfreq}
+%  \end{center}
+%\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
