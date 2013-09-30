@@ -22,10 +22,16 @@
 \renewcommand{\sfdefault}{phv}
 
 % plr added
+\usepackage{amsmath}
+\usepackage{amssymb}
+\newcommand{\E}{\mathbb{E}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\var}{\mathop{\mbox{Var}}}
 \newcommand{\mutrate}{\lambda_{\text{mut}}}
 \newcommand{\migrate}{\lambda_{\text{mig}}}
 \newcommand{\Tmut}{T_{\text{mut}}}
 \newcommand{\Tmig}{T_{\text{mig}}}
+
 
 \usepackage{fancyhdr}
 \pagestyle{fancy}
@@ -164,6 +170,20 @@ We discuss the significance of these results in the context of the molecular bas
 
 \bibliography{MZpara1,MZpara2,plr-hilo}
 \bibliographystyle{geneticsT2}
+
+\suppl
+
+%%%%%%%
+% put supplemental figures and tables here:
+% e.g.
+% \begin{figure}
+% ...
+
+
+%%%%%
+% appendices to follow
+\input{demographic-model-appendix}
+
 
 \end{document}
 

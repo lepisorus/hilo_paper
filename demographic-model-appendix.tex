@@ -1,42 +1,7 @@
-\documentclass{article} 
-\usepackage{fullpage} 
-\usepackage{graphicx}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\newcommand{\E}{\mathbb{E}}
-\renewcommand{\P}{\mathbb{P}}
-\newcommand{\var}{\mathop{\mbox{Var}}}
-\newcommand{\mutrate}{\lambda_{\mbox{mut}}}
-\newcommand{\migrate}{\lambda_{\mbox{mig}}}
-\begin{document}
 
+\section{Details of the demographic model}
+\label{apx:demographic_model}
 
-Maize is cultivated in several highland regions of North and South America,
-ranging in size and hundreds to thousands of kilometers apart;
-first in modern-day central Mexico, and some thousands of years later in the Andes.
-The (relevant) highland-adapted traits are thought to be deleterious in the intervening lowlands.
-The question is then whether the Andes acquired these traits through independent evolution (i.e.~new mutation)
-or by migration from Mexico.
-As many of the relevant parameter values are only vaguely guessable --
-e.g.~population size, mutational target size, migration rates --
-we consider the ease of adaptation by migration or mutation across a range of parameter values.
-A set of parameters that deems adaptation by either means highly unlikely
-can be discarded, since we know adaptation has occurred.
-On the other hand, it may well be the case that both methods are likely, so that some adaptations have arisen {\it de novo}
-and others have moved by migration.
-
-In the case of either migration or mutation, we can estimate the rate of adaptation by the expected time to adaptation.
-If this is sufficiently small (hundreds of years) then it is almost certain to have occurred within the three thousand years available;
-if it is large (tens of thousands of years) it is very unlikely.
-Both models assume a continuous distribution of populations across geography.
-To evaluate the chance of adaptation by mutation,
-we suppose that there is a large patch of highland habitat, but no highland-adapted alleles yet;
-the chance that a new mutation beneficial at high altitude achieves local fixation depends on the distance to the highland.
-As for migration, we compute the expected time before a rare excursion of migrants from a patch of highland habitat already fixed for the highland alleles
-travels a distance comparable to the distance between highlands.
-
-
-\section{General modeling}
 
 Throughout we use in many ways the {\em branching process approximation} --
 if an allele is locally rare, then for at least a few generations,
@@ -64,6 +29,7 @@ Then $p_* = (p_{*1}, \ldots, p_{*n})$, the vector of probabilities that a new mu
 is the minimal solution to $\Phi(1-p_*) = 1-p_*$,
 i.e.\ $\Phi_i(1-p_*) = 1-p_{*i}$.
 
+%%%%% in rcode/maize_calcs.R
 % # maize
 % N <- 103359  # plants per field
 % Nf <- 561    # ears to make next generation
@@ -279,15 +245,18 @@ Note that the approximation $2s$ divided by the variance in offspring number is 
     \includegraphics{prob-estab-500}
   \end{center}
   \caption{
+  \plr{make this look better}
   Probability of establishment, as a function of distance along and around an altitudinal cline, whise boundaries are marked by the green lines.
   {\bf (A)} The parameters above; with cline width 62km; {\bf (B)} the same, except with cline width 500km.
-  \label{fig:prob_estab}
+  \label{sfig:prob_estab}
   }
 \end{figure}
 
 
 %%%%%%%
 \section{Adaptation by mutation}
+
+\plr{just a placeholder for now; to be merged in}
 
 First, we'd like to compute how difficult is it for the beneficial adaptation to arise by new mutation.
 The rate of appearance of mutant alleles is a Poisson process,
@@ -366,9 +335,3 @@ However, independent mutations could be expected in kilobase-size targets,
 suggesting there might be signal for genes that share adaptive changes.
 
 
-
-% \input{maize-ex-table.tex}
-
-% \input{maize-standing-ex-table.tex}
-
-\end{document}
