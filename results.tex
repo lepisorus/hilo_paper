@@ -121,7 +121,7 @@ Given the historical spread of maize from an origin in the lowlands, it is tempt
 To test this hypothesis, we sought to identify the adaptive allele at each locus using comparisons between Mexico and South America as well as to \emph{parviglumis} (Supplemental methods).
 %
 %I think these bar graphs and explanation should go in the supplement. Opinions?
-%MBH: Reading through this again
+%MBH: Reading through this again, I think it will work to move to supplement
 %However, we cannot rule out the possibility of adaptation in the lowlands.
 %Therefore we further investigated patterns of allele frequency change across populations.
 %When data were available for \textit{parviglumis} from Hapmap v2 \citep{Chia_2012_22660545,Hufford_2012_22660546}, we included these in our analysis.
@@ -160,7 +160,7 @@ We identify 56 SNPs with $F_{ST}$ p-values in Mexico ($P_M$) and South America (
 This number  was significantly larger than the random expectation ($48,370\times 0.01 \times 0.01 \approx 4.8$; $\chi^2$-test, $P\ll0.001$).  Furthermore, the distribution of $P_M$ in the 712 SNPs with $P_S<0.01$ was highly skewed toward zero (supp fig~7A), and a similar tendency was observed in $P_S$ given $P_M<0.01$ (935 SNPs; supp fig~7B).  Thus, we converted the $P$-values in one population given $P<0.01$ in the other population into $q$-values.  
 At a false discovery rate of 0.2 we found 117 SNPs with $P_M<0.01 \cap P_S < 0.0169$ or $P_M<0.0247 \cap P_S < 0.01$, and these SNPs were considered our candidates for parallel adaptation.
 We found 959 SNPs showing significant population differentiation only in Mexico ($P_M<0.01 \cap P_S > 0.0169$) and 664 SNPs only in South America  ($P_M>0.0247 \cap P_S < 0.01$).  The scatter plot of $P_M$ and $P_S$ is shown in Figure~\ref{PvDist}.  
-For a subset of 67 of the SNPs showing putative evidence of parallel adaptation candidates we also had data from \textit{parviglumis} and were able to infer based on patterns of segregation whether these SNPs were potentially adaptive under lowland or highland conditions.  Surprisingly, SNPs identified as targets of parallel adaptation in Mexico and South America more frequently show segregation patterns consistent with lowland adaptation (62 SNPs) than highland adaptation (5 SNPs). %add p-value for this comparison?
+For a subset of 67 of the SNPs showing putative evidence of parallel adaptation we also had data from \textit{parviglumis} and were able to infer based on patterns of segregation whether these SNPs were potentially adaptive under lowland or highland conditions.  Surprisingly, SNPs identified as targets of parallel adaptation in Mexico and South America more frequently show segregation patterns consistent with lowland adaptation (62 SNPs) than highland adaptation (5 SNPs). %add p-value for this comparison?
 %70\% and 39.5\% of SNPs showed consistent patterns in the PHS tests in high- and lowland populations, respectively.
 %Not sure what these PHS values are referring to? Do we need to keep them?
 %
@@ -191,7 +191,6 @@ This contrasts with data from humans \citep{Tennessen_2011_21698142} showing fre
 
 %Fig.~\ref{tes2}B shows the segregation patterns expected under parallel adaptation in the highlands and the lowlands.
 %If there is not teosinte data, we cannot distinguish between high- and lowland adaptation.
-%Surprisingly, SNPs identified as targets of parallel adaptation in Mexico and South America more frequently show segregation patterns consistent with lowland adaptation (62 SNPs) than highland adaptation (5 SNPs).
 %70\% and 39.5\% of SNPs showed consistent patterns in the PHS tests in high- and lowland populations, respectively.
 
 %Without data from \textit{parviglumis}, it is very difficult to decipher whether a segregation pattern is consistent with high- or lowland parallel adaptation.  
@@ -246,15 +245,15 @@ If the selection against the allele is even weaker ($s_m=10^{-4}$) it is still e
 However, shorter distances could be transited by very weakly deleterious alleles --
 if the distance between highland patches $R$ is 1,000 km (or if $\sigma$ is four times larger)
 then with $s_m=10^{-4}$ the time $\Tmig$ is about 1.6 generations --
-so, adaptation by migration is certain.
-This is strongly dependent on the small value of the deleterious selection coefficient: 
-with even $s_m=10^{-3}$ it is still $2.3 \times 10^6$ generations.
+so, adaptation by migration is certain in the known timeframe of maize diffusion.
+This is strongly dependent on the magnitude of the deleterious selection coefficient: for example,
+with $s_m=10^{-3}$, $\Tmig$ is $2.3 \times 10^6$ generations.
 
-This suggests that if the highland-adaptive mutations are even weakly deleterious in the lowlands,
+This suggests that even when highland-adaptive mutations are weakly deleterious in the lowlands,
 gene flow will not result in shared adaptations.
-The situation where they are neutral in the lowlands is harder to model,
+The situation where these are neutral in the lowlands is more difficult to model,
 but we can make some informed guesses.
-Maize in the Andean highlands, say, would have inherited a neutral, highland-adapted allele from the Mexican highlands 
+Maize in the Andean highlands, say, would have inherited a lowland-neutral, highland-adapted allele from the Mexican highlands 
 if some of the ancestral lineages along which the modern Andean plants have inherited at that locus trace back to the Mexican highlands 
 at some point since the appearance of the allele in Mexico.
 If the allele is neutral in the lowlands, we can treat this as a neutral process,
@@ -262,10 +261,9 @@ using the framework of coalescent theory \citep{wakeley2005coalescent}.
 To do this, we need to follow \emph{all} of the $N \approx 2.5 \times 10^6$ lineages backwards --
 but, these quickly coalesce to many fewer -- to $m$ lineages
 in approximately $\sum_{k=m}^N \frac{2N}{\xi^2 k(k+1)} \approx 1.25 \times 10^5/m$ generations;
-leaving about 1000 lineages after 100 generations.
-These lineages are starting to be spread out over a larger area.
-The displacement of a lineage after $m$ generations has variance $m \sigma^2$ and perhaps approximately Gaussian;
-if we assume that $n$ of them are independent, and $Z_n$ is the distance to the furthest one,
+leaving about 1000 lineages after 100 generations that are spread over a larger area.
+The displacement of a lineage after $m$ generations has variance $m \sigma^2$ and is approximately Gaussian;
+if we assume that $n$ lineages are independent, and $Z_n$ is the distance to the furthest lineage,
 then $\P\{ Z_n / \sqrt{m \sigma^2} \le x /\sqrt{2 \log n} + \sqrt{2 \log n} - (1/2) (\log \log n + \log 4 \pi)/\sqrt{2 \log n} \} \approx \exp( - e^{-x} )$
 \citep{berman1964limit}.
 With $n=1000$, the typical distance to the furthest displacement is after $m=1000$ generations is $\sqrt{2 \sigma^2 m \log n} 212$km;
