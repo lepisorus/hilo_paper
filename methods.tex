@@ -7,7 +7,7 @@
    \includegraphics[width=0.8\textwidth]{fig/Fig2}
    \renewcommand{\baselinestretch}{0.9}
    \vspace{-3mm}
-   \caption{(A) Sampling locations of landraces.  Red, blue, yellow and light blue dots represent Mexico lowland, Mexico highland, SA lowland and SA highland populations, respectively.  (B) Results of {\sf STRUCTURE} analysis of the maizeSNP50 SNPs with $K=2\sim4$.  The top panel shows the altitude, ranging from 0 to 4,000 m on the \emph{y}-axes.  The colors in $K=4$ correspond to those in panel (A).    }
+   \caption{(A) Sampling locations of landraces.  Red, blue, yellow and light blue dots represent Mexico lowland, Mexico highland, S. America lowland and S. America highland populations, respectively.  (B) Results of {\sf STRUCTURE} analysis of the maizeSNP50 SNPs with $K=2\sim4$.  The top panel shows the altitude, ranging from 0 to 4,000 m on the \emph{y}-axes.  The colors in $K=4$ correspond to those in panel (A).    }
 \vspace{-6mm}
     \label{map}
   \end{center}
@@ -18,13 +18,9 @@
 \section*{Materials and Methods}
 
 \subsection*{Materials and DNA extraction}
-We included one individual from each of 94 open-pollinated landrace maize accessions from high and low elevation sites in Mexico and South America (Table S1).  Accessions were provided by the USDA germplasm repository or kindly donated by Major Goodman (North Carolina State University).  
-Sampling locations are shown in Figure~\ref{map}A (see also table S1).  
-%shouldn't we put table refs in case these change?
-%
-% You mean supp table?  I don't know how to refer to a table in a different tex file. - ST
-% That's the cool thing, you just use the lable like any table, as these all end up in the main file!
-Landraces sampled from altitudes $<$1,700 m were considered lowland, while accessions from $>$1,700 m were considered highland (table S1).  
+We included one individual from each of 94 open-pollinated landrace maize accessions from high and low elevation sites in Mexico and South America (Table~S1).  Accessions were provided by the USDA germplasm repository or kindly donated by Major Goodman (North Carolina State University).  
+Sampling locations are shown in Figure~\ref{map}A (see also Table~S1).  
+Landraces sampled from altitudes $<$1,700 m were considered lowland, while accessions from $>$1,700 m were considered highland (Table~S1).  
 Seeds were germinated on filter paper following fungicide treatment and grown in standard potting mix.  Leaf tips were harvested from plants at the five leaf stage.  Following storage at $-80{}^\circ$C overnight, leaf tips were lyophilized for 48 hours.  Tissue was then homogenized with a Mini-Beadbeater-8 (BioSpec Products, Inc., Bartlesville, OK, USA).  DNA was extracted using a modified CTAB protocol \cite[]{CTAB}.  The quality of DNA was ensured using methods described in \cite{vanHeerwaarden_2011_21189301}.
 
 \subsection*{SNP data}
@@ -39,17 +35,17 @@ SNPs \cite[]{Ganal_2011_22174790}.  SNPs were clustered with the default algorit
 Clustering for each SNP was then visually inspected and manually adjusted.  
 These data are referred to as "MaizeSNP50" hereafter.  
 MaizeSNP50 data have high reproducibility and a low proportion of missing data but are subject to ascertainment bias. 
-This array contains SNPs discovered in five ascertainment schemes \cite[]{Ganal_2011_22174790}; however, the vast majority of SNPs come from two panels: the Syngenta set (14,810 SNPs), derived from polymorphisms distinguishing the parents of the IBM mapping population (the maize lines B73 and Mo17), and the Panzea set, including 40,594 SNPs identified during sequencing of the 25 parents of the NAM population.  
+This array contains SNPs discovered in five ascertainment schemes \cite[]{Ganal_2011_22174790}; however, the vast majority of SNPs come from two panels: the Syngenta set (14,810 SNPs), derived from polymorphisms distinguishing the parents of the IBM population (the maize lines B73 and Mo17), and the Panzea set, including 40,594 SNPs identified during sequencing of the 25 parents of the NAM population.  
 
 The second data set was generated utilizing high-throughput Illumina sequencing data in a method referred to as \underline{g}enotyping-\underline{b}y-\underline{s}equencing (GBS).  \textcolor{red}{Kelly is up for details.}
 Average coverage was relatively low \textcolor{red}{(XXX)}, likely resulting in heterozygotes often being miscalled as homozygotes.  However, this data set is relatively free from ascertainment bias.       
 %please fill in X
-GBS data were obtained for a subset of 87 of the landrace accessions (Supp. Table 1). 
+GBS data were obtained for a subset of 87 of the landrace accessions (Table~S1). 
 
 To assess data quality, we compared genotypes at the 7,197 SNPs that overlap between the MaizeSNP50 and GBS data sets. 
 Excluding missing data, we compared 229,937 genotypes. 
 While only 0.8\% of 173,670 homozygous loci in the MaizeSNP50 data set differed from GBS genotypes, 88.6\% of 56,267 MaizeSNP50 heterozygotes had different genotypes in the GBS data, being homozygous in nearly all cases. 
-Despite an extremely high heterozygote error rate, our GBS data should be informative given the high correlation in allele frequencies between data sets ($r=0.89$; Supp fig. 2) and a lack of major allele or reference bias (data not shown).
+Despite an extremely high heterozygote error rate, our GBS data should be informative given the high correlation in allele frequencies between data sets ($r=0.89$; Figure~SX \st{change after finishing intro and results}) and a lack of major allele or reference bias (data not shown).
 
 \subsection*{Structure analysis}
 We performed a {\sf STRUCTURE} analysis \cite[]{Pritchard_2000_10835412,Falush_2003_12930761} using  synonymous and noncoding SNPs from the MaizeSNP50 data. 
@@ -107,7 +103,7 @@ The final model is for the Mexico lowland, SA lowland and SA highland population
    \includegraphics[width=0.5\textwidth]{fig/Fig4}
    \renewcommand{\baselinestretch}{0.9}
    \vspace{-3mm}
-   \caption{Observed and expected joint distributions of minor allele frequencies in low- and highland populations in (A) Mexico and (B) South America. }
+   \caption{Observed and expected joint distributions of minor allele frequencies in low- and highland populations in (A) Mexico and (B) S. America. }
 \vspace{-6mm}
     \label{JFD}
   \end{center}
@@ -125,7 +121,7 @@ For both Models IA and IB, we inferred three parameters ($\alpha$, $\beta$ and $
 
 \subsection*{Differentiation between low- and highland populations}
 We used our inferred demographic model to generate a null distribution of $F_{ST}$ via simulation using the software {\sf ms} \cite[]{Hudson_2002_11847089}.   
-The command line options for {\sf ms} are provided in Table S2.  Generating the null distribution of differentiation for the MaizeSNP50 data requires accounting for ascertainment bias. Evaluation of genetic clustering in our data (not shown) coincides with previous work \cite[]{Hufford_2012_22660546} in suggesting that the two lines most important in the ascertainment panel are most closely related to Mexican lowland maize.  
+The command line options for {\sf ms} are provided in Table~S4.  Generating the null distribution of differentiation for the MaizeSNP50 data requires accounting for ascertainment bias. Evaluation of genetic clustering in our data (not shown) coincides with previous work \cite[]{Hufford_2012_22660546} in suggesting that the two lines most important in the ascertainment panel are most closely related to Mexican lowland maize.  
 We thus added two additional individuals to the Mexican lowland population and generated our null distribution using only SNPs for which the two individuals had different alleles. For model IA in South America we added two individuals at time $t_F$ to the ancestral population of the South American low- and highland populations because the Mexican lowland population was not incorporated into this model. For each combination of sample sizes in low- and highland populations, we generated $10^7$ $F_{ST}$ values and used these as a null distribution in order to evaluate our data.   We calculated $F_{ST}$ values for all SNPs that had $\geq10$ individuals with no missing data in all four populations and showed no departure from HWE at the 0.5\% (GBS) or 5\% (MaizeSNP50) level. 
 
 \subsection*{Haplotype scoring test}
@@ -158,10 +154,11 @@ Z_{ijx} = \frac{ d_{ijx} - \bar{d_{ij}} }{ \sigma_{ij} }
 \end{equation}
 
 \noindent where $d_{ijx}$ is the genetic distance over which individuals $i$ and $j$ are identical surrounding position $x$, $\bar{d_{ij}}$ is the genome-wide mean of distances over which individuals are identical, and $\sigma_{ij}$ is the standard deviation of the distribution of distances.  
-The \emph{P}-value for an allele $A$ with frequency $p$ at position $x$ was calculated such that Pr($PHA_{xA}\leq PHA_{null|p}$), where $PHA_{null|p}$ are the PHS values for all alleles with frequency $p$ across the genome. 
+The \emph{P}-value for an allele $A$ with frequency $p$ at position $x$ was calculated such that Pr($PHS_{xA}\leq PHS_{null|p}$), where $PHS_{null|p}$ are the PHS values for all alleles with frequency $p$ across the genome. 
 \plr{Do you mean that the $P$-value for allele $x$ is the proportion of alleles of the same frequency genome-wide that have a larger PHS value? (and, should be PHS, not PHA?)}
+\st{You are right. PHA is a typo.  Corrected.}
 
-Genetic distances were obtained from the IBM mapping population \cite[]{Ganal_2011_22174790}.  
+Genetic distances were obtained from the IBM population \cite[]{Ganal_2011_22174790}.  
 While genetic positions were initially only available for the MaizeSNP50 data set, we fit genetic (cM) and physical (bp) distances to a tenth degree polynomial curve, and calculated cM for all SNPs.
 %MBH:  May need to think about rerunning this given the errors in Gerke's genetic map. 
  
