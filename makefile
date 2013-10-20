@@ -1,4 +1,4 @@
-.PHONY : clean
+.PHONY : clean gh-pages
 
 clean : 
 	rm -f *.aux *.log *.bbl *.blg
@@ -10,6 +10,11 @@ PDFFIGS = $(wildcard fig/*.pdf)
 SVGFIGS = $(patsubst %.pdf,%.svg,$(PDFFIGS))
 TEXFILES = HighLow.tex intro.tex methods.tex results.tex demographic-model-appendix.tex 
 BIBFILES = MZpara1.bib MZpara2.bib plr-hilo.bib
+
+gh-pages : HighLow.xhtml
+	git rebase master
+	rm HighLow.xhtml
+	make HighLow.xhtml
 
 HighLow.html : $(TEXFILES) $(SVGFIGS) $(BIBFILES)
 	rm -f LaTeXML.cache
