@@ -236,13 +236,13 @@ at the parameter values above.
 \subsection{Results}
 
 Iterating the generating function above finds the probability of establishment as a function of distance along the cline.
-This is shown in figure \ref{fig:prob_estab}.
+This is shown in figure \ref{sfig:prob_estab}.
 Note that the approximation $2s$ divided by the variance in offspring number is pretty darn close.
 
 \begin{figure}[ht!!]
   \begin{center}
-    \includegraphics{prob-estab-62}
-    \includegraphics{prob-estab-500}
+    \includegraphics{fig/prob-estab-62}
+    \includegraphics{fig/prob-estab-500}
   \end{center}
   \caption{
   \plr{make this look better}
@@ -263,7 +263,7 @@ The rate of appearance of mutant alleles is a Poisson process,
 and we can assume that each is successful or not independently,
 so the time until the new mutant appears and fixes is exponentially distributed,
 with rate equal to the mutation rate multiplied by the probability of establishment integrated over the population.
-Referring to figure~\ref{fig:prob_estab},
+Referring to figure~\ref{sfig:prob_estab},
 we see that this is pretty close to ( (area of high altitude) $+$ ($1/2$ area of altitudial gradient) ) $\times$ (population density) $\times$ (prob of establishment at high altitude).
 
 Let $A$ denote (area of high altitude) plus ($1/2$ area of altitudial gradient).
