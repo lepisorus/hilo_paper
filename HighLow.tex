@@ -33,6 +33,24 @@
 \newcommand{\Tmig}{T_{\text{mig}}}
 
 
+%editing commands (please leave in for now)
+\newcommand{\jri}[1]{\textcolor{blue}{ \emph{\scriptsize  #1}} }
+\newcommand{\st}[1]{\textcolor{red}{#1}}
+\newcommand{\comst}[1]{\textcolor{red}{ \em{\scriptsize  #1}} }
+\definecolor{mattgreen} {rgb} {0,0.6,0}
+\newcommand{\mbh}[1]{\textcolor{mattgreen}{ \em{\scriptsize  #1}} }
+\definecolor{peterpurple}{rgb}{.6,0,.6}
+\newcommand{\plr}[1]{\textcolor{peterpurple}{ \emph{\scriptsize (#1)}} }
+
+%%%
+% for latexml
+\usepackage{latexml}
+
+% only do this stuff if latexml is not parsing the document
+\iflatexml
+  \renewcommand\sfbf[1]{\sf{\bfseries#1}}
+\else 
+% do this stuff:
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
@@ -45,15 +63,6 @@
 	\fancyhf{}
 }
 
-%editing commands (please leave in for now)
-\newcommand{\jri}[1]{\textcolor{blue}{ \emph{\scriptsize  #1}} }
-\newcommand{\st}[1]{\textcolor{red}{#1}}
-\newcommand{\comst}[1]{\textcolor{red}{ \em{\scriptsize  #1}} }
-\definecolor{mattgreen} {rgb} {0,0.6,0}
-\newcommand{\mbh}[1]{\textcolor{mattgreen}{ \em{\scriptsize  #1}} }
-\definecolor{peterpurple}{rgb}{.6,0,.6}
-\newcommand{\plr}[1]{\textcolor{peterpurple}{ \emph{\scriptsize (#1)}} }
-
 \usepackage[normalem]{ulem}
 \def\dt{\bgroup
  \markoverwith{\lower-0.2ex\hbox
@@ -66,6 +75,8 @@
  {\kern-.03em\vbox{\hrule width.2em\kern0.45ex\hrule}\kern-.03em}}%
  \ULon}
 \MakeRobust\dt
+% ok latexml pay attention again
+\fi
 
 %%%%
 
