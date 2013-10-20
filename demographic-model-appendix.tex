@@ -312,25 +312,25 @@ At this upper bound, we would have $5 \le \sigma/\sqrt{2s_m} \le 175$ km,
 which is not very different.
 This makes the exponential term very small since $R$ is on the order of 1,000 km.
 
-Taking $\sigma=2$ km, we then compute that 
+Taking $\sigma=2$ km
 % rho <- 5000; sb <- .01; sm <- 10^(-(1:4)); xisq <- 50; sigma <- 2
 % sapply( 1000*(1:4), function (R) rho * sb * sqrt(2*sm) / (2 *  xisq) * exp(- sqrt(2*sm)*R/sigma ) )
-if $s_m = 10^{-4}$ (very weak selection in the lowlands), then for $R=1,000$ km, the migration rate is $\migrate \le 10^{-5}$,
+and $s_m = 10^{-4}$ (very weak selection in the lowlands), then for $R=1,000$ km, the migration rate is $\migrate \le 10^{-5}$,
 i.e.\ it would take on the order of 100,000 generations (years) to get a successful migrant only 1,000 km away,
 under this model of undirected, diffusive dispersal.
 For larger $s_m$, the migration rate is much smaller.
 
 
-%%%%%%%%%%%%
-\section{Conclusion}
-
-It seems unlikely that any alleles that are adaptive in the highlands and deleterious at all in the lowlands
-would have transited central America by undirected (diffusive) sharing of seed.
-The conclusions could change if we drastically underestimate the rate of very long distance sharing of seed,
-e.g.\ if sharing across hundreds of kilometers was common at some point.
-
-Both calculations are very pessimistic about the chance of shared single-base changes through either migration or independent mutation.
-However, independent mutations could be expected in kilobase-size targets,
-suggesting there might be signal for genes that share adaptive changes.
+% %%%%%%%%%%%%
+% \section{Conclusion}
+% 
+% It seems unlikely that any alleles that are adaptive in the highlands and deleterious at all in the lowlands
+% would have transited central America by undirected (diffusive) sharing of seed.
+% The conclusions could change if we drastically underestimate the rate of very long distance sharing of seed,
+% e.g.\ if sharing across hundreds of kilometers was common at some point.
+% 
+% Both calculations are very pessimistic about the chance of shared single-base changes through either migration or independent mutation.
+% However, independent mutations could be expected in kilobase-size targets,
+% suggesting there might be signal for genes that share adaptive changes.
 
 
