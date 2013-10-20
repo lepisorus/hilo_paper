@@ -1,5 +1,10 @@
 .PHONY : clean gh-pages
 
+## TO-DO:
+# rejigger things so that the gh-pages branch does not have the primary files in
+# i.e. the first step in make gh-pages is to checkout the relevant files from the master branch
+# ideally parsing the .tex files to figure out what the prerequisites are (does latexml do this?)
+
 clean : 
 	rm -f *.aux *.log *.bbl *.blg
 	rm -f x1.png x2.png x3.png x4.png x5.png x6.png x7.png x8.png x9.png x10.png 
