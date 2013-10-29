@@ -79,12 +79,8 @@ Comparing our empirical $F_{ST}$ values to the null expectation simulated under 
    \includegraphics[width=0.4\textwidth]{fig/Fig6}
    \renewcommand{\baselinestretch}{0.9}
    \vspace{-3mm}
-   \caption{Scatter plot of $F_{ST}$ $P$-values in Mexico ($P_M$ on $x$-axes) and South America ($P_S$ on $y$-axes).  $P_M$ and $P_S$ are scaled by $-\log_{10}$.  
-   \plr{I think you mean these are $-\log_{10} P$-values?}
-   \st{yes}
-   \plr{It might be nice to label this figure with the numbers in the text, so we can see how many SNPs fall in each category.}
-   \st{you mean the numbers of SNPs? How about this?}
-   Red, blue, orange and gray dots represents SNPs showing significance in both Mexico and S. America, only in Mexico, only in S. America, respectively (see text for details).
+   \caption{Scatter plot of $-\log_10 P$-values of observed $F_{ST}$ values, based on simulation from \plr{which model}, in Mexico ($P_M$ on $x$-axes) and South America ($P_S$ on $y$-axes).  
+   Red, blue, orange and gray dots represents SNPs showing significance in both Mexico and South America, only in Mexico, only in South America, respectively (see text for details).
    The number of SNPs in each category is shown in the same color of dots.} 
 \vspace{-6mm}
     \label{PvDist}
@@ -99,9 +95,10 @@ Comparing our empirical $F_{ST}$ values to the null expectation simulated under 
 \subsubsection{Adaptation via mutation versus standing variation}
 
 In order to characterize patterns of adaptation, we first determined whether SNPs showing high differentiation between the lowlands and the highlands arose primarily through new mutations or standing genetic variation.  
-We found that these putatively adaptive variants in both Mexico and S. America tended to segregate in lowland populations more often than other SNPs (84.6\% vs. 74.8\% in Mexico, Fisher's exact test (FET) {$P < 10^{-11}$ and 87.3\% vs 81.8\% in South America,  $P< 10^{-3}$).  
+We found that these putatively adaptive variants in both Mexico and South America tended to segregate in lowland populations more often than other SNPs (84.6\% vs. 74.8\% in Mexico, Fisher's exact test (FET) {$P < 10^{-11}$ and 87.3\% vs 81.8\% in South America,  $P< 10^{-3}$).  
 \plr{``segregate in'' -- are these percentages of SNPs that are polymorphic (as opposed to fixed for either allele) in the relevant population?}
 \st{yes. No fixed allele between Mexico and S. America}
+\plr{I don't think I understand.  I'd expect SNPs with high frequency differences between high and lowland to have different chances of polymorphism in lowland populations, somehow.  Why is this meaningful?}
 We extended this analysis to standing variation in \emph{parviglumis} by retrieving SNP data from 14 \emph{parviglumis} inbred lines included in the Hapmap v2 data set, using only SNPs with $n\geq10$ \cite[]{Chia_2012_22660545,Hufford_2012_22660546}.  
 Again we found that putatively adaptive variants were more likely to be polymorphic in \emph{parviglumis} (81.1\% vs. 72.1\% in Mexico, FET {$P < 10^{-6}$ and 81.2\% vs 72.7\% in South America,  $P< 10^{-4}$).  
 
@@ -113,7 +110,7 @@ Our result is consistent with this view.
 In the case of maize, the divergence events occurred very recently \cite[]{Piperno_2006_69,Perry_2006_16511492,Grobman_2012_22307642}.
 Thus, it would be unlikely that adaptation via \emph{de novo} mutations frequently occur, which requires a longer waiting time until new beneficial mutations are arisen.
 Theoretically, the situation of maize would be consistent with standing variation scenario.
-Selection from standing variation are common when scaled mutation rate (the product of effective population size, mutation rate and target size), $\Theta\geq1$ and/or scaled selection coefficient ($Ns$) is enough large \cite[]{Hermisson_2005_15716498}.
+Selection from standing variation is expected to be common when the scaled mutation rate (the product of effective population size, mutation rate and target size), $\Theta\geq1$, as long as the scaled selection coefficient (product of effective population size and seleciton coefficient) $Ns$ is large enough \cite[]{Hermisson_2005_15716498}.
 Maize should have large $\Theta$ and $Ns$ because the effective population size is relatively large (synonymous nucleotide diversity = 0.014, \cite[\emph{e.g.,} ][]{Tenaillon_2004_15014173,Wright_2005_15919994,Ross-Ibarra_2009_19153259}).
 
 %Sho: please add a sentence or two here on other empirical results on standing var (including the above). We also need a sentence or two here on why we expect this based on theory. I think we drop the domestication comparison
@@ -172,12 +169,13 @@ Despite similar phenotypes and environments, we thus see little evidence for par
 Our result of few parallel adaptation in maize contrasts with data from humans \citep{Tennessen_2011_21698142} showing frequent evidence of selection on the same genes in multiple pairs of tropical and temperate human populations.  
 It is common in maize and human that the majority of adaptive variants to high altitudes would be derived from standing variation \cite[]{Tennessen_2011_21698142}.
 On the other hand, one difference between these two species is an effective population size.
-The effective size of maize (on the oder of $10^5$) is an order of magnitude larger than that in human \cite[]{Takahata_1997_9114074}.
+The effective size of maize (on the order of $10^5$) is an order of magnitude larger than that in human \cite[]{Takahata_1997_9114074}.
 Human would have less potential to possess genetic variants as a source of adaptation, so it could be more likely that the same variants are selected in multiple subpopulations (as long as $s$ is enough large and initial frequency is, for example, $>0.1$).
 One the other hand, maize would maintain a larger amount of variants in the ancestral lowland population.
 In this case, if genetic variants have almost the same phenotypic effect, the each highland population might pick up one of them randomly.
 Or if Mexican and S. American highlands have slightly different climate condition, it is feasible that different variants are selected.
 The target size of mutations can also increase the variants for adaptation, but there is no data of this size in maize and human.
+\plr{You are discussing adaptation from standing variation; what about from new mutation?  This wouldn't require postulating lots of equivalent variants?}
 
 Indeed, there are lines of evidence of adaptation from multiple standing variants in maize. % more examples?
 One example is \emph{grassy tillers 1} (\emph{gt1}) genes in maize \cite[]{Wills_2013_23825971}.
@@ -256,11 +254,10 @@ This suggests that even when highland-adaptive mutations are weakly deleterious 
 gene flow will not result in shared adaptations.
 The situation where these are neutral in the lowlands is more difficult to model,
 but we can make some informed guesses.
-Maize in the Andean highlands, say, would have inherited a lowland-neutral, highland-adapted allele from the Mexican highlands 
-if some of the ancestral lineages along which the modern Andean plants have inherited at that locus trace back to the Mexican highlands 
-at some point since the appearance of the allele in Mexico.
-%MBH:  the previous sentence is pretty convoluted...can this be clarified/simplified?
-If the allele is neutral in the lowlands, we can treat this as a neutral process,
+For maize in the Andean highlands to have inherited a highland-adapted allele from the Mexican highlands,
+those Andean plants must be directly descended from highland Mexican plants that lived more recently than the appearance of the adaptive allele.
+In other words, the ancestral lineages along which the modern Andean plants have inherited at that locus must trace back to the Mexican highlands.
+If the allele is neutral in the lowlands, we can treat the movement of these lineages as a neutral process,
 using the framework of coalescent theory \citep{wakeley2005coalescent}.
 To do this, we need to follow \emph{all} of the $N \approx 2.5 \times 10^6$ lineages backwards; these quickly coalesce to fewer $m$ lineages
 in approximately $\sum_{k=m}^N \frac{2N}{\xi^2 k(k+1)} \approx 1.25 \times 10^5/m$ generations,
@@ -269,7 +266,7 @@ The displacement of a lineage after $m$ generations has variance $m \sigma^2$ an
 If we assume that $n$ lineages are independent, and $Z_n$ is the distance to the furthest lineage,
 then $\P\{ Z_n / \sqrt{m \sigma^2} \le x /\sqrt{2 \log n} + \sqrt{2 \log n} - (1/2) (\log \log n + \log 4 \pi)/\sqrt{2 \log n} \} \approx \exp( - e^{-x} )$
 \citep{berman1964limit}.
-With $n=1000$, the typical distance to the furthest displacement after $m=1000$ generations is $\sqrt{2 \sigma^2 m \log n} 212$km;
+With $n=1000$, the typical distance to the furthest displacement after $m=1000$ generations is $\sqrt{2 \sigma^2 m \log n} \approx 212$km;
 after $m=6000$ generations it is $\approx 518$km.
 In either case, the chance that the maximum is larger than 1,000km after 6,000 generations is well less than $10^{-4}$.
 Of course, this is under an equilibrium population model; and maize reached the Andean highlands only around 4,000 years ago.
