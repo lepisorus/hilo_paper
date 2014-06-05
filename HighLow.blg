@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2012)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: HighLow.aux
+The style file: geneticsT2.bst
+Database file #1: MZpara1.bib
+Database file #2: MZpara2.bib
+Database file #3: plr-hilo.bib
+You've used 58 entries,
+            2295 wiz_defined-function locations,
+            909 strings with 19317 characters,
+and the built_in function-call counts, 30169 in all, are:
+= -- 3295
+> -- 1758
+< -- 22
++ -- 676
+- -- 653
+* -- 2575
+:= -- 5387
+add.period$ -- 119
+call.type$ -- 58
+change.case$ -- 730
+chr.to.int$ -- 57
+cite$ -- 58
+duplicate$ -- 774
+empty$ -- 1578
+format.name$ -- 721
+if$ -- 6001
+int.to.chr$ -- 2
+int.to.str$ -- 0
+missing$ -- 61
+newline$ -- 295
+num.names$ -- 184
+pop$ -- 613
+preamble$ -- 1
+purify$ -- 733
+quote$ -- 0
+skip$ -- 569
+stack$ -- 0
+substring$ -- 1954
+swap$ -- 22
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 342
+warning$ -- 0
+while$ -- 172
+width$ -- 0
+write$ -- 758
