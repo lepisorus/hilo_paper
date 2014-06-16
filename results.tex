@@ -43,10 +43,10 @@ Most landraces were assigned to groups consistent with \emph{a priori} populatio
 \subsection*{Population differentiation under inferred demography}
 
 To provide a null expectation for allele frequency differentiation, we used the joint site frequency distribution (JFD) of lowland and highland populations to estimate parameters of two demographic models (Figure~\ref{model}; see Materials and Methods for details) using the maximum likelihood method implemented in {\sf dadi} \citep{Gutenkunst_2009_19851460}.  
-All models incorporate domestication bottleneck \cite[]{Wright_2005_15919994} and population differentiation between lowland and highland populations.
-Model IA is common between Mexican and S. America populations.
-Model IB is specific to Mexican populations, into which we incorporated the admixture from \emph{mexicana} to highlands.
-Model II is specific to S. America, which includes S. American populations and Mexican lowlands.  
+All models incorporate a domestication bottleneck \cite[]{Wright_2005_15919994} and population differentiation between lowland and highland populations.
+Model IA is appropriate for both Mexican and S. America populations.
+Model IB is specific to Mexican populations, into which we incorporated admixture from \emph{mexicana} into highland maize.
+Model II is specific to S. America and includes S. American populations and maize from the Mexican lowlands.  
 We introduced the last model to simulate SNPs with ascertainment bias because the discovery panel included individuals most closely related to accessions in the Mexican lowlands (see Materials and Methods for details).
 
 Estimated parameter values are listed in Table~\ref{param}; 
@@ -54,15 +54,15 @@ while the observed and expected JFDs were quite similar for both models,
 residuals indicated an excess of rare variants in the observed JFDs in all cases (Figure~\ref{JFD}). 
 Under both models IA and IB,  we found expansion in the highland population in Mexico to be unlikely, but a strong bottleneck followed by population expansion is supported in S. American maize in both models IA and II.  
 The likelihood value of model IB was higher than the likelihood of model IA by 850 units of log-likelihood (Table~\ref{param}), 
-consistent with analyses suggesting that introgression from \textit{mexicana} played a significant role during the spread of maize into the Mexican highlands \citep{Profford_2013}. 
+consistent with analyses suggesting that introgression from \textit{mexicana} played a significant role during the spread of maize into the Mexican highlands \cite{Profford_2013}. 
 
 In addition to the parameters listed in Figure~\ref{model}, we investigated the impact of varying the domestication bottleneck size ($N_B$).  
 Surprisingly, $N_B$ was estimated to be equal to $N_C$, the population size at the end of the bottleneck, and the likelihood of $N_B<N_C$ was much smaller than for alternative parameterizations (Table~\ref{param}, Table~S2) 
 
-This result appears to contradict earlier work using sequences from coding regions to infer a maize domestication bottleneck \cite[]{Eyre-Walker_1998_9539756,Tenaillon_2004_15014173,Wright_2005_15919994}.  One explanation for this discrepancy may be the action of purifying selection in coding regions, which could act to retard the recovery of diversity and lead to estimates of a stronger bottleneck \cite{Hufford_2012_22660546}.  Consistent with \citet{Hufford_2012_22660546}, our genome-wide SNP data show an excess of rare variants relative to expectations under \cite{Wright_2005_15919994}'s bottleneck model (Figure~\ref{JFD}), suggesting a domestication model involving a weaker bottleneck or more rapid population growth.
+This result appears to contradict earlier work using sequences from coding regions to infer a maize domestication bottleneck \cite[]{Eyre-Walker_1998_9539756,Tenaillon_2004_15014173,Wright_2005_15919994}.  One explanation for this discrepancy may be the action of purifying selection in coding regions, which could retard the recovery of diversity and lead to estimates of a stronger bottleneck \citep{Hufford_2012_22660546}.  Consistent with \citet{Hufford_2012_22660546}, our genome-wide SNP data show an excess of rare variants relative to expectations under \cite{Wright_2005_15919994}'s bottleneck model (Figure~\ref{JFD}), suggesting a domestication model involving a weaker bottleneck or more rapid population growth.
 % Peter does more rapid pop growth make sense? I don't think it's really more rapid, I think it's just that the lack of rare variants in coding regions leads to over-estimation of bneck strength. Is that plausible (graham seemed skeptical when I mentioned this).
 
-Comparing our empirical $F_{ST}$ values to the null expectation simulated under our demographic models allowed us to identify significantly differentiated SNPs between low- and highland populations. In all cases, observed $F_{ST}$ values were quite similar to those generated under our null models (Figure~\ref{FstDist}A), and model choice -- including the parameterization of the domestication bottleneck -- had little impact on the distribution of estimated p-values (Figure~S4). We chose $P<0.01$ as an arbitrary cut-off for significant differentiation between low- and highland populations, and identified 1,040 SNPs in Mexico (1,040/76,989=0.0135) and 756 SNPs in South America (756/63,160=0.0120) as outliers.
+Comparisons of our empirical $F_{ST}$ values to the null expectation simulated under our demographic models allowed us to identify significantly differentiated SNPs between low- and highland populations. In all cases, observed $F_{ST}$ values were quite similar to those generated under our null models (Figure~\ref{FstDist}A), and model choice -- including the parameterization of the domestication bottleneck -- had little impact on the distribution of estimated p-values (Figure~S4). We chose $P<0.01$ as an arbitrary cut-off for significant differentiation between low- and highland populations, and identified 1,040 SNPs in Mexico (1,040/76,989=0.0135) and 756 SNPs in South America (756/63,160=0.0120) as outliers.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
 \begin{figure}[tb]   
@@ -93,13 +93,9 @@ We found that these putatively adaptive variants in both Mexico and South Americ
 \plr{I don't think I understand.  I'd expect SNPs with high frequency differences between high and lowland to have different chances of polymorphism in lowland populations, somehow.  Why is this meaningful?}
 We extended this analysis to standing variation in \emph{parviglumis} by retrieving SNP data from 14 \emph{parviglumis} inbred lines included in the Hapmap v2 data set, using only SNPs with $n\geq10$ \cite[]{Chia_2012_22660545,Hufford_2012_22660546}.  
 Again we found that putatively adaptive variants were more likely to be polymorphic in \emph{parviglumis} (81.1\% vs. 72.1\% in Mexico, FET {$P < 10^{-6}$ and 81.2\% vs 72.7\% in South America,  $P< 10^{-4}$).  
-
-\st{add para}
-These results suggest that maize adaptation to high altitudes has largely made use of standing genetic variation. 
-Recently, examples of adaptation from standing variation have been increased \cite[Reviewed in ][]{Barrett_2008_18006185,Messer_2013_24075201}, and
-genome scan studies indicated that soft sweeps are plentiful in Drosophila \cite[]{Garud_2013_ArXiv} and human \cite[]{Turchin_2012_22902787,Peter_2012_23071458}.
-Our result is consistent with this view.
-In the case of maize, the divergence events occurred very recently \cite[]{Piperno_2006_69,Perry_2006_16511492,Grobman_2012_22307642}.
+These results suggest that maize adaptation to high altitude has largely made use of standing genetic variation. 
+Recent examples of adaptation from standing variation \cite[Reviewed in ][]{Barrett_2008_18006185,Messer_2013_24075201} and detection of soft selective sweeps in Drosophila \cite[]{Garud_2013_ArXiv} and humans \cite[]{Turchin_2012_22902787,Peter_2012_23071458} suggest this may be common form of adaptation.
+In the case of maize, divergence events occurred very recently \cite[]{Piperno_2006_69,Perry_2006_16511492,Grobman_2012_22307642}.
 Thus, it would be unlikely that adaptation via \emph{de novo} mutations frequently occur, which requires a longer waiting time until new beneficial mutations are arisen.
 Theoretically, the situation of maize would be consistent with standing variation scenario.
 Selection from standing variation is expected to be common when the scaled mutation rate (the product of effective population size, mutation rate and target size), $\Theta\geq1$, as long as the scaled selection coefficient (product of effective population size and seleciton coefficient) $Ns$ is large enough \cite[]{Hermisson_2005_15716498}.
