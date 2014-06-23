@@ -2,7 +2,6 @@
 \section{Details of the demographic model}
 \label{apx:demographic_model}
 
-
 Throughout we use in many ways the {\em branching process approximation} --
 if an allele is locally rare, then for at least a few generations,
 the fates of each offspring are nearly independent.
@@ -12,14 +11,13 @@ On the other hand, if the allele is advantageous,
 it will either die out or become locally common, with its fate determined in the first few generations.
 If the number of offspring of an individual with this allele is the random variable $X$, 
 with mean $\E[X] = 1+s$ (selective advantage $s>0$), variance $\var[X]=\xi^2$, and $\P\{X=0\}>0$ (some chance of leaving no offspring),
-then the probability of local nonextinction $p_*$ is approximately $p_* \approx 2s/\xi^2$ to second order in $s$.
+then the probability of local nonextinction $p_*$ is approximately $p_* \approx 2s/\xi^2$ to a second order in $s$.
 The precise value can be found by defining the generating function $\Phi(u) = \E[u^X]$; 
 the probability of local nonextinction $p_*$ is the minimal solution to $\Phi(1-u) = 1-u$.
 (This can be seen because: $1-p_*$ is the probability that an individual's family dies out;
 this is equal to the probability that the families of all that individuals' children die out;
 since each child's family behaves independently, if the individual has $x$ offspring, this is equal to $(1-p_*)^x$;
 and $\Phi(1-p_*) = \E[(1-p_*)^X]$.)
-
 
 If the selective advantage ($s$) depends on geographic location, 
 a similar fact holds: index spatial location by $i \in 1, \ldots, n$,
@@ -57,13 +55,13 @@ $1-p_* = \lim_{n \to \infty} \Phi^n(u)$ for an appropriate starting point $u$.
 
 \subsection{Maize model}
 
-Specifically, the migration and reproduction dynamics we use are as follows.
+The migration and reproduction dynamics we use are taken largely from \citet{vanHeerwaarden2010}.  
 On a large scale,
 fields of $N$ plants are replanted each year from $N_f$ ears,
 either from completely new stock (with probability $p_e$),
 from partially new stock (a proportion $r_m$ with probability $p_m$),
 or entirely from the same field.
-Plants have an average of $\mu_E$ ears per plant, and ears have an average of $N/N_f$ kernels;
+Plants have an average of $\mu_E$ ears per plant, and ears have an average of $N/N_f$ kernels; \jri{what happens if we change mean ears per plant from 3 to 1?}
 so a plant has on average $\mu_E N/N_f$ kernels, and a field has on average $\mu_E N$ ears and $\mu_E N^2/N_f$ kernels.
 We suppose that a plant with the selected allele is pollen parent to $(1+s) \mu_E N/N_f$ kernels,
 and also seed parent to $(1+s)\mu_E N/N_f$ kernels, still in $\mu_E$ ears.
@@ -81,7 +79,7 @@ and that the selected allele is locally rare.
 Finally, we must divide all these offspring numbers by 2,
 since we look at the offspring carrying a particular haplotype, not of the diploid plant's genome.
 
-The above gives mean values; to get a probability model we assume that every count in sight is Poisson.
+The above gives mean values; to get a probability model we assume that every count is Poisson.
 In other words, we suppose that the number of pollen children is Poisson with random mean $\lambda_P$,
 and the number of seed children is a mixture of $K$ independent Poissons with mean $(1+s)N/N_f$ each,
 where $K$ is the random number of ears chosen to replant, which is itself Poisson with mean $\mu_K$.
@@ -294,16 +292,17 @@ but a mutation with a larger target, say $\mu=10^{-5}$, would fix in tens to tho
 %%%%%%%
 \section{Adaptation by migration}
 
-As we show in the theory paper, 
+As we show in \jri{insert citation to theory paper} , 
 the rate of adaptation by diffusive migration is roughly
 \begin{align*}
   \migrate = \rho \frac{s_b \sqrt{2 s_m}}{2\xi^2} \exp\left(- \frac{\sqrt{2 s_m}R}{\sigma} \right) .
 \end{align*}
-We can talk about this more and give some simulations.
-But for now, let's interpret.
+
+\jri{do we need to expland? not sure. }
+%But for now, let's interpret.
 
 First note that for $10^{-1} \le s_m \le 10^{-4}$, the value $1/\sqrt{2s_m}$ is between 2 and 70 --
-so the exponential decay of the chance of migration fallws off on a scale of between 2 and 70 times the dispersal distance.
+so the exponential decay of the chance of migration falls off on a scale of between 2 and 70 times the dispersal distance.
 Above we have estimated the dispersal distance to be $\sigma \approx 2$ km,
 and far below the mean distance $\sigma_s$ to the field that a farmer replants seed from, when this happens,
 which we have as $\sigma_s = 50$ km.
@@ -320,7 +319,6 @@ if $s_m = 10^{-4}$ (very weak selection in the lowlands), then for $R=1,000$ km,
 i.e.\ it would take on the order of 100,000 generations (years) to get a successful migrant only 1,000 km away,
 under this model of undirected, diffusive dispersal.
 For larger $s_m$, the migration rate is much smaller.
-
 
 %%%%%%%%%%%%
 \section{Conclusion}

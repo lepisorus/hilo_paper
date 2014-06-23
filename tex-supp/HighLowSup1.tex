@@ -1,69 +1,71 @@
-\documentclass[onecolumn,oneside,letterpaper,12pt]{article} 
-
-\usepackage{geneticsSupT}
+%\documentclass[onecolumn,oneside,letterpaper,12pt]{article} 
+%
+%\usepackage{geneticsSupT}
 %\usepackage{geneticsT2}
-
-\usepackage{times}
-\usepackage{color}
-
+%
+%\usepackage{times}
+%\usepackage{color}
+%
 % rayout %
-\addtolength{\oddsidemargin}{-2.75cm}
-\addtolength{\evensidemargin}{-0.75cm}
-
-\addtolength{\textwidth}{5.5cm}
-\addtolength{\topmargin}{-3cm}
-\addtolength{\textheight}{4.5cm}
-
-\parindent=1em
-\setlength{\parskip}{0.01pt}
-
-\renewcommand{\textfraction}{0.01}
-\renewcommand{\topfraction}{0.99}
-\renewcommand{\bottomfraction}{0.65}
-\renewcommand{\floatpagefraction}{0.90}
-\renewcommand{\dbltopfraction}{0.95}
-\renewcommand{\dblfloatpagefraction}{0.80}
-\renewcommand{\sfdefault}{phv}
-
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhf{}
-\fancyfoot[CE,CO]{\thepage}
-\renewcommand{\headrulewidth}{0pt}
-\fancypagestyle{plain}{
-	\fancyhf{}
-}
-
+%\addtolength{\oddsidemargin}{-2.75cm}
+%\addtolength{\evensidemargin}{-0.75cm}
+%
+%\addtolength{\textwidth}{5.5cm}
+%\addtolength{\topmargin}{-3cm}
+%\addtolength{\textheight}{4.5cm}
+%
+%\parindent=1em
+%\setlength{\parskip}{0.01pt}
+%
+%\renewcommand{\textfraction}{0.01}
+%\renewcommand{\topfraction}{0.99}
+%\renewcommand{\bottomfraction}{0.65}
+%\renewcommand{\floatpagefraction}{0.90}
+%\renewcommand{\dbltopfraction}{0.95}
+%\renewcommand{\dblfloatpagefraction}{0.80}
+%\renewcommand{\sfdefault}{phv}
+%
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+%\fancyhf{}
+%\fancyfoot[CE,CO]{\thepage}
+%\renewcommand{\headrulewidth}{0pt}
+%\fancypagestyle{plain}{
+%	\fancyhf{}
+%}
+%
 % space of double hline in Table
-\doublerulesep = 0.4pt
+%\doublerulesep = 0.4pt
+%
+%\title{The molecular basis of parallel adaptation to\\ highland climate in domesticated maize.}
+%
+%\author{
+% Shohei Takuno, Peter Ralph, Sofiane Mezmouk, Kelly Swarts, Matthew B. Hufford, Rob J. Elshire, Jeffrey C. Glaubitz, Edward S. Buckler and Jeffrey Ross-Ibarra
+%   }
+%
+%\usepackage{natbib}
+%\bibpunct{(}{)}{;}{a}{}{,}
+%
+%\usepackage{amsmath}
+%
+%\usepackage{graphicx}
+%
+%\begin{document}
 
-\title{The molecular basis of parallel adaptation to\\ highland climate in domesticated maize.}
-
-\author{
- Shohei Takuno, Peter Ralph, Sofiane Mezmouk, Kelly Swarts, Matthew B. Hufford, Rob J. Elshire, Jeffrey C. Glaubitz, Edward S. Buckler and Jeffrey Ross-Ibarra
-   }
-
-\usepackage{natbib}
-\bibpunct{(}{)}{;}{a}{}{,}
-
-\usepackage{amsmath}
-
-\usepackage{graphicx}
-
-\begin{document}
-
-\maketitle
+%\maketitle
 
 % Supplemental 
 
-Later we should separate all Text S1, figs and tables in this file if we submit PLoS G.
 
 \newpage
-
-\renewcommand{\thefigure}{\Roman{figure}} 
+\st{Later we should separate all Text S1, figs and tables in this file if we submit PLoS G.}
+%\renewcommand{\thefigure}{\Roman{figure}} 
 % Figure AllelePat is not called in the main text, and I use Roman numbers for figure numbers
 
-\noindent {\Large \textit{Text~S1} }
+\section*{Supplemental Text}
+%\noindent {\Large \textit{Text~S1} }
+
+\jri{This needs some rewriting -- Matt?}
 
 We classified the patterns of allelic differentiation among highland and lowland populations in Mexico and S. America together with the information of \emph{parviglumis} in an \emph{ad hoc} manner; the allelic differentiation pattern is consistent with highland or lowland adaptation scenario.  
 In Figure~\ref{AllelePat}, we illustrate the frequency of putative ancestral and derived alleles in the five populations, drawn by red and blue, respectively.
@@ -71,6 +73,8 @@ In Figure~\ref{AllelePat}, we illustrate the frequency of putative ancestral and
 First, we focus on the SNPs with the signature of adaptation only in Mexican populations (Figure~\ref{AllelePat}A).  
 The first and second rows shows the typical patterns of highland adaptation with \emph{parviglumis} data available.
 We simply assume that the allele in higher frequency in \emph{parviglumis} is ancestral.
+\jri{we have decent Tripsacum data now, should we go back and re-assess this?}
+
 Both rows show the consistent pattern to highland adaptation in Mexico because the frequency of the putative derived allele in Mexican highlands is highly differentiated from those in both \emph{parviglumis} and Mexican lowlands.
 The patterns in S. America are different between the first and second rows.
 However, we do not take the patterns in S. American populations into account because there is no adaptive signature in S. American.
@@ -385,9 +389,9 @@ RIMMA0668	&	Ames 28668	&		&	Granada	&	Puno, Peru	&	-14.9 	&	-70.6 	&	3925	&	Good
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t]
   \begin{center}
-    \includegraphics[width=0.6\columnwidth]{fig/bioclm.pdf}
+    \includegraphics[width=0.6\columnwidth]{texsupp/fig/bioclm.pdf}
     \caption{Correlation of allele frequencies between GBS (\emph{x}-axes) and MaizeSNP50 (\emph{y}-axes) data.  We used overlapped SNPs with $n\geq40$ for both data sets.  Correlation coefficient is 0.890 ($P<10^{-5}$ by permutation test with $10^5$ replications).}
-    \label{colfreq}
+    \label{supp:colfreq}
   \end{center}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -395,7 +399,7 @@ RIMMA0668	&	Ames 28668	&		&	Granada	&	Puno, Peru	&	-14.9 	&	-70.6 	&	3925	&	Good
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t]
   \begin{center}
-    \includegraphics[width=0.4\columnwidth]{fig/kk.pdf}
+    \includegraphics[width=0.4\columnwidth]{texsupp/fig/kk.pdf}
     \caption{Likelihood of STRUCTURE analysis given $K$.  The \emph{x}-axes represents $K$ and the \emph{y}-axes represents likelihood.}
     \label{colfreq}
   \end{center}
@@ -474,7 +478,7 @@ RIMMA0668	&	Ames 28668	&		&	Granada	&	Puno, Peru	&	-14.9 	&	-70.6 	&	3925	&	Good
 
 
 
-\end{document}
+%\end{document}
 
 
 
