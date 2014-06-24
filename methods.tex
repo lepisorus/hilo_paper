@@ -76,14 +76,19 @@ Demographic parameters were inferred using the software {\sf dadi} \cite[]{Guten
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
 
 \subsubsection{Model IA}
-This model is applied to the Mexico and S. America populations.
-We assume the ancestral diploid population representing \emph{parviglumis} follows a standard Wright-Fisher model with constant size.  The size of the ancestral population is denoted by $N_A$.
-At $t_D$ generations ago, the bottleneck event begins at domestication, and at $t_E$ generations ago, the bottleneck ends.  The population size and duration of the bottleneck are denoted by $N_B$ and $t_B=t_D-t_E$, respectively.  The population size recovers to $N_C=\alpha N_A$ in the lowlands.  
-Then, the highland population is differentiated from the lowland population at $t_F$ generations ago.  The size of the low- and highland populations at time $t_F$ is determined by a parameter, $\beta$ such that the population is divided by $\beta N_C$ and $(1-\beta)N_C$.  
+This model is applied to the Mexican and S. American populations.
+We assume the ancestral diploid population representing \emph{parviglumis} follows a standard Wright-Fisher model with constant size.  
+The size of the ancestral population is denoted by $N_A$.
+At $t_D$ generations ago, the bottleneck event begins at domestication, and at $t_E$ generations ago, the bottleneck ends.  
+The population size and duration of the bottleneck are denoted by $N_B$ and $t_B=t_D-t_E$, respectively.  
+The population size recovers to $N_C=\alpha N_A$ in the lowlands.  
+Then, the highland population is differentiated from the lowland population at $t_F$ generations ago.  
+The size of the low- and highland populations at time $t_F$ is determined by a parameter $\beta$ such that the population is divided by $\beta N_C$ and $(1-\beta)N_C$.  
 We assume that the population size in the lowlands is constant but that the highland population experiences exponential expansion after divergence: its current population size is $\gamma$ times larger than that at $t_F$.  \\
+\jri{isn't this really a shrinking population in the lowlands, since $\beta N_C<N_C$ ? wouldn't we want instead for lowlands to stay at $N_C$ and a new population branching off?  how much do we worry about this?}
 
 \subsubsection{Model IB}
-We expand Model IA for the Mexico populations by incorporating admixture from \emph{mexicana} to the highland Mexican maize population.  The time of differentiation between \emph{parviglumis} and \emph{mexicana} occurs at $t_{mex}$ generations ago.  The size of the \emph{mexicana} population is denoted by $N_{mex}$ and this size is assumed to be constant.  At $t_F$ generations ago, the Mexico highland population is derived from the Mexico lowland population and admixture with \emph{mexicana}.  The proportion of admixture with \emph{mexicana} is denoted by $P_{mex}$.  \\
+We expand Model IA for the Mexico populations by incorporating admixture from the teosinte \emph{mexicana} to the highland Mexican maize population.  The time of differentiation between \emph{parviglumis} and \emph{mexicana} occurs at $t_{mex}$ generations ago.  The size of the \emph{mexicana} population is denoted by $N_{mex}$ and this size is assumed to be constant.  At $t_F$ generations ago, the Mexico highland population is derived from the Mexico lowland population and admixture with \emph{mexicana}.  The proportion of admixture with \emph{mexicana} is denoted by $P_{mex}$.  \\
 
 \subsubsection{Model II}
 The final model is for the Mexican lowland, S. American lowland and highland populations.  This model was used for simulating SNPs with ascertainment bias (see below).  At time $t_F$, the Mexican and S. American lowland populations are differentiated, and the sizes of populations after splitting are determined by $\beta_1$.  At time $t_G$, SA lowland and highland populations are differentiated, and the sizes of populations at this time are determined by $\beta_2$.  As in Model IA, the S. American highland population is assumed to experience population growth with the parameter, $\gamma$.\\
