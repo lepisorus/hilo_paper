@@ -42,7 +42,7 @@ Genotypes were called using TASSEL-GBS \cite[]{Glaubitz_GBS} resulting in {\colo
 
 To assess data quality, we compared genotypes at the 7,197 SNPs (229,937 genotypes, excluding missing data) that overlap between the MaizeSNP50 and GBS data sets. 
 While only 0.8\% of 173,670 homozygous loci in the MaizeSNP50 data set differed from GBS genotypes, 88.6\% of 56,267 MaizeSNP50 heterozygotes differed in the GBS data, nearly always reported as a homozygote.
-Despite this high heterozygote error rate,  the high correlation in allele frequencies between data sets ($r=0.89$; Figure \ref{correl_freq}) supports its utility in estimating allele frequencies.  
+Despite this high heterozygote error rate,  the high correlation in allele frequencies between data sets ($r=0.89$; Figure \ref{fig:correl_freq}) supports its utility in estimating allele frequencies.  
 %\st{change after finishing intro and results}
 
 We annotated SNPs using the filtered gene set from RefGen version 2 of the maize B73 genome sequence (\citealt{Schnable_2009_19965430}; release 5b.60) from maizesequence.org.  
@@ -59,11 +59,11 @@ Results across replicates were nearly identical.
 \subsection*{Demographic inference}
 We tested three demographic models in which maize was differentiated into high- and lowland populations subsequent to domestication (Figure~\ref{model}). 
 Observed joint frequency distributions (JFDs) were calculated using the GBS data set due to its lower level of ascertainment bias. 
-A subset of silent SNPs were utilized that had $\geq15$ individuals without missing data in both low- and highland populations and did not violate HWE.  
+A subset of silent \jri{would it be correct to change "silent" to say "synonymous and noncoding"?} SNPs were utilized that had $\geq15$ individuals without missing data in both low- and highland populations and did not violate HWE.  
 A HWE cut-off of $P<0.005$ was used for each subpopulation due to our under-calling of heterozygotes. 
 In total, we included 18,745 silent SNPs for the Mexican populations in Models IA and IB, 14,508 for the S. American populations in Model I and 11,305 for the Mexican lowland population and the S. American populations in Model II.  
 We obtained similar results under more or less stringent thresholds for significance ($P < 0.05\sim0.0005$; data not shown), though the number of SNPs was very small at $P<0.05$.  
-Demographic parameters were inferred using the software {\sf dadi} \cite[]{Gutenkunst_2009_19851460}, which uses a diffusion method to calculate an expected JFD and evaluates the likelihood of the data using a multinomial assumption.
+Demographic parameters were inferred using the software $\delta a \delta i$ \cite[]{Gutenkunst_2009_19851460}, which uses a diffusion method to calculate an expected JFD and evaluates the likelihood of the data using a multinomial assumption.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
 \begin{figure}[tb]   
@@ -107,21 +107,6 @@ This model was used for simulating SNPs with ascertainment bias (see below).
 At time $t_F$, the Mexican and S. American lowland populations are differentiated, and the sizes of populations after splitting are determined by $\beta_1$.  
 At time $t_G$, SA lowland and highland populations are differentiated, and the sizes of populations at this time are determined by $\beta_2$.  
 As in Model IA, the S. American highland population is assumed to experience population growth with the parameter, $\gamma$.\\
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
-\begin{figure}[tb]   
-  \begin{center}
-   \vspace{-0mm}
-   %\includegraphics[width=0.23\textwidth]{figs/model}
-   \includegraphics[width=0.5\textwidth]{fig/Fig4}
-   \renewcommand{\baselinestretch}{0.9}
-   \vspace{-3mm}
-   \caption{Observed and expected joint distributions of minor allele frequencies in low- and highland populations in (A) Mexico and (B) S. America. }
-\vspace{-6mm}
-    \label{JFD}
-  \end{center}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
 
 Estimates of a number of our model parameters were available from previous work.    
 $N_A$ was set to 150,000 using estimates of the composite parameter $4N_A\mu \sim 0.018$ from \emph{parviglumis}  \cite[]{Eyre-Walker_1998_9539756,Tenaillon_2001_11470895,Tenaillon_2004_15014173,Wright_2005_15919994,Ross-Ibarra_2009_19153259} and an estimate of the mutation rate $\mu \sim 3\times 10^{-8}$ \cite[]{Clark_2005_16079248} per site per generation.  
