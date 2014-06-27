@@ -17,10 +17,10 @@
 \section*{Materials and Methods}
 
 \subsection*{Materials and DNA extraction}
-We included one individual from each of 94 open-pollinated landrace maize accessions from high and low elevation sites in Mexico and S. America (Table~S1).   \jri{table ref}
+We included one individual from each of 94 open-pollinated landrace maize accessions from high and low elevation sites in Mexico and S. America (Table \ref{srkid}).   
 Accessions were provided by the USDA germplasm repository or kindly donated by Major Goodman (North Carolina State University).  
-Sampling locations are shown in Figure~\ref{map}A (see also Table~S1).   \jri{table ref}
-Landraces sampled from altitudes $<1,700$ m were considered lowland, while accessions from $>1,700$ m were considered highland (Table~S1).   \jri{table ref}
+Sampling locations are shown in Figure~\ref{map}A (see also Table \ref{srkid}).  
+Landraces sampled from altitudes $<1,700$ m were considered lowland, while accessions from $>1,700$ m were considered highland.  
 Seeds were germinated on filter paper following fungicide treatment and grown in standard potting mix.  
 Leaf tips were harvested from plants at the five leaf stage.  
 Following storage at $-80^{\circ}$C overnight, leaf tips were lyophilized for 48 hours.  
@@ -36,13 +36,14 @@ Clustering for each SNP was then visually inspected and manually adjusted.
 These data are referred to as "MaizeSNP50" hereafter.  
 This array contains SNPs discovered in multiple ascertainment schemes \cite[]{Ganal_2011_22174790}; however, the vast majority of SNPs come from polymorphisms distinguishing the maize inbred lines B73 and Mo17 (14,810 SNPs) or identified from sequencing 25 diverse inbred lines \cite[40,594 SNPs;][]{Gore20112009}.  
 
-The second data set was generated for a subset of 87 of the landrace accessions (Table~S1)  \jri{table ref} utilizing high-throughput Illumina sequencing data via genotyping-by-sequencing \cite[GBS;][]{Elshire2011}.
+The second data set was generated for a subset of 87 of the landrace accessions (Table \ref{srkid}) utilizing high-throughput Illumina sequencing data via genotyping-by-sequencing \cite[GBS;][]{Elshire2011}.
 Genotypes were called using TASSEL-GBS \cite[]{Glaubitz_GBS} resulting in {\color{red} XXX} SNPs with an average of  {\color{red} XXX}  missing data per individual.
 \jri{Sho, please fill in the XX's and add label references for supp tables throughout}
 
 To assess data quality, we compared genotypes at the 7,197 SNPs (229,937 genotypes, excluding missing data) that overlap between the MaizeSNP50 and GBS data sets. 
 While only 0.8\% of 173,670 homozygous loci in the MaizeSNP50 data set differed from GBS genotypes, 88.6\% of 56,267 MaizeSNP50 heterozygotes differed in the GBS data, nearly always reported as a homozygote.
-Despite this high heterozygote error rate,  the high correlation in allele frequencies between data sets ($r=0.89$; Figure SX \jri{label figure ref} \st{change after finishing intro and results}) supports its utility in estimating allele frequencies.  
+Despite this high heterozygote error rate,  the high correlation in allele frequencies between data sets ($r=0.89$; Figure \ref{correl_freq}) supports its utility in estimating allele frequencies.  
+%\st{change after finishing intro and results}
 
 We annotated SNPs using the filtered gene set from RefGen version 2 of the maize B73 genome sequence (\citealt{Schnable_2009_19965430}; release 5b.60) from maizesequence.org.  
 We excluded genes annotated as transposable elements (84) and pseudogenes (323) from the filtered gene set, resulting in a total of 38,842 genes.
@@ -127,10 +128,12 @@ $N_A$ was set to 150,000 using estimates of the composite parameter $4N_A\mu \si
 The severity of the domestication bottleneck is represented by $k=N_B/t_B$ \cite[]{Eyre-Walker_1998_9539756,Wright_2005_15919994}, and following \cite{Wright_2005_15919994} we assumed $k=2.45$ and $t_B=1,000$ generations.  
 Taking into account archaeological evidence \cite[]{Piperno_2009_19307570}, we assume $t_D=9,000$ and $t_E=8,000$.  
 We further assumed $t_F=6,000$ for Mexican populations in Models IA and II \cite[]{Piperno_2006_69}, $t_F=4,000$ for S. American populations in Model lI \cite[]{Perry_2006_16511492}, and $t_{mex}=60,000$, $N_{mex}=160,000$ \cite[]{Ross-Ibarra_2009_19153259}, and $P_{mex}=0.2$ \cite[]{vanHeerwaarden_2011_21189301} for Model IB. 
-For both Models IA and IB, we inferred three parameters ($\alpha$, $\beta$ and $\gamma$), and, for Model II, we fixed $t_F=6,000$ and $t_G=4,000$ \cite[]{Piperno_2006_69,Perry_2006_16511492} \jri{there are newer estimates of timing for S.America -- see \url{http://www.pnas.org/content/early/2012/01/11/1120270109}. not worth redoing unless model needs to be redone to address concerns about pop size} and estimated the remaining four parameters ($\alpha$, $\beta_1$, $\beta_2$ and $\gamma$).
+For both Models IA and IB, we inferred three parameters ($\alpha$, $\beta$ and $\gamma$), and, for Model II, we fixed $t_F=6,000$ and $t_G=4,000$ \cite[]{Piperno_2006_69,Perry_2006_16511492}  and estimated the remaining four parameters ($\alpha$, $\beta_1$, $\beta_2$ and $\gamma$).
+\jri{$t_F$ for model II is listed as 4,000 and 6,000 above.  6,000 is the number that matches the lit best. is that what was used? if so, we should cite \cite[]{Grobman_2012_22307642}}
+
 
 \subsection*{Differentiation between low- and highland populations}
-We used our inferred demographic model to generate a null distribution of $F_{ST}$ via simulation using the software {\sf ms} \cite[]{Hudson_2002_11847089}; command line options are provided in Table~S4.  \jri{table ref}
+We used our inferred demographic model to generate a null distribution of $F_{ST}$ via simulation using the software {\sf ms} \cite[]{Hudson_2002_11847089}; command line options are provided in Table \ref{commandline}.  
 Generating the null distribution of differentiation for the MaizeSNP50 data requires accounting for ascertainment bias. 
 Evaluation of genetic clustering in our data (not shown) coincides with previous work \cite[]{Hufford_2012_22660546} in suggesting that the two lines most important in the ascertainment panel are most closely related to Mexican lowland maize.  
 We thus added two additional individuals to the Mexican lowland population and generated our null distribution using only SNPs for which the two individuals had different alleles. For model IA in S. America we added two individuals at time $t_F$ to the ancestral population of the S. American low- and highland populations because the Mexican lowland population was not incorporated into this model. 
