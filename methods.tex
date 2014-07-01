@@ -41,7 +41,7 @@ Genotypes were called using TASSEL-GBS \cite[]{Glaubitz_GBS} resulting in {\colo
 \jri{Sho, please fill in the XX's and add label references for supp tables throughout}
 
 To assess data quality, we compared genotypes at the 7,197 SNPs (229,937 genotypes, excluding missing data) that overlap between the MaizeSNP50 and GBS data sets. 
-While only 0.8\% of 173,670 homozygous loci in the MaizeSNP50 data set differed from GBS genotypes, 88.6\% of 56,267 MaizeSNP50 heterozygotes differed in the GBS data, nearly always reported as a homozygote.
+While only 0.8\% of 173,670  comparisons involving homozygous MaizeSNP50 genotypes differed in the GBS data, 88.6\% of 56,267 comparisons with MaizeSNP50 heterozygotes differed, nearly always being reported as a homozygote in GBS.
 Despite this high heterozygote error rate,  the high correlation in allele frequencies between data sets ($r=0.89$; Figure \ref{fig:correl_freq}) supports its utility in estimating allele frequencies.  
 %\st{change after finishing intro and results}
 
@@ -125,6 +125,7 @@ We thus added two additional individuals to the Mexican lowland population and g
 For each combination of sample sizes in low- and highland populations, we generated $10^7$ $F_{ST}$ values and used these as a null distribution in order to evaluate our data.   
 We calculated $F_{ST}$ values for all SNPs that had $\geq10$ individuals with no missing data in all four populations and showed no departure from HWE at the 0.5\% (GBS) or 5\% (MaizeSNP50) level. 
 \jri{we don't correct for allele frequency (or heterozygosity) in our Fst outlier analysis do we?  if not, this is a problem I think.}
+\jri{do we use all GBS data in the Fst outlier test, or just silent SNPs? we should be able to use nonsynonymous too, right?}
 
 \subsection*{Haplotype scoring test}
 We performed a \underline{p}airwise \underline{h}aplotype \underline{s}coring (PHS) test to detect further evidence of selection, following \cite{Toomajian_2006_16623598}.  
