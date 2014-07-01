@@ -123,22 +123,28 @@ The proportion of significant SNPs in introgressed regions in Mexico is signific
 %When focusing on GUs, we identified 99/586 (14.5\%) and 22/466 (4.7\%) GUs of Mexico- and SA-specific significance in introgressed regions (Fisher's exact test, $P<10^{-6}$). 
 %Would the genetic unit numbers work in the tanja table? i liek those numbers and think we should keep if possible.
 % ST: the number of overlapped SNPs is not big between Tanja's and mine, so it's hard to check GUs.
-Outside introgressed regions, the Mexican and S. American populations did not show marked differences in the proportion of significant SNPs (Fisher's exact test, $P>0.7$). These results combined with those from \citep{Profford_2013} suggest that SNPs in introgressed regions have indeed been under selection.  \jri{can we say this? if we assume gene flow is correct, wouldn't we expect neutral introgressions from mexicana to show high Fst with lowland maize?}
+Outside introgressed regions, the Mexican and S. American populations did not show marked differences in the proportion of significant SNPs (Fisher's exact test, $P>0.7$). These results combined with those from \citep{Profford_2013} suggest that SNPs in introgressed regions have indeed been under selection.  \jri{can we say this? if we assume gene flow is correct, wouldn't we expect neutral introgressions from mexicana to show high Fst with lowland maize? maybe delete these sentences and just point out that Tanja's outliers were enriched in matt's regions (i think that's right?)}
 
-%JRI STOPPED HERE.
 
-\subsubsection{Evidence for parallel adaptation}
+\subsubsection{Genetic basis of convergent evolution}
 
 % ST: recombination stuff is moved to subsection "no evidence of parallel adaptation"
 %Because linkage disequilibrium in maize decays rapidly \cite[]{Remington_2001_11562485,Tenaillon_2001_11470895} as in our data (Figure~S7), it is plausible that a number of hard sweeps -- strong selection on new mutations -- would be missed by our data, but several lines of evidence suggest to us that this is unlikely.  
 
-While maize adaptation in Mexico and S. America are likely distinguished by unique histories of gene flow with wild relatives, the potential remains for parallel adaptation in these two regions.  
-SNPs showing significant differentiation between low- and highland populations in both Mexico and S. America are likely candidates for parallel adaptation. 
+While maize adaptation in Mexico and S. America are likely distinguished by unique histories of gene flow with wild relatives, convergent phenotypic evolution in these population may nonetheless have a shared genetic basis.   
+Shared adaptation at the genetic level should be reflected in an excess of SNPs showing significant differentiation between low- and highland populations in both Mexico and S. America. 
 We identified 56 SNPs with $F_{ST}$ \emph{P}-values in Mexico ($P_M$) and S. America ($P_S$) both $<0.01$.   
-This number was significantly larger than the random expectation ($48,370\times 0.01 \times 0.01 \approx 4.8$; $\chi^2$-test, $P\ll0.001$).  Furthermore, the distribution of $P_M$ in the 712 SNPs with $P_S<0.01$ was highly skewed toward zero (Figure~S4A), and a similar tendency was observed in $P_S$ given $P_M<0.01$ (935 SNPs; Figure~S4AB).  Thus, we converted the $P$-values in one population given $P<0.01$ in the other population into $q$-values.  
-At a false discovery rate of 0.2 we found 117 SNPs with $P_M<0.01 \cap P_S < 0.0169$ or $P_M<0.0247 \cap P_S < 0.01$, and these SNPs were considered our candidates for parallel adaptation.
-We found 959 SNPs showing significant population differentiation only in Mexico ($P_M<0.01 \cap P_S > 0.0169$) and 664 SNPs only in South America  ($P_M>0.0247 \cap P_S < 0.01$).  The scatter plot of $P_M$ and $P_S$ is shown in Figure~\ref{PvDist}.  
-For a subset of 67 of the SNPs showing putative evidence of parallel adaptation we also had data from \textit{parviglumis} and were able to infer based on patterns of segregation whether these SNPs were potentially adaptive under lowland or highland conditions (Text~S1).  Surprisingly, SNPs identified as targets of parallel adaptation in Mexico and South America more frequently showed segregation patterns consistent with lowland adaptation (62 SNPs) rather than highland adaptation (5 SNPs). 
+This number was significantly larger than the random expectation ($48,370\times 0.01 \times 0.01 \approx 4.8$; $\chi^2$-test, $P\ll0.001$).  
+Furthermore, the distribution of $P_M$ in the 712 SNPs with $P_S<0.01$ was highly skewed toward zero, and a similar tendency was observed in $P_S$ in the 935 SNPs with $P_M<0.01$ (Figure~\ref{pval_freq_comparison}).  
+Thus, we converted the $P$-values in one population given $P<0.01$ in the other population into $q$-values.  
+At a false discovery rate of 0.2 we found 117 SNPs with $P_M<0.01 \cap P_S < 0.0169$ or $P_M<0.0247 \cap P_S < 0.01$, and these SNPs were considered our candidates for shared adaptive variants.
+We found 959 SNPs showing significant population differentiation only in Mexico ($P_M<0.01 \cap P_S > 0.0169$) and 664 SNPs only in South America  ($P_M>0.0247 \cap P_S < 0.01$).  
+The scatter plot of $P_M$ and $P_S$ is shown in Figure~\ref{PvDist}.  
+For a subset of 67 of the SNPs showing putative evidence of parallel adaptation we also had data from \textit{parviglumis} and were able to infer based on patterns of segregation whether these SNPs were potentially adaptive under lowland or highland conditions (Supplemental Text).  
+Surprisingly, SNPs identified as shared adaptive variants more frequently showed segregation patterns consistent with lowland  (62 SNPs) rather than highland adaptation (5 SNPs). 
+\jri{I think this paragraph could be shortened/tightened up a bit. Matt? Or I can revisit later.}
+
+%JRI STOPPED HERE
 
 In addition to evaluating parallel adaptation at the SNP level, we investigated how often different SNPs in the same gene may have been targeted by selection. To search for this pattern, we defined a ``genetic unit" or GU as all SNPs within 10kb of a transcript.  SNPs in an miRNA or second transcript within 10kb of the transcript of interest were excluded.  
 We classified SNPs showing significance in Mexico, S. America or in both regions into 1,277 GUs. 
