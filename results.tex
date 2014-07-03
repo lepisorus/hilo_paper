@@ -132,44 +132,39 @@ Outside introgressed regions, the Mexican and S. American populations did not sh
 %Because linkage disequilibrium in maize decays rapidly \cite[]{Remington_2001_11562485,Tenaillon_2001_11470895} as in our data (Figure~S7), it is plausible that a number of hard sweeps -- strong selection on new mutations -- would be missed by our data, but several lines of evidence suggest to us that this is unlikely.  
 
 While maize adaptation in Mexico and S. America are likely distinguished by unique histories of gene flow with wild relatives, convergent phenotypic evolution in these population may nonetheless have a shared genetic basis.   
-Shared adaptation at the genetic level should be reflected in an excess of SNPs showing significant differentiation between low- and highland populations in both Mexico and S. America. 
+Convergent evolution at the nucleotide level should be reflected in an excess of SNPs showing significant differentiation between low- and highland populations in both Mexico and S. America. 
 We indeed see such an excess, with 56 SNPs showing $F_{ST}$ \emph{P}-values  $<0.01$ in both Mexico ($P_M$) and S. America ($P_S$), compared to $\approx 5$ expected ($48,370\times 0.01 \times 0.01 \approx 4.8$; $\chi^2$-test, $P\ll0.001$).
 Furthermore, the distribution of $P_M$ in the 712 SNPs with $P_S<0.01$ was highly skewed toward zero, and a similar tendency was observed in $P_S$ in the 935 SNPs with $P_M<0.01$ (Figure~\ref{pval_freq_comparison}).  
 We converted the $P$-values in one population given $P<0.01$ in the other population into $q$-values, and at a false discovery rate of 0.2 we found 117 SNPs with $P_M<0.01 \cap P_S < 0.0169$ or $P_M<0.0247 \cap P_S < 0.01$.   
-We consider these latter SNPS and these SNPs were our candidate shared adaptive variants.
-While the number of shared SNPs is in excess of expectations, We found 959 SNPs showing significant population differentiation only in Mexico ($P_M<0.01 \cap P_S > 0.0169$) and 664 SNPs only in South America  ($P_M>0.0247 \cap P_S < 0.01$).  
-The scatter plot of $P_M$ and $P_S$ is shown in Figure~\ref{PvDist}.  
+We consider these latter SNPS our candidate shared adaptive variants.
 For a subset of 67 of the SNPs showing putative evidence of shared selection we also had data from \textit{parviglumis} and were able to infer based on patterns of segregation whether these SNPs were potentially adaptive under lowland or highland conditions (Supplemental Text).  
 Surprisingly, SNPs identified as shared adaptive variants more frequently showed segregation patterns consistent with lowland  (62 SNPs) rather than highland adaptation (5 SNPs). 
-\jri{I think this paragraph could be shortened/tightened up a bit. Matt? Or I can revisit later.}
+While the number of shared SNPs is in excess of expectations, we the majority of significant SNPs were significant only in one population (959 $P_M<0.01 \cap P_S > 0.0169$ and 664 $P_S<0.01 \cap P_M>0.0247$; Figure \ref{PvDist}).  
 
-%JRI STOPPED HERE
-
-In addition to evaluating parallel adaptation at the SNP level, we investigated how often different SNPs in the same gene may have been targeted by selection. To search for this pattern, we defined a ``genetic unit" or GU as all SNPs within 10kb of a transcript.  SNPs in an miRNA or second transcript within 10kb of the transcript of interest were excluded.  
+In addition to evaluating parallel adaptation at the SNP level, we investigated how often different SNPs in the same gene may have been targeted by selection. 
+To search for this pattern, we defined a ``genetic unit" or GU as all SNPs within 10kb of a transcript.  
+SNPs in an miRNA or second transcript within 10kb of the transcript of interest were excluded.  
 We classified SNPs showing significance in Mexico, S. America or in both regions into 1,277 GUs. 
-Of these, 95 GUs contained at least one SNP with a pattern of differentiation suggesting parallel adaptation, whereas only 12 GUs contained both Mexico-specific and SA-specific significant SNPs. 
-Overall, fewer GUs showed evidence of parallel adaptation than expected by chance (permutation test; $P<10^{-5}$), with more than 700 and 470 GUs showing Mexico-specific and SA-specific significant SNPs, respectively.  
+Of these, 95 GUs contained at least one SNP with a pattern of differentiation suggesting convergent evolution and 12 GUs contained both Mexico-specific and SA-specific significant SNPs. 
+Overall, fewer GUs showed evidence of convergent evolution than expected by chance (permutation test; $P<10^{-5}$), with more than 700 and 470 GUs showing Mexico-specific and SA-specific significant SNPs, respectively.  
 Despite similar phenotypes and environments, we thus see little evidence for parallel adaptation at either the SNP or the gene (GU) level.  
 
-\st{Need your comments!!}
+\jri{this paragraph needs reworking and to jive with the below from peter}
 The rarity of parallel adaptations in maize contrasts with data from humans \citep{Tennessen_2011_21698142} showing selection on the same genes in multiple pairs of tropical and temperate populations.  
 However, in both maize and humans the majority of adaptive variants appear to have been derived from standing variation \cite[]{Tennessen_2011_21698142}.
-One difference between these two species is effective population size;
-the effective population size of maize ($\sim10^5$) is an order of magnitude larger than that in humans \cite[]{Takahata_1997_9114074}.
+One difference between these two species is effective population size: the effective population size of maize ($\sim10^5$) is an order of magnitude larger than that in humans \cite[]{Takahata_1997_9114074}.
 Humans would therefore have less standing variation as a source of adaptation, resulting in the same variants being selected in multiple subpopulations (as long as $s$ is sufficiently large and initial frequency is, for example, $>0.1$).
 In contrast, maize could maintain a larger number of adaptive variants in the ancestral lowland population.
 In this case, if genetic variants produce similar phenotypic effects, they may be selected to high frequency in independent highland regions at random.
 Or if Mexican and S. American highlands have slightly different climates, it is feasible that different variants are selected.
 The target size of mutations can also increase the variants for adaptation, but there are currently no data regarding mutational target size in maize versus humans.
 \plr{You are discussing adaptation from standing variation; what about from new mutation?  This wouldn't require postulating lots of equivalent variants?} 
-In fact, adaptation from multiple standing variants that produce similar phenotypes has previously been observed in maize; % more examples?
-the \emph{grassy tillers1} (\emph{gt1}) gene \cite[]{Wills_2013_23825971} contains two artificially selected mutations that reduce ear number.
+In fact, adaptation from multiple standing variants that produce similar phenotypes has previously been observed in maize: the \emph{grassy tillers1} (\emph{gt1}) gene \cite[]{Wills_2013_23825971} contains two artificially selected mutations that reduce ear number.
 These mutations both segregate at low frequency in \emph{parviglumis} but have been individually selected to high frequency in different populations of maize.
 
 % ST: LD result is necessary?  Can we say "LD decay looks nice, so genotyping would be nice"?
 %Because linkage disequilibrium in maize decays rapidly \cite[]{Remington_2001_11562485,Tenaillon_2001_11470895} as in our data (Figure~S5), it is plausible that a number of hard sweeps -- strong selection on new mutations -- would be missed by our data, but several lines of evidence suggest to us that this is unlikely.  
 % MBH:  Not sure where this fits right now...adaptation from standing variation or parallel adaptation...applies to both so maybe a point of discussion at the end?
-
 
 %Points for discussion (add/delete etc.)
 %genomic architecture differences? local adaptation uses regulary in teo (cite Tanja)? But what about Fraser (finds same in humans)
@@ -181,31 +176,27 @@ These mutations both segregate at low frequency in \emph{parviglumis} but have b
 %MBH:Like the discussion above...any way we could include this somewhere?
 % ST:  vote in deleting
 
+%JRI STOPPED HERE
+
 \subsection*{Comparison to theory}
 
 % # \mutrate computation:
 % A <- 500; rho <- 5000; sb <- 10^(-(1:4)); xisq <- 30
 % sapply( 10^c(-5,-8), function (mu) mu * (2 * rho * A * sb)/xisq )
 
-For a final point of comparison,
-we assessed the degree of parallelism expected under a spatially explicit population genetic model.
-We estimated the (maize) population density $\rho$ of the highlands to be around
-(0.5 people/km$^2$) $\times$ (0.5 ha field/person) $\times$ ($2\times10^4$ plants per field ha) $=$ 5,000 plants per km$^2$.
+For a final point of comparison, we assessed the degree of convergence expected under a spatially explicit population genetic model.
+We estimated the (maize) population density $\rho$ of the highlands to be around (0.5 people/km$^2$) $\times$ (0.5 ha field/person) $\times$ ($2\times10^4$ plants per field ha) $=$ 5,000 plants per km$^2$.
 The area of the Andean highlands is around $A=500\text{km}^2$, leading to a total population of $A \rho = 2.5 \times 10^6$.
 %MBH: This seems like a pretty low planting density
 %This should be 14K plants per acre, or ~30-35K per hectare. Good catch Matt!!
 %  Moved this up here.  I'm not sure what that 14,000 number was doing in the previous draft.  But, added details behind this calculation.  Should I change anything?
 %  Note that 0.5 people/km2 is close to the other number we came up with of "one village per 15km" (which gets 0.4444 people/km2).
-Combined with an offspring variance of $\xi^2 = 30$,
-we can compute the rate, $\mutrate$, at which newly adapted alleles arise in the population.
-We observe that even if there is strong selection for an allele at high elevation ($s_b=0.1$),
-a single-base mutation with mutation rate $\mu=10^{-8}$ would still take at least 6,000 generations to appear and fix.
-On the other hand, a kilobase-sized target with mutation rate $\mu=10^{-5}$
-with this selection coefficient would appear and begin to fix in only 6 generations,
-while more weakly selected alleles with $s_b$ of $10^{-2}$ or $10^{-3}$ would take hundreds or thousands of generations, respectively.
+% I think these numbers are OK.  It's ~8000 plants per acre, which is really low, but we're talking prehistoric times.  In the 1960's they were still experimenting with 9-18000 per acres (http://trace.tennessee.edu/cgi/viewcontent.cgi?article=1321&context=utk_agbulletin) in Tennessee!
+Combined with an offspring variance of $\xi^2 = 30$, we can compute the rate, $\mutrate$, at which newly adapted alleles arise in the population.
+We observe that even if there is strong selection for an allele at high elevation ($s_b=0.1$), a single-base mutation with mutation rate $\mu=10^{-8}$ would still take at least 6,000 generations to appear and fix.
+On the other hand, a kilobase-sized target with mutation rate $\mu=10^{-5}$ with this selection coefficient would appear and begin to fix in only 6 generations, while more weakly selected alleles with $s_b$ of $10^{-2}$ or $10^{-3}$ would take hundreds or thousands of generations, respectively.
 (Note that the time scales linearly with the selection coefficient: at these values $\Tmut = 1/\mutrate \approx \mu s_b \times 1.6\times 10^5$.)
-Therefore, we might expect to see parallel changes of similar effect at the level of genes (e.g.\ disabling mutations),
-but would not expect to see adaptive SNPs that arise through independent mutation in the two populations.
+Therefore, we might expect to see convergent changes of similar effect at the level of genes (e.g.\ disabling mutations), but would not expect to see adaptive SNPs that arise through independent mutation in the two populations.
 
 % # Tmig computation:
 % A <- 500; rho <- 5000; sm <- 10^(-(1:4)); xisq <- 30; sigma <- 1.8
@@ -215,53 +206,28 @@ but would not expect to see adaptive SNPs that arise through independent mutatio
 % Ne  # = 14025
 % sapply( 1000*(1:4), function (R) 1 / ( Ne * exp(- sqrt(2*sm)*R/sigma ) ) )
 
-While parallel SNP changes seem unlikely from new mutation, the potential remains for gene flow between highland regions.
-From the demographic model above
-we have estimated that $\sigma \approx 1.8$ kilometers per generation,
-so with $10^{-1} \ge s_m \ge 10^{-4}$ the distance $\sigma/\sqrt{2s_m}$ over which the frequency of 
-a highland-adaptive, lowland-deleterious allele decays into the lowlands
-is still short: between 4 and 150 kilometers.
-Since the Mexican and Andean highlands are around 4,000 km apart,
-the time needed for a rare allele, with selective cost $s_m=10^{-3}$ in the lowlands, to transit between the two highland regions
-is $\Tmig \approx 5 \times 10^{34}$ generations.
-In other words, from these calculations it is almost impossible that an allele that is deleterious at low elevation with $s_m=10^{-3}$ 
-would ever transit from the Mexican to the Andean highlands.
+While convergent SNP changes seem unlikely from new mutation, the potential remains for gene flow between highland regions.
+From the demographic model above we have estimated that $\sigma \approx 1.8$ kilometers per generation, so with $10^{-1} \ge s_m \ge 10^{-4}$ the distance $\sigma/\sqrt{2s_m}$ over which the frequency of a highland-adaptive, lowland-deleterious allele decays into the lowlands is still short: between 4 and 150 kilometers.
+Since the Mexican and Andean highlands are around 4,000 km apart, the time needed for a rare allele, with selective cost $s_m=10^{-3}$ in the lowlands, to transit between the two highland regions is $\Tmig \approx 5 \times 10^{34}$ generations.
+In other words, from these calculations it is almost impossible that an allele that is deleterious at low elevation with $s_m=10^{-3}$ would ever transit from the Mexican to the Andean highlands.
 If the selection against the allele is even weaker ($s_m=10^{-4}$) it is still expected to take $\Tmig = 1.8 \times 10^8$ generations.
-However, shorter distances could be transited by very weakly deleterious alleles --
-if the distance between highland patches $R$ is 1,000 km (or if $\sigma$ is four times larger)
-then with $s_m=10^{-4}$ the time $\Tmig$ is about 1.6 generations --
-so, adaptation by migration is certain in the known timeframe of maize diffusion.
-This is strongly dependent on the magnitude of the deleterious selection coefficient: for example,
-with $s_m=10^{-3}$, $\Tmig$ is $2.3 \times 10^6$ generations.
+However, shorter distances could be transited by very weakly deleterious alleles -- if the distance between highland patches $R$ is 1,000 km (or if $\sigma$ is four times larger) then with $s_m=10^{-4}$ the time $\Tmig$ is about 1.6 generations -- so, adaptation by migration is certain in the known timeframe of maize diffusion.
+This is strongly dependent on the magnitude of the deleterious selection coefficient: for example, with $s_m=10^{-3}$, $\Tmig$ is $2.3 \times 10^6$ generations.
 
-Our analysis suggests that even when highland-adaptive mutations are weakly deleterious in the lowlands,
-gene flow will not result in shared adaptations.
-The situation where these are neutral in the lowlands is more difficult to model,
-but we can make some informed guesses.
-For maize in the Andean highlands to have inherited a highland-adapted allele from the Mexican highlands,
-those Andean plants must be directly descended from highland Mexican plants that lived more recently than the appearance of the adaptive allele.
+Our analysis suggests that even when highland-adaptive mutations are weakly deleterious in the lowlands, gene flow will not result in shared adaptations.
+The situation where these are neutral in the lowlands is more difficult to model, but we can make some informed guesses.
+For maize in the Andean highlands to have inherited a highland-adapted allele from the Mexican highlands, those Andean plants must be directly descended from highland Mexican plants that lived more recently than the appearance of the adaptive allele.
 In other words, the ancestral lineages along which the modern Andean plants have inherited at that locus must trace back to the Mexican highlands.
-If the allele is neutral in the lowlands, we can treat the movement of these lineages as a neutral process,
-using the framework of coalescent theory \citep{wakeley2005coalescent}.
-To do this, we need to follow \emph{all} of the $N \approx 2.5 \times 10^6$ lineages backwards; these quickly coalesce to fewer $m$ lineages
-in approximately $\sum_{k=m}^N \frac{2N}{\xi^2 k(k+1)} \approx 1.25 \times 10^5/m$ generations,
-leaving about 1000 lineages after 100 generations that are spread over a larger area.
+If the allele is neutral in the lowlands, we can treat the movement of these lineages as a neutral process, using the framework of coalescent theory \citep{wakeley2005coalescent}.
+To do this, we need to follow \emph{all} of the $N \approx 2.5 \times 10^6$ lineages backwards; these quickly coalesce to fewer $m$ lineages in approximately $\sum_{k=m}^N \frac{2N}{\xi^2 k(k+1)} \approx 1.25 \times 10^5/m$ generations, leaving about 1000 lineages after 100 generations that are spread over a larger area.
 The displacement of a lineage after $m$ generations has variance $m \sigma^2$ and is approximately Gaussian.
-If we assume that $n$ lineages are independent, and $Z_n$ is the distance to the furthest lineage,
-then $\P\{ Z_n / \sqrt{m \sigma^2} \le x /\sqrt{2 \log n} + \sqrt{2 \log n} - (1/2) (\log \log n + \log 4 \pi)/\sqrt{2 \log n} \} \approx \exp( - e^{-x} )$
-\citep{berman1964limit}.
-With $n=1000$, the typical distance to the furthest displacement after $m=1000$ generations is $\sqrt{2 \sigma^2 m \log n} \approx 212$km;
-after $m=6000$ generations it is $\approx 518$km.
+If we assume that $n$ lineages are independent, and $Z_n$ is the distance to the furthest lineage, then $\P\{ Z_n / \sqrt{m \sigma^2} \le x /\sqrt{2 \log n} + \sqrt{2 \log n} - (1/2) (\log \log n + \log 4 \pi)/\sqrt{2 \log n} \} \approx \exp( - e^{-x} )$ \citep{berman1964limit}.
+With $n=1000$, the typical distance to the furthest displacement after $m=1000$ generations is $\sqrt{2 \sigma^2 m \log n} \approx 212$km; after $m=6000$ generations it is $\approx 518$km.
 In either case, the chance that the maximum is larger than 1,000km after 6,000 generations is well less than $10^{-4}$.
 Of course, this is under an equilibrium population model; and maize reached the Andean highlands only around 4,000 years ago.
-Nonetheless, this suggests that even highland-adapted alleles that are merely neutral in the lowlands
-would have difficulty moving between the Mexican and Andean highlands in a few thousand generations.
+Nonetheless, this suggests that even highland-adapted alleles that are merely neutral in the lowlands would have difficulty moving between the Mexican and Andean highlands in a few thousand generations.
 
-Based on our spatially explicit population genetic model,
-parallel adaptation involving identical nucleotide changes is quite unlikely under either scenarios of independent mutation 
-or transit of Central America by undirected (diffusive) sharing of seed.
-However, independent mutations could be expected in kilobase-sized targets,
-suggesting there might be signal for genes that share adaptive changes.
-These conclusions could change if we drastically underestimated the rate of very-long-distance sharing of seed,
-e.g.\ if sharing across hundreds of kilometers was common at some point.
+Based on our spatially explicit population genetic model, convergent evolution involving identical nucleotide changes is quite unlikely under either scenarios of independent mutation or transit of Central America by undirected (diffusive) sharing of seed. 
+However, independent mutations could be expected in kilobase-sized targets, suggesting there might be signal for genes that share adaptive changes.
+These conclusions could change if we drastically underestimated the rate of very-long-distance sharing of seed, e.g.\ if sharing across hundreds of kilometers was common at some point.
 
