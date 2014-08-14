@@ -85,14 +85,12 @@ Most landraces were assigned to groups consistent with \emph{a priori} populatio
    \includegraphics[width=0.5\textwidth]{fig/Fig4}
    \renewcommand{\baselinestretch}{0.9}
    \vspace{-3mm}
-   \caption{Observed and expected joint distributions of minor allele frequencies in low- and highland populations in (A) Mexico and (B) S. America. Residuals are calculated as  $(\mbot{model}-\mbox{data})/\sqrt[]{\mbot{model}}$}
+   \caption{Observed and expected joint distributions of minor allele frequencies in low- and highland populations in (A) Mexico and (B) S. America. Residuals are calculated as  $(\mbox{model}-\mbox{data})/\sqrt[]{\mbox{model}}$}
 \vspace{-6mm}
     \label{JFD}
   \end{center}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
-\jri{legend text that says "allele frequency" should say "density" or somethign else i think, as it is showing not the freq. of an allele in the pop but the density of alleles in each category.}
-\st{Fixed}
 
 \subsection*{Population differentiation under inferred demography}
 
@@ -106,8 +104,6 @@ The likelihood value of model IB was higher than the likelihood of model IA by 8
 In addition to the parameters listed in Figure~\ref{model}, we investigated the impact of varying the domestication bottleneck size ($N_B$).  
 Surprisingly, $N_B$ was estimated to be equal to $N_C$, the population size at the end of the bottleneck, and the likelihood of $N_B<N_C$ was much smaller than for alternative parameterizations (Table~\ref{param}). This result appears to contradict earlier work using sequences from coding regions to infer a maize domestication bottleneck \cite[]{Eyre-Walker_1998_9539756,Tenaillon_2004_15014173,Wright_2005_15919994}.  
 Consistent with \citet{Hufford_2012_22660546}, our genome-wide SNP data show an excess of rare variants relative to expectations under \cite{Wright_2005_15919994}'s bottleneck model (Figure~\ref{JFD}), suggesting a domestication model involving a weaker bottleneck or more rapid population growth.
-\jri{I cut the purifying selection, as my sims suggest it only works under a relatively small parameter space of deleterious mutations.  also our models were estimated using GBS data so the purifying selection argument doesn't seem to hold}
-\st{agreed}
 
 Comparisons of our empirical $F_{ST}$ values to the null expectation simulated under our demographic models allowed us to identify significantly differentiated SNPs between low- and highland populations. In all cases, observed $F_{ST}$ values were quite similar to those generated under our null models (Figure~\ref{FstDist}), and model choice -- including the parameterization of the domestication bottleneck -- had little impact on the distribution of estimated p-values (Figure~S\ref{fig:qq}). 
 Thus, hereafter, we show the results under Model IB for Mexican populations and Model II for S. American populations.
@@ -121,9 +117,9 @@ We chose $P<0.01$ as an arbitrary cut-off for significant differentiation betwee
    \includegraphics[width=0.4\textwidth]{fig/Fig6}
    \renewcommand{\baselinestretch}{0.9}
    \vspace{-3mm}
-   \caption{Scatter plot of $-\log_10 P$-values of observed $F_{ST}$ values, based on simulation from \plr{which model} \st{described in the text; Model IB for Mex, Model II for SA}, in Mexico ($P_M$ on $x$-axes) and South America ($P_S$ on $y$-axes).  
+   \caption{Scatter plot of $-\log_10 P$-values of observed $F_{ST}$ values based on simulation from estimated demographic models. $P$-values are shown for each SNP in both Mexico (Model IB; $P_M$ on $x$-axis) and South America (Model II; $P_S$ on $y$-axis).  
    Red, blue, orange and gray dots represents SNPs showing significance in both Mexico and South America, only in Mexico, only in South America, respectively (see text for details).
-   The number of SNPs in each category is shown in the same color of dots.} 
+   The number of SNPs in each category is shown in the same color as the points.} 
 \vspace{-6mm}
     \label{PvDist}
   \end{center}
@@ -147,11 +143,11 @@ The majority of these SNPs show patterns of haplotype variation (by PHS test) co
 In order to characterize patterns of adaptation, we first determined whether SNPs showing high differentiation between the lowlands and the highlands arose primarily through new mutations or standing genetic variation.  
 We found that these putatively adaptive variants in both Mexico and South America tended to segregate in Mexican lowland population more often than other SNPs (85.3\% vs. 74.8\% in Mexico, Fisher's exact test (FET) {$P < 10^{-9}$ and 94.8\% vs 87.4\% in South America,  $P< 10^{-4}$).  
 
-\plr{``segregate in'' -- are these percentages of SNPs that are polymorphic (as opposed to fixed for either allele) in the relevant population?}
-\st{yes. No fixed allele between Mexico and S. America}
-\plr{I don't think I understand.  I'd expect SNPs with high frequency differences between high and lowland to have different chances of polymorphism in lowland populations, somehow.  Why is this meaningful?}
-\jri{agree with peter here. high fst SNPs will have higher mean freq. in maize (avg. between highland and lowland). higher mean freq == older, more likely to be found polymorphic in teosinte. perhaps we should either drop this or reassess taking into account allele freq? same is true for lowland comparison: under neutrality higher freq in highland -> higher freq in lowland and higher fst.}
-\st{In the new ver., P-values are calculated, taking mean freq into account.  So, is it ok?}
+%\plr{``segregate in'' -- are these percentages of SNPs that are polymorphic (as opposed to fixed for either allele) in the relevant population?}
+%\st{yes. No fixed allele between Mexico and S. America}
+%\plr{I don't think I understand.  I'd expect SNPs with high frequency differences between high and lowland to have different chances of polymorphism in lowland populations, somehow.  Why is this meaningful?}
+%\jri{agree with peter here. high fst SNPs will have higher mean freq. in maize (avg. between highland and lowland). higher mean freq == older, more likely to be found polymorphic in teosinte. perhaps we should either drop this or reassess taking into account allele freq? same is true for lowland comparison: under neutrality higher freq in highland -> higher freq in lowland and higher fst.}
+%\st{In the new ver., P-values are calculated, taking mean freq into account.  So, is it ok?}
 
 We extended this analysis to standing variation in \emph{parviglumis} by retrieving SNP data from 14 \emph{parviglumis} inbred lines included in the Hapmap v2 data set, using only SNPs with $n\geq10$ \cite[]{Chia_2012_22660545,Hufford_2012_22660546}.  
 Again we found that putatively adaptive variants were more likely to be polymorphic in \emph{parviglumis} (78.3\% vs. 72.2\% in Mexico, FET {$P < 0.01$ and 80.2\% vs 72.8\% in South America,  $P< 0.01$).  
@@ -207,9 +203,9 @@ Similar to that investigation, we found that SNPs with significant $F_{ST}$ $P$-
 Significant overlap was also observed between S. America and teosinte (Table~\ref{tanja}; $P<10^{-3}$), but the proportion of SNPs was lower than in Mexico.
 These data suggest that adaptations in Mexican maize may have been obtained through gene flow with wild relatives.  To more fully explore this hypothesis we evaluated our data in light of introgression identified by \citep{Profford_2013} from \textit{mexicana} into maize in the Mexican highlands.  
 The proportion of significant SNPs in introgressed regions in Mexico is significantly higher than found in S. America (FET $P<10^{-6}$).
-Outside introgressed regions, the Mexican and S. American populations did not show marked differences in the proportion of significant SNPs (Fisher's exact test, $P=0.036$). These results combined with those from \citep{Profford_2013} suggest that SNPs in introgressed regions have indeed been under selection.  
-\jri{can we say this? if we assume gene flow is correct, wouldn't we expect neutral introgressions from mexicana to show high Fst with lowland maize? maybe delete these sentences and just point out that Tanja's outliers were enriched in matt's regions (i think that's right?)}
-\st{I checked this.  First, I excluded SNPs with significant Fst P-values.  Next, I calculated average Fst within and outside the introgressed regions. The average Fst value within the introgressed regions is 0.032 and that outside those regions is 0.020, so it's ok.}
+Outside introgressed regions, the Mexican and S. American populations did not show marked differences in the proportion of significant SNPs (Fisher's exact test, $P=0.036$). These results combined with those from \citep{Profford_2013} suggest that SNPs in introgressed regions have indeed been under selection.  \jri{add sho's rsults about fst in and out of introgressed region}
+%\jri{can we say this? if we assume gene flow is correct, wouldn't we expect neutral introgressions from mexicana to show high Fst with lowland maize? maybe delete these sentences and just point out that Tanja's outliers were enriched in matt's regions (i think that's right?)}
+%\st{I checked this.  First, I excluded SNPs with significant Fst P-values.  Next, I calculated average Fst within and outside the introgressed regions. The average Fst value within the introgressed regions is 0.032 and that outside those regions is 0.020, so it's ok.}
 
 %When focusing on GUs, we identified 99/586 (14.5\%) and 22/466 (4.7\%) GUs of Mexico- and SA-specific significance in introgressed regions (Fisher's exact test, $P<10^{-6}$). 
 %Would the genetic unit numbers work in the tanja table? i liek those numbers and think we should keep if possible.
@@ -225,16 +221,16 @@ While maize adaptation in Mexico and S. America are likely distinguished by uniq
 Convergent evolution at the nucleotide level should be reflected in an excess of SNPs showing significant differentiation between low- and highland populations in both Mexico and S. America. 
 We indeed see such an excess, with 19 SNPs showing $F_{ST}$ \emph{P}-values  $<0.01$ in both Mexico ($P_M$) and S. America ($P_S$), compared to $\approx 5$ expected ($48,370\times 0.01 \times 0.01 \approx 4.8$; $\chi^2$-test, $P\ll0.001$).
 
-\st{
-DELETE this part.  This q-value approach doesn't work in the new dataset.
-Furthermore, the distribution of $P_M$ in the 712 SNPs with $P_S<0.01$ was highly skewed toward zero, and a similar tendency was observed in $P_S$ in the 935 SNPs with $P_M<0.01$ (Figure~\ref{pval_freq_comparison}).  
-We converted the $P$-values in one population given $P<0.01$ in the other population into $q$-values, and at a false discovery rate of 0.2 we found 117 SNPs with $P_M<0.01 \cap P_S < 0.0169$ or $P_M<0.0247 \cap P_S < 0.01$.   
-We consider these latter SNPS our candidate shared adaptive variants.}
+%\st{
+%DELETE this part.  This q-value approach doesn't work in the new dataset.
+%Furthermore, the distribution of $P_M$ in the 712 SNPs with $P_S<0.01$ was highly skewed toward zero, and a similar tendency was observed in $P_S$ in the 935 SNPs with $P_M<0.01$ (Figure~\ref{pval_freq_comparison}).  
+%We converted the $P$-values in one population given $P<0.01$ in the other population into $q$-values, and at a false discovery rate of 0.2 we found 117 SNPs with $P_M<0.01 \cap P_S < 0.0169$ or $P_M<0.0247 \cap P_S < 0.01$.   
+%We consider these latter SNPS our candidate shared adaptive variants.}
 
 For 13 of 19 SNPs showing putative evidence of shared selection we also had data from \textit{parviglumis} and were able to infer based on patterns of segregation whether these SNPs were potentially adaptive under lowland or highland conditions (Supplemental Text).  
 Surprisingly, SNPs identified as shared adaptive variants more frequently showed segregation patterns consistent with lowland  (10 SNPs) rather than highland adaptation (2 SNPs). (1 SNP with an ambiguous pattern). 
 
-\st{DELETE While the number of shared SNPs is in excess of expectations, we the majority of significant SNPs were significant only in one population (959 $P_M<0.01 \cap P_S > 0.0169$ and 664 $P_S<0.01 \cap P_M>0.0247$; Figure \ref{PvDist}).  }
+%\st{DELETE While the number of shared SNPs is in excess of expectations, we the majority of significant SNPs were significant only in one population (959 $P_M<0.01 \cap P_S > 0.0169$ and 664 $P_S<0.01 \cap P_M>0.0247$; Figure \ref{PvDist}).  }
 
 Our demographic models are not perfect; the observed proportion of rare variants was much higher than expected (Figure~\ref{JFD}).
 Nevertheless, this faultiness does not affect our conclusion.
