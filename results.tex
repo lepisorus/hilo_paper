@@ -197,20 +197,17 @@ NS                                & 133            &  17,518    & 0.018\\[1mm]
 
 A marked difference between highland adaptation of maize in Mexico and S. America is the potential for adaptation through introgression from wild relatives.  
 While maize in Mexico grows in sympatry with both the lowland taxon \textit{parviglumis} and the highland taxon \textit{mexicana}, maize in South America is outside the range of wild \textit{Zea} species.
-\citet{Pyhajarvi2013} recently assessed the potential for local adaptation in \textit{parviglumis} and \textit{mexicana} populations, characterizing differentiation between these subspecies using an $F_{ST}$-outlier approach.
+\citet{Pyhajarvi2013} recently assessed the potential for local adaptation in \textit{parviglumis} and \textit{mexicana} populations, characterizing differentiation between these subspecies using an v-outlier approach.
 We observed a significant excess of overlap between our putatively adaptive SNPs in Mexican maize and those identified in the \citet{Pyhajarvi2013} analysis (Table~\ref{tanja}; $P<10^{-8}$ by FET). 
-Similar to that investigation, we found that SNPs with significant $F_{ST}$ $P$-values were enriched in intergenic regions than protein coding regions (60.0\% vs. 47.9\%, FET $P < 10^{-7}$ for Mexico; 62.0\% vs. 47.8\%, FET $P<10^{-5}$ for S. America). 
+Similar to that investigation, we found that SNPs with significant $F_{ST}$ $P$-values were enriched in intergenic regions than protein coding regions (60.0\% vs. 47.9\%, FET $P < 10^{-7}$ for Mexico; 62.0\% vs. 47.8\%, FET $P<10^{-5}$ for S. America). \jri{doesn't belong here}
 Significant overlap was also observed between S. America and teosinte (Table~\ref{tanja}; $P<10^{-3}$), but the proportion of SNPs was lower than in Mexico.
 These data suggest that adaptations in Mexican maize may have been obtained through gene flow with wild relatives.  To more fully explore this hypothesis we evaluated our data in light of introgression identified by \citep{Profford_2013} from \textit{mexicana} into maize in the Mexican highlands.  
 The proportion of significant SNPs in introgressed regions in Mexico is significantly higher than found in S. America (FET $P<10^{-6}$).
-Outside introgressed regions, the Mexican and S. American populations did not show marked differences in the proportion of significant SNPs (Fisher's exact test, $P=0.036$). These results combined with those from \citep{Profford_2013} suggest that SNPs in introgressed regions have indeed been under selection.  \jri{add sho's rsults about fst in and out of introgressed region}
-%\jri{can we say this? if we assume gene flow is correct, wouldn't we expect neutral introgressions from mexicana to show high Fst with lowland maize? maybe delete these sentences and just point out that Tanja's outliers were enriched in matt's regions (i think that's right?)}
-%\st{I checked this.  First, I excluded SNPs with significant Fst P-values.  Next, I calculated average Fst within and outside the introgressed regions. The average Fst value within the introgressed regions is 0.032 and that outside those regions is 0.020, so it's ok.}
+Outside introgressed regions, the Mexican and S. American populations did not show marked differences in the proportion of significant SNPs (Fisher's exact test, $P=0.036$).  Excluding  significant $F_{ST}$ outliers, mean $F_{ST}$ between Mexico and S. America is only slightly higher in introgressed regions (0.032) than across the rest of the genome (0.020), suggesting these differences are not simply due to neutral introgression of a divergent teosinte haplotype.  Combined with observations from \citep{Profford_2013}, our results suggest that SNPs in introgressed regions have indeed been under selection. 
 
 %When focusing on GUs, we identified 99/586 (14.5\%) and 22/466 (4.7\%) GUs of Mexico- and SA-specific significance in introgressed regions (Fisher's exact test, $P<10^{-6}$). 
 %Would the genetic unit numbers work in the tanja table? i liek those numbers and think we should keep if possible.
 % ST: the number of overlapped SNPs is not big between Tanja's and mine, so it's hard to check GUs.
-
 
 \subsubsection{Genetic basis of convergent evolution}
 
@@ -238,16 +235,16 @@ We performed a demographic model-free approach.
 We simply defined adaptive variants that showed top 1\% highest Fst values given $p\pm 0.05$, where $p$ is the mean allele frequency in highlands and lowlands.
 We detected no shared adaptive variant between Mexican and S. American populations by this approach.
 
-In addition to evaluating parallel adaptation at the SNP level, we investigated how often different SNPs in the same gene may have been targeted by selection. 
+In addition to evaluating convergent adaptation at the SNP level, we investigated how often different SNPs in the same gene may have been targeted by selection. 
 To search for this pattern, we defined a ``genetic unit" or GU as all SNPs within 10kb of a transcript.  
 SNPs in an miRNA or second transcript within 10kb of the transcript of interest were excluded.  
 We classified SNPs showing significance in Mexico, S. America or in both regions into 778 GUs. 
 Of these, 14 GUs contained at least one SNP with a pattern of differentiation suggesting convergent evolution and 2 GUs contained both Mexico-specific and SA-specific significant SNPs. 
 Overall, fewer GUs showed evidence of convergent evolution than expected by chance (permutation test; $P<10^{-5}$), with 485 and 277 GUs showing Mexico-specific and SA-specific significant SNPs, respectively.  
-Despite similar phenotypes and environments, we thus see little evidence for parallel adaptation at either the SNP or the gene (GU) level.  
+Despite similar phenotypes and environments, we thus see little evidence for convergent adaptation at either the SNP or the gene (GU) level.  
 
 \jri{this paragraph needs reworking and to jive with the below from peter}
-The rarity of parallel adaptations in maize contrasts with data from humans \citep{Tennessen_2011_21698142} showing selection on the same genes in multiple pairs of tropical and temperate populations.  
+The rarity of convergent adaptations in maize contrasts with data from humans \citep{Tennessen_2011_21698142} showing selection on the same genes in multiple pairs of tropical and temperate populations.  
 However, in both maize and humans the majority of adaptive variants appear to have been derived from standing variation \cite[]{Tennessen_2011_21698142}.
 One difference between these two species is effective population size: the effective population size of maize ($\sim10^5$) is an order of magnitude larger than that in humans \cite[]{Takahata_1997_9114074}.
 Humans would therefore have less standing variation as a source of adaptation, resulting in the same variants being selected in multiple subpopulations (as long as $s$ is sufficiently large and initial frequency is, for example, $>0.1$).

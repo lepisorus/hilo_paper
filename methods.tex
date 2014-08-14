@@ -38,8 +38,6 @@ This array contains SNPs discovered in multiple ascertainment schemes \cite[]{Ga
 
 The second data set was generated for a subset of 87 of the landrace accessions (Table \ref{srkid}) utilizing high-throughput Illumina sequencing data via genotyping-by-sequencing \cite[GBS;][]{Elshire2011}.
 Genotypes were called using TASSEL-GBS \cite[]{Glaubitz_GBS} resulting in 2,848,284 SNPs with an average of 71.3\% missing data per individual.
-\jri{Sho, please fill in the XX's and add label references for supp tables throughout}
-\st{done}
 
 To assess data quality, we compared genotypes at the 7,197 SNPs (229,937 genotypes, excluding missing data) that overlap between the MaizeSNP50 and GBS data sets. 
 While only 0.8\% of 173,670  comparisons involving homozygous MaizeSNP50 genotypes differed in the GBS data, 88.6\% of 56,267 comparisons with MaizeSNP50 heterozygotes differed, nearly always being reported as a homozygote in GBS.
@@ -59,7 +57,7 @@ Results across replicates were nearly identical.
 \subsection*{Demographic inference}
 We tested three demographic models in which maize was differentiated into high- and lowland populations subsequent to domestication (Figure~\ref{model}). 
 Observed joint frequency distributions (JFDs) were calculated using the GBS data set due to its lower level of ascertainment bias. 
-A subset of silent \jri{would it be correct to change "silent" to say "synonymous and noncoding"?}\st{ok} SNPs were utilized that had $\geq15$ individuals without missing data in both low- and highland populations and did not violate HWE.  
+A subset of synonymous and noncoding SNPs were utilized that had $\geq15$ individuals without missing data in both low- and highland populations and did not violate HWE.  
 A HWE cut-off of $P<0.005$ was used for each subpopulation due to our under-calling of heterozygotes. 
 In total, we included 18,745 silent SNPs for the Mexican populations in Models IA and IB, 14,508 for the S. American populations in Model I and 11,305 for the Mexican lowland population and the S. American populations in Model II.  
 We obtained similar results under more or less stringent thresholds for significance ($P < 0.05\sim0.0005$; data not shown), though the number of SNPs was very small at $P<0.005$.  
@@ -91,13 +89,11 @@ The population size recovers to $N_C=\alpha N_A$ in the lowlands.
 Then, the highland population is differentiated from the lowland population at $t_F$ generations ago.  
 The size of the low- and highland populations at time $t_F$ is determined by a parameter $\beta$ such that the population is divided by $\beta N_C$ and $(1-\beta)N_C$.  
 We assume that the population size in the lowlands is constant but that the highland population experiences exponential expansion after divergence: its current population size is $\gamma$ times larger than that at $t_F$.  \\
-\jri{isn't this really a shrinking population in the lowlands, since $\beta N_C<N_C$ ? wouldn't we want instead for lowlands to stay at $N_C$ and a new population branching off?  how much do we worry about this?}
-\st{actually, our conclusion holds when I assumed the pop size of lowlands stays at $N_C$.  However, the likelihood is a bit better in my original model.}
+%\jri{isn't this really a shrinking population in the lowlands, since $\beta N_C<N_C$ ? wouldn't we want instead for lowlands to stay at $N_C$ and a new population branching off?  how much do we worry about this?}
+%\st{actually, our conclusion holds when I assumed the pop size of lowlands stays at $N_C$.  However, the likelihood is a bit better in my original model.}
 
 \subsubsection{Model IB}
 We expand Model IA for the Mexico populations by incorporating admixture from the teosinte \emph{mexicana} to the highland Mexican maize population.  
-\jri{do we say "Mexico population" or "Mexican" (and thus "South American") "population" throughout?  as long as we're consistent probably OK either way.}
-\st{vote to Mexican population}
 The time of differentiation between \emph{parviglumis} and \emph{mexicana} occurs at $t_{mex}$ generations ago.  
 The \emph{mexicana} population size is assumed to be constant at $N_{mex}$.  
 At $t_F$ generations ago, the Mexican highland population is derived from admixture of between the Mexican lowland population and a portion $P_{mex}$ from the teosinte \emph{mexicana} .  \\
@@ -116,10 +112,6 @@ Taking into account archaeological evidence \cite[]{Piperno_2009_19307570}, we a
 We further assumed $t_F=6,000$ for Mexican populations in Models IA and IB \cite[]{Piperno_2006_69}, $t_F=4,000$ for S. American populations in Model lA \cite[]{Perry_2006_16511492,Grobman_2012_22307642}, and $t_{mex}=60,000$, $N_{mex}=160,000$ \cite[]{Ross-Ibarra_2009_19153259}, and $P_{mex}=0.2$ \cite[]{vanHeerwaarden_2011_21189301} for Model IB. 
 For both Models IA and IB, we inferred three parameters ($\alpha$, $\beta$ and $\gamma$), and, for Model II, we fixed $t_F=6,000$ and $t_G=4,000$ \cite[]{Piperno_2006_69,Perry_2006_16511492,Grobman_2012_22307642}  and estimated the remaining four parameters ($\alpha$, $\beta_1$, $\beta_2$ and $\gamma$).
 
-\jri{$t_F$ for model II is listed as 4,000 and 6,000 above.  6,000 is the number that matches the lit best. is that what was used? if so, we should cite \cite[]{Grobman_2012_22307642}}
-\st{fixed}
-
-
 \subsection*{Differentiation between low- and highland populations}
 We used our inferred demographic model to generate a null distribution of $F_{ST}$.
 As implemented in $\delta a \delta i$ \cite[]{Gutenkunst_2009_19851460}, we calculated an expected JFD given estimated demographic parameters and the sample sizes of highlands and lowlands.
@@ -135,11 +127,11 @@ For each combination of sample sizes in low- and highland populations, we genera
 Then, we calculated \emph{P}-values from the JDF in the same way.
 We calculated $F_{ST}$ values for all SNPs that had $\geq10$ individuals with no missing data in all four populations and showed no departure from HWE at the 0.5\% (GBS) or 5\% (MaizeSNP50) level. 
 
-\jri{we don't correct for allele frequency (or heterozygosity) in our Fst outlier analysis do we?  if not, this is a problem I think.}
-\st{I did.  No essential change}
+%\jri{we don't correct for allele frequency (or heterozygosity) in our Fst outlier analysis do we?  if not, this is a problem I think.}
+%\st{I did.  No essential change}
 
-\jri{do we use all GBS data in the Fst outlier test, or just silent SNPs? we should be able to use nonsynonymous too, right?}
-\st{I used all.}
+%\jri{do we use all GBS data in the Fst outlier test, or just silent SNPs? we should be able to use nonsynonymous too, right?}
+%\st{I used all.}
 
 \subsection*{Haplotype sharing test}
 We performed a \underline{p}airwise \underline{h}aplotype \underline{s}haring (PHS) test to detect further evidence of selection, following \cite{Toomajian_2006_16623598}.  
