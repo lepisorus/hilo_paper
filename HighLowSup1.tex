@@ -62,6 +62,8 @@
 %\renewcommand{\thefigure}{\Roman{figure}} 
 % Figure AllelePat is not called in the main text, and I use Roman numbers for figure numbers
 
+
+
 \section*{Supplemental Text} \label{sec:supptextsho}
 %\noindent {\Large \textit{Text~S1} }
 
@@ -112,7 +114,8 @@ The result is summarized in Table~S3.
 \suppl
 
 %\section*{SUPPLEMENTAL METHODS}
-
+\renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\thetable}{S\arabic{table}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -305,7 +308,7 @@ RIMMA0668	&	Ames 28668	&		&	Granada	&	Puno, Peru	&	-14.9 	&	-70.6 	&	3925	&	Good
 \multicolumn{3}{l}{The description of $\alpha, \beta$ and $\gamma$ is in Figure~3.}\\
 \multicolumn{3}{l}{$\sigma$ is a relative size of $N_B$ to $N_C$ ($N_B=\sigma N_C$).}\\
     \end{tabular}
-    \label{param}  % caption is needed to make this work
+    \label{supp:param}  % caption is needed to make this work
 }
 \end{center}
 \end{table}
@@ -332,7 +335,7 @@ RIMMA0668	&	Ames 28668	&		&	Granada	&	Puno, Peru	&	-14.9 	&	-70.6 	&	3925	&	Good
                      & Lowland adaptation & 70 & 50 (71.4\%)  \\[0.1cm]
     \hline
     \end{tabular}
-    \label{phs}  % caption is needed to make this work
+    \label{supp:phs}  % caption is needed to make this work
 }
 \end{center}
 \end{table}
@@ -399,9 +402,19 @@ RIMMA0668	&	Ames 28668	&		&	Granada	&	Puno, Peru	&	-14.9 	&	-70.6 	&	3925	&	Good
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t]
   \begin{center}
+    \includegraphics[width=0.4\columnwidth]{fig/col.pdf}
+    \caption{Correlation of allele frequencies between GBS (\emph{x}-axes) and MaizeSNP50 (\emph{y}-axes) data.  We used overlapped SNPs with $n\geq40$ for both data sets.  Correlation coefficient is 0.890 ($P<10^{-5}$ by permutation test with $10^5$ replications).}
+    \label{supp:correl_freq}
+  \end{center}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[t]
+  \begin{center}
     \includegraphics[width=0.4\columnwidth]{fig/kk.pdf}
     \caption{Likelihood of STRUCTURE analysis given $K$.  The \emph{x}-axes represents $K$ and the \emph{y}-axes represents likelihood.}
-    \label{fig:correl_freq}
+    \label{supp:struct}
   \end{center}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -418,13 +431,13 @@ RIMMA0668	&	Ames 28668	&		&	Granada	&	Puno, Peru	&	-14.9 	&	-70.6 	&	3925	&	Good
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[t]
-  \begin{center}
-    \includegraphics[width=0.8\columnwidth]{fig/pmps.pdf}
-    \caption{(A) Frequency distribution of $P_M$ given $P_S<0.01$ and $P_S\geq0.01$.  (B) Frequency distribution of $P_S$ given $P_M<0.01$ and $P_M\geq0.01$.}
-    \label{pval_freq_comparison}
-  \end{center}
-\end{figure}
+%\begin{figure}[t]
+%  \begin{center}
+%    \includegraphics[width=0.8\columnwidth]{fig/pmps.pdf}
+%    \caption{(A) Frequency distribution of $P_M$ given $P_S<0.01$ and $P_S\geq0.01$.  (B) Frequency distribution of $P_S$ given $P_M<0.01$ and $P_M\geq0.01$.}
+%    \label{pval_freq_comparison}
+%  \end{center}
+%\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -432,21 +445,13 @@ RIMMA0668	&	Ames 28668	&		&	Granada	&	Puno, Peru	&	-14.9 	&	-70.6 	&	3925	&	Good
   \begin{center}
     \includegraphics[width=0.7\columnwidth]{fig/LD.pdf}
     \caption{Pattern of decay of linkage equilibrium in Mexico (A) and South America (B).  Red and blue dots represent low- and highland population, respectively.  $r^2$ values were calculated as a statistics and averaged within 10-bp bins of distance between SNPs.  The \emph{x}- and \emph{y}-axes represent distance between SNPs (kb) and average $r^2$ values.}
- %   \label{colfreq}
+    \label{supp:LD}
   \end{center}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[t]
-  \begin{center}
-    \includegraphics[width=0.4\columnwidth]{fig/col.pdf}
-    \caption{Correlation of allele frequencies between GBS (\emph{x}-axes) and MaizeSNP50 (\emph{y}-axes) data.  We used overlapped SNPs with $n\geq40$ for both data sets.  Correlation coefficient is 0.890 ($P<10^{-5}$ by permutation test with $10^5$ replications).}
-%    \label{colfreq}
-  \end{center}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 
 
