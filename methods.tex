@@ -34,7 +34,7 @@ The first set was generated using the Illumina MaizeSNP50 BeadChip platform, inc
 SNPs were clustered with the default algorithm of the GenomeStudio Genotyping Module v1.0 (Illumina Inc., San Diego, CA, USA).   
 Clustering for each SNP was then visually inspected and manually adjusted.  
 These data are referred to as "MaizeSNP50" hereafter.  
-This array contains SNPs discovered in multiple ascertainment schemes \cite[]{Ganal_2011_22174790}; however, the vast majority of SNPs come from polymorphisms distinguishing the maize inbred lines B73 and Mo17 (14,810 SNPs) or identified from sequencing 25 diverse inbred lines \cite[40,594 SNPs;][]{Gore20112009}.  
+This array contains SNPs discovered in multiple ascertainment schemes \cite[]{Ganal_2011_22174790}; however, the vast majority of SNPs come from polymorphisms distinguishing the maize inbred lines B73 and Mo17 (14,810 SNPs) or identified from sequencing 25 diverse maize inbred lines \cite[40,594 SNPs;][]{Gore20112009}.  
 
 The second data set was generated for a subset of 87 of the landrace accessions (Table~\ref{srkid}) utilizing high-throughput Illumina sequencing data via genotyping-by-sequencing \cite[GBS;][]{Elshire2011}.
 Genotypes were called using TASSEL-GBS \cite[]{Glaubitz_GBS} resulting in 2,848,284 SNPs with an average of 71.3\% missing data per individual.
@@ -43,7 +43,7 @@ Genotypes were called using TASSEL-GBS \cite[]{Glaubitz_GBS} resulting in 2,848,
 
 To assess data quality, we compared genotypes at the 7,197 SNPs (229,937 genotypes, excluding missing data) that overlap between the MaizeSNP50 and GBS data sets. 
 While only 0.8\% of 173,670  comparisons involving homozygous MaizeSNP50 genotypes differed in the GBS data, 88.6\% of 56,267 comparisons with MaizeSNP50 heterozygotes differed, nearly always being reported as a homozygote in GBS.
-Despite this high heterozygote error rate,  the high correlation in allele frequencies between data sets ($r=0.89$; Figure~\ref{supp:correl_freq}) supports its utility in estimating allele frequencies.  
+Despite this high heterozygote error rate,  the high correlation in allele frequencies between data sets ($r=0.89$; Figure~\ref{supp:correl_freq}) supports the utility of the GBS data set for estimating allele frequencies.  
 
 We annotated SNPs using the filtered gene set from RefGen version 2 of the maize B73 genome sequence (\citealt{Schnable_2009_19965430}; release 5b.60) from maizesequence.org.  
 We excluded genes annotated as transposable elements (84) and pseudogenes (323) from the filtered gene set, resulting in a total of 38,842 genes.
@@ -53,7 +53,7 @@ We performed a {\sf STRUCTURE} analysis \cite[]{Pritchard_2000_10835412,Falush_2
 We assumed free recombination between SNPs without missing data and randomly pruned SNPs closer than 10 kb (alternative distances were tried with nearly identical results). 
 We excluded SNPs in which the number of heterozygous individuals exceeded homozygotes and where the \emph{P}-value for departure from Hardy-Weinberg Equilibrium (HWE) based on a \emph{G}-test was smaller than 0.05 using all individuals. 
 Following these data thinning measures, 17,013 biallelic SNPs remained. 
-We conducted three replicate runs of {\sf STRUCTURE} using the correlated allele frequency model with admixture for \emph{K} = 2 through 6 populations, a burn-in length of 50,000 iterations and a run length of 100,000 iterations. 
+We conducted three replicate runs of {\sf STRUCTURE} using the correlated allele frequency model with admixture for \emph{K} = 2 through \emph{K} = 6 populations, a burn-in length of 50,000 iterations and a run length of 100,000 iterations. 
 Results across replicates were nearly identical.
 
 \subsection*{Demographic inference}
@@ -64,7 +64,7 @@ SNPs were utilized that had $\geq15$ individuals without missing data in both lo
 A HWE cut-off of $P<0.005$ was used for each subpopulation due to our under-calling of heterozygotes. 
 In total, we included 18,745 silent SNPs for the Mexican populations in Models IA and IB, 14,508 for the S. American populations in Model I and 11,305 for the Mexican lowland population and the S. American populations in Model II.  
 We obtained similar results under more or less stringent thresholds for significance ($P < 0.05\sim0.0005$; data not shown), though the number of SNPs was very small at $P<0.005$.  
-Demographic parameters were inferred using the software $\delta a \delta i$ \cite[]{Gutenkunst_2009_19851460}, which uses a diffusion method to calculate an expected JFD and evaluates the likelihood of the data using a multinomial assumption.
+Demographic parameters were inferred with the software $\delta a \delta i$ \cite[]{Gutenkunst_2009_19851460}, which uses a diffusion method to calculate an expected JFD and evaluates the likelihood of the data using a multinomial assumption.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
 \begin{figure}[tb]   
@@ -181,11 +181,11 @@ Genetic distances were obtained for the MaizeSNP50 data \cite[]{Ganal_2011_22174
 
 
 %%%% PLR:
-\subsection*{Theoretical evaluation of parallel adaptation }
+\subsection*{Theoretical evaluation of convergent evolution }
 
 We suggest below that many of the high-$F_{ST}$ alleles are locally adaptive,
 and the degree of coincidence between highland regions informs us about 
-whether these adaptations occurred in parallel, 
+whether these adaptations occurred convergently, 
 or if alleles were transmitted between the two by migration.
 To see if the abundance and degree of coincidence is consistent with what is known about the population history of maize,
 we evaluated the rate at which we expect an allele that provides a selective advantage at higher altitude
