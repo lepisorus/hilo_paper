@@ -99,16 +99,17 @@ We assume that the population size in the lowlands is constant but that the high
 We expand Model IA for the Mexican populations by incorporating admixture from the teosinte \emph{mexicana} to the highland Mexican maize population.  
 \jri{do we say "Mexico population" or "Mexican" (and thus "South American") "population" throughout?  as long as we're consistent probably OK either way.}
 \st{vote to Mexican population}
+\mbh{second}
 The time of differentiation between \emph{parviglumis} and \emph{mexicana} occurs at $t_{mex}$ generations ago.  
 The \emph{mexicana} population size is assumed to be constant at $N_{mex}$.  
-At $t_F$ generations ago, the Mexican highland population is derived from admixture of between the Mexican lowland population and a portion $P_{mex}$ from the teosinte \emph{mexicana} .  \\
+At $t_F$ generations ago, the Mexican highland population is derived from admixture between the Mexican lowland population and a portion $P_{mex}$ from the teosinte \emph{mexicana} .  \\
 
 \subsubsection{Model II}
 The final model is for the Mexican lowland, S. American lowland and highland populations.  
 This model was used for simulating SNPs with ascertainment bias (see below).  
 At time $t_F$, the Mexican and S. American lowland populations are differentiated, and the sizes of populations after splitting are determined by $\beta_1$.  
-At time $t_G$, SA lowland and highland populations are differentiated, and the sizes of populations at this time are determined by $\beta_2$.  
-As in Model IA, the S. American highland population is assumed to experience population growth with the parameter, $\gamma$.\\
+At time $t_G$, S. American lowland and highland populations are differentiated, and the sizes of populations at this time are determined by $\beta_2$.  
+As in Model IA, the S. American highland population is assumed to experience population growth with the parameter $\gamma$.\\
 
 Estimates of a number of our model parameters were available from previous work.    
 $N_A$ was set to 150,000 using estimates of the composite parameter $4N_A\mu \sim 0.018$ from \emph{parviglumis}  \cite[]{Eyre-Walker_1998_9539756,Tenaillon_2001_11470895,Tenaillon_2004_15014173,Wright_2005_15919994,Ross-Ibarra_2009_19153259} and an estimate of the mutation rate $\mu \sim 3\times 10^{-8}$ \cite[]{Clark_2005_16079248} per site per generation.  
@@ -144,9 +145,9 @@ We calculated $F_{ST}$ values for all SNPs that had $\geq10$ individuals with no
 
 \subsection*{Haplotype sharing test}
 We performed a \underline{p}airwise \underline{h}aplotype \underline{s}haring (PHS) test to detect further evidence of selection, following \cite{Toomajian_2006_16623598}.  
-To conduct this test, we first imputed and phased the combined SNP data (both GBS and MaizeSNP50) using the {\sf fastphase} software version 1.4.0 \cite[]{Scheet_2006_16532393}.  
+To conduct this test, we first imputed and phased the combined SNP data (both GBS and MaizeSNP50) using the {\sf fastPHASE} software version 1.4.0 \cite[]{Scheet_2006_16532393}.  
 As a reference for phasing, we used data (excluding heterozygous SNPs) from an Americas-wide sample of 23 partially inbred landraces from the Hapmap v2 data set  \cite[]{Chia_2012_22660545}.  
-We ran {\sf fastphase}  with default parameter settings.  
+We ran {\sf fastPHASE}  with default parameter settings.  
 PHS was calculated for an allele \emph{A} at position $x$ by
 
 \begin{equation}
