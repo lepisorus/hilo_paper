@@ -1,69 +1,73 @@
-\documentclass[onecolumn,oneside,letterpaper,12pt]{article} 
-
-\usepackage{geneticsSupT}
+%\documentclass[onecolumn,oneside,letterpaper,12pt]{article} 
+%
+%\usepackage{geneticsSupT}
 %\usepackage{geneticsT2}
-
-\usepackage{times}
-\usepackage{color}
-
+%
+%\usepackage{times}
+%\usepackage{color}
+%
 % rayout %
-\addtolength{\oddsidemargin}{-2.75cm}
-\addtolength{\evensidemargin}{-0.75cm}
-
-\addtolength{\textwidth}{5.5cm}
-\addtolength{\topmargin}{-3cm}
-\addtolength{\textheight}{4.5cm}
-
-\parindent=1em
-\setlength{\parskip}{0.01pt}
-
-\renewcommand{\textfraction}{0.01}
-\renewcommand{\topfraction}{0.99}
-\renewcommand{\bottomfraction}{0.65}
-\renewcommand{\floatpagefraction}{0.90}
-\renewcommand{\dbltopfraction}{0.95}
-\renewcommand{\dblfloatpagefraction}{0.80}
-\renewcommand{\sfdefault}{phv}
-
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhf{}
-\fancyfoot[CE,CO]{\thepage}
-\renewcommand{\headrulewidth}{0pt}
-\fancypagestyle{plain}{
-	\fancyhf{}
-}
-
+%\addtolength{\oddsidemargin}{-2.75cm}
+%\addtolength{\evensidemargin}{-0.75cm}
+%
+%\addtolength{\textwidth}{5.5cm}
+%\addtolength{\topmargin}{-3cm}
+%\addtolength{\textheight}{4.5cm}
+%
+%\parindent=1em
+%\setlength{\parskip}{0.01pt}
+%
+%\renewcommand{\textfraction}{0.01}
+%\renewcommand{\topfraction}{0.99}
+%\renewcommand{\bottomfraction}{0.65}
+%\renewcommand{\floatpagefraction}{0.90}
+%\renewcommand{\dbltopfraction}{0.95}
+%\renewcommand{\dblfloatpagefraction}{0.80}
+%\renewcommand{\sfdefault}{phv}
+%
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+%\fancyhf{}
+%\fancyfoot[CE,CO]{\thepage}
+%\renewcommand{\headrulewidth}{0pt}
+%\fancypagestyle{plain}{
+%	\fancyhf{}
+%}
+%
 % space of double hline in Table
-\doublerulesep = 0.4pt
+%\doublerulesep = 0.4pt
+%
+%\title{The molecular basis of parallel adaptation to\\ highland climate in domesticated maize.}
+%
+%\author{
+% Shohei Takuno, Peter Ralph, Sofiane Mezmouk, Kelly Swarts, Matthew B. Hufford, Rob J. Elshire, Jeffrey C. Glaubitz, Edward S. Buckler and Jeffrey Ross-Ibarra
+%   }
+%
+%\usepackage{natbib}
+%\bibpunct{(}{)}{;}{a}{}{,}
+%
+%\usepackage{amsmath}
+%
+%\usepackage{graphicx}
+%
+%\begin{document}
 
-\title{The molecular basis of parallel adaptation to\\ highland climate in domesticated maize.}
-
-\author{
- Shohei Takuno, Peter Ralph, Sofiane Mezmouk, Kelly Swarts, Matthew B. Hufford, Rob J. Elshire, Jeffrey C. Glaubitz, Edward S. Buckler and Jeffrey Ross-Ibarra
-   }
-
-\usepackage{natbib}
-\bibpunct{(}{)}{;}{a}{}{,}
-
-\usepackage{amsmath}
-
-\usepackage{graphicx}
-
-\begin{document}
-
-\maketitle
+%\maketitle
 
 % Supplemental 
 
-Later we should separate all Text S1, figs and tables in this file if we submit PLoS G.
 
 \newpage
-
-\renewcommand{\thefigure}{\Roman{figure}} 
+\st{Later we should separate all Text S1, figs and tables in this file if we submit PLoS G.}
+%\renewcommand{\thefigure}{\Roman{figure}} 
 % Figure AllelePat is not called in the main text, and I use Roman numbers for figure numbers
 
-\noindent {\Large \textit{Text~S1} }
+
+
+\section*{Supplemental Text} \label{sec:supptextsho}
+%\noindent {\Large \textit{Text~S1} }
+
+\jri{This needs some rewriting -- Matt?}
 
 We classified the patterns of allelic differentiation among highland and lowland populations in Mexico and S. America together with the information of \emph{parviglumis} in an \emph{ad hoc} manner; the allelic differentiation pattern is consistent with highland or lowland adaptation scenario.  
 In Figure~\ref{AllelePat}, we illustrate the frequency of putative ancestral and derived alleles in the five populations, drawn by red and blue, respectively.
@@ -71,6 +75,8 @@ In Figure~\ref{AllelePat}, we illustrate the frequency of putative ancestral and
 First, we focus on the SNPs with the signature of adaptation only in Mexican populations (Figure~\ref{AllelePat}A).  
 The first and second rows shows the typical patterns of highland adaptation with \emph{parviglumis} data available.
 We simply assume that the allele in higher frequency in \emph{parviglumis} is ancestral.
+\jri{we have decent Tripsacum data now, should we go back and re-assess this?}
+
 Both rows show the consistent pattern to highland adaptation in Mexico because the frequency of the putative derived allele in Mexican highlands is highly differentiated from those in both \emph{parviglumis} and Mexican lowlands.
 The patterns in S. America are different between the first and second rows.
 However, we do not take the patterns in S. American populations into account because there is no adaptive signature in S. American.
@@ -108,7 +114,8 @@ The result is summarized in Table~S3.
 \suppl
 
 %\section*{SUPPLEMENTAL METHODS}
-
+\renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\thetable}{S\arabic{table}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -282,7 +289,7 @@ RIMMA0668	&	Ames 28668	&		&	Granada	&	Puno, Peru	&	-14.9 	&	-70.6 	&	3925	&	Good
      Mexico  & \multicolumn{2}{c}{Model I}  \\[0.1cm]
     \hline
     & & \\[-3mm]
-   & Likelihood & $-$3050.84  \\
+   & Likelihood & $-$3052.34  \\
   &$\alpha$ & 0.99 \\
   &$\beta$ & 0.42 \\ 
   &$\gamma$   & 1        \\ 
@@ -292,16 +299,16 @@ RIMMA0668	&	Ames 28668	&		&	Granada	&	Puno, Peru	&	-14.9 	&	-70.6 	&	3925	&	Good
     South America  & \multicolumn{2}{c}{Model I}  \\[0.1cm]
         \hline
     & & \\[-3mm]
-     & Likelihood &  $-$2737.80  \\
-       &$\alpha$ & 0.6 \\
+     & Likelihood &  $-$2717.64  \\
+       &$\alpha$ & 0.51 \\
       &$\beta$ & 0.97           \\ 
-      &$\gamma$   & $\geq$55   \\
+      &$\gamma$   & 151   \\
         & $\sigma$ & 1\\ [1mm]
     \hline
 \multicolumn{3}{l}{The description of $\alpha, \beta$ and $\gamma$ is in Figure~3.}\\
 \multicolumn{3}{l}{$\sigma$ is a relative size of $N_B$ to $N_C$ ($N_B=\sigma N_C$).}\\
     \end{tabular}
-    \label{param}  % caption is needed to make this work
+    \label{supp:param}  % caption is needed to make this work
 }
 \end{center}
 \end{table}
@@ -322,13 +329,13 @@ RIMMA0668	&	Ames 28668	&		&	Granada	&	Puno, Peru	&	-14.9 	&	-70.6 	&	3925	&	Good
      Population  & Pattern of adaptation & No. SNPs & No. SNPs supported by PHS test \\[0.1cm]
     \hline
     & & \\[-3mm]
-   Mexico & Highland adaptation & 414 & 278 (67.1\%)  \\
-               & Lowhland adaptation & 199 & 113 (56.8\%)  \\
-   S. America & Highland adaptation & 453 & 307 (67.7\%)  \\
-                     & Lowhland adaptation & 144 & 78 (54.2\%)  \\[0.1cm]
+   Mexico & Highland adaptation & 264 & 172 (65.2\%)  \\
+               & Lowland adaptation & 101 & 66 (65.3\%)  \\
+   S. America & Highland adaptation & 164 & 230 (71.3\%)  \\
+                     & Lowland adaptation & 70 & 50 (71.4\%)  \\[0.1cm]
     \hline
     \end{tabular}
-    \label{phs}  % caption is needed to make this work
+    \label{supp:phs}  % caption is needed to make this work
 }
 \end{center}
 \end{table}
@@ -357,25 +364,25 @@ RIMMA0668	&	Ames 28668	&		&	Granada	&	Puno, Peru	&	-14.9 	&	-70.6 	&	3925	&	Good
      Population 1: Mexico lowland population   \\
      Population 2: Mexico highland population   \\
      Population 3: \emph{mexicane} population   \\
--I 2 $n_{m1}$ $n_{m2}$ -n 1 1.125 -n 2 0.375 -es 0.01 2 0.8 -en 0.01 3 1.0667 -ej 0.01 2 1 -en 0.01 1 1.5 -en 0.0133 1 0.0163 -en 0.015 1 1.0 -ej 0.1 3 1 \\ 
+-I 2 $n_{m1}$ $n_{m2}$ -n 1 1.14 -n 2 0.36 -es 0.01 2 0.8 -en 0.01 3 1.0667 -ej 0.01 2 1 -en 0.01 1 1.5 -en 0.0133 1 0.0163 -en 0.015 1 1.0 -ej 0.1 3 1 \\ 
       \hline
     & & \\[-3mm]
     Model I for SA  populations   \\
      Population 1: SA lowland population   \\
      Population 2: SA highland population   \\
-  -I 2 $n_{s1}$ $n_{s2}$ -n 1 0.5335 -n 2 0.99 -g 2 614.1517 -ej 0.006667 2 1 -eg 0.006667 2 0.0 -en 0.00667 1 0.55 -en 0.01333 1 0.0163 -en 0.015 1 1.0 \\ 
+  -I 2 $n_{s1}$ $n_{s2}$ -n 1 0.5044 -n 2 1.3728 -g 2 671.60 -ej 0.006667 2 1 -eg 0.006667 2 0.0 -en 0.00667 1 0.52 -en 0.01333 1 0.0163 -en 0.015 1 1.0 \\ 
       \hline
     & & \\[-3mm]
     Model III for SA  populations   \\
     Population 1: Mexico lowland population   \\
      Population 2: SA lowland population   \\
      Population 3: SA highland population   \\
-  -I 3 $n_{m1}$ $n_{s1}$ $n_{s2}$ -n 1 0.64 -n 2 0.342 -n 3 0.99 -g 3 601.1000 -ej 0.006667 3 2 -eg 0.006667 3 0.0 -en 0.006667 2 0.36 -ej 0.01 2 1\\
+  -I 3 $n_{m1}$ $n_{s1}$ $n_{s2}$ -n 1 0.64 -n 2 0.342 -n 3 0.972 -g 3 598.35 -ej 0.006667 3 2 -eg 0.006667 3 0.0 -en 0.006667 2 0.36 -ej 0.01 2 1\\
    -en 0.01 1 1 -en 0.0133 1 0.0163 -en 0.015 1 1.0 \\  [1mm]
     \hline
 \multicolumn{1}{l}{Sample size of Mexico lowland, Mexico highland, SA lowland and SA highland populations are denoted by $n_{m1}$, $n_{m2}$, $n_{s1}$ and $n_{s2}$, respectively.}\\
     \end{tabular}
-    \label{param}  % caption is needed to make this work
+    \label{commandline}  % caption is needed to make this work
 }
 \end{center}
 \end{table}
@@ -387,7 +394,17 @@ RIMMA0668	&	Ames 28668	&		&	Granada	&	Puno, Peru	&	-14.9 	&	-70.6 	&	3925	&	Good
   \begin{center}
     \includegraphics[width=0.6\columnwidth]{fig/bioclm.pdf}
     \caption{Correlation of allele frequencies between GBS (\emph{x}-axes) and MaizeSNP50 (\emph{y}-axes) data.  We used overlapped SNPs with $n\geq40$ for both data sets.  Correlation coefficient is 0.890 ($P<10^{-5}$ by permutation test with $10^5$ replications).}
-    \label{colfreq}
+    \label{supp:colfreq}
+  \end{center}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[t]
+  \begin{center}
+    \includegraphics[width=0.4\columnwidth]{fig/col.pdf}
+    \caption{Correlation of allele frequencies between GBS (\emph{x}-axes) and MaizeSNP50 (\emph{y}-axes) data.  We used overlapped SNPs with $n\geq40$ for both data sets.  Correlation coefficient is 0.890 ($P<10^{-5}$ by permutation test with $10^5$ replications).}
+    \label{supp:correl_freq}
   \end{center}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -397,7 +414,7 @@ RIMMA0668	&	Ames 28668	&		&	Granada	&	Puno, Peru	&	-14.9 	&	-70.6 	&	3925	&	Good
   \begin{center}
     \includegraphics[width=0.4\columnwidth]{fig/kk.pdf}
     \caption{Likelihood of STRUCTURE analysis given $K$.  The \emph{x}-axes represents $K$ and the \emph{y}-axes represents likelihood.}
-    \label{colfreq}
+    \label{supp:struct}
   \end{center}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -407,20 +424,20 @@ RIMMA0668	&	Ames 28668	&		&	Granada	&	Puno, Peru	&	-14.9 	&	-70.6 	&	3925	&	Good
   \begin{center}
     \includegraphics[width=0.6\columnwidth]{fig/bot2.pdf}
     \caption{Q-Q plot for $-$log$_{10}$-scaled \emph{P}-values of population differentiation between lowland and highland populations. (A) Model IA \emph{v.s.} Model IB in Mexico, (B) Model IA \emph{v.s.} Model II in S. America, (C) Model with \emph{v.s.} without bottleneck in Mexico and (D) Model with \emph{v.s.} without bottleneck in S. America.}
-    \label{colfreq}
+    \label{fig:qq}
   \end{center}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[t]
-  \begin{center}
-    \includegraphics[width=0.8\columnwidth]{fig/pmps.pdf}
-    \caption{(A) Frequency distribution of $P_M$ given $P_S<0.01$ and $P_S\geq0.01$.  (B) Frequency distribution of $P_S$ given $P_M<0.01$ and $P_M\geq0.01$.}
-    \label{colfreq}
-  \end{center}
-\end{figure}
+%\begin{figure}[t]
+%  \begin{center}
+%    \includegraphics[width=0.8\columnwidth]{fig/pmps.pdf}
+%    \caption{(A) Frequency distribution of $P_M$ given $P_S<0.01$ and $P_S\geq0.01$.  (B) Frequency distribution of $P_S$ given $P_M<0.01$ and $P_M\geq0.01$.}
+%    \label{pval_freq_comparison}
+%  \end{center}
+%\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -428,21 +445,13 @@ RIMMA0668	&	Ames 28668	&		&	Granada	&	Puno, Peru	&	-14.9 	&	-70.6 	&	3925	&	Good
   \begin{center}
     \includegraphics[width=0.7\columnwidth]{fig/LD.pdf}
     \caption{Pattern of decay of linkage equilibrium in Mexico (A) and South America (B).  Red and blue dots represent low- and highland population, respectively.  $r^2$ values were calculated as a statistics and averaged within 10-bp bins of distance between SNPs.  The \emph{x}- and \emph{y}-axes represent distance between SNPs (kb) and average $r^2$ values.}
-    \label{colfreq}
+    \label{supp:LD}
   \end{center}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[t]
-  \begin{center}
-    \includegraphics[width=0.4\columnwidth]{fig/col.pdf}
-    \caption{Correlation of allele frequencies between GBS (\emph{x}-axes) and MaizeSNP50 (\emph{y}-axes) data.  We used overlapped SNPs with $n\geq40$ for both data sets.  Correlation coefficient is 0.890 ($P<10^{-5}$ by permutation test with $10^5$ replications).}
-    \label{colfreq}
-  \end{center}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 
 
@@ -474,7 +483,7 @@ RIMMA0668	&	Ames 28668	&		&	Granada	&	Puno, Peru	&	-14.9 	&	-70.6 	&	3925	&	Good
 
 
 
-\end{document}
+%\end{document}
 
 
 

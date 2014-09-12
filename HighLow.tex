@@ -1,10 +1,10 @@
-% test by ST who is awesome
 \documentclass[twocolumn,twoside,letterpaper]{article} 
 
 \usepackage{color}
 
 \usepackage{geneticsT2}
 \usepackage{times}
+\usepackage{hyperref}
 
 \addtolength{\oddsidemargin}{-.2cm}
 \addtolength{\evensidemargin}{-1.2cm}
@@ -54,9 +54,7 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
-%\fancyhead[LE,RO]{\thepage}
-%\fancyhead[CE]{S. Takuno \emph{et al}.}
-%\fancyhead[CO]{Pseudogene preservation by gene conversion}
+
 \fancyfoot[LE,RO]{{\sfbf \thepage}}
 \renewcommand{\headrulewidth}{0pt}
 \fancypagestyle{plain}{
@@ -80,9 +78,9 @@
 
 %%%%
 
-\title{The molecular basis of parallel adaptation to\\ highland climate in domesticated maize}
+\title{Independent molecular basis of convergent highland adaptation in maize}
 \author{
- \small\sfbf{Shohei Takuno$^{\ast}$, Peter Ralph$^{\dag, \ddag}$, Sofiane Mezmouk$^{\ast}$, Kelly Swarts$^{\S}$, Rob J. Elshire$^{\S}$, Jeffrey C. Glaubitz$^{\S}$,}\\
+ \small\sfbf{Shohei Takuno$^{\ast ,}$, Peter Ralph$^{\dag, \ddag}$, Sofiane Mezmouk$^{\ast}$, Kelly Swarts$^{\S}$, Rob J. Elshire$^{\S}$, Jeffrey C. Glaubitz$^{\S}$,}\\
    \small\sfbf{Edward S. Buckler$^{\S, \ast\ast}$, Matthew B. Hufford$^{\ast, \dag\dag}$, and Jeffrey Ross-Ibarra$^{\ast,\ddag\ddag,}$}\thanks{
 Corresponding author:  Department of Plant Sciences, University of California, Davis, California 95616, USA. 
     E-mail: \mbox{rossibarra@ucdavis.edu}}\\[0.3cm]
@@ -90,23 +88,24 @@ Corresponding author:  Department of Plant Sciences, University of California, D
    \small\sf $^\dag$Department of Evolution and Ecology, University of California, Davis, California 95616, USA,\\
    \small\sf $^\ddag$Molecular and Computational Biology, University of Southern California,  Los Angeles,California 90089-0371, USA,\\
    \small\sf $^\S$Institute for Genomic Diversity, Cornell University, Ithaca, New York 14853-2703, USA,\\
-   \small\sf $^{\ast\ast}$US Department of Agriculture -- Agriculture Research Service (USDA-ARS) \st{address},\\
+   \small\sf $^{\ast\ast}$United States Department of Agriculture -Agricultural Research Service, Ithaca,
+NY 14853,\\
    \small\sf $^{\dag\dag}$Department of Ecology, Evolution, and Organismal Biology, Iowa State University, Ames, Iowa 50011, USA,\\
-   \small\sf $^{\ddag\ddag}$The Center for Population Biology and the Genome Center, University of California, Davis, California 95616 , USA\\
+   \small\sf $^{\ddag\ddag}$The Center for Population Biology and the Genome Center, University of California, Davis, California 95616 , USA,
+   %\small\sf  Present address: Graduate University for Advanced Studies, Hayama, Kanagawa 240-0193, Japan\\
 }
 
  
 \date{Revised manuscript for \emph{Genetics}, \today}
 
 \abstract{
-Parallel adaptation is defined as the independent evolution of multiple species/subpopulations to similar environments via adaptive mutations in the same locus.
-We investigate here the molecular basis of maize adaptation to highland climates in Mexico and South America using genome-wide SNP data. 
+Convergent evolution occurs when multiple species/subpopulations adapt to similar environments via similar phenotypes. 
+We investigate here the molecular basis of convergent adaptation in maize to highland climates in Mexico and South America using genome-wide SNP data. 
 Taking advantage of archaeological data on the arrival of maize to the highlands, we infer demographic models for both populations, identifying evidence of a strong bottleneck and rapid expansion in South America.  
 We use these models to then identify loci showing an excess of differentiation as a means of identifying putative targets of natural selection, and compare our results to expectations from recently developed theory on parallel adaptation.  
 In spite of similar morphologies, we see limited evidence of selection on quantitative traits, and, consistent with predictions across a wide array of parameter space, we see few SNPs showing signs of parallel adaptation.
-%need to tweak this for Sofiane's GWAS
 Instead, we show that selection appears to have predominantly acted on standing genetic variation, and that introgression from wild teosinte populations appears to have played a role in adaptation in Mexican maize.
-We discuss the significance of these results in the context of the molecular basis of adaptation to new environments. }
+We discuss the significance of these results in the context of the molecular basis of adaptation to new environments. \jri{abstract could use some more exciting wording }}
 
 \usepackage{natbib}
 \bibpunct{(}{)}{;}{a}{}{,}
@@ -127,62 +126,37 @@ We discuss the significance of these results in the context of the molecular bas
 
 \input{results}
 
-\section*{Conclusions}
-1. We successfully inferred demography and detected the candidates of adaptive loci to highland climates in Mexico and South America by utilizing GBS and 55-k chip.
+\section*{Conclusions} \jri{ WE NEED A CONCLUSION! }
+We successfully inferred/revealed the molecular basis of independent adaptation to highland climates in the Mexican and S. American maize populations.
+For this aim, we utilized the high throughput genotyping technologies: GBS and Illumina MaizeSNP50 BeadChip platform.
+We inferred the demography, and detected the candidates of adaptive loci to highland climates by analyzing $\approx 90,000$ SNPs.
+The majority of adaptive variants were derived from standing genetic variation in the maize with a large effective population size as theory predicted.
+Introgression events from wild highland maize are also important source of highland adaptation.
+Surprisingly, despite the fact that the environments of Mexican and S. American highlands are very similar, we found that parallel adaptation is very rare. 
+Our newly developed theory supported the rarity of parallel adaptation in maize (???).
+Thus, maize highland adaptation could be a good example of convergent adaptation in natural populations.
 
-2. The main conclusion is parallel adaptation is rare in maize highland adaptation.
+\st{silly sentences.}
+However, it is known that the effective recombination rate of maize is very high (CITE, Maud, PNAS).
+Linkage disequilibrium rapidly decays and reaches plateau around 100 bp (Figure~\ref{supp:LD}).
+The density of SNPs was roughly 1 SNP per 20 kb, so we could miss some of the adaptive variants.
+We believe that our conclusion holds even if more dense SNP dataset can be used, but the future genotyping technology may solve this problem.
+
+%1. We successfully inferred demography and detected the candidates of adaptive loci to highland climates in Mexico and South America by utilizing GBS and 55-k chip.
+
+%2. The main conclusion is parallel adaptation is rare in maize highland adaptation.
 
 
 \begin{acknowledgments}
-  We appreciate the helpful comments of P. Morrell and the members of Ross-Ibarra lab and Coop labs.   
-%add in formal acknowledgement of USDA. use grant number from Joost's 2012 PNAS paper.
+  We appreciate the helpful comments of P. Morrell and the members of the Ross-Ibarra lab and Coop lab.   This project was supported by Agriculture and Food Research Initiative Competitive Grant 2009-01864 from the USDA’s National Institute of Food and Agriculture and funding from the National Science Foundation IOS-1238014.
 \end{acknowledgments}
-
-
-%Note that a SNP with significant \emph{P} value is not necessarily the causative variant because we cannot rule out the possibility that the SNP is just linked to the true causative one.  
-
-%, or the two SNPs are linked to the causative SNPs and recombination .
-
-%    The distance of genetic units would be fairly long, compared to the rapid decay of linkage disequilibrium in maize (roughly 100 bp; Supp Fig. X) \cite[]{Tenaillon_2001_11470895}.  We just assumed that SNPs within a genetic unit have the same functional effect or link to the functional SNP, and based on this assumption, we screened SNPs showing Pattern C of parallel adaptation in Fig.~\ref{fig1}.  \textcolor{red}{Do you have a better idea?}  \jri{i like this but i think we need to be more explicit about relating our analyses back to the patterns.  are we doing this because of linkage or because of biology or both?} \mbh{It might be a good idea to mention linkage to the heuristic set up in Figure 1} 
-
-% \jri{ so this is worth thinking about.  what do we call it if the same SNP was selected but in alternate directions?  i think you need to explain "recombination" further.  i assume you mean that both snp alleles occurred on some background that was then selected in parallel?  since we don't know what SNP was selected how do we categorize this?  Also, somewhere we need to make clear that our different models of parallel adaptation assume that if we see high $F_{ST}$ in two pops that it's because that snp is selected for.  It's just as possible to have the same SNP allele selected in both pops but because it was on different backgrounds! }
-
-% \textcolor{red}{Parallel adaptation in lowland populations also occurred!!} \jri{ not sure how we know this was parallel adaptation in lowland... could be ancestral snp on a derived background (recombination), could be the ancestral allele is suddenly beneficial in a highland habitat (parallel adaptation in highland) or that the new derived allele is beneficial in lowland (parallel adaptation in lowland).  can we distinguish among these (or other) options? }
-
-%Note that the result was not changed when using working gene set. 
-%\jri{need to add working gene set not changing result into text.}
-
-%A lot of adaptive SNPs are from standing variation.  That was confirmed by SNPs of teosinte in Hapmap v2. 
-
-%\jri{is standing variation defined in teosinte or should it be defined in lowland ancestral pop? some SNPs that are monomorphic in teo might have been polymorphic in lowland ancestor? } \mbh {It seems if we're talking about highland adaptation from standing variation, it has to be from variation in lowland maize}
-
-
-
-
-
-%\subsection*{Check overlap with QTL regions} \jri{ skip both these for now}
-
-%\subsection*{Maize cys}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 \bibliography{MZpara1,MZpara2,plr-hilo}
 \bibliographystyle{geneticsT2}
 
 \suppl
+
+
 
 %%%%%%%
 % put supplemental figures and tables here:
@@ -194,82 +168,7 @@ We discuss the significance of these results in the context of the molecular bas
 %%%%%
 % appendices to follow
 \input{demographic-model-appendix}
-
+\input{HighLowSup1} 
 
 \end{document}
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\arraystretch}{1.1}
-\begin{table}[tb]
-
-\begin{center}
- \caption[]{Parallel adaptation\hspace*{0.3cm}}
-  \textbf{}\\[-2mm]
-{\fontsize{7}{11}\sf
-    \begin{tabular}{lllcccccl} \hline
-       & & \\[-3mm]
-     Description  & Number of genetic units\\[0.1cm]
-    \hline
-Pattern A or B     & 45 \\
-Pattern C from standing variation & 16\\ 
-Pattern C from standing variation and & 2\\
-\ \ vi new mutations & \\
-Total & 63\\[1mm]
-    \hline
-  \multicolumn{2}{l}{$^{a}$ \textcolor{red}{In this table, I did not use the information of teosinte polymorphisms.}}\\
-    \end{tabular}
-    \label{paraGU}  % caption is needed to make this work
-}
-\end{center}
-\end{table}
-\renewcommand{\arraystretch}{1}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-% pre
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\arraystretch}{1.1}
-\begin{table}[tb]
-
-\begin{center}
- \caption[]{Parallel adaptation\hspace*{0.3cm}}
-  \textbf{}\\[-2mm]
-{\fontsize{7}{11}\sf
-    \begin{tabular}{lllcccccl} \hline
-       & & \\[-3mm]
-     Description  & Number of genetic units\\[0.1cm]
-    \hline
-Parallel adaptation     &  \\
-Pattern A or B     & 45 \\
-Pattern C from standing variation & 16\\ 
-Pattern C from standing variation and & 2\\
-\ \ vi new mutations & \\
-Total & 63\\
-      \hline
-    & & \\[-3mm]
-Only Mexico     &  \\
-From standing variation & 635 \\
-New mutations & 65 \\
-Both mechanisms & 16 \\
-Total & 716\\
-      \hline
-    & & \\[-3mm]
-Only South America     &  \\
-From standing variation & 458 \\
-New mutations & 36 \\
-Both mechanisms & 4 \\
-Total & 498\\[1mm]
-    \hline
-  \multicolumn{2}{l}{$^{a}$ \textcolor{red}{Check teosinte polymorphisms on Hapmap2 later.}}\\
-    \end{tabular}
-    \label{paraGU}  % caption is needed to make this work
-}
-\end{center}
-\end{table}
-\renewcommand{\arraystretch}{1}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

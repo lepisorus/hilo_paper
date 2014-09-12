@@ -1,0 +1,57 @@
+This is BibTeX, Version 0.99d (TeX Live 2012)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: HighLow.aux
+The style file: geneticsT2.bst
+Database file #1: MZpara1.bib
+Database file #2: MZpara2.bib
+Database file #3: plr-hilo.bib
+Repeated entry---line 2 of file plr-hilo.bib
+ : @article{vanHeerwaarden2010
+ :                            ,
+I'm skipping whatever remains of this entry
+"}" immediately follows an entry type---line 11 of file plr-hilo.bib
+ : location = {Biometris, Department of Plant Sciences, Wageningen University, Wageningen, The Netherlands. jvheerwaarden@gmail.com
+ :                                                                                                                                 },
+I'm skipping whatever remains of this entry
+You've used 60 entries,
+            2295 wiz_defined-function locations,
+            921 strings with 19889 characters,
+and the built_in function-call counts, 31273 in all, are:
+= -- 3413
+> -- 1834
+< -- 22
++ -- 709
+- -- 682
+* -- 2671
+:= -- 5594
+add.period$ -- 123
+call.type$ -- 60
+change.case$ -- 757
+chr.to.int$ -- 59
+cite$ -- 60
+duplicate$ -- 800
+empty$ -- 1628
+format.name$ -- 752
+if$ -- 6214
+int.to.chr$ -- 2
+int.to.str$ -- 0
+missing$ -- 63
+newline$ -- 305
+num.names$ -- 190
+pop$ -- 636
+preamble$ -- 1
+purify$ -- 760
+quote$ -- 0
+skip$ -- 587
+stack$ -- 0
+substring$ -- 2012
+swap$ -- 22
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 354
+warning$ -- 0
+while$ -- 178
+width$ -- 0
+write$ -- 784
+(There were 2 error messages)
