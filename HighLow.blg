@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2012)
+This is BibTeX, Version 0.99d (TeX Live 2013)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: HighLow.aux
 The style file: geneticsT2.bst
@@ -13,45 +13,45 @@ I'm skipping whatever remains of this entry
  : location = {Biometris, Department of Plant Sciences, Wageningen University, Wageningen, The Netherlands. jvheerwaarden@gmail.com
  :                                                                                                                                 },
 I'm skipping whatever remains of this entry
-You've used 60 entries,
+You've used 63 entries,
             2295 wiz_defined-function locations,
-            921 strings with 19889 characters,
-and the built_in function-call counts, 31273 in all, are:
-= -- 3413
-> -- 1834
+            937 strings with 20835 characters,
+and the built_in function-call counts, 33047 in all, are:
+= -- 3604
+> -- 1959
 < -- 22
-+ -- 709
-- -- 682
-* -- 2671
-:= -- 5594
-add.period$ -- 123
-call.type$ -- 60
-change.case$ -- 757
-chr.to.int$ -- 59
-cite$ -- 60
-duplicate$ -- 800
-empty$ -- 1628
-format.name$ -- 752
-if$ -- 6214
++ -- 760
+- -- 731
+* -- 2829
+:= -- 5924
+add.period$ -- 129
+call.type$ -- 63
+change.case$ -- 803
+chr.to.int$ -- 62
+cite$ -- 63
+duplicate$ -- 839
+empty$ -- 1706
+format.name$ -- 804
+if$ -- 6556
 int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 63
-newline$ -- 305
-num.names$ -- 190
-pop$ -- 636
+missing$ -- 66
+newline$ -- 320
+num.names$ -- 199
+pop$ -- 676
 preamble$ -- 1
-purify$ -- 760
+purify$ -- 806
 quote$ -- 0
-skip$ -- 587
+skip$ -- 614
 stack$ -- 0
-substring$ -- 2012
+substring$ -- 2104
 swap$ -- 22
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 354
+type$ -- 372
 warning$ -- 0
-while$ -- 178
+while$ -- 187
 width$ -- 0
-write$ -- 784
+write$ -- 823
 (There were 2 error messages)
