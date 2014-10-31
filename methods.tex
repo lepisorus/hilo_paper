@@ -47,7 +47,7 @@ We annotated SNPs using the filtered gene set from RefGen version 2 of the maize
 We excluded genes annotated as transposable elements (84) and pseudogenes (323) from the filtered gene set, resulting in a total of 38,842 genes.
 
 \subsection*{Structure analysis}
-We performed a {\sf STRUCTURE} analysis \cite[]{Pritchard_2000_10835412,Falush_2003_12930761} using  synonymous and noncoding SNPs from the MaizeSNP50 data. 
+We performed a {\sf STRUCTURE} analysis \cite[]{Pritchard_2000_10835412,Falush_2003_12930761} using silent SNPs from the MaizeSNP50 data. 
 We assumed free recombination between SNPs without missing data and randomly pruned SNPs closer than 10 kb (alternative distances were tried with nearly identical results). 
 We excluded SNPs in which the number of heterozygous individuals exceeded homozygotes and where the \emph{P}-value for departure from Hardy-Weinberg Equilibrium (HWE) based on a \emph{G}-test was smaller than 0.05 using all individuals. 
 Following these data thinning measures, 17,013 biallelic SNPs remained. 
@@ -57,10 +57,10 @@ Results across replicates were nearly identical.
 \subsection*{Demographic inference}
 We tested three demographic models in which maize was differentiated into high- and lowland populations subsequent to domestication (Figure~\ref{model}). 
 Observed joint frequency distributions (JFDs) were calculated using the GBS data set due to its lower level of ascertainment bias. 
-A subset of synonymous and noncoding SNPs were utilized that had $\geq15$ individuals without missing data in both low- and highland populations and did not violate HWE.  
+A subset of silent SNPs were utilized that had $\geq15$ individuals without missing data in both low- and highland populations and did not violate HWE.  
 A HWE cut-off of $P<0.005$ was used for each subpopulation due to our under-calling of heterozygotes. 
 In total, we included 18,745 silent SNPs for the Mexican populations in Models IA and IB, 14,508 for the S. American populations in Model I and 11,305 for the Mexican lowland population and the S. American populations in Model II.  
-We obtained similar results under more or less stringent thresholds for significance ($P < 0.05\sim0.0005$; data not shown), though the number of SNPs was very small at $P<0.005$.  
+We obtained similar results under more or less stringent thresholds for significance ($P < 0.05\sim0.0005$; data not shown), though the number of SNPs was very small at $P<0.05$.  
 Demographic parameters were inferred with the software $\delta a \delta i$ \cite[]{Gutenkunst_2009_19851460}, which uses a diffusion method to calculate an expected JFD and evaluates the likelihood of the data using a multinomial assumption.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
