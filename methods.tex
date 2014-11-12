@@ -141,12 +141,16 @@ As a reference for phasing, we used data (excluding heterozygous SNPs) from an A
 We ran {\sf fastPHASE}  with default parameter settings.  
 PHS was calculated for an allele \emph{A} at position $x$ by
 
+%  \displaystyle{
+%PHS_{x_A} = \sum^{p-1}_{i=1}\sum^{p}_{j=i+1}Z_{ijx}  / \Bigl( \begin{array}{c} p \\ 2 \\ \end{array} \Bigr) 
+%- \sum^{n-1}_{i=1}\sum^{n}_{j=i+1}Z_{ijx}  / \Bigl( \begin{array}{c} n \\ 2 \\ \end{array} \Bigr) 
+%  }
+
 \begin{equation}
   \label{phs-1}
   \begin{array}{l}
   \displaystyle{
-PHS_{x_A} = \sum^{p-1}_{i=1}\sum^{p}_{j=i+1}Z_{ijx}  / \Bigl( \begin{array}{c} p \\ 2 \\ \end{array} \Bigr) 
-- \sum^{n-1}_{i=1}\sum^{n}_{j=i+1}Z_{ijx}  / \Bigl( \begin{array}{c} n \\ 2 \\ \end{array} \Bigr) 
+PHS_{x_A} = \sum^{p-1}_{i=1}\sum^{p}_{j=i+1} \frac{ Z_{ijx} }{ {p \choose 2} } - \sum^{n-1}_{i=1}\sum^{n}_{j=i+1} \frac{ Z_{ijx}  }{ {n \choose 2}}
   }
   \end {array} 
   \textrm{,}
