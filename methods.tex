@@ -118,7 +118,7 @@ We used our inferred demographic model to generate a null distribution of $F_{ST
 As implemented in $\delta a \delta i$ \cite[]{Gutenkunst_2009_19851460}, we calculated an expected JFD given estimated demographic parameters and the sample sizes from our highland and lowland populations.
 Then, we converted the JFD into the distribution of $F_{ST}$ values.
 The \emph{P}-value of a SNP was calculated by $P(F_{ST\_E}\geq F_{ST\_O}|p\pm 0.05) = P(F_{ST\_E}\geq F_{ST\_O} \cap p\pm 0.05)/P(p\pm 0.05)$, 
-where $F_{ST\_O}$ and $F_{ST\_E}$ are observed and expected $F_{ST}$ values and $p\pm 0.05$ is the set of loci with mean allele frequencies within 0.05 of the mean allele frequency of the SNP across both highland and lowland populations.
+where $F_{ST\_O}$ and $F_{ST\_E}$ are observed and expected $F_{ST}$ values and $p\pm 0.05$ is the set of loci in the same 0.05 bin of mean allele frequency of the SNP across both highland and lowland populations. \jri{Sho is this correct or is the probability comparing all loci within 0.05 frequency of the given SNP?  That is, if my SNP is at MAF 0.07, does the probability only include things between 0.05-0.1 or is it going from 0.02-0.12?}
 
 Generating the null distribution of differentiation for the MaizeSNP50 data requires accounting for ascertainment bias. 
 Evaluation of genetic clustering in our data (not shown) coincides with previous work \cite[]{Hufford_2012_22660546} in suggesting that the two inbred lines most important in the ascertainment panel (B73 and Mo17) are most closely related to Mexican lowland maize.  
