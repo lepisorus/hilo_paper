@@ -5,7 +5,7 @@
 \begin{table}[tb]
 
 \begin{center}
- \caption[]{$F_{ST}$ of synonymous and noncoding GBS SNPs \hspace*{2.3cm}}
+ \caption[]{$F_{ST}$ of synonymous and noncoding GBS SNPs}
   \textbf{}\\[-2mm]
 {\fontsize{7}{9}\sf
     \begin{tabular}{llccccccl}
@@ -33,7 +33,7 @@ SA		&	Lowlands	&	0.0227	&	0.0343	&	--		&		\\
 \begin{table}[tb]
 
 \begin{center}
- \caption[]{Inference of demographic parameters\hspace*{0.3cm}}
+ \caption[]{Estimated parameters of population size model}
   \textbf{}\\[-2mm]
 {\fontsize{7}{11}\sf
     \begin{tabular}{lcccccccl} \hline
@@ -85,31 +85,14 @@ Most landraces were assigned to groups consistent with \emph{a priori} populatio
    \includegraphics[width=0.5\textwidth]{fig/Fig4}
    \renewcommand{\baselinestretch}{0.9}
    \vspace{-3mm}
-   \caption{Observed and expected joint distributions of minor allele frequencies in low- and highland populations in (A) Mexico and (B) S. America. Residuals are calculated as  $(\mbox{model}-\mbox{data})/\sqrt[]{\mbox{model}}$}
+   \caption{Observed and expected joint distributions of minor allele frequencies in lowland and highland populations in (A) Mexico and (B) S. America. Residuals are calculated as  $(\mbox{model}-\mbox{data})/\sqrt[]{\mbox{model}}$}
 \vspace{-6mm}
     \label{JFD}
   \end{center}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
-\begin{figure}[tb]   
-  \begin{center}
-   \vspace{-0mm}
-   %\includegraphics[width=0.23\textwidth]{figs/model}
-   \includegraphics[width=0.45\textwidth]{fig/Fig5}
-   \renewcommand{\baselinestretch}{0.9}
-   \vspace{-3mm}
-   \caption{Observed and expected distributions of $F_{ST}$ values in GBS (A) and MaizeSNP50 data (B).  The \emph{x}-axes represent $F_{ST}$ values.  The \emph{y}-axes represent the frequency of SNPs with $F_{ST}$ values within a bin of 0.05 size.  Red dots and solid lines indicate observed and expected distributions. 
-   }
-\vspace{-6mm}
-    \label{FstDist}
-  \end{center}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
-
-\subsection*{Population differentiation under inferred demography}
+\subsection*{Population differentiation}
 
 To provide a null expectation for allele frequency differentiation, we used the joint site frequency distribution (JFD) of lowland and highland populations to estimate parameters of two demographic models  using the maximum likelihood method implemented in $\delta a \delta i$ \cite[]{Gutenkunst_2009_19851460}.  
 All models incorporate a domestication bottleneck \cite[]{Wright_2005_15919994} and population differentiation between lowland and highland populations, but differ in their consideration of admixture and ascertainment bias (Figure~\ref{model}; see Materials and Methods for details).
@@ -123,10 +106,9 @@ Surprisingly, $N_B$ was estimated to be equal to $N_C$, the population size at t
 This result appears to contradict earlier work using sequences exclusively from coding regions to infer a maize domestication bottleneck \cite[]{Eyre-Walker_1998_9539756,Tenaillon_2004_15014173,Wright_2005_15919994}.  
 Consistent with \citet{Hufford_2012_22660546}, our genome-wide SNP data show an excess of rare variants relative to expectations under \cite{Wright_2005_15919994}'s bottleneck model (Figure~\ref{JFD}), suggesting a domestication model involving a weaker bottleneck or more rapid population growth.
 
-Comparisons of our empirical $F_{ST}$ values to the null expectation simulated under our demographic models allowed us to identify significantly differentiated SNPs between low- and highland populations. In all cases, observed $F_{ST}$ values were quite similar to those generated under our null models (Figure~\ref{FstDist}), and model choice -- including the parameterization of the domestication bottleneck -- had little impact on the distribution of estimated \emph{P}-values (Figure~\ref{fig:qq}). \jri{sho i think we should move figure qq plot to the supplement}
+Comparisons of our empirical $F_{ST}$ values to the null expectation simulated under our demographic models allowed us to identify significantly differentiated SNPs between lowland and highland populations. In all cases, observed $F_{ST}$ values were quite similar to those generated under our null models (Figure~\ref{FstDist}), and model choice -- including the parameterization of the domestication bottleneck -- had little impact on the distribution of estimated \emph{P}-values (Figure~\ref{fig:qq}). 
 Thus, hereafter, we show the results under Model IB for Mexican populations and Model II for S. American populations.
-We chose $P<0.01$ as an arbitrary cut-off for significant differentiation between low- and highland populations, and identified 687 SNPs in Mexico (687/76,989=0.89\%) and 409 SNPs in South America (409/63,160=0.65\%) as outliers (Figure~\ref{PvDist}). \jri{Can we add a sentence here saying "Different cutoff values used gave qualitatively identical results"? I believe you did that analysis already and it's ok to say that, right?}
-
+We chose $P<0.01$ as an arbitrary cut-off for significant differentiation between lowland and highland populations, and identified 687 SNPs in Mexico (687/76,989=0.89\%) and 409 SNPs in South America (409/63,160=0.65\%) as outliers (Figure~\ref{PvDist}). \jri{Can we add a sentence here saying "Different cutoff values used gave qualitatively identical results"? I believe you did that analysis already and it's ok to say that, right?}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
 \begin{figure}[tb]   
@@ -148,8 +130,6 @@ We chose $P<0.01$ as an arbitrary cut-off for significant differentiation betwee
 
 \subsection*{Patterns of adaptation}
 
-\subsubsection{Genetic basis of convergent evolution}
-
 Given the historical spread of maize from an origin in the lowlands, it is tempting to assume that the observation of significant population differentiation at a SNP should be primarily due to an increase in frequency of adaptive alleles in the highlands.
 To test this hypothesis, we sought to identify the adaptive allele at each locus using comparisons between Mexico and S. America as well as to \emph{parviglumis} (See Supplementary Text  for details).  
 Consistent with predictions, we infer that differentiation at 72.3\% (264) and 76.7\% (230) of SNPs in Mexico and S. America is due to adaptation in the highlands after excluding  SNPs with ambiguous patterns likely due to recombination. 
@@ -168,27 +148,19 @@ Of these, 485 and 277 genes showed Mexico-specific and SA-specific significant S
 Overall, however, fewer genes showed evidence of convergent evolution than expected by chance (permutation test; $P<10^{-5}$). 
 Despite similar phenotypes and environments, we thus see little evidence for convergent evolution at either the SNP or the gene level.  
 
-%JRI STOPPED HERE
-
 \subsection*{Comparison to theory}
 
 % # \mutrate computation:
 % A <- 500; rho <- 5000; sb <- 10^(-(1:4)); xisq <- 30
 % sapply( 10^c(-5,-8), function (mu) mu * (2 * rho * A * sb)/xisq )
 
-For a final point of comparison, we assessed the degree of convergence expected under a spatially explicit population genetic model.
-We estimated the (maize) population density $\rho$ of the highlands to be around (0.5 people/km$^2$) $\times$ (0.5 ha field/person) $\times$ ($2\times10^4$ plants per field ha) $=$ 5,000 plants per km$^2$.
-The area of the Andean highlands is around $A=500\text{km}^2$, leading to a total population of $A \rho = 2.5 \times 10^6$. \jri{Jeff: check these numbers are sensical}
-%MBH: This seems like a pretty low planting density
-%This should be 14K plants per acre, or ~30-35K per hectare. Good catch Matt!!
-%  Moved this up here.  I'm not sure what that 14,000 number was doing in the previous draft.  But, added details behind this calculation.  Should I change anything?
-%  Note that 0.5 people/km2 is close to the other number we came up with of "one village per 15km" (which gets 0.4444 people/km2).
-% I think these numbers are OK.  It's ~8000 plants per acre, which is really low, but we're talking prehistoric times.  In the 1960's they were still experimenting with 9-18000 per acres (http://trace.tennessee.edu/cgi/viewcontent.cgi?article=1321&context=utk_agbulletin) in Tennessee!
-Combined with an offspring variance of $\xi^2 = 30$, we can compute the rate, $\mutrate$, at which newly adapted alleles arise in the population.
-We observe that even if there is strong selection for an allele at high elevation ($s_b=0.1$), a single-base mutation with mutation rate $\mu=10^{-8}$ would still take at least 6,000 generations to appear and fix.
-On the other hand, a kilobase-sized target with mutation rate $\mu=10^{-5}$ with this selection coefficient would appear and begin to fix in only 6 generations, while more weakly selected alleles with $s_b$ of $10^{-2}$ or $10^{-3}$ would take hundreds or thousands of generations, respectively.
-(Note that the time scales linearly with the selection coefficient: at these values $\Tmut = 1/\mutrate \approx \mu s_b \times 1.6\times 10^5$.)
-Therefore, we might expect to see convergent changes of similar effect at the level of genes (e.g.\ disabling mutations), but would not expect to see adaptive SNPs that arise through independent mutation in the two populations.
+Given the limited empirical evidence for convergent evolution at the molecular level, we took advantage of recent theoretical efforts \cite[]{ralph2014convergent} to assess the degree of convergence expected under a spatially explicit population genetic model (see Materials and Methods).
+We estimated the maize population density $\rho$ of the highlands to be around (0.5 ha field/person) $\times$ (0.5 people/km$^2$) $\times$ ($2\times 10^4$ plants per ha field) $=$ 5,000 plants per km$^2$.
+The area of the Andean highlands is around $A=500\text{km}^2$, leading to a total population of $A \rho = 2.5 \times 10^6$. 
+Assuming an offspring variance of $\xi^2 = 30$, we can then compute the waiting time $\Tmut=1/\mutrate$ for a new beneficial mutation to appear and fix.
+We observe that even if there is relatively strong selection for an allele at high elevation ($s_b=0.01$), a single-base mutation with mutation rate $\mu=10^{-8}$ would take at least 60,000 generations to appear and fix.
+Because $\Tmut$ scales approximately linearly with both the selection coefficient and the mutation rate, strong selection and the existence of multiple equivalent mutable sites could reduce this time. 
+For example, if any one of 10 sites within a gene could have equivalent strong selective benefit ($s_b=0.1$), $\Tmut$ would be reduced to 600 generations. \jri{Peter please check this paragraph to make sure numbers and text look OK.}
 
 % # Tmig computation:
 % A <- 500; rho <- 5000; sm <- 10^(-(1:4)); xisq <- 30; sigma <- 1.8
@@ -198,31 +170,24 @@ Therefore, we might expect to see convergent changes of similar effect at the le
 % Ne  # = 14025
 % sapply( 1000*(1:4), function (R) 1 / ( Ne * exp(- sqrt(2*sm)*R/sigma ) ) )
 
-While convergent SNP changes seem unlikely from new mutation, the potential remains for gene flow between highland regions.
-From the demographic model above we have estimated that $\sigma \approx 1.8$ kilometers per generation, so with $10^{-1} \ge s_m \ge 10^{-4}$ the distance $\sigma/\sqrt{2s_m}$ over which the frequency of a highland-adaptive, lowland-deleterious allele decays into the lowlands is still short: between 4 and 150 kilometers.
-Since the Mexican and Andean highlands are around 4,000 km apart, the time needed for a rare allele, with selective cost $s_m=10^{-3}$ in the lowlands, to transit between the two highland regions is $\Tmig \approx 5 \times 10^{34}$ generations.
-In other words, from these calculations it is almost impossible that an allele that is deleterious at low elevation with $s_m=10^{-3}$ would ever transit from the Mexican to the Andean highlands.
-If the selection against the allele is even weaker ($s_m=10^{-4}$) it is still expected to take $\Tmig = 1.8 \times 10^8$ generations.
-However, shorter distances could be transited by very weakly deleterious alleles -- if the distance between highland patches $R$ is 1,000 km (or if $\sigma$ is four times larger) then with $s_m=10^{-4}$ the time $\Tmig$ is about 1.6 generations -- so, adaptation by migration is certain in the known timeframe of maize diffusion.
-This is strongly dependent on the magnitude of the deleterious selection coefficient: for example, with $s_m=10^{-3}$, $\Tmig$ is $2.3 \times 10^6$ generations.
+An alternative process that could generate patterns of shared adaptive SNPs is gene flow between highland regions.
+From our demographic model we have estimated a mean dispersal distance of $\sigma \approx 1.8$ kilometers per generation.
+With selection against the highland allele in low elevations $10^{-1} \ge s_m \ge 10^{-4}$, the distance $\sigma/\sqrt{2s_m}$ over which the frequency of a highland-adaptive, lowland-deleterious allele decays into the lowlands is still short: between 4 and 150 kilometers.
+Since the Mexican and Andean highlands are around 4,000 km apart, the time needed for a rare allele with weak selective cost $s_m=10^{-4}$ in the lowlands to transit between the two highland regions is $\Tmig \approx 4 \times 10^{10}$ generations. 
+However, shorter distances could be transited more quickly -- if the distance between highland patches $R$ is 1,000 km (or if $\sigma$ is four times larger) then the same allele would be expected to transit between populations in approximately 2 generations.
+The waiting time $\Tmig$ is  strongly dependent on the magnitude of the deleterious selection coefficient, however: with $s_m=10^{-3}$, for example $\Tmig$ is $1.6 \times 10^7$ generations over 1,000km.
+%Since the Mexican and Andean highlands are around 4,000 km apart, the time needed for a rare allele with selective cost $s_m=10^{-3}$ in the lowlands to transit between the two highland regions is $\Tmig \approx 5 \times 10^{34}$ generations. 
+%The waiting time $\Tmig$, however,is is strongly dependent on the magnitude of the deleterious selection coefficient: for example, with $s_m=10^{-3}$, $\Tmig$ is $2.3 \times 10^6$ generations.
+\jri{Peter please check $\Tmig$ here is correct. Original sentence (see .tex) didn't give numbers for waiting time that jived with what I get from R code in .tex}
 
-Our analysis suggests that even when highland-adaptive mutations are weakly deleterious in the lowlands, gene flow will not result in shared adaptations.
-The situation where these are neutral in the lowlands is more difficult to model, but we can make some informed guesses.
-For maize in the Andean highlands to have inherited a highland-adapted allele from the Mexican highlands, those Andean plants must be directly descended from highland Mexican plants that lived more recently than the appearance of the adaptive allele.
-In other words, the ancestral lineages along which the modern Andean plants have inherited at that locus must trace back to the Mexican highlands.
-If the allele is neutral in the lowlands, we can treat the movement of these lineages as a neutral process, using the framework of coalescent theory \citep{wakeley2005coalescent}.
-To do this, we need to follow \emph{all} of the $N \approx 2.5 \times 10^6$ lineages backwards; these quickly coalesce to fewer $m$ lineages in approximately $\sum_{k=m}^N \frac{2N}{\xi^2 k(k+1)} \approx 1.25 \times 10^5/m$ generations, leaving about 1000 lineages after 100 generations that are spread over a larger area.
-The displacement of a lineage after $m$ generations has variance $m \sigma^2$ and is approximately Gaussian.
-If we assume that $n$ lineages are independent, and $Z_n$ is the distance to the furthest lineage, then $\P\{ Z_n / \sqrt{m \sigma^2} \le x /\sqrt{2 \log n} + \sqrt{2 \log n} - (1/2) (\log \log n + \log 4 \pi)/\sqrt{2 \log n} \} \approx \exp( - e^{-x} )$ \citep{berman1964limit}.
-With $n=1000$, the typical distance to the furthest displacement after $m=1000$ generations is $\sqrt{2 \sigma^2 m \log n} \approx 212$km; after $m=6000$ generations it is $\approx 518$km.
-In either case, the chance that the maximum is larger than 1,000km after 6,000 generations is well less than $10^{-4}$.
-Of course, this is under an equilibrium population model; and maize reached the Andean highlands only around 4,000 years ago.
-Nonetheless, this suggests that even highland-adapted alleles that are merely neutral in the lowlands would have difficulty moving between the Mexican and Andean highlands in a few thousand generations.
+Finally, a coalescent approach allows us to also estimate the distance travelled for a beneficial highland alleles which is neutral in lowland environments.  After $m=1,000$ generations, there are approximately $n=1,000$ lineages remaining and of these the furthest has travelled  $\sqrt{2 \sigma^2 m \log n} \approx 212$km from the highlands.  The distance travelled, however, does not scale linearly with time, such that at  $m=6000$ generations the furthest alleles is $\approx 518$km from its highland origin. \jri{Peter I'm confused here. If the above is correct it argues a neutral allele will travel a \emph{shorter} distance than a deleterious allele? 1000km would take neutral allele >6K generations but in the previous paragraph a deleterious allele with $s_m=10^{-4}$ does it in 2 generations.}
 
-Based on our spatially explicit population genetic model, convergent evolution involving identical nucleotide changes is quite unlikely under either scenarios of independent mutation or transit of Central America by undirected (diffusive) sharing of seed. 
-However, independent mutations could be expected in kilobase-sized targets, suggesting there might be signal for genes that share adaptive changes.
-%clarify what kb target means
-These conclusions could change if we drastically underestimated the rate of very-long-distance sharing of seed, e.g.\ if sharing across hundreds of kilometers was common at some point.
+%With $n=1000$, the typical distance to the furthest displacement after $m=1000$ generations is $\sqrt{2 \sigma^2 m \log n} \approx 212$km; after $m=6000$ generations it is $\approx 518$km.
+%In either case, the chance that the maximum is larger than 1,000km after 6,000 generations is well less than $10^{-4}$.
+%Of course, this is under an equilibrium population model; and maize reached the Andean highlands only around 4,000 years ago.
+%Nonetheless, this suggests that even highland-adapted alleles that are merely neutral in the lowlands would have difficulty moving between the Mexican and Andean highlands in a few thousand generations.
+
+\jristop
 
 \subsubsection{Adaptation via mutation versus standing variation}
 
@@ -297,4 +262,4 @@ Outside introgressed regions, the Mexican and S. American populations did not sh
 % ST: the number of overlapped SNPs is not big between Tanja's and mine, so it's hard to check GUs.
 
 
-
+    

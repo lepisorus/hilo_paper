@@ -54,14 +54,14 @@ Following these data thinning measures, 17,013 biallelic SNPs remained.
 We conducted three replicate runs of {\sf STRUCTURE} using the correlated allele frequency model with admixture for \emph{K} = 2 through \emph{K} = 6 populations, a burn-in length of 50,000 iterations and a run length of 100,000 iterations. 
 Results across replicates were nearly identical.
 
-\subsection*{Demographic inference}
-We tested three demographic models in which maize was differentiated into high- and lowland populations subsequent to domestication (Figure~\ref{model}). 
+\subsection*{Historical population size}
+We tested three models in which maize was differentiated into highland and lowland populations subsequent to domestication (Figure~\ref{model}). 
 Observed joint frequency distributions (JFDs) were calculated using the GBS data set due to its lower level of ascertainment bias. 
-A subset of synonymous and noncoding SNPs were utilized that had $\geq15$ individuals without missing data in both low- and highland populations and did not violate HWE.  
+A subset of synonymous and noncoding SNPs were utilized that had $\geq15$ individuals without missing data in both lowland and highland populations and did not violate HWE.  
 A HWE cut-off of $P<0.005$ was used for each subpopulation due to our under-calling of heterozygotes. 
 In total, we included 18,745 synonymous and noncoding SNPs for the Mexican populations in Models IA and IB, 14,508 for the S. American populations in Model I and 11,305 for the Mexican lowland population and the S. American populations in Model II.  
 We obtained similar results under more or less stringent thresholds for significance ($P < 0.05 \sim 0.0005$; data not shown), though the number of SNPs was very small at $P<0.05$.  
-Demographic parameters were inferred with the software $\delta a \delta i$ \cite[]{Gutenkunst_2009_19851460}, which uses a diffusion method to calculate an expected JFD and evaluates the likelihood of the data using a multinomial assumption. 
+Parameters were inferred with the software $\delta a \delta i$ \cite[]{Gutenkunst_2009_19851460}, which uses a diffusion method to calculate an expected JFD and evaluates the likelihood of the data using a multinomial assumption. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
 \begin{figure}[tb]   
@@ -71,7 +71,7 @@ Demographic parameters were inferred with the software $\delta a \delta i$ \cite
    \includegraphics[width=0.5\textwidth]{fig/Fig3}
    \renewcommand{\baselinestretch}{0.9}
    \vspace{-3mm}
-   \caption{ Demographic models of maize low- and highland populations.  Parameters in bold were estimated in this study.  See text for details.
+   \caption{  Models of historical population size for lowland and highland populations.  Parameters in bold were estimated in this study.  See text for details.
    }
 \vspace{-6mm}
     \label{model}
@@ -87,7 +87,7 @@ At $t_D$ generations ago, the bottleneck event begins at domestication, and at $
 The population size and duration of the bottleneck are denoted by $N_B$ and $t_B=t_D-t_E$, respectively.  
 The population size recovers to $N_C=\alpha N_A$ in the lowlands.  
 Then, the highland population is differentiated from the lowland population at $t_F$ generations ago.  
-The size of the low- and highland populations at time $t_F$ is determined by a parameter $\beta$ such that the population is divided by $\beta N_C$ and $(1-\beta)N_C$.  
+The size of the lowland and highland populations at time $t_F$ is determined by a parameter $\beta$ such that the population is divided by $\beta N_C$ and $(1-\beta)N_C$.  
 We assume that the population size in the lowlands is constant but that the highland population experiences exponential expansion after divergence: its current population size is $\gamma$ times larger than that at $t_F$. \\
 
 %jri{isn't this really a shrinking population in the lowlands, since $\beta N_C<N_C$ ? wouldn't we want instead for lowlands to stay at $N_C$ and a new population branching off?  how much do we worry about this?}
@@ -114,8 +114,8 @@ We further assumed $t_F=6,000$ for Mexican populations in Models IA and IB \cite
 For both Models IA and IB, we inferred three parameters ($\alpha$, $\beta$ and $\gamma$), and, for Model II, we fixed $t_F=6,000$ and $t_G=4,000$ \cite[]{Piperno_2006_69,Perry_2006_16511492,Grobman_2012_22307642}  and estimated the remaining four parameters ($\alpha$, $\beta_1$, $\beta_2$ and $\gamma$).
 
 \subsection*{Population differentiation}
-We used our inferred demographic model to generate a null distribution of $F_{ST}$.
-As implemented in $\delta a \delta i$ \cite[]{Gutenkunst_2009_19851460}, we calculated an expected JFD given estimated demographic parameters and the sample sizes from our highland and lowland populations.
+We used our inferred models of population size change to generate a null distribution of $F_{ST}$.
+As implemented in $\delta a \delta i$ \cite[]{Gutenkunst_2009_19851460}, we calculated an expected JFD given estimated model parameters and the sample sizes from our highland and lowland populations.
 Then, we converted the JFD into the distribution of $F_{ST}$ values.
 The \emph{P}-value of a SNP was calculated by $P(F_{ST\_E}\geq F_{ST\_O}|p\pm 0.025) = P(F_{ST\_E}\geq F_{ST\_O} \cap p\pm 0.025)/P(p\pm 0.025)$, 
 where $F_{ST\_O}$ and $F_{ST\_E}$ are observed and expected $F_{ST}$ values and $p\pm 0.025$ is the set of loci with mean allele frequency across both highland and lowland populations within 0.025 of the SNP in question. 
@@ -225,6 +225,14 @@ Since the latter is at least 1, this puts an upper bound on the rate of migratio
 and we we would need to wait $\Tmig = 1/\migrate$ generations for a rare such excursion to occur.
 %with $N$ being the total size of the unadapted highland population, and $R$ the distance from the adapted to the yet-unadapted highland populations.
 This calculation omits the probability that such an allele fixes ($\approx 2s_b/\xi^2$), but since such alleles arrive by migration, this omission is unlikely a large effect and is conservative.
+
+If highland alleles are neutral in the lowlands the situation is more difficult to model, but we can make some informed guesses.
+For maize in the Andean highlands to have inherited a highland-adapted allele from the Mexican highlands, those Andean plants must be directly descended from highland Mexican plants that lived more recently than the appearance of the adaptive allele.
+In other words, the ancestral lineages along which the modern Andean plants have inherited at that locus must trace back to the Mexican highlands.
+If the allele is neutral in the lowlands, we can treat the movement of these lineages as a neutral process, using the framework of coalescent theory \citep{wakeley2005coalescent}.
+To do this, we need to follow \emph{all} of the $N \approx 2.5 \times 10^6$ lineages backwards; these quickly coalesce to fewer $m$ lineages in approximately $\sum_{k=m}^N \frac{2N}{\xi^2 k(k+1)} \approx 1.25 \times 10^5/m$ generations, leaving about 1000 lineages after 100 generations that are spread over a larger area.
+The displacement of a lineage after $m$ generations has variance $m \sigma^2$ and is approximately Gaussian.
+If we assume that $n$ lineages are independent, and $Z_n$ is the distance to the furthest lineage, then $\P\{ Z_n / \sqrt{m \sigma^2} \le x /\sqrt{2 \log n} + \sqrt{2 \log n} - (1/2) (\log \log n + \log 4 \pi)/\sqrt{2 \log n} \} \approx \exp( - e^{-x} )$ \citep{berman1964limit}. \jri{Peter are the braces in the right place? seems to me naively it should be  $\P\{ Z_n / \sqrt{m \sigma^2} \le x \} = \sqrt{2 \log n} + ...$ ??}
 
 
 
