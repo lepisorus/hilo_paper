@@ -11,13 +11,13 @@
     \begin{tabular}{llccccccl}
     \hline
     & & \\[-3mm]
-	&		&	\multicolumn{2}{c}{Mexico}		&	\multicolumn{2}{c}{South America}		\\
+	&		&	\multicolumn{2}{c}{Mexico}		&	\multicolumn{2}{c}{S. America}		\\
 	&		&	Lowlands	&	Highlands	&	Lowlands	&	Highlands	\\
       \hline
     & & \\[-3mm]
 Mexico	&	Lowlands	&	--		&			&			&		\\
 		&	Highlands	&	0.0244	&	--		&			&		\\
-SA		&	Lowlands	&	0.0227	&	0.0343	&	--		&		\\
+S. America		&	Lowlands	&	0.0227	&	0.0343	&	--		&		\\
 		&	Highlands	&	0.0466	&	0.0534	&	0.0442	&	--	\\ [1mm]
     \hline
     \end{tabular}
@@ -47,7 +47,7 @@ SA		&	Lowlands	&	0.0227	&	0.0343	&	--		&		\\
    &$\gamma$   & 1                   &  $\gamma$   & 1\\ 
       \hline
     & & \\[-3mm]
-    South America  & \multicolumn{2}{c}{Model IA}  &\multicolumn{2}{c}{Model II}\\[0.1cm]
+    S. America  & \multicolumn{2}{c}{Model IA}  &\multicolumn{2}{c}{Model II}\\[0.1cm]
         \hline
      & & \\[-3mm]
       & Likelihood   &  $-$3855.28 & Likelihood     &  $-$8044.71 \\
@@ -108,7 +108,7 @@ Consistent with \citet{Hufford_2012_22660546}, our genome-wide SNP data show an 
 
 Comparisons of our empirical $F_{ST}$ values to the null expectation simulated under our demographic models allowed us to identify significantly differentiated SNPs between lowland and highland populations. In all cases, observed $F_{ST}$ values were quite similar to those generated under our null models (Figure~\ref{FstDist}), and model choice -- including the parameterization of the domestication bottleneck -- had little impact on the distribution of estimated \emph{P}-values (Figure~\ref{fig:qq}). 
 Thus, hereafter, we show the results under Model IB for Mexican populations and Model II for S. American populations.
-We chose $P<0.01$ as an arbitrary cut-off for significant differentiation between lowland and highland populations, and identified 687 SNPs in Mexico (687/76,989=0.89\%) and 409 SNPs in South America (409/63,160=0.65\%) as outliers (Figure~\ref{PvDist}). \jri{Can we add a sentence here saying "Different cutoff values used gave qualitatively identical results"? I believe you did that analysis already and it's ok to say that, right?}
+We chose $P<0.01$ as an arbitrary cut-off for significant differentiation between lowland and highland populations, and identified 687 SNPs in Mexico (687/76,989=0.89\%) and 409 SNPs in South America (409/63,160=0.65\%) as outliers (Figure~\ref{PvDist}). Different cutoff values (0.05, 0.001) gave qualitatively identical results (data not shown). 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
 \begin{figure}[tb]   
@@ -126,7 +126,7 @@ We chose $P<0.01$ as an arbitrary cut-off for significant differentiation betwee
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
 %
-\jri{do we know what that clear outlier red SNP is? anything interesting? i suspect a reviewer might ask}
+\jri{there is one obvious shared red SNP that is an outlier. what gene is it in? what does that gene do? anything we want to mention in the discussion? I suspect a reviewer will ask.}
 
 \subsection*{Patterns of adaptation}
 
@@ -207,7 +207,7 @@ Recent empirical examples of adaptation from standing variation \cite[Reviewed i
 %In the case of maize, lowland-highland divergence events occurred very recently \cite[]{Piperno_2006_69,Perry_2006_16511492,Grobman_2012_22307642} and it would be unlikely that adaptation via \emph{de novo} mutations frequently occurred due to the waiting time required for new beneficial mutations to arise. \jri{tempted to drop this sentence as it seems to preempt our own analytical result? thoughts?}
 %Theory also predicts adaptation from standing variation based on estimates of the demography of maize.
 Selection from standing variation should be common when the scaled mutation rate (the product of the effective population size, mutation rate and target size), $\Theta\geq1$, as long as the scaled selection coefficient (product of the effective population size and selection coefficient) $Ns$ is large enough \cite[]{Hermisson_2005_15716498}.
-Estimates of $\theta$ from synonymous nucleotide diversity in maize ($\cong0.014$ \cite[\emph{e.g.,} ][]{Tenaillon_2004_15014173,Wright_2005_15919994,Ross-Ibarra_2009_19153259}) then suggest adaptation from standing genetic variation would be likely for target sizes larger than a few hundred nucleotides. \jri{i think we say 0.018 earlier. Where does this 0.014 come from?}
+Estimates of $\theta$ from synonymous nucleotide diversity in maize ($\cong0.014$ \cite[\emph{e.g.,} ][]{Tenaillon_2004_15014173,Wright_2005_15919994,Ross-Ibarra_2009_19153259}) then suggest adaptation from standing genetic variation would be likely for target sizes larger than a few hundred nucleotides. \jri{i think we say 0.018 earlier. Where does this 0.014 come from?} \st{0.018 is pi in \emph{parviglumis} that is used to estimate the size of the ancestral population,  0.014 is pi in maize.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\arraystretch}{1.1}
@@ -226,7 +226,7 @@ Significant $F_{CT}$ & 25              &   337       & 0.077\\
 NS                             & 299            &  18,493   & 0.018\\
       \hline
     & & \\[-3mm]
-South America     & \multicolumn{3}{c}{Number of SNPs} \\
+S. America     & \multicolumn{3}{c}{Number of SNPs} \\
                                      & Significant & NS           & Proportion  \\
 Significant $F_{CT}$    & 10              &   327        & 0.070\\ 
 NS                                & 133            &  17,518    & 0.018\\[1mm]

@@ -32,8 +32,8 @@ The quality of DNA was ensured through inspection on a 2\% agarose gel and quant
 We generated two complementary SNP data sets for the sampled maize landraces. 
 The first set was generated using the Illumina MaizeSNP50 BeadChip platform, including 56,110 SNPs \cite[]{Ganal_2011_22174790}.  
 SNPs were clustered with the default algorithm of the GenomeStudio Genotyping Module v1.0 (Illumina Inc., San Diego, CA, USA) and then visually inspected and manually adjusted.   
-These data are referred to as "MaizeSNP50" hereafter.  
-This array contains SNPs discovered in multiple ascertainment schemes \cite[]{Ganal_2011_22174790}, but the vast majority of SNPs come from polymorphisms distinguishing the maize inbred lines B73 and Mo17 (14,810 SNPs) or identified from sequencing 25 diverse maize inbred lines \cite[40,594 SNPs;][]{Gore20112009}.  
+These data are referred to as ``MaizeSNP50'' hereafter.  
+This array contains SNPs discovered in multiple ascertainment schemes \cite[]{Ganal_2011_22174790}, but the vast majority of SNPs come from polymorphisms distinguishing the maize inbred lines B73 and Mo17 (14,810 SNPs) or identified from sequencing 25 diverse maize inbred lines \cite[40,594 SNPs;][]{Gore_2009_19965431}.  
 
 The second data set was generated for a subset of 87 of the landrace accessions (Table~\ref{srkid}) utilizing high-throughput Illumina sequencing data via genotyping-by-sequencing \cite[GBS;][]{Elshire2011}.
 Genotypes were called using TASSEL-GBS \cite[]{Glaubitz_GBS} resulting in 2,848,284 SNPs with an average of 71.3\% missing data per individual.
@@ -173,7 +173,7 @@ Genetic distances were obtained for the MaizeSNP50 data \cite[]{Ganal_2011_22174
  
 %%%% PLR:
 \subsection*{Theoretical evaluation of convergent evolution }
-We build on results from \cite[]{ralph2014convergent} to assess whether the abundance and degree of coincidence of presumably adaptive high-$F_{ST}$ alleles is consistent with what is known about the population history of maize, we evaluated the rate at which we expect an allele that provides a selective advantage at higher elevation to arise by new mutation in a highland region ($\mutrate$), and the rate at which such an allele already present in the Mexican highlands would transit the intervening lowlands and fix in the Andean highlands ($\migrate$).
+We build on results from \cite{ralph2014convergent} to assess whether the abundance and degree of coincidence of presumably adaptive high-$F_{ST}$ alleles is consistent with what is known about the population history of maize, we evaluated the rate at which we expect an allele that provides a selective advantage at higher elevation to arise by new mutation in a highland region ($\mutrate$), and the rate at which such an allele already present in the Mexican highlands would transit the intervening lowlands and fix in the Andean highlands ($\migrate$).
 % We suggest below that many of the high-$F_{ST}$ alleles are locally adaptive, and the degree of coincidence between highland regions informs us about whether these adaptations occurred convergently, or if alleles were transmitted between the two by migration. 
 We assume alleles adapted in the highlands are slightly deleterious at lower elevation, consistent with empirical findings in reciprocal transplant experiments in Mexico \cite[]{Mercer2008}.
 These numbers depend most strongly on the population density, the selection coefficient, and the rate at which seed is transported long distances and replanted.
@@ -210,7 +210,7 @@ In terms of these parameters, the rate of appearance is
 \end{align}
 
 \subsubsection{Migration}
-A corresponding expression for the chance that an allele moves from one highland population to another is harder to intuit, and is addressed in more depth in \citep{ralph2014convergent}.
+A corresponding expression for the chance that an allele moves from one highland population to another is harder to intuit, and is addressed in more depth in \cite{ralph2014convergent}.
 If an allele is beneficial at high elevation and fixed in the Mexican highlands but is deleterious at low elevations, then at equilibrium it will be present at low frequency at migration-selection balance \citep{slatkin1973geneflow} in nearby lowland populations.
 This equilibrium frequency decays exponentially with distance, so that the highland allele is present at distance $R$ from the highlands at frequency $C \exp(- R \sqrt{2s_m} / \sigma)$, where $s_m$ is the deleterious selection coefficient for the allele in low elevation, $\sigma$ is the mean dispersal distance, and $C$ is a constant depending on geography ($C\approx 1/2$ is close).
 Multiplying this frequency by a population size gets the predicted number (average density across a large number of generations) of individuals carrying the allele.
