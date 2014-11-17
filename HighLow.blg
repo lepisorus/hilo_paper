@@ -1,48 +1,48 @@
-This is BibTeX, Version 0.99d (TeX Live 2013)
+This is BibTeX, Version 0.99d (TeX Live 2012)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: HighLow.aux
 The style file: geneticsT2.bst
 Database file #1: MZpara1.bib.bib
 Database file #2: MZpara2.bib.bib
 Database file #3: plr-hilo.bib
-You've used 66 entries,
+You've used 61 entries,
             2295 wiz_defined-function locations,
-            956 strings with 21677 characters,
-and the built_in function-call counts, 34679 in all, are:
-= -- 3787
-> -- 2051
-< -- 24
-+ -- 795
-- -- 766
-* -- 2957
-:= -- 6209
-add.period$ -- 135
-call.type$ -- 66
-change.case$ -- 839
-chr.to.int$ -- 65
-cite$ -- 66
-duplicate$ -- 891
-empty$ -- 1787
-format.name$ -- 842
-if$ -- 6887
+            930 strings with 20695 characters,
+and the built_in function-call counts, 32310 in all, are:
+= -- 3523
+> -- 1939
+< -- 21
++ -- 760
+- -- 731
+* -- 2778
+:= -- 5805
+add.period$ -- 125
+call.type$ -- 61
+change.case$ -- 796
+chr.to.int$ -- 60
+cite$ -- 61
+duplicate$ -- 807
+empty$ -- 1646
+format.name$ -- 800
+if$ -- 6383
 int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 69
-newline$ -- 334
-num.names$ -- 208
-pop$ -- 709
+missing$ -- 64
+newline$ -- 309
+num.names$ -- 191
+pop$ -- 675
 preamble$ -- 1
-purify$ -- 842
+purify$ -- 799
 quote$ -- 0
-skip$ -- 660
+skip$ -- 587
 stack$ -- 0
-substring$ -- 2202
-swap$ -- 35
-text.length$ -- 2
+substring$ -- 2031
+swap$ -- 16
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 390
+type$ -- 360
 warning$ -- 0
-while$ -- 198
+while$ -- 183
 width$ -- 0
-write$ -- 860
+write$ -- 795
