@@ -105,8 +105,9 @@ In addition to the parameters listed in Figure~\ref{model}, we investigated the 
 Surprisingly, $N_B$ was estimated to be equal to $N_C$, the population size at the end of the bottleneck, and the likelihood of $N_B<N_C$ was much smaller than for alternative parameterizations (Table~\ref{param},~\ref{supp:param}). 
 
 Comparisons of our empirical $F_{ST}$ values to the null expectation simulated under our demographic models allowed us to identify significantly differentiated SNPs between lowland and highland populations. In all cases, observed $F_{ST}$ values were quite similar to those generated under our null models (Figure~\ref{FstDist}), and model choice -- including the parameterization of the domestication bottleneck -- had little impact on the distribution of estimated \emph{P}-values (Figure~\ref{fig:qq}). 
-Thus, hereafter, we show the results under Model IB for Mexican populations and Model II for S. American populations.
-We chose $P<0.01$ as an arbitrary cut-off for significant differentiation between lowland and highland populations, and identified 687 SNPs in Mexico (687/76,989=0.89\%) and 409 SNPs in South America (409/63,160=0.65\%) as outliers (Figure~\ref{PvDist}). SNPs with significant $F_{ST}$ $P$-values were enriched in intergenic regions rather than protein coding regions (60.0\% vs. 47.9\%, Fisher's Exact Test $P < 10^{-7}$ for Mexico; 62.0\% vs. 47.8\%, FET $P<10^{-5}$ for S. America). Different cutoff values (0.05, 0.001) gave qualitatively identical results (data not shown). \jri{not sure if the intergenic result feels right where I put it here. thoughts?} \st{ST loves it.  Should we here mention that our result is consistent with Tanja's one?}
+We show results under Model IB for Mexican populations and Model II for S. American populations.
+We chose $P<0.01$ as an arbitrary cut-off for significant differentiation between lowland and highland populations, and identified 687 SNPs in Mexico (687/76,989=0.89\%) and 409 SNPs in South America (409/63,160=0.65\%) as outliers (Figure~\ref{PvDist}). Different cutoff values (0.05, 0.001) gave qualitatively identical results (data not shown).
+SNPs with significant $F_{ST}$ $P$-values were enriched in intergenic regions rather than protein coding regions (60.0\% vs. 47.9\%, Fisher's Exact Test $P < 10^{-7}$ for Mexico; 62.0\% vs. 47.8\%, FET $P<10^{-5}$ for S. America). 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
 \begin{figure}[tb]   
@@ -151,7 +152,7 @@ Despite similar phenotypes and environments, we thus see little evidence for con
 % sapply( 10^c(-5,-8), function (mu) mu * (2 * rho * A * sb)/xisq )
 
 Given the limited empirical evidence for convergent evolution at the molecular level, we took advantage of recent theoretical efforts \cite[]{ralph2014convergent} to assess the degree of convergence expected under a spatially explicit population genetic model (see Materials and Methods).
-We estimated the maize population density $\rho$ of the highlands to be around (0.5 ha field/person) $\times$ (0.5 people/km$^2$) $\times$ ($2\times 10^4$ plants per ha field) $=$ 5,000 plants per km$^2$.
+Our modeling estimates assume a maize population density $\rho$ of the highlands to be around (0.5 ha field/person) $\times$ (0.5 people/km$^2$) $\times$ ($2\times 10^4$ plants per ha field) $=$ 5,000 plants per km$^2$.
 The area of the Andean highlands is around $A=500\text{km}^2$, leading to a total population of $A \rho = 2.5 \times 10^6$. 
 Assuming an offspring variance of $\xi^2 = 30$, we can then compute the waiting time $\Tmut=1/\mutrate$ for a new beneficial mutation to appear and fix.
 We observe that even if there is relatively strong selection for an allele at high elevation ($s_b=0.01$), a single-base mutation with mutation rate $\mu=10^{-8}$ would take at least 60,000 generations to appear and fix.
@@ -198,12 +199,17 @@ While maize in highland Mexico grows in sympatry with the highland teosinte \tex
 Genome-wide, only a small proportion of ($\sim 2-7\%$) of our putatively adaptive SNPs were identified by \citet{Pyhajarvi2013}, though these numbers are still in excess of expectations (FET $P<10^{-3}$ for S. America and $P<10^{-8}$ for Mexico; Table~\ref{tanja}).
 The proportion of putatively adaptive SNPs shared with teosinte was twice as high in Mexico, however, leading us to evaluate our results in light of introgression identified by \citet{Profford_2013} from \textit{mexicana} into maize in the Mexican highlands.  
 
-\jri{Sho do you have numbers on how many of the introgressed regions identified by Matt have $\ge 1$ adaptive SNP here in each pop? Or what \% of our adaptive SNPs are in introgressed regions in each pop? Some way of quantifying how much overlap there is, like we do above for Tanja's SNPs. Would be good for SNPs and genes.  In the .tex it says "99/586 (14.5\%) and 22/466 (4.7\%) GUs of Mexico- and SA-specific significance in introgressed regions (Fisher's exact test, $P<10^{-6}$)" are those numbers still good? that might help the comparison in the previous sentence too, since even a FET of 0.036 is still statiscally signficant, isn't it?}
-\st{Reply to JRI via e-mail.}
+%\jri{Sho do you have numbers on how many of the introgressed regions identified by Matt have $\ge 1$ adaptive SNP here in each pop? Or what \% of our adaptive SNPs are in introgressed regions in each pop? Some way of quantifying how much overlap there is, like we do above for Tanja's SNPs. Would be good for SNPs and genes.  In the .tex it says "77/473 (16.3\%) and 14/274 (5.1\%)  GUs of Mexico- and SA-specific significance in introgressed regions (Fisher's exact test, $P<10^{-6}$)" are those numbers still good? that might help the comparison in the previous sentence too, since even a FET of 0.036 is still statiscally signficant, isn't it?}
+%\st{Reply to JRI via e-mail.}
 
-The proportion of putatively adaptive SNPs in introgressed regions of the genome in highland maize from Mexico is significantly higher than found in highland maize in S. America (FET $P<10^{-10}$). 
-Outside introgressed regions, the proportion of significant SNPs showed much less marked differences (FET, $P<0.01$).
+The proportion of putatively adaptive SNPs in introgressed regions of the genome in highland maize from Mexico is nearly four times higher than found in highland maize in S. America (FET $P<10^{-11}$). 
+Outside introgressed regions, the proportion of significant SNPs showed much smaller differences (7.5\% vs. 6.2\%; Table \ref{supp:introgressed}).
 Excluding  putatively adaptive SNPs, mean $F_{ST}$ between Mexico and S. America is only slightly higher in introgressed regions (0.032) than across the rest of the genome (0.020), suggesting the enrichment of high $F_{ST}$ SNPs seen in Mexico is not simply due to neutral introgression of a divergent teosinte haplotype.  
+\ref{supp:introgressed}
+
+
+
+
 
 %When focusing on GUs, we identified 99/586 (14.5\%) and 22/466 (4.7\%) GUs of Mexico- and SA-specific significance in introgressed regions (Fisher's exact test, $P<10^{-6}$). 
 
