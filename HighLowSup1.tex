@@ -59,17 +59,10 @@
 
 \newpage
 
-%\renewcommand{\thefigure}{\Roman{figure}} 
-% Figure AllelePat is not called in the main text, and I use Roman numbers for figure numbers
-
-
-
-\section*{Supplemental Text} \label{sec:supptextsho}
+\section*{Directionality of adaptation} \label{sec:supptextsho}
 %\noindent {\Large \textit{Text~S1} }
 
 \jri{This needs some rewriting -- Matt?}
-
-\subsection*{Directionality of adaptation}
 
 We classified the patterns of allelic differentiation among highland and lowland populations in Mexico and S. America together with the information of \emph{parviglumis} in an \emph{ad hoc} manner; the allelic differentiation pattern is consistent with highland or lowland adaptation scenario.  
 In Figure~\ref{AllelePat}, we illustrate the frequency of putative ancestral and derived alleles in the five populations, drawn by red and blue, respectively.
@@ -102,20 +95,11 @@ The result is summarized in Table~S3.
 
 \pagebreak
 
+\section*{Demographic modeling}
 
-\renewcommand{\thefigure}{A\arabic{figure}}
-\renewcommand{\thetable}{A\arabic{table}}
-
-\subsection*{Details of the demographic model}
-\label{apx:demographic_model}
-
-Throughout we use in many ways the {\em branching process approximation} --
-if an allele is locally rare, then for at least a few generations,
-the fates of each offspring are nearly independent.
-So, if the allele is locally deleterious, the total numbers of that allele behave as a subcritical branching process,
-destined for ultimate extinction.
-On the other hand, if the allele is advantageous,
-it will either die out or become locally common, with its fate determined in the first few generations.
+Throughout we use in many ways the {\em branching process approximation} -- if an allele is locally rare, then for at least a few generations, the fates of each offspring are nearly independent.
+So, if the allele is locally deleterious, the total numbers of that allele behave as a subcritical  branching process, destined for ultimate extinction.
+On the other hand, if the allele is advantageous, it will either die out or become locally common, with its fate determined in the first few generations.
 If the number of offspring of an individual with this allele is the random variable $X$, 
 with mean $\E[X] = 1+s$ (selective advantage $s>0$), variance $\var[X]=\xi^2$, and $\P\{X=0\}>0$ (some chance of leaving no offspring),
 then the probability of local nonextinction $p_*$ is approximately $p_* \approx 2s/\xi^2$ to a second order in $s$.
@@ -160,7 +144,7 @@ There does not seem to be a nice analytic expression for $p_*$ in this case,
 but since $1-p_*$ is a fixed point of $\Phi$, the solution can be found by iteration:
 $1-p_* = \lim_{n \to \infty} \Phi^n(u)$ for an appropriate starting point $u$.
 
-\paragraph*{Maize model}
+\subsection*{Maize model}
 
 The migration and reproduction dynamics we use are taken largely from \citet{vanHeerwaarden2010}.  
 On a large scale,
@@ -168,8 +152,8 @@ fields of $N$ plants are replanted each year from $N_f$ ears,
 either from completely new stock (with probability $p_e$),
 from partially new stock (a proportion $r_m$ with probability $p_m$),
 or entirely from the same field.
-Plants have an average of $\mu_E$ ears per plant, and ears have an average of $N/N_f$ kernels; \jri{what happens if we change mean ears per plant from 3 to 1?}
-so a plant has on average $\mu_E N/N_f$ kernels, and a field has on average $\mu_E N$ ears and $\mu_E N^2/N_f$ kernels.
+Plants have an average of $\mu_E$ ears per plant, and ears have an average of $N/N_f$ kernels; 
+so a plant has on average $\mu_E N/N_f$ kernels, and a field has on average $\mu_E N$ ears and $\mu_E N^2/N_f$ kernels. \jri{what happens if we change mean ears per plant from 3 to 1?}
 We suppose that a plant with the selected allele is pollen parent to $(1+s) \mu_E N/N_f$ kernels,
 and also seed parent to $(1+s)\mu_E N/N_f$ kernels, still in $\mu_E$ ears.
 The number of offspring a plant has depends on how many of its offspring kernels get replanted.
@@ -232,7 +216,7 @@ and otherwise $\mu_{KM} = 0$ and $\lambda_{PM} = m_g(1+s)$.
 \end{table}
 
 
-\paragraph*{Math}
+\subsection*{Math}
 
 The generating function of a Poisson with mean $\lambda$ is $\phi(u;\lambda)=\exp(\lambda(u-1))$,
 and the generating function of a Poisson($\mu$) sum of Poisson($\lambda$) values is $\phi(\phi(u;\lambda);\mu)$.
@@ -295,7 +279,7 @@ the mean total number of offspring of a diploid is
 We show numerically later that the probability of establishment is very close to $2s$ over the variance in reproductive number (as expected).
 It is possible to write down an expression for the variance, but it's a big, ugly one that doesn't lend itself to intuition.
 
-\subsection{Migration and spatial structure}
+\subsection*{Migration and spatial structure}
 
 To incorporate spatial structure, suppose that the locations $\ell_k$ are arranged in a regular grid, so that $\ell_k = a k$. 
 Recall that $s_k$ is the selection coefficient at location $k$.
@@ -322,8 +306,6 @@ on average $\sigma_s$ distance away in a random direction.
 The number of villages away the seed comes from could be geometric 
 (including the possibility of coming from the same village).
 
-\subsection{Dispersal distance}
-
 The dispersal distance
 -- the mean distance between parent and offspring --
 is the average of the pollen and seed mean dispersal distances.
@@ -338,11 +320,9 @@ This is
 \end{align}
 at the parameter values above.
 
-\subsection{Results}
-
 Iterating the generating function above finds the probability of establishment as a function of distance along the cline.
 This is shown in figure \ref{sfig:prob_estab}.
-Note that the approximation $2s$ divided by the variance in offspring number is pretty darn close.
+Note that the approximation $2s$ divided by the variance in offspring number is quite close.
 
 \begin{figure}[ht!!]
   \begin{center}
@@ -351,47 +331,12 @@ Note that the approximation $2s$ divided by the variance in offspring number is 
   \end{center}
   \caption{
   \plr{make this look better}
-  Probability of establishment, as a function of distance along and around an altitudinal cline, whise boundaries are marked by the green lines.
+  Probability of establishment, as a function of distance along and around an altitudinal cline, whose boundaries are marked by the green lines.
   {\bf (A)} The parameters above; with cline width 62km; {\bf (B)} the same, except with cline width 500km.
   \label{sfig:prob_estab}
   }
 \end{figure}
 
-
-%%%%%%%
-\section{Adaptation by mutation}
-
-\plr{just a placeholder for now; to be merged in}
-
-First, we'd like to compute how difficult is it for the beneficial adaptation to arise by new mutation.
-The rate of appearance of mutant alleles is a Poisson process,
-and we can assume that each is successful or not independently,
-so the time until the new mutant appears and fixes is exponentially distributed,
-with rate equal to the mutation rate multiplied by the probability of establishment integrated over the population.
-Referring to figure~\ref{sfig:prob_estab},
-we see that this is pretty close to ( (area of high altitude) $+$ ($1/2$ area of altitudial gradient) ) $\times$ (population density) $\times$ (prob of establishment at high altitude).
-
-Let $A$ denote (area of high altitude) plus ($1/2$ area of altitudial gradient).
-The population density $\rho$ is roughly 0.5--5 people per km$^2 \times$ (0.5 ha field/person) $\times$ ($2\times10^4$ plants per field ha) $=$ (5000--50000 plants per km$^2$).
-As a check, the other set of numbers was ``one village per 15 km''; i.e.\ per square with 15km on a side, which is 0.444 people per km$^2$.
-
-Since the probability of establishment at high altitude is approximately $2 s_b / \xi^2$, 
-with $\xi^2$ the variance in offspring number,
-the rate of appearance is just 
-\begin{align*}
-  \mutrate = 2 \rho A s_b \mu / \xi^2 .
-\end{align*}
-% rho <- 5000; sb <- 10^(-(1:3)); xisq <- 50; A <- 500
-% sapply( c(1e-8,1e-5), function (mu) 2 * rho * A * sb *mu / xisq )
-At the values above, with $.1 \le s_b \le .001$, the factor $2 \rho A s_b / \xi^2$ multiplying the mutation rate
-varies between $10^2$ and $10^5$,
-implying that a single-base mutation with $\mu=10^{-8}$ would have to wait between $10^4$ and $10^6$ generations to fix,
-but a mutation with a larger target, say $\mu=10^{-5}$, would fix in tens to thousands of generations, depending on the selection coefficient.
-
-
-
-%%%%%%%
-\section{Adaptation by migration}
 
 As we show in \jri{insert citation to theory paper} , 
 the rate of adaptation by diffusive migration is roughly
@@ -420,6 +365,42 @@ if $s_m = 10^{-4}$ (very weak selection in the lowlands), then for $R=1,000$ km,
 i.e.\ it would take on the order of 100,000 generations (years) to get a successful migrant only 1,000 km away,
 under this model of undirected, diffusive dispersal.
 For larger $s_m$, the migration rate is much smaller.
+
+
+%%%%%%%
+\section{Adaptation by mutation}
+
+\plr{just a placeholder for now; to be merged in}
+
+First, we'd like to compute how difficult is it for the beneficial adaptation to arise by new mutation.
+The rate of appearance of mutant alleles is a Poisson process,
+and we can assume that each is successful or not independently,
+so the time until the new mutant appears and fixes is exponentially distributed,
+with rate equal to the mutation rate multiplied by the probability of establishment integrated over the population.
+Referring to figure~\ref{sfig:prob_estab},
+we see that this is pretty close to ( (area of high altitude) $+$ ($1/2$ area of altitudinal gradient) ) $\times$ (population density) $\times$ (prob of establishment at high altitude).
+
+Let $A$ denote (area of high altitude) plus ($1/2$ area of altitudial gradient).
+The population density $\rho$ is roughly 0.5--5 people per km$^2 \times$ (0.5 ha field/person) $\times$ ($2\times10^4$ plants per field ha) $=$ (5000--50000 plants per km$^2$).
+As a check, the other set of numbers was ``one village per 15 km''; i.e.\ per square with 15km on a side, which is 0.444 people per km$^2$.
+
+Since the probability of establishment at high altitude is approximately $2 s_b / \xi^2$, 
+with $\xi^2$ the variance in offspring number,
+the rate of appearance is just 
+\begin{align*}
+  \mutrate = 2 \rho A s_b \mu / \xi^2 .
+\end{align*}
+% rho <- 5000; sb <- 10^(-(1:3)); xisq <- 50; A <- 500
+% sapply( c(1e-8,1e-5), function (mu) 2 * rho * A * sb *mu / xisq )
+At the values above, with $.1 \le s_b \le .001$, the factor $2 \rho A s_b / \xi^2$ multiplying the mutation rate
+varies between $10^2$ and $10^5$,
+implying that a single-base mutation with $\mu=10^{-8}$ would have to wait between $10^4$ and $10^6$ generations to fix,
+but a mutation with a larger target, say $\mu=10^{-5}$, would fix in tens to thousands of generations, depending on the selection coefficient.
+
+
+
+%%%%%%%
+\section{Adaptation by migration}
 
 %%%%%%%%%%%%
 \section{Conclusion}
