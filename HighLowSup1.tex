@@ -364,6 +364,14 @@ i.e.\ it would take on the order of 100,000 generations (years) to get a success
 under this model of undirected, diffusive dispersal.
 For larger $s_m$, the migration rate is much smaller.
 
+%below moved from methods.`
+If highland alleles are neutral in the lowlands the situation is more difficult to model, but we can make some informed guesses.
+For maize in the Andean highlands to have inherited a highland-adapted allele from the Mexican highlands, those Andean plants must be directly descended from highland Mexican plants that lived more recently than the appearance of the adaptive allele.
+In other words, the ancestral lineages along which the modern Andean plants have inherited at that locus must trace back to the Mexican highlands.
+If the allele is neutral in the lowlands, we can treat the movement of these lineages as a neutral process, using the framework of coalescent theory \citep{wakeley2005coalescent}.
+To do this, we need to follow \emph{all} of the $N \approx 2.5 \times 10^6$ lineages backwards; these quickly coalesce to fewer $m$ lineages in approximately $\sum_{k=m}^N \frac{2N}{\xi^2 k(k+1)} \approx 1.25 \times 10^5/m$ generations, leaving about 1000 lineages after 100 generations that are spread over a larger area.
+The displacement of a lineage after $m$ generations has variance $m \sigma^2$ and is approximately Gaussian.
+If we assume that $n$ lineages are independent, and $Z_n$ is the distance to the furthest lineage, then $\P\{ Z_n / \sqrt{m \sigma^2} \le x /\sqrt{2 \log n} + \sqrt{2 \log n} - (1/2) (\log \log n + \log 4 \pi)/\sqrt{2 \log n} \} \approx \exp( - e^{-x} )$ \citep{berman1964limit}. \jri{Peter are the braces in the right place? seems to me naively it should be  $\P\{ Z_n / \sqrt{m \sigma^2} \le x \} = \sqrt{2 \log n} + ...$ ??}
 
 %%%%%%%
 \section{Adaptation by mutation}
