@@ -1,30 +1,27 @@
 \section*{Discussion}
 
-Our analysis of diversity and population structure in maize landraces from Mexico and S. America is consistent with earlier archaeological \cite[]{Piperno_2006_69,Perry_2006_16511492,Grobman_2012_22307642} and genetic \citep{vanHeerwaarden_2011_21189301} work suggesting an independent origin of S. American highland maize. 
-We used our genetic data to fit a model of historical population size change, and find no evidence of a bottleneck in Mexico but results suggesting a strong bottleneck followed by expansion in the highlands of S. America. 
-Surprisingly, our models showed no support for a maize domestication bottleneck, apparently contradicting earlier work using Sanger sequence from a smaller number of protein-coding genes \cite[]{Eyre-Walker_1998_9539756,Tenaillon_2004_15014173,Wright_2005_15919994}. 
-While our SNP set is enriched for protein-coding genes, it does include a large number of noncoding variants.
-Diversity differences between maize and teosinte are greatest in protein-coding regions \citep{Hufford_2012_22660546}, and like \citet{Hufford_2012_22660546} we find more similar patterns of rare variants in noncoding regions (Figure~\ref{JFD}) .
-Together, these data suggest earlier models may have overestimated the strength of the domestication bottleneck.
-A more detailed comparison with data from teosinte will be required  to validate these results, however, but they at least suggest that a reanalysis of the demography of maize domestication may be in order.
+Our analysis of diversity and population structure in maize landraces from Mexico and S. America points to an  an independent origin of S. American highland maize, in line with earlier archaeological \cite[]{Piperno_2006_69,Perry_2006_16511492,Grobman_2012_22307642} and genetic \citep{vanHeerwaarden_2011_21189301} work. 
+We use our genetic data to fit a model of historical population size change, and find no evidence of a bottleneck in Mexico but a strong bottleneck followed by expansion in the highlands of S. America. 
+Surprisingly, our models showed no support for a maize domestication bottleneck, apparently contradicting earlier work \cite[]{Eyre-Walker_1998_9539756,Tenaillon_2004_15014173,Wright_2005_15919994}. 
+One factor contributing to these differences is the set of loci sampled. 
+Previous efforts focused on data exclusively from protein-coding regions, while our data set includes a large number of noncoding variants.
+Diversity differences between maize and teosinte are greatest in protein-coding regions \citep{Hufford_2012_22660546}, presumably due to the effects of background selection \citep{}, and demographic estimates using only protein-coding loci should thus overestimates the strength of a domestication bottleneck.
+While a more detailed comparison with data from teosinte will be required to validate these results, they nonetheless suggest the value of a reassessment of the combined impacts of demography and selection on genome-wide patterns of diversity during maize domestication.
 
-\paragraph{we see little convergence}
-We used SNPs with significant $F_{ST}$ $P$-values were enriched in intergenic regions rather than protein coding regions (60.0\% vs. 47.9\%, Fisher's Exact Test $P < 10^{-7}$ for Mexico; 62.0\% vs. 47.8\%, FET $P<10^{-5}$ for S. America). 
-Wallace paper, Tanja paper
+\paragraph{Highland Adaptation}
+We identified SNPs deviating from patterns of allele frequencies determined by our demographic model as loci putatively under selection for highland adaptation.
+These conclusions are supported by evidence of haplotype differentiation \jri{supp.} and the directionality of allele frequency change \jri{supp.}.
+Consistent with results from both GWAS \citep{Wallace} and local adaptation in teosinte \citep{Tanja}, we find that putatively adaptive SNPs are enriched in intergenic regions of the genome, further suggesting an important role for regulatory variation in maize evolution. 
 
-\paragraph{theory comparison}
-Based on our spatially explicit population genetic model, convergent evolution involving identical nucleotide changes is quite unlikely under either scenarios of independent mutation or transit of Central America by undirected (diffusive) sharing of seed. 
-However, independent mutations could be expected in kilobase-sized targets, suggesting there might be signal for genes that share adaptive changes.
+Although our data suggest that hundreds of loci were targeted by natural selection in Mexico and South America, fewer than $X\%$ of SNPs and $X\%$ of genes show evidence for convergent evolution between the two highland populations.
+To evaluate the significance of our empirical observations given the biology and colonization history of highland maize, we applied recently developed models of convergent evolution \citep{Peter} across a range of parameter possibilities. \jri{is this fair to say? we didn't really do any formal sensitivity analyses...} 
+Our modeling results suggest that convergent evolution involving identical nucleotide changes is quite unlikely due to recurrent mutation or diffusion across Central America via seed sharing.    
+
+
+
+ these results are robust to a range of parameter values \jri{fair to say?}, independent mif many adaptive traits large number of nucleotides independent mutations could be expected in kilobase-sized targets, suggesting there might be signal for genes that share adaptive changes.
 %clarify what kb target means
 These conclusions could change if we drastically underestimated the rate of very-long-distance sharing of seed, e.g.\ if sharing across hundreds of kilometers was common at some point.
-
-
-\label{low power}
-However, it is known that the effective recombination rate of maize is very high \cite[]{Tenaillon_2001_11470895}.
-Linkage disequilibrium rapidly decays and reaches plateau around 100 bp (Figure~\ref{supp:LD}).
-The density of SNPs was roughly 1 SNP per 20 kb, so we could miss some of the adaptive variants.
-We believe that our conclusion holds even if more dense SNP dataset can be used, but the future genotyping technology may solve this problem.
-\cite[]{tiffin2014advances}.
 
 \label{other taxa}
 The rarity of convergent evolution in maize contrasts with data from humans \citep{Tennessen_2011_21698142} showing selection on the same genes in multiple pairs of tropical and temperate populations.  
@@ -48,6 +45,11 @@ The target size of mutations can also increase the variants for adaptation, but 
 %Estimates of $\theta$ from synonymous nucleotide diversity in maize ($\cong0.014$ \cite[\emph{e.g.,} ][]{Tenaillon_2004_15014173,Wright_2005_15919994,Ross-Ibarra_2009_19153259}) then suggest adaptation from standing genetic variation would be likely for target sizes larger than a few hundred nucleotides. \jri{i think we say 0.018 earlier. Where does this 0.014 come from?} \st{0.018 is pi in \emph{parviglumis} that is used to estimate the size of the ancestral population,  0.014 is pi in maize.}
 In fact, adaptation from multiple standing variants that produce similar phenotypes has previously been observed in maize: the \emph{grassy tillers1} (\emph{gt1}) gene \cite[]{Wills_2013_23825971} contains two artificially selected mutations that reduce ear number.
 These mutations both segregate at low frequency in \emph{parviglumis} but have been individually selected to high frequency in different populations of maize.
+
+Finally, although we evaluated a genome-wide sample of more than 90,000 SNPs, this sampling is likely insufficient to capture all of the signals of selection across the genome.  
+Linkage disequilibrium in mays decays rapidly \citep{Chia}, reaching a plateau in only a few hundred bp (Figure~\ref{supp:LD}) and a much greater density of SNPs would be needed to effectively identify the majority of selective sweeps in the history of these populations \cite[]{tiffin2014advances}.
+SNP density alone does not explain the lack of convergent evolution seen at SNPs showing evidence of selection, however.  
+Our genomic sampling may have thus identified only a subset of all loci targeted by natural selection, but there is no reason to believe that the percentage of selected loci showing convergent selection should change with higher genotyping density. 
 
 
 
