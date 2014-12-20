@@ -5,48 +5,46 @@ The style file: geneticsT2.bst
 Database file #1: MZpara1.bib.bib
 Database file #2: MZpara2.bib.bib
 Database file #3: plr-hilo.bib
-Warning--I didn't find a database entry for ""
-Warning--I didn't find a database entry for "Wallace"
 Warning--I didn't find a database entry for "Chia"
-You've used 61 entries,
+You've used 63 entries,
             2295 wiz_defined-function locations,
-            935 strings with 20885 characters,
-and the built_in function-call counts, 32535 in all, are:
-= -- 3550
-> -- 1966
+            945 strings with 21293 characters,
+and the built_in function-call counts, 33512 in all, are:
+= -- 3656
+> -- 2019
 < -- 20
-+ -- 775
-- -- 744
-* -- 2802
-:= -- 5849
-add.period$ -- 125
-call.type$ -- 61
-change.case$ -- 804
-chr.to.int$ -- 60
-cite$ -- 61
-duplicate$ -- 807
-empty$ -- 1645
-format.name$ -- 812
-if$ -- 6420
++ -- 795
+- -- 762
+* -- 2885
+:= -- 6026
+add.period$ -- 129
+call.type$ -- 63
+change.case$ -- 823
+chr.to.int$ -- 62
+cite$ -- 63
+duplicate$ -- 833
+empty$ -- 1702
+format.name$ -- 832
+if$ -- 6617
 int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 64
-newline$ -- 309
-num.names$ -- 190
-pop$ -- 684
+missing$ -- 66
+newline$ -- 319
+num.names$ -- 196
+pop$ -- 699
 preamble$ -- 1
-purify$ -- 807
+purify$ -- 826
 quote$ -- 0
-skip$ -- 587
+skip$ -- 605
 stack$ -- 0
-substring$ -- 2034
+substring$ -- 2111
 swap$ -- 16
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 360
+type$ -- 372
 warning$ -- 0
-while$ -- 184
+while$ -- 190
 width$ -- 0
-write$ -- 795
-(There were 3 warnings)
+write$ -- 821
+(There was 1 warning)
