@@ -5,10 +5,9 @@ The style file: geneticsT2.bst
 Database file #1: MZpara1.bib.bib
 Database file #2: MZpara2.bib.bib
 Database file #3: plr-hilo.bib
-Warning--I didn't find a database entry for "Chia"
 You've used 63 entries,
             2295 wiz_defined-function locations,
-            945 strings with 21293 characters,
+            943 strings with 21285 characters,
 and the built_in function-call counts, 33512 in all, are:
 = -- 3656
 > -- 2019
@@ -47,4 +46,3 @@ warning$ -- 0
 while$ -- 190
 width$ -- 0
 write$ -- 821
-(There was 1 warning)

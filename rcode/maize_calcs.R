@@ -1,7 +1,9 @@
 #######
-# Find prob of survival with nonconstant selection
+# Find probability of survival with nonconstant selection
+#  by finding the appropriate fixed point of the generating function
 
 iterroot <- function (genfn,tol=sqrt(.Machine$double.eps),maxiter=1000,...) {
+    # Iterate the generating function forward to a fixed point
     p0 <- genfn(1/2,...)
     for (k in 1:maxiter) {
         p <- genfn(p0,...)
@@ -20,22 +22,24 @@ for (clinewidth in c(26,62,500)) {
 dx <- 15            # distance between demes (km)
 rangesize <- 1000   # half-length of range (km)
 xx <- seq(-rangesize,rangesize,by=dx)  # deme locations (km)
-sb <- 0.1
-sd <- 0.00001
+sb <- 0.1           # maximum benefit of allele in highlands
+sd <- 0.00001       # maximum deleterious affect of allele in lowlands
 elevends <- c(500,2500)     # endpoints of elevation (m)
 alpha <- (sb+sd)/clinewidth      # slope of selection with altitude (units of s per km)
-selfn <- function (x) { pmin( sb, pmax( -sd, alpha*x ) ) }
+selfn <- function (x) { pmin( sb, pmax( -sd, alpha*x ) ) }   # gives the cline as a function of distance
 selx <- selfn(xx)
 
-# binary branching
+# Examples:
+# simple demographic model: binary branching
 m <- .5
 eqvals <- c( 1, iterroot( function (p) (1/2)*(1-sb) + (1/2)*(1+sb)*p^2 ) )
 genfn <- function (f,selx,migr=m) { (1/2)*(1-selx) + (1/2)*(1+selx)*f*( f + migr*diff(c(eqvals[1],f,eqvals[2]),differences=2) ) }
-# Poisson
+# simple demographic model: Poisson
 m <- .5
 eqvals <- c( 1, iterroot( function (p) exp((1+sb)*(p-1)) ) )
 genfn <- function (f,selx,migr=m) { exp((1+selx)*(f+migr*diff(c(eqvals[1],f,eqvals[2]),differences=2)-1)) }
 
+# Complex demographic model: Maize
 # maize
 N <- 103359  # plants per field
 Nf <- 561    # ears to make next generation
@@ -44,13 +48,14 @@ mg <- .0083  # pollen migration
 psig <- 0    # pollen migration distance
 ssig <- 50   # seed stock "migration" distance
 pm <- .02    # prob of partial stock addition
-rm <- 0.2     # proportion of stock replaced
+rm <- 0.2    # proportion of stock replaced
 poisgenfn <- function (f,lambda) { 
+    # generating function for a Poisson
     ans <- exp(lambda*(f-1)) 
     if (any(!is.finite(ans))) { stop("oops! nonfinite??") } else { return(ans) }
 }
 migrave <- function (f,pmig) {
-    # average of f[x+X] over X chosen from [-sig,sig] with pmig giving the probs of moving
+    # average of f[x+X] over X chosen from [-sig,sig] with pmig giving the probs of moving, assumed symmetric
     #  (zero distance is what's left over)
     pzero <- 1-sum(pmig)
     sig <- length(pmig)
@@ -61,9 +66,11 @@ migrave <- function (f,pmig) {
     return( rowSums(fx*c(rev(pmig/2),pzero,pmig/2)[col(fx)]) )
 }
 genfn <- function (f,selx,migr=1) {
+    # full generating function, using poisgenfn and migrave as pieces
     s <- (1+2*selx)/2
     polm <- 0
-    seedm <- (1-1/(1+(ssig/dx)))^(0:(6*ssig/dx)); seedm <- migr*(seedm/sum(seedm))[-1]  # geometric with mean ssig
+    seedm <- (1-1/(1+(ssig/dx)))^(0:(6*ssig/dx))
+    seedm <- migr*(seedm/sum(seedm))[-1]  # geometric with mean ssig
     return( poisgenfn( migrave(f,polm), mg*s ) * # pollen migration
         ( pe +  # local extinction
         ( (1-pe)*(1-pm) * poisgenfn(f,(1-mg)*s) * # local pollen
@@ -85,9 +92,8 @@ tmpsl <- diff(genfn(diffx,selx=sb,migr=0))/diff(diffx)
 meanoff <- diff(genfn(1-c(.00001,0),selx=sb,migr=0))/diff(1-c(.00001,0))
 varoff <- (1/2)*diff(genfn(1-c(.00002,.00001,0),selx=sb,migr=0),differences=2)/prod(diff(1-c(.00002,.00001,0))) - meanoff^2
 
-# calculate mean of n log n
 
-
+# check that convergence is working
 niter <- 1000
 
 f <- function (x) { 1/2 + sb*tanh(-x/30) }
