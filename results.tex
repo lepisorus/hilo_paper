@@ -195,13 +195,15 @@ With selection against the highland allele in low elevations $10^{-1} \ge s_m \g
 Since the Mexican and Andean highlands are around 4,000 km apart, the time needed for a rare allele with weak selective cost $s_m=10^{-4}$ in the lowlands to transit between the two highland regions is $\Tmig \approx 2 \times 10^{7}$ generations. 
 However, the exponential dependence on distance in equation \eqref{eqn:migrate}
 means that shorter distances could be transited more quickly 
--- if the distance between highland patches $R$ is 1,000 km (or if $\sigma$ is four times larger) 
-then the same allele would be expected to transit between populations in approximately 2 generations 
-\mbh{is this correct?  4000km in $\approx 4 \times 10^{10}$ and 1000km in 2 generations?}.
-The waiting time $\Tmig$ is  strongly dependent on the magnitude of the deleterious selection coefficient, however: with $s_m=10^{-3}$, for example $\Tmig$ is $1.6 \times 10^7$ generations over 1,000km.
-%Since the Mexican and Andean highlands are around 4,000 km apart, the time needed for a rare allele with selective cost $s_m=10^{-3}$ in the lowlands to transit between the two highland regions is $\Tmig \approx 5 \times 10^{34}$ generations. 
-%The waiting time $\Tmig$, however,is is strongly dependent on the magnitude of the deleterious selection coefficient: for example, with $s_m=10^{-3}$, $\Tmig$ is $2.3 \times 10^6$ generations.
-\jri{Peter please check $\Tmig$ here is correct. Original sentence (see .tex) didn't give numbers for waiting time that jived with what I get from R code in .tex}
+-- if the distance between highland patches $R$ is 2,000 km (or if $\sigma$ is twice as large)
+then $\Tmig \approx 2$ generations,
+indicating that all alleles such weak selection cost between that are beneficial in both highlands
+should be shared
+if they arose long enough ago for migration-selection balance to have been reached.
+The waiting time $\Tmig$ is strongly dependent on the magnitude of the deleterious selection coefficient, however: 
+with the still weak selective cost of $s_m=10^{-3}$, for example, $\Tmig$ is $2.5 \times 10^4$ generations over 1,000km,
+and much larger for longer distances.
+\plr{fixed this up: removed factor of $2s_b/\xi^2$ in the R code that doesn't appear in \eqref{eqn:migrate}.}
 
 Finally, a coalescent approach allows us to also estimate the distance travelled for a beneficial highland allele which is neutral in lowland environments.  After $m=1,000$ generations, there are approximately $n=1,000$ lineages remaining and of these the furthest has travelled  $\sqrt{2 \sigma^2 m \log n} \approx 212$km from the highlands.  The distance travelled, however, does not scale linearly with time, such that at  $m=6000$ generations the furthest alleles is $\approx 518$km from its highland origin. \jri{Peter I'm confused here. If the above is correct it argues a neutral allele will travel a \emph{shorter} distance than a deleterious allele? 1000km would take neutral allele >6K generations but in the previous paragraph a deleterious allele with $s_m=10^{-4}$ does it in 2 generations. NOTE: I think i may have messed up here, as i think the supp text doesn't jive with the numbers here. please take a look}
 
@@ -214,14 +216,17 @@ Finally, a coalescent approach allows us to also estimate the distance travelled
 The lack of both empirical and theoretical support for convergent adaptation at SNPs or genes led us to investigate alternative patterns of adaptation. 
 
 We first sought to understand whether SNPs showing high differentiation between the lowlands and the highlands arose primarily via new mutations or were selected from standing genetic variation.  
-We found that putatively adaptive variants identified in both Mexico and S. America tended to segregate in the lowland population more often than other SNPs of similar mean allele frequency (85.3\% vs. 74.8\% in Mexico, FET {$P < 10^{-9}$ and 94.8\% vs 87.4\% in S. America,  $P< 10^{-4}$).  
+We found that putatively adaptive variants identified in both Mexico and S. America tended to segregate in the lowland population more often than other SNPs of similar mean allele frequency (85.3\% vs. 74.8\% in Mexico (Fisher's exact test $P < 10^{-9}$ and 94.8\% vs 87.4\% in S. America,  $P< 10^{-4}$).  
 We extended this analysis by retrieving SNP data from 14 \emph{parviglumis} inbred lines included in the Hapmap v2 data set, using only SNPs with $n\geq10$ \cite[]{Chia_2012_22660545,Hufford_2012_22660546}.  
-Again we found that putatively adaptive variants were more likely to be polymorphic in \emph{parviglumis} (78.3\% vs. 72.2\% in Mexico, FET {$P < 0.01$ and 80.2\% vs 72.8\% in S. America,  $P< 0.01$). 
+Again we found that putatively adaptive variants were more likely to be polymorphic in \emph{parviglumis} (78.3\% vs. 72.2\% in Mexico 
+(Fisher's exact test $P < 0.01$ and 80.2\% vs 72.8\% in S. America,  $P< 0.01$). 
 
 While maize in highland Mexico grows in sympatry with the highland teosinte \textit{mexicana}, maize in S. America is outside the range of wild \textit{Zea} species, leading to a marked difference in the potential for adaptive introgression from wild relatives.
 \citet{Pyhajarvi2013} recently investigated local adaptation in \textit{parviglumis} and \textit{mexicana} populations, characterizing differentiation between these subspecies using an outlier approach.
-Genome-wide, only a small proportion of ($\sim 2-7\%$) of our putatively adaptive SNPs were identified by \citet{Pyhajarvi2013}, though these numbers are still in excess of expectations (FET $P<10^{-3}$ for S. America and $P<10^{-8}$ for Mexico; Table~\ref{tanja}).
-The proportion of putatively adaptive SNPs shared with teosinte was twice as high in Mexico, however, leading us to evaluate our results in light of introgression identified by \citet{Profford_2013} from \textit{mexicana} into maize in the Mexican highlands.  
+Genome-wide, only a small proportion (2--7\%) of our putatively adaptive SNPs were identified by \citet{Pyhajarvi2013}, though these numbers are still in excess of expectations (Fisher's exact test $P<10^{-3}$ for S. America and $P<10^{-8}$ for Mexico; Table~\ref{tanja}).
+The proportion of putatively adaptive SNPs shared with teosinte was twice as high in Mexico, however, 
+\plr{what does this mean:}
+leading us to evaluate our results in light of introgression identified by \citet{Profford_2013} from \textit{mexicana} into maize in the Mexican highlands.  
 
 The proportion of putatively adaptive SNPs in introgressed regions of the genome in highland maize in Mexico was nearly four times higher than found in S. America (FET $P<10^{-11}$), while differences outside introgressed regions were much smaller (7.5\% vs. 6.2\%; Table \ref{supp:introgressed}). 
 Furthermore, of the 77 regions identified as introgressed in \cite[]{Profford_2013}, more than twice as many contain at least one $F_{ST}$ outlier in Mexico as in S. America (23 compared to 9, one-tailed Z-test $P=0.0027$).
