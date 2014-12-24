@@ -289,57 +289,6 @@ For larger $s_m$, the migration rate is much smaller.
 
 
 
-%%%%%%%% %%%%%%%%
-\section{Neutral alleles and the approach to mutation-selection equilibrium}
-
-The above analysis required that alleles be deleterious in the lowlands, 
-and neglected the time to reach migration-selection equilibrium.
-It is therefore helpful to consider the complementary case of an allele that is neutral in the lowlands.
-In this case, a branching process approximation is no longer appropriate,
-but we have other tools at our disposal.
-For maize in the Andean highlands to have inherited a highland-adapted allele from the Mexican highlands, 
-those Andean plants must be directly descended from highland Mexican plants that lived more recently than the appearance of the adaptive allele.
-In other words, the ancestral lineages along which the modern Andean plants have inherited at that locus must trace back to the Mexican highlands.
-If the allele is neutral in the lowlands, we can treat the movement of these lineages as a neutral process, using the framework of coalescent theory 
-\citep{wakeley2005coalescent}.
-To do this, we need to follow \emph{all} of the $N \approx 2.5 \times 10^6$ lineages backwards.
-% these quickly coalesce to fewer $m$ lineages in approximately $\sum_{k=m}^N \frac{2N}{\xi^2 k(k+1)} \approx 1.25 \times 10^5/m$ generations, leaving about 1000 lineages after 100 generations that are spread over a larger area.
-Assuming demographic stationarity,
-the motion of each lineage can be modeled as a random walk,
-whose displacement after $m$ generations has variance $m \sigma^2$, and for large $m$ is approximately Gaussian.
-If we assume that lineages move independently, 
-and $Z_n$ is the distance to the furthest of $n$ lineages, 
-then $Z_n \le \sqrt{m \sigma^2} ( \sqrt{2 \log n} + \sqrt{2/\log n} )$ with very small probability
-% then $\P\{ Z_n / \sqrt{m \sigma^2} \le x /\sqrt{2 \log n} + \sqrt{2 \log n} - (1/2) (\log \log n + \log 4 \pi)/\sqrt{2 \log n} \} \approx \exp( - e^{-x} )$ 
-\citep{berman1964limit}. 
-\jri{Peter are the braces in the right place?}
-\plr{yes: see code below.}
-Since the dependance on $n$ is very weak,
-the practical upshot of this is that the maximal displacement a lineage is very unlikely to be more than about 6 times more distant 
-than the typical lineage,
-even with, say, $10^7$ lineages.
-Lineages are not independent, but this results in our overestimating the maximum likely displacement.
-Therefore, an area today (say, the Andean highlands)
-is very unlikely to draw any ancestry from a region more than about $6 \sqrt{m} \sigma$ kilometers away from $m$ generations ago;
-with $m=4000$ this is 1,328km.
-
-% # code to verify this: (and, see maize_calcs.R to verify this random walk is close to Gaussian after 2,000 generations)
-% x <- rnorm(1e6)  # independent
-% # x <- rnorm(1e6,sd=1/sqrt(2),mean=rep(rnorm(1e3,sd=1/sqrt(2)))) # or, correlated
-% nvals <- 1e3*(1:(length(x)/1e3))
-% maxvals <- cummax(x)[nvals]
-% meanvals <- sqrt(2*log(nvals))-(1/2)*(log(log(nvals))+log(4*pi))/sqrt(2*log(nvals)) 
-% # 95% quantile:
-% exp.95 <- log(1/log(1/.95))/sqrt(2*log(nvals)) + meanvals
-% # 5% quantile:
-% exp.05 <- log(1/log(1/.05))/sqrt(2*log(nvals)) + meanvals
-% plot( nvals, maxvals, ylim=range(maxvals,exp.95,exp.05) )
-% lines( nvals, meanvals )
-% lines( nvals, exp.95, lty=2 )
-% lines( nvals, exp.05, lty=2 )
-% lines( nvals, sqrt(2*log(nvals))+2/sqrt(2*log(nvals)), col='red' )
-
-
 
 \newpage
 
