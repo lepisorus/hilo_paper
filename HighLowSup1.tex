@@ -187,10 +187,10 @@ the mean total number of offspring of a diploid is
   \big) \\
 & \qquad = 2(1+s) .
 \end{align}
-\plr{CHECK}
 
 We show numerically later that the probability of establishment is very close to $2s$ over the variance in reproductive number (as expected).
-It is possible to write down an expression for the variance, but it's a big, ugly one that doesn't lend itself to intuition.
+It is possible to write down an expression for the variance, 
+but the exact expression does not aid the intuition.
 
 \subsection*{Migration and spatial structure}
 
@@ -223,15 +223,13 @@ The number of villages away the seed comes from could be geometric
 
 The dispersal distance
 -- the mean distance between parent and offspring --
-is the average of the pollen and seed mean dispersal distances.
-With the above assumptions, the pollen dispersal distance is zero,
-and the seed dispersal distance is the chance of inter-village movement
+is equal to the chance of inter-village movement
 multiplied by the mean distance moved.
 This is
 % pe <- .068; pm <- .02; rm <- .2; sigma.s <- 50
-% (1/2) * (pe + (1-pe)*pm*rm) * sigma.s
+% (pe + (1-pe)*pm*rm) * sigma.s
 \begin{align}
-  \sigma = \frac{1}{2} (p_e + (1-p_e) p_m r_m ) \sigma_s = 1.7932 \text{km}
+  \sigma = (p_e + (1-p_e) p_m r_m ) \sigma_s = 3.5864 \text{km}
 \end{align}
 at the parameter values above.
 
@@ -253,93 +251,95 @@ Note that the approximation $2s$ divided by the variance in offspring number is 
 \end{figure}
 
 
+In the main text, we used a rough upper bound on the rate of migration
+that ignored correlations in migrants.
 As we show in \citet{ralph2014convergent}, 
-the rate of adaptation by diffusive migration is roughly
+the rate of adaptation by diffusive migration is more precisely
 \begin{align*}
-  \migrate = \rho \frac{s_b \sqrt{2 s_m}}{2\xi^2} \exp\left(- \frac{\sqrt{2 s_m}R}{\sigma} \right) .
+  \migrate = \frac{1}{2} \rho s_m \min(s_m,2s_b/\xi^2) \exp\left(- \frac{\sqrt{2 s_m}R}{\sigma} \right) .
 \end{align*}
 
-\jri{do we need to expland? not sure. }
+\jri{do we need to explain? not sure.}
+\plr{we could just cut the remining discussion.}
 %But for now, let's interpret.
 
 First note that for $10^{-1} \le s_m \le 10^{-4}$, the value $1/\sqrt{2s_m}$ is between 2 and 70 --
 so the exponential decay of the chance of migration falls off on a scale of between 2 and 70 times the dispersal distance.
-Above we have estimated the dispersal distance to be $\sigma \approx 2$ km,
+Above we have estimated the dispersal distance to be $\sigma \approx 3.5$ km,
 and far below the mean distance $\sigma_s$ to the field that a farmer replants seed from, when this happens,
 which we have as $\sigma_s = 50$ km.
-Taking $\sigma=2$ km, we have that $4 \le \sigma/\sqrt{2s_m} \le 150$ km.
-A very conservative upper bound might be $\sigma \le \sigma_s/20$ (if farmers replaced 10\% of their seed with long-distance seed every year).
-At this upper bound, we would have $5 \le \sigma/\sqrt{2s_m} \le 175$ km,
+Taking $\sigma=3.5$ km, we have that $7 \le \sigma/\sqrt{2s_m} \le 250$ km.
+A very conservative upper bound might be $\sigma \le \sigma_s/10$ (if farmers replaced 10\% of their seed with long-distance seed every year).
+At this upper bound, we would have $10 \le \sigma/\sqrt{2s_m} \le 350$ km,
 which is not very different.
-This makes the exponential term very small since $R$ is on the order of 1,000 km.
+This makes the exponential term small since $R$ is on the order of thousands of kilometers.
 
-Taking $\sigma=2$ km, we then compute that 
-% rho <- 5000; sb <- .01; sm <- 10^(-(1:4)); xisq <- 50; sigma <- 2
-% sapply( 1000*(1:4), function (R) rho * sb * sqrt(2*sm) / (2 *  xisq) * exp(- sqrt(2*sm)*R/sigma ) )
+% rho <- 5000; xisq <- 30; sigma <- 3.5
+% params <- expand.grid( R=1000*(1:4), sm=10^(-(1:4)) )
+% params$char.length <- with(params, sigma/sqrt(2*sm) )
+% params$migrate <- with( params, ( ( rho * sb * pmin(sm,2*sb/xisq) / 2 )* exp(- sqrt(2*sm)*R/sigma ) ) )
+% params$Tmig <- with( params, 1/migrate )
+% print(params)
+
+Taking $\sigma=3.5$ km, we then compute that 
 if $s_m = 10^{-4}$ (very weak selection in the lowlands), then for $R=1,000$ km, the migration rate is $\migrate \le 10^{-5}$,
 i.e.\ it would take on the order of 100,000 generations (years) to get a successful migrant only 1,000 km away,
 under this model of undirected, diffusive dispersal.
 For larger $s_m$, the migration rate is much smaller.
 
-%below moved from methods.`
-If highland alleles are neutral in the lowlands the situation is more difficult to model, but we can make some informed guesses.
-For maize in the Andean highlands to have inherited a highland-adapted allele from the Mexican highlands, those Andean plants must be directly descended from highland Mexican plants that lived more recently than the appearance of the adaptive allele.
+
+
+%%%%%%%% %%%%%%%%
+\section{Neutral alleles and the approach to mutation-selection equilibrium}
+
+The above analysis required that alleles be deleterious in the lowlands, 
+and neglected the time to reach migration-selection equilibrium.
+It is therefore helpful to consider the complementary case of an allele that is neutral in the lowlands.
+In this case, a branching process approximation is no longer appropriate,
+but we have other tools at our disposal.
+For maize in the Andean highlands to have inherited a highland-adapted allele from the Mexican highlands, 
+those Andean plants must be directly descended from highland Mexican plants that lived more recently than the appearance of the adaptive allele.
 In other words, the ancestral lineages along which the modern Andean plants have inherited at that locus must trace back to the Mexican highlands.
-If the allele is neutral in the lowlands, we can treat the movement of these lineages as a neutral process, using the framework of coalescent theory \citep{wakeley2005coalescent}.
-To do this, we need to follow \emph{all} of the $N \approx 2.5 \times 10^6$ lineages backwards; these quickly coalesce to fewer $m$ lineages in approximately $\sum_{k=m}^N \frac{2N}{\xi^2 k(k+1)} \approx 1.25 \times 10^5/m$ generations, leaving about 1000 lineages after 100 generations that are spread over a larger area.
-The displacement of a lineage after $m$ generations has variance $m \sigma^2$ and is approximately Gaussian.
-If we assume that $n$ lineages are independent, and $Z_n$ is the distance to the furthest lineage, then $\P\{ Z_n / \sqrt{m \sigma^2} \le x /\sqrt{2 \log n} + \sqrt{2 \log n} - (1/2) (\log \log n + \log 4 \pi)/\sqrt{2 \log n} \} \approx \exp( - e^{-x} )$ \citep{berman1964limit}. \jri{Peter are the braces in the right place? seems to me naively it should be  $\P\{ Z_n / \sqrt{m \sigma^2} \le x \} = \sqrt{2 \log n} + ...$ ??}
+If the allele is neutral in the lowlands, we can treat the movement of these lineages as a neutral process, using the framework of coalescent theory 
+\citep{wakeley2005coalescent}.
+To do this, we need to follow \emph{all} of the $N \approx 2.5 \times 10^6$ lineages backwards.
+% these quickly coalesce to fewer $m$ lineages in approximately $\sum_{k=m}^N \frac{2N}{\xi^2 k(k+1)} \approx 1.25 \times 10^5/m$ generations, leaving about 1000 lineages after 100 generations that are spread over a larger area.
+Assuming demographic stationarity,
+the motion of each lineage can be modeled as a random walk,
+whose displacement after $m$ generations has variance $m \sigma^2$, and for large $m$ is approximately Gaussian.
+If we assume that lineages move independently, 
+and $Z_n$ is the distance to the furthest of $n$ lineages, 
+then $Z_n \le \sqrt{m \sigma^2} ( \sqrt{2 \log n} + \sqrt{2/\log n} )$ with very small probability
+% then $\P\{ Z_n / \sqrt{m \sigma^2} \le x /\sqrt{2 \log n} + \sqrt{2 \log n} - (1/2) (\log \log n + \log 4 \pi)/\sqrt{2 \log n} \} \approx \exp( - e^{-x} )$ 
+\citep{berman1964limit}. 
+\jri{Peter are the braces in the right place?}
+\plr{yes: see code below.}
+Since the dependance on $n$ is very weak,
+the practical upshot of this is that the maximal displacement a lineage is very unlikely to be more than about 6 times more distant 
+than the typical lineage,
+even with, say, $10^7$ lineages.
+Lineages are not independent, but this results in our overestimating the maximum likely displacement.
+Therefore, an area today (say, the Andean highlands)
+is very unlikely to draw any ancestry from a region more than about $6 \sqrt{m} \sigma$ kilometers away from $m$ generations ago;
+with $m=4000$ this is 1,328km.
 
-%%%%%%%
-\section{Adaptation by mutation}
-
-\plr{just a placeholder for now; to be merged in}
-
-First, we'd like to compute how difficult is it for the beneficial adaptation to arise by new mutation.
-The rate of appearance of mutant alleles is a Poisson process,
-and we can assume that each is successful or not independently,
-so the time until the new mutant appears and fixes is exponentially distributed,
-with rate equal to the mutation rate multiplied by the probability of establishment integrated over the population.
-Referring to figure~\ref{sfig:prob_estab},
-we see that this is pretty close to ( (area of high altitude) $+$ ($1/2$ area of altitudinal gradient) ) $\times$ (population density) $\times$ (prob of establishment at high altitude).
-
-Let $A$ denote (area of high altitude) plus ($1/2$ area of altitudinal gradient).
-The population density $\rho$ is roughly 0.5--5 people per km$^2 \times$ (0.5 ha field/person) $\times$ ($2\times10^4$ plants per field ha) $=$ (5000--50000 plants per km$^2$).
-As a check, the other set of numbers was ``one village per 15 km''; i.e.\ per square with 15km on a side, which is 0.444 people per km$^2$.
-
-Since the probability of establishment at high altitude is approximately $2 s_b / \xi^2$, 
-with $\xi^2$ the variance in offspring number,
-the rate of appearance is just 
-\begin{align*}
-  \mutrate = 2 \rho A s_b \mu / \xi^2 .
-\end{align*}
-% rho <- 5000; sb <- 10^(-(1:3)); xisq <- 50; A <- 500
-% sapply( c(1e-8,1e-5), function (mu) 2 * rho * A * sb *mu / xisq )
-At the values above, with $.1 \le s_b \le .001$, the factor $2 \rho A s_b / \xi^2$ multiplying the mutation rate
-varies between $10^2$ and $10^5$,
-implying that a single-base mutation with $\mu=10^{-8}$ would have to wait between $10^4$ and $10^6$ generations to fix,
-but a mutation with a larger target, say $\mu=10^{-5}$, would fix in tens to thousands of generations, depending on the selection coefficient.
-
-
-
-%%%%%%%
-\section{Adaptation by migration}
-
-%%%%%%%%%%%%
-\section{Conclusion}
-It seems unlikely that any alleles that are adaptive in the highlands and deleterious at all in the lowlands
-would have transited central America by undirected (diffusive) sharing of seed.
-The conclusions could change if we drastically underestimate the rate of very long distance sharing of seed,
-e.g. if sharing across hundreds of kilometers was common at some point.
-
-Both calculations are very pessimistic about the chance of shared single-base changes through either migration or independent mutation.
-However, independent mutations could be expected in kilobase-size targets,
-suggesting there might be signal for genes that share adaptive changes.
+% # code to verify this: (and, see maize_calcs.R to verify this random walk is close to Gaussian after 2,000 generations)
+% x <- rnorm(1e6)  # independent
+% # x <- rnorm(1e6,sd=1/sqrt(2),mean=rep(rnorm(1e3,sd=1/sqrt(2)))) # or, correlated
+% nvals <- 1e3*(1:(length(x)/1e3))
+% maxvals <- cummax(x)[nvals]
+% meanvals <- sqrt(2*log(nvals))-(1/2)*(log(log(nvals))+log(4*pi))/sqrt(2*log(nvals)) 
+% # 95% quantile:
+% exp.95 <- log(1/log(1/.95))/sqrt(2*log(nvals)) + meanvals
+% # 5% quantile:
+% exp.05 <- log(1/log(1/.05))/sqrt(2*log(nvals)) + meanvals
+% plot( nvals, maxvals, ylim=range(maxvals,exp.95,exp.05) )
+% lines( nvals, meanvals )
+% lines( nvals, exp.95, lty=2 )
+% lines( nvals, exp.05, lty=2 )
+% lines( nvals, sqrt(2*log(nvals))+2/sqrt(2*log(nvals)), col='red' )
 
 
-\newpage
-\suppl
-\section*{Supporting information}
 
 \newpage
 

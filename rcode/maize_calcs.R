@@ -71,6 +71,7 @@ genfn <- function (f,selx,migr=1) {
     polm <- 0
     seedm <- (1-1/(1+(ssig/dx)))^(0:(6*ssig/dx))
     seedm <- migr*(seedm/sum(seedm))[-1]  # geometric with mean ssig
+    # check: dx * sqrt( sum(seedm*seq_along(seedm)^2)-sum(seedm*seq_along(seedm))^2 ) # == 53.3396
     return( poisgenfn( migrave(f,polm), mg*s ) * # pollen migration
         ( pe +  # local extinction
         ( (1-pe)*(1-pm) * poisgenfn(f,(1-mg)*s) * # local pollen
@@ -93,7 +94,6 @@ meanoff <- diff(genfn(1-c(.00001,0),selx=sb,migr=0))/diff(1-c(.00001,0))
 varoff <- (1/2)*diff(genfn(1-c(.00002,.00001,0),selx=sb,migr=0),differences=2)/prod(diff(1-c(.00002,.00001,0))) - meanoff^2
 
 
-# check that convergence is working
 niter <- 1000
 
 f <- function (x) { 1/2 + sb*tanh(-x/30) }
@@ -114,6 +114,17 @@ dev.off()
 # end iterate over clinewidth
 }
 
+if (interactive()) {
+    ## look at random walk induced by this
+    ngens <- 2e3
+    nwalks <- 5e3
+    seedm <- (1-1/(1+(ssig/dx)))^(0:(6*ssig/dx))
+    seedm <- (seedm/sum(seedm))[-1]  # geometric with mean ssig
+    xx <- matrix( dx*sample( 0:length(seedm), size=ngens*nwalks, prob=c(1-pe,pe*seedm), replace=TRUE ), nrow=nwalks )
+    x <- rowSums( xx * 2 * ( rbinom( length(xx), 1, prob=1/2 ) - 1/2 ) )
+    xh <- hist(x,breaks=100)
+    with( xh, lines( mids, sum(xh$counts)*diff( pnorm( breaks/(sqrt(ngens)*sd(as.vector(xx))) ) ), col='blue', lwd=2 ) )
+}
 
 if (interactive()) {
     layout(t(1:2))

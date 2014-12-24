@@ -183,34 +183,46 @@ For example, if any one of 10 sites within a gene could have equivalent strong s
 % \jri{Peter please check this paragraph to make sure numbers and text look OK.}  % plr: yup.
 
 % # Tmig computation:
-% A <- 500; rho <- 5000; xisq <- 30; sigma <- 1.8
+% A <- 500; rho <- 5000; xisq <- 30; sigma <- 3.5
 % params <- expand.grid( R=1000*(1:4), sm=10^(-(1:4)) )
 % params$char.length <- with(params, 1/(sqrt(2*sm)/sigma) )
-% params$Tmig <- with( params, 1 / ( A * rho *  exp(- sqrt(2*sm)*R/sigma ) ) )
+% params$Tmig <- with( params, 1 / ( sm * (A * rho / 2) *  exp(- sqrt(2*sm)*R/sigma ) ) )
 % print(params)
 
 Gene flow between highland regions could also generate patterns of shared adaptive SNPs.
 From our demographic model we have estimated a mean dispersal distance of $\sigma \approx 1.8$ kilometers per generation.
-With selection against the highland allele in low elevations $10^{-1} \ge s_m \ge 10^{-4}$, the distance $\sigma/\sqrt{2s_m}$ over which the frequency of a highland-adaptive, lowland-deleterious allele decays into the lowlands is still short: between 4 and 150 kilometers.
-Since the Mexican and Andean highlands are around 4,000 km apart, the time needed for a rare allele with weak selective cost $s_m=10^{-4}$ in the lowlands to transit between the two highland regions is $\Tmig \approx 2 \times 10^{7}$ generations. 
+With selection against the highland allele in low elevations $10^{-1} \ge s_m \ge 10^{-4}$, 
+the distance $\sigma/\sqrt{2s_m}$ over which the frequency of a highland-adaptive, lowland-deleterious allele decays into the lowlands is still short: 
+between 7 and 250 kilometers.
+Since the Mexican and Andean highlands are around 4,000 km apart, the time needed for a rare allele with weak selective cost $s_m=10^{-4}$ in the lowlands 
+to transit between the two highland regions is $\Tmig \approx 8 \times 10^{4}$ generations. 
 However, the exponential dependence on distance in equation \eqref{eqn:migrate}
 means that shorter distances could be transited more quickly 
 -- if the distance between highland patches $R$ is 2,000 km (or if $\sigma$ is twice as large)
-then $\Tmig \approx 2$ generations,
+then $\Tmig \approx 25$ generations,
 indicating that all alleles such weak selection cost between that are beneficial in both highlands
 should be shared
 if they arose long enough ago for migration-selection balance to have been reached.
 The waiting time $\Tmig$ is strongly dependent on the magnitude of the deleterious selection coefficient, however: 
-with the still weak selective cost of $s_m=10^{-3}$, for example, $\Tmig$ is $2.5 \times 10^4$ generations over 1,000km,
+with the still weak selective cost of $s_m=10^{-3}$, for example, $\Tmig$ is $10^8$ generations over 2,000km,
 and much larger for longer distances.
-\plr{fixed this up: removed factor of $2s_b/\xi^2$ in the R code that doesn't appear in \eqref{eqn:migrate}.}
 
-Finally, a coalescent approach allows us to also estimate the distance travelled for a beneficial highland allele which is neutral in lowland environments.  After $m=1,000$ generations, there are approximately $n=1,000$ lineages remaining and of these the furthest has travelled  $\sqrt{2 \sigma^2 m \log n} \approx 212$km from the highlands.  The distance travelled, however, does not scale linearly with time, such that at  $m=6000$ generations the furthest alleles is $\approx 518$km from its highland origin. \jri{Peter I'm confused here. If the above is correct it argues a neutral allele will travel a \emph{shorter} distance than a deleterious allele? 1000km would take neutral allele >6K generations but in the previous paragraph a deleterious allele with $s_m=10^{-4}$ does it in 2 generations. NOTE: I think i may have messed up here, as i think the supp text doesn't jive with the numbers here. please take a look}
+\plr{The above has changed because I found an factor of 2 missed out in $\sigma$, 
+and the R code has an factor of $2s_b/\xi^2$ that wasn't present in \eqref{eqn:migrate}.
+This is an overestimate of the rate that is more correctly given in the supplement;
+I didn't worry about this before, when migration was unlikely for all parameter values.
+However, now $\Tmig$ is smallish for $R=1,000$ and $s_m=10^{-3}$ with the approximation \eqref{eqn:migrate},
+but not with the better expression of the appendix.
+This makes me want to put in the better expression, which I can't quickly motivate,
+except that the next bit makes it not matter, I think.}
 
-%With $n=1000$, the typical distance to the furthest displacement after $m=1000$ generations is $\sqrt{2 \sigma^2 m \log n} \approx 212$km; after $m=6000$ generations it is $\approx 518$km.
-%In either case, the chance that the maximum is larger than 1,000km after 6,000 generations is well less than $10^{-4}$.
-%Of course, this is under an equilibrium population model; and maize reached the Andean highlands only around 4,000 years ago.
-%Nonetheless, this suggests that even highland-adapted alleles that are merely neutral in the lowlands would have difficulty moving between the Mexican and Andean highlands in a few thousand generations.
+Finally, the rough calculations with coalescent theory above  \plr{or, below?}
+show that even neutral alleles are not expected to transit between the Mexican and Andean highlands
+within 4,000 generations if they were not already present.
+Since the calculation of $\Tmig$ does not include the time for mutation-selection balance to be reached,
+this lower bound also applies to weakly deleterious alleles,
+suggesting that any form of shared adaptation is unlikely if it does not arise from shared standing variation.
+
 
 \subsection*{Alternative routes of adaptation}
 The lack of both empirical and theoretical support for convergent adaptation at SNPs or genes led us to investigate alternative patterns of adaptation. 
