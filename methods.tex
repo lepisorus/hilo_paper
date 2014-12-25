@@ -8,8 +8,7 @@
    \renewcommand{\baselinestretch}{0.9}
    \vspace{-3mm}
    \caption{
-   (A) Sampling locations of landraces.  Red, blue, yellow and light blue dots represent Mexican lowland, Mexican highland, S. American lowland and S. American highland populations, respectively.  
-   \plr{Looks like some of those ``Mexican'' dots are in Guatemala? I can't think of a better name than `Mexican high/lowland' though.}
+   (A) Sampling locations of landraces.  Red, blue, yellow and light blue dots represent Mesoamerican lowland, Mesoamerican highland, S. American lowland and S. American highland populations, respectively.  
    (B) Results of {\sf STRUCTURE} analysis of the maizeSNP50 SNPs with $K=2\sim4$.  The top panel shows the elevation, ranging from 0 to 4,000 m on the \emph{y}-axes.  The colors in $K=4$ correspond to those in panel (A).    }
 \vspace{-6mm}
     \label{map}
@@ -20,7 +19,7 @@
 \section*{Materials and Methods}
 
 \subsection*{Materials and DNA extraction}
-We included one individual from each of 94 open-pollinated landrace maize accessions from high and low elevation sites in Mexico and S. America (Table \ref{srkid}).   
+We included one individual from each of 94 open-pollinated landrace maize accessions from high and low elevation sites in Mesoamerica and S. America (Table \ref{srkid}).   
 Accessions were provided by the USDA germplasm repository or kindly donated by Major Goodman (North Carolina State University).  
 Sampling locations are shown in Figure~\ref{map}A.  
 Landraces sampled from elevations $<1,700$ m were considered lowland, while accessions from $>1,700$ m were considered highland.  
@@ -39,7 +38,6 @@ These data are referred to as ``MaizeSNP50'' hereafter.
 This array contains SNPs discovered in multiple ascertainment schemes \cite[]{Ganal_2011_22174790}, but the vast majority of SNPs come from polymorphisms distinguishing the maize inbred lines B73 and Mo17 (14,810 SNPs) or identified from sequencing 25 diverse maize inbred lines \cite[40,594 SNPs;][]{Gore_2009_19965431}.  
 
 The second data set was generated for a subset of 87 of the landrace accessions (Table~\ref{srkid}) utilizing high-throughput Illumina sequencing data via genotyping-by-sequencing \cite[GBS;][]{Elshire2011}.
-\plr{what coverage?}
 Genotypes were called using TASSEL-GBS \cite[]{Glaubitz_GBS} resulting in 2,848,284 SNPs with an average of 71.3\% missing data per individual.
 
 To assess data quality, we compared genotypes at the 7,197 SNPs (229,937 genotypes, excluding missing data) that overlap between the MaizeSNP50 and GBS data sets. 
@@ -63,10 +61,11 @@ We tested three models in which maize was differentiated into highland and lowla
 Observed joint frequency distributions (JFDs) were calculated using the GBS data set due to its lower level of ascertainment bias. 
 A subset of synonymous and noncoding SNPs were utilized that had $\geq15$ individuals without missing data in both lowland and highland populations and did not violate HWE.  
 A HWE cut-off of $P<0.005$ was used for each subpopulation due to our under-calling of heterozygotes. 
-\plr{this next sentence is confusing.  can just delete the ``for the X populations'', as this is explained later?}
-In total, we included 18,745 synonymous and noncoding SNPs for the Mexican populations in Models IA and IB, 14,508 for the S. American populations in Model I and 11,305 for the Mexican lowland population and the S. American populations in Model II.  
+%\plr{this next sentence is confusing.  can just delete the ``for the X populations'', as this is explained later?}
+%In total, we included 18,745 synonymous and noncoding SNPs for the Mesoamerican populations in Models IA and IB, 14,508 for the S. American populations in Model I and 11,305 for the Mesoamerican lowland population and the S. American populations in Model II.  
 We obtained similar results under more or less stringent thresholds for significance ($P < 0.05 -- 0.0005$; data not shown), though the number of SNPs was very small at $P<0.05$.  
 \plr{PLoS has a new policy agains saying ``data not shown''; throw results into a supplement or strike that phrase?}
+\jri{can we just remove the phrase and leave the result w/o the data to back it up?}
 Parameters were inferred with the software $\delta a \delta i$ \cite[]{Gutenkunst_2009_19851460}, which uses a diffusion method to calculate an expected JFD and evaluates the likelihood of the data assuming multinomial sampling.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
@@ -86,7 +85,7 @@ Parameters were inferred with the software $\delta a \delta i$ \cite[]{Gutenkuns
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
 
 \paragraph{Model IA}
-This model is applied separately to both the Mexican and the S. American populations.
+This model is applied separately to both the Mesoamerican and the S. American populations.
 We assume the ancestral diploid population representing \emph{parviglumis} follows a standard Wright-Fisher model with constant size.  
 The size of the ancestral population is denoted by $N_A$.
 At $t_D$ generations ago, the bottleneck event begins at domestication, and at $t_E$ generations ago, the bottleneck ends.  
@@ -94,29 +93,29 @@ The population size and duration of the bottleneck are denoted by $N_B$ and $t_B
 The population size recovers to $N_C=\alpha N_A$ in the lowlands.  
 Then, the highland population is differentiated from the lowland population at $t_F$ generations ago.  
 The size of the lowland and highland populations at time $t_F$ is determined by a parameter $\beta$ such that the population is divided by $\beta N_C$ and $(1-\beta)N_C$; our conclusions hold if we force lowland population size to remain at $N_C$ (data not shown).  
-\plr{grrr, ``data not shown''}
+\plr{``data not shown''}
 We assume that the population size in the lowlands is constant but that the highland population experiences exponential expansion after divergence: its current population size is $\gamma$ times larger than that at $t_F$. \\
 
 \paragraph{Model IB}
-We expand Model IA for the Mexican populations by incorporating admixture from the teosinte \emph{mexicana} to the highland Mexican maize population.  
+We expand Model IA for the Mesoamerican populations by incorporating admixture from the teosinte \emph{mexicana} to the highland Mesoamerican maize population.  
 The time of differentiation between \emph{parviglumis} and \emph{mexicana} occurs at $t_{mex}$ generations ago.  
 The \emph{mexicana} population size is assumed to be constant at $N_{mex}$.  
-At $t_F$ generations ago, the Mexican highland population is derived from admixture between the Mexican lowland population and a portion $P_{mex}$ from the teosinte \emph{mexicana}.\\  
+At $t_F$ generations ago, the Mesoamerican highland population is derived from admixture between the Mesoamerican lowland population and a portion $P_{mex}$ from the teosinte \emph{mexicana}.\\  
 
 \paragraph{Model II}
-The final model includes the Mexican lowland, S. American lowland and highland populations.  
+The final model includes the Mesoamerican lowland, S. American lowland and highland populations.  
 This model was used for simulating SNPs with ascertainment bias (see below).  
-At time $t_F$, the Mexican and S. American lowland populations are differentiated, and the sizes of populations after splitting are determined by $\beta_1$.  
+At time $t_F$, the Mesoamerican and S. American lowland populations are differentiated, and the sizes of populations after splitting are determined by $\beta_1$.  
 At time $t_G$, the S. American lowland and highland populations are differentiated, and the sizes of populations at this time are determined by $\beta_2$.  
 As in Model IA, the S. American highland population is assumed to experience population growth with the parameter $\gamma$.\\
 
-\plr{Perhaps a brief sentence saying didn't do a four population model because inference becomes slow and unreliable with so many parameters.}
+\plr{Perhaps a brief sentence saying didn't do a four population model because inference becomes slow and unreliable with so many parameters.} \jri{dadi can only do 3 pops i thought}
 
 Estimates of a number of our model parameters were available from previous work.    
 $N_A$ was set to 150,000 using estimates of the composite parameter $4N_A\mu \sim 0.018$ from \emph{parviglumis}  \cite[]{Eyre-Walker_1998_9539756,Tenaillon_2001_11470895,Tenaillon_2004_15014173,Wright_2005_15919994,Ross-Ibarra_2009_19153259} and an estimate of the mutation rate $\mu \sim 3\times 10^{-8}$ \cite[]{Clark_2005_16079248} per site per generation.  
 The severity of the domestication bottleneck is represented by $k=N_B/t_B$ \cite[]{Eyre-Walker_1998_9539756,Wright_2005_15919994}, and following \cite{Wright_2005_15919994} we assumed $k=2.45$ and $t_B=1,000$ generations.  
 Taking into account archaeological evidence \cite[]{Piperno_2009_19307570}, we assume $t_D=9,000$ and $t_E=8,000$.  
-We further assumed $t_F=6,000$ for Mexican populations in Models IA and IB \cite[]{Piperno_2006_69}, $t_F=4,000$ for S. American populations in Model IA \cite[]{Perry_2006_16511492,Grobman_2012_22307642}, and $t_{mex}=60,000$, $N_{mex}=160,000$ \cite[]{Ross-Ibarra_2009_19153259}, and $P_{mex}=0.2$ \cite[]{vanHeerwaarden_2011_21189301} for Model IB. 
+We further assumed $t_F=6,000$ for Mesoamerican populations in Models IA and IB \cite[]{Piperno_2006_69}, $t_F=4,000$ for S. American populations in Model IA \cite[]{Perry_2006_16511492,Grobman_2012_22307642}, and $t_{mex}=60,000$, $N_{mex}=160,000$ \cite[]{Ross-Ibarra_2009_19153259}, and $P_{mex}=0.2$ \cite[]{vanHeerwaarden_2011_21189301} for Model IB. 
 For both Models IA and IB, we inferred three parameters ($\alpha$, $\beta$ and $\gamma$), and, for Model II, we fixed $t_F=6,000$ and $t_G=4,000$ \cite[]{Piperno_2006_69,Perry_2006_16511492,Grobman_2012_22307642}  and estimated the remaining four parameters ($\alpha$, $\beta_1$, $\beta_2$ and $\gamma$).
 
 \subsection*{Population differentiation}
@@ -127,9 +126,9 @@ The \emph{P}-value of a SNP was calculated by $P(F_{ST\_E}\geq F_{ST\_O}|p\pm 0.
 where $F_{ST\_O}$ and $F_{ST\_E}$ are observed and expected $F_{ST}$ values and $p\pm 0.025$ is the set of loci with mean allele frequency across both highland and lowland populations within 0.025 of the SNP in question. 
 
 Generating the null distribution of differentiation for the MaizeSNP50 data requires accounting for ascertainment bias. 
-Evaluation of genetic clustering in our data (not shown) coincides with previous work \cite[]{Hufford_2012_22660546} in suggesting that the two inbred lines most important in the ascertainment panel (B73 and Mo17) are most closely related to Mexican lowland maize.  
-We thus added two additional individuals to the Mexican lowland population and generated our null distribution using only SNPs for which the two individuals had different alleles.
-For model IA in S. America we added two individuals at time $t_F$ to the ancestral population of the S. American lowland and highland populations because the Mexican lowland population was not incorporated into this model. 
+Evaluation of genetic clustering in our data (not shown) coincides with previous work \cite[]{Hufford_2012_22660546} in suggesting that the two inbred lines most important in the ascertainment panel (B73 and Mo17) are most closely related to Mesoamerican lowland maize.  
+We thus added two additional individuals to the Mesoamerican lowland population and generated our null distribution using only SNPs for which the two individuals had different alleles.
+For model IA in S. America we added two individuals at time $t_F$ to the ancestral population of the S. American lowland and highland populations because the Mesoamerican lowland population was not incorporated into this model. 
 For each combination of sample sizes in lowland and highland populations, we generated a JFD from $10^7$  SNPs using the software {\sf ms} \cite[]{Hudson_2002_11847089}.
 Then, we calculated \emph{P}-values from the JFD in the same way.
 We calculated $F_{ST}$ values for all SNPs that had $\geq10$ individuals with no missing data in all four populations and showed no departure from HWE at the 0.5\% (GBS) or 5\% (MaizeSNP50) level. 
@@ -179,13 +178,13 @@ The \emph{P}-value for each allele was calculated as the proportion of alleles o
 \plr{This is (one minus) the quantile of the PHS value.}
 
 Genetic distances were obtained for the MaizeSNP50 data \cite[]{Ganal_2011_22174790} and fit using a tenth degree polynomial curve to all SNPs (data not shown).
-\plr{again with the ``data not shown'' -- the code for this can be provided? or posted to datadryad?}
+\plr{again with the ``data not shown'' -- the code for this can be provided? or posted to datadryad?} \jri{sho: can we just post mathematica notebook (or perl or whatever you used) to figshare?}
 
 %%%% PLR:
 \subsection*{Theoretical evaluation of convergent evolution }
 We build on results from \cite{ralph2014convergent} to assess whether the abundance and degree of coincidence of presumably adaptive high-$F_{ST}$ alleles is consistent with what is known about the population history of maize.
 To do this,
-we evaluated the rate at which we expect an allele that provides a selective advantage at higher elevation to arise by new mutation in a highland region ($\mutrate$), and the rate at which such an allele already present in the Mexican highlands would transit the intervening lowlands and fix in the Andean highlands ($\migrate$).
+we evaluated the rate at which we expect an allele that provides a selective advantage at higher elevation to arise by new mutation in a highland region ($\mutrate$), and the rate at which such an allele already present in the Mesoamerican highlands would transit the intervening lowlands and fix in the Andean highlands ($\migrate$).
 % We suggest below that many of the high-$F_{ST}$ alleles are locally adaptive, and the degree of coincidence between highland regions informs us about whether these adaptations occurred convergently, or if alleles were transmitted between the two by migration. 
 We first assume alleles adapted in the highlands are slightly deleterious at lower elevation, consistent with empirical findings in reciprocal transplant experiments in Mexico \cite[]{Mercer2008}.
 The resulting values of $\mutrate$ and $\migrate$ 
@@ -227,7 +226,7 @@ In terms of these parameters, the rate of appearance is
 
 \paragraph{Migration}
 A corresponding expression for the chance that an allele moves from one highland population to another is harder to intuit, and is addressed in more depth in \cite{ralph2014convergent}.
-If an allele is beneficial at high elevation and fixed in the Mexican highlands but is deleterious at low elevations, then at equilibrium it will be present at low frequency at migration-selection balance in nearby lowland populations \citep{haldane1948theory,slatkin1973geneflow}.
+If an allele is beneficial at high elevation and fixed in the Mesoamerican highlands but is deleterious at low elevations, then at equilibrium it will be present at low frequency at migration-selection balance in nearby lowland populations \citep{haldane1948theory,slatkin1973geneflow}.
 This equilibrium frequency decays exponentially with distance, so that the highland allele is present at distance $R$ from the highlands at frequency $C \exp(- R \sqrt{2s_m} / \sigma)$, where $s_m$ is the deleterious selection coefficient for the allele in low elevation, $\sigma$ is the mean dispersal distance, and $C$ is a constant depending on geography ($C\approx 1/2$ is close).
 Multiplying this frequency by a population size gets the predicted number (average density across a large number of generations) of individuals carrying the allele.
 Therefore, in a lowland population of size $N$ at distance $R$ from the highlands, $(N/2)  \exp(- R \sqrt{2s_m} / \sigma)$ 
@@ -251,9 +250,9 @@ both of these omissions mean we underestimate $\Tmig$.
 The above analysis required that alleles be deleterious in the lowlands, 
 and neglected the time to reach migration-selection equilibrium.
 It is therefore helpful to consider the complementary case of an allele that is neutral in the lowlands.
-For maize in the Andean highlands to have inherited a highland-adapted allele from the Mexican highlands, 
-those Andean plants must be directly descended from highland Mexican plants that lived more recently than the appearance of the adaptive allele.
-In other words, the ancestral lineages along which the modern Andean plants have inherited at that locus must trace back to the Mexican highlands.
+For maize in the Andean highlands to have inherited a highland-adapted allele from the Mesoamerican highlands, 
+those Andean plants must be directly descended from highland Mesoamerican plants that lived more recently than the appearance of the adaptive allele.
+In other words, the ancestral lineages along which the modern Andean plants have inherited at that locus must trace back to the Mesoamerican highlands.
 If the allele is neutral in the lowlands, we can treat the movement of these lineages as a neutral process, using the framework of coalescent theory 
 \citep{wakeley2005coalescent}.
 To do this, we need to follow \emph{all} of the $N \approx 2.5 \times 10^6$ lineages backwards.
@@ -268,8 +267,6 @@ and $Z_n$ is the distance to the furthest of $n$ lineages,
 then $Z_n \le \sqrt{m \sigma^2} ( \sqrt{2 \log n} + \sqrt{2/\log n} )$ with very high probability
 % then $\P\{ Z_n / \sqrt{m \sigma^2} \le x /\sqrt{2 \log n} + \sqrt{2 \log n} - (1/2) (\log \log n + \log 4 \pi)/\sqrt{2 \log n} \} \approx \exp( - e^{-x} )$ 
 \citep{berman1964limit}. 
-\jri{Peter are the braces in the right place?}
-\plr{yes: see code below; I've interpreted the expression a bit.}
 
 Since this depends only on the logarithm of $n$, the number of lineages,
 the practical upshot of this is that the most distant lineage
