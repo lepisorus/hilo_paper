@@ -171,10 +171,10 @@ Z_{ijx} = \frac{ d_{ijx} - \bar{d_{ij}} }{ \sigma_{ij} }
   \textrm{,}
 \end{equation}
 \noindent where $d_{ijx}$ is the genetic distance over which individuals $i$ and $j$ are identical surrounding position $x$, 
-$\bar{d_{ij}}$ is the genome-wide mean of distances over which individuals \plr{$i$ and $j$} are identical, 
+$\bar{d_{ij}}$ is the genome-wide mean of distances over which individuals $i$ and $j$ are identical, 
 and $\sigma_{ij}$ is the standard deviation of the distribution of distances.  
 The \emph{P}-value for each allele was calculated as the proportion of alleles of the same frequency genome-wide that have a larger PHS value. 
-\plr{This is (one minus) the quantile of the PHS value.}
+%\plr{This is (one minus) the quantile of the PHS value.}
 
 Genetic distances were obtained for the MaizeSNP50 data \cite[]{Ganal_2011_22174790} and fit using a tenth degree polynomial curve to all SNPs (data not shown).
 
@@ -285,4 +285,3 @@ with $m=4000$ and $\sigma=3.5$km this is 1,328km.
 % lines( nvals, exp.95, lty=2 )
 % lines( nvals, exp.05, lty=2 )
 % lines( nvals, sqrt(2*log(nvals))+2/sqrt(2*log(nvals)), col='red' )
-

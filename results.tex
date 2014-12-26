@@ -111,7 +111,7 @@ Comparisons of our empirical $F_{ST}$ values to the null expectation simulated u
 We show results under Model IB for Mesoamerican populations and Model II for S. American populations.
 We chose $P<0.01$ as an arbitrary cut-off for significant differentiation between lowland and highland populations, and identified 687 SNPs in Mesoamerica (687/76,989=0.89\%) and 409 SNPs in S. America (409/63,160=0.65\%) as significant outliers (Figure~\ref{PvDist}). Different cutoff values (0.05, 0.001) gave qualitatively identical results (data not shown). SNPs with significant $F_{ST}$ $P$-values were enriched in intergenic regions rather than protein coding regions (60.0\% vs. 47.9\%, Fisher's Exact Test $P < 10^{-7}$ for Mesoamerica; 62.0\% vs. 47.8\%, FET $P<10^{-5}$ for S. America).
 Different cutoff values (0.05, 0.001) gave qualitatively identical results (data not shown).
-\jri{ fix "data not shown" if going to PLoS Gen.}
+%\jri{ fix "data not shown" if going to PLoS Gen.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
 \begin{figure}[tb]   
@@ -132,25 +132,15 @@ Different cutoff values (0.05, 0.001) gave qualitatively identical results (data
 \subsection*{Patterns of adaptation}
 
 Given the historical spread of maize from an origin in the lowlands, it is tempting to assume that the observation of significant population differentiation at a SNP should be primarily due to an increase in frequency of adaptive alleles in the highlands.
-To test this hypothesis, we sought to identify the adaptive allele at each locus using comparisons between Mesoamerica and S. America as well as to \emph{parviglumis} (Supporting Information, File S1).  
+To test this hypothesis, we sought to identify the adaptive allele at each locus using comparisons between Mesoamerica and S. America as well as to \emph{parviglumis}. 
+Alleles were called ancestral if they were at higher frequency in \emph{parviglumis}, or uncalled in \emph{parviglumis} but at higher frequency in all populations but one. 
+SNPs were consistent with Mesoamerica-specific adaptation if one allele was at high frequency in one Mesoamerican population, low frequency in the other Mesoamerican population, and either: low frequency in \emph{parviglumis} and at most intermediate frequency in S. American populations, or missing in \emph{parviglumis} and at low frequency in S. American populations.
+On the other hand, SNPs were consistent with adaptation to highlands in both regions if they were at high frequency in both highland populations, and at low frequency in the lowland populations and \emph{parviglumis}; and vice-versa for adaptation to lowlands in both regions.
+SNPs with an allele at high frequency in one highland and the alternate lowland population are suggestive of adaptation in both populations but on different haplotypes created by recombination.
+
 Consistent with predictions, we infer that differentiation at 72.3\% (264) and 76.7\% (230) of SNPs in Mesoamerica and S. America is due to adaptation in the highlands after excluding  SNPs with ambiguous patterns likely due to recombination. 
 The majority of these SNPs show patterns of haplotype variation (by the PHS test) consistent with our inference of selection (Table~\ref{supp:phs} and Supporting Information, File S1).
    
-\plr{I think we should merge in File S1; here's my attempt:
-Alleles were called ancestral if they were at higher frequency in \emph{parviglumis}, 
-or uncalled in \emph{parviglumis} but at higher frequency in all populations but one.
-SNPs were consistent with Mesoamerica-specific adaptation if one allele was at high frequency in one Mesoamerican population,
-low frequency in the other Mesoamerican population,
-and either: low frequency in \emph{parviglumis} and at most intermediate frequency in S. American populations,
-or missing in \emph{parviglumis} and at low frequency in S. American populations.
-On the other hand, SNPs were consistent with adaptation to highlands in both regions
-if they were at high frequency in both highland populations,
-and at low frequency in the lowland populations and \emph{parviglumis};
-and vice-versa for adaptation to lowlands in both regions.
-SNPs with an allele at high frequency in one highland and one lowland population
-are suggestive of adaptation in both populations but on different haplotypes created by recombination.
-}
-
 Convergent evolution at the nucleotide level should be reflected in an excess of SNPs showing significant differentiation between lowland and highland populations in both Mesoamerica and S. America. 
 Although the 19 SNPs showing $F_{ST}$ \emph{P}-values  $<0.01$ in both Mesoamerica ($P_M$) and S. America ($P_S$) is statistically greater than the $\approx 5$ expected ($48,370\times 0.01 \times 0.01 \approx 4.8$; $\chi^2$-test, $P\ll0.001$), it nonetheless represents a small fraction ($\approx 7-8\%$) of all SNPs showing evidence of selection.
 This paucity of shared selected SNPs does not appear to be due to our demographic model: 
@@ -173,7 +163,7 @@ Despite similar phenotypes and environments, we thus see little evidence for con
 
 Given the limited empirical evidence for convergent evolution at the molecular level, we took advantage of recent theoretical efforts \cite[]{ralph2014convergent} to assess the degree of convergence expected under a spatially explicit population genetic model (see Materials and Methods).
 Our modeling estimates assume a maize population density $\rho$ of the highlands to be around (0.5 ha field/person) $\times$ (0.5 people/km$^2$) $\times$ ($2\times 10^4$ plants per ha field) $=$ 5,000 plants per km$^2$.
-The area of the Andean highlands is around $A=500\text{km}^2$, leading to a total population of $A \rho = 2.5 \times 10^6$. \mbh{this area seems way too small} \jri{agreed}
+The area of the Andean highlands is around $A=500\text{km}^2$, leading to a total population of $A \rho = 2.5 \times 10^6$. %\mbh{this area seems way too small} \jri{agreed}
 Assuming an offspring variance of $\xi^2 = 30$, we can then compute the waiting time $\Tmut=1/\mutrate$ for a new beneficial mutation to appear and fix.
 We observe that even if there is relatively strong selection for an allele at high elevation ($s_b=0.01$), a single-base mutation with mutation rate $\mu=10^{-8}$ would take at least 60,000 generations to appear and fix.
 Because $\Tmut$ scales approximately linearly with both the selection coefficient and the mutation rate, strong selection and the existence of multiple equivalent mutable sites could reduce this time. 
@@ -197,21 +187,20 @@ However, the exponential dependence on distance in equation \eqref{eqn:migrate}
 means that shorter distances could be transited more quickly 
 -- if the distance between highland patches is 2,000 km (or if $\sigma$ is twice as large)
 then $\Tmig \approx 25$ generations,
-indicating that all alleles such weak selection cost between that are beneficial in both highlands
-should be shared
+indicating that all alleles beneficial in both highlands but with such weak selection cost in the lowlands should be shared
 if they arose long enough ago for migration-selection balance to have been reached.
 The waiting time $\Tmig$ is strongly dependent on the magnitude of the deleterious selection coefficient, however: 
 with the still weak selective cost of $s_m=10^{-3}$, for example, $\Tmig$ is $10^8$ generations over 2,000km,
 and much larger for longer distances.
 
-\plr{The above has changed because I found an factor of 2 missed out in $\sigma$, 
-and the R code has an factor of $2s_b/\xi^2$ that wasn't present in \eqref{eqn:migrate}.
-This is an overestimate of the rate that is more correctly given in the supplement;
-I didn't worry about this before, when migration was unlikely for all parameter values.
-However, now $\Tmig$ is smallish for $R=1,000$ and $s_m=10^{-3}$ with the approximation \eqref{eqn:migrate},
-but not with the better expression of the appendix.
-This makes me want to put in the better expression, which I can't quickly motivate,
-except that the next bit makes it not matter, I think.}
+%\plr{The above has changed because I found an factor of 2 missed out in $\sigma$, 
+%and the R code has an factor of $2s_b/\xi^2$ that wasn't present in \eqref{eqn:migrate}.
+%This is an overestimate of the rate that is more correctly given in the supplement;
+%I didn't worry about this before, when migration was unlikely for all parameter values.
+%However, now $\Tmig$ is smallish for $R=1,000$ and $s_m=10^{-3}$ with the approximation \eqref{eqn:migrate},
+%but not with the better expression of the appendix.
+%This makes me want to put in the better expression, which I can't quickly motivate,
+%except that the next bit makes it not matter, I think.}
 
 However, the rough calculations with coalescent theory above 
 show that even neutral alleles are not expected to transit between the Mesoamerican and Andean highlands within 4,000 generations.
@@ -238,7 +227,6 @@ While maize in highland Mesoamerica grows in sympatry with the highland teosinte
 \citet{Pyhajarvi2013} recently investigated local adaptation in \textit{parviglumis} and \textit{mexicana} populations, characterizing differentiation between these subspecies using an outlier approach.
 Genome-wide, only a small proportion (2--7\%) of our putatively adaptive SNPs were identified by \citet{Pyhajarvi2013}, though these numbers are still in excess of expectations (Fisher's exact test $P<10^{-3}$ for S. America and $P<10^{-8}$ for Mesoamerica; Table~\ref{tanja}).
 The proportion of putatively adaptive SNPs shared with teosinte was twice as high in Mesoamerica, however, 
-%\plr{what does this mean:}
 leading us to evaluate the contribution of introgression  from \textit{mexicana} \citet{Profford_2013} in patterning differences between S. American and Mesoamerican highlands.  
 
 The proportion of putatively adaptive SNPs in introgressed regions of the genome in highland maize in Mesoamerica was nearly four times higher than found in S. America (FET $P<10^{-11}$), while differences outside introgressed regions were much smaller (7.5\% vs. 6.2\%; Table \ref{supp:introgressed}). 
