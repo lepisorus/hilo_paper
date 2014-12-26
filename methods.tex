@@ -57,15 +57,18 @@ We conducted three replicate runs of {\sf STRUCTURE} using the correlated allele
 Results across replicates were nearly identical.
 
 \subsection*{Historical population size}
-We tested three models in which maize was differentiated into highland and lowland populations subsequent to domestication (Figure~\ref{model}). 
+We tested three models in which maize was differentiated into highland and lowland populations subsequent to domestication (Figure~\ref{model}). We did not use the ``full'' model that incorporates all four populations because parameter estimation under this model is computationally infeasible.
+
 Observed joint frequency distributions (JFDs) were calculated using the GBS data set due to its lower level of ascertainment bias. 
 A subset of synonymous and noncoding SNPs were utilized that had $\geq15$ individuals without missing data in both lowland and highland populations and did not violate HWE.  
 A HWE cut-off of $P<0.005$ was used for each subpopulation due to our under-calling of heterozygotes. 
+
 %\plr{this next sentence is confusing.  can just delete the ``for the X populations'', as this is explained later?}
 %In total, we included 18,745 synonymous and noncoding SNPs for the Mesoamerican populations in Models IA and IB, 14,508 for the S. American populations in Model I and 11,305 for the Mesoamerican lowland population and the S. American populations in Model II.  
 We obtained similar results under more or less stringent thresholds for significance ($P < 0.05 -- 0.0005$; data not shown), though the number of SNPs was very small at $P<0.05$.  
 \plr{PLoS has a new policy agains saying ``data not shown''; throw results into a supplement or strike that phrase?}
 \jri{can we just remove the phrase and leave the result w/o the data to back it up?}
+
 Parameters were inferred with the software $\delta a \delta i$ \cite[]{Gutenkunst_2009_19851460}, which uses a diffusion method to calculate an expected JFD and evaluates the likelihood of the data assuming multinomial sampling.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
@@ -93,7 +96,8 @@ The population size and duration of the bottleneck are denoted by $N_B$ and $t_B
 The population size recovers to $N_C=\alpha N_A$ in the lowlands.  
 Then, the highland population is differentiated from the lowland population at $t_F$ generations ago.  
 The size of the lowland and highland populations at time $t_F$ is determined by a parameter $\beta$ such that the population is divided by $\beta N_C$ and $(1-\beta)N_C$; our conclusions hold if we force lowland population size to remain at $N_C$ (data not shown).  
-\plr{``data not shown''}
+%\plr{``data not shown''}
+
 We assume that the population size in the lowlands is constant but that the highland population experiences exponential expansion after divergence: its current population size is $\gamma$ times larger than that at $t_F$. \\
 
 \paragraph{Model IB}
@@ -108,8 +112,6 @@ This model was used for simulating SNPs with ascertainment bias (see below).
 At time $t_F$, the Mesoamerican and S. American lowland populations are differentiated, and the sizes of populations after splitting are determined by $\beta_1$.  
 At time $t_G$, the S. American lowland and highland populations are differentiated, and the sizes of populations at this time are determined by $\beta_2$.  
 As in Model IA, the S. American highland population is assumed to experience population growth with the parameter $\gamma$.\\
-
-\plr{Perhaps a brief sentence saying didn't do a four population model because inference becomes slow and unreliable with so many parameters.} \jri{dadi can only do 3 pops i thought}
 
 Estimates of a number of our model parameters were available from previous work.    
 $N_A$ was set to 150,000 using estimates of the composite parameter $4N_A\mu \sim 0.018$ from \emph{parviglumis}  \cite[]{Eyre-Walker_1998_9539756,Tenaillon_2001_11470895,Tenaillon_2004_15014173,Wright_2005_15919994,Ross-Ibarra_2009_19153259} and an estimate of the mutation rate $\mu \sim 3\times 10^{-8}$ \cite[]{Clark_2005_16079248} per site per generation.  
