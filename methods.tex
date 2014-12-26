@@ -64,10 +64,13 @@ Observed joint frequency distributions (JFDs) were calculated using the GBS data
 A subset of synonymous and noncoding SNPs were utilized that had $\geq15$ individuals without missing data in both lowland and highland populations and did not violate HWE.  
 A HWE cut-off of $P<0.005$ was used for each subpopulation due to our under-calling of heterozygotes. 
 \plr{this next sentence is confusing.  can just delete the ``for the X populations'', as this is explained later?}
-In total, we included 18,745 synonymous and noncoding SNPs for the Mexican populations in Models IA and IB, 14,508 for the S. American populations in Model I and 11,305 for the Mexican lowland population and the S. American populations in Model II.  
-We obtained similar results under more or less stringent thresholds for significance ($P < 0.05 -- 0.0005$; data not shown), though the number of SNPs was very small at $P<0.05$.  
+\comst{Peter- we used Model IA for both Mexican and S. American populations, so I'd like to keep it (I have no idea to improve these sentences, though...)}
+In total, we included 18,745 synonymous and noncoding SNPs for the Mexican populations in Models IA and IB, 14,508 for the S. American populations in Model I\st{A} and 11,305 for the Mexican lowland population and the S. American populations in Model II.  
+We obtained similar results under more or less stringent thresholds for significance ($P < 0.05$ -- $0.0005$; data not shown), though the number of SNPs was very small at $P<0.05$.  
 \plr{PLoS has a new policy agains saying ``data not shown''; throw results into a supplement or strike that phrase?}
+\comst{We'll go to Genetics. I didn't find this policy in Author Instruction of Genetics.}
 Parameters were inferred with the software $\delta a \delta i$ \cite[]{Gutenkunst_2009_19851460}, which uses a diffusion method to calculate an expected JFD and evaluates the likelihood of the data assuming multinomial sampling.
+\st{We did not use ``full'' model that incorporates all the four populations because parameter estimation under this model is computationally infeasible.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
 \begin{figure}[tb]   
@@ -94,7 +97,7 @@ The population size and duration of the bottleneck are denoted by $N_B$ and $t_B
 The population size recovers to $N_C=\alpha N_A$ in the lowlands.  
 Then, the highland population is differentiated from the lowland population at $t_F$ generations ago.  
 The size of the lowland and highland populations at time $t_F$ is determined by a parameter $\beta$ such that the population is divided by $\beta N_C$ and $(1-\beta)N_C$; our conclusions hold if we force lowland population size to remain at $N_C$ (data not shown).  
-\plr{grrr, ``data not shown''}
+\plr{grrr, ``data not shown''}\comst{haw!!}
 We assume that the population size in the lowlands is constant but that the highland population experiences exponential expansion after divergence: its current population size is $\gamma$ times larger than that at $t_F$. \\
 
 \paragraph{Model IB}
@@ -111,6 +114,7 @@ At time $t_G$, the S. American lowland and highland populations are differentiat
 As in Model IA, the S. American highland population is assumed to experience population growth with the parameter $\gamma$.\\
 
 \plr{Perhaps a brief sentence saying didn't do a four population model because inference becomes slow and unreliable with so many parameters.}
+\comst{When I talked to Ryan, he said, "it actually works", but, yeah, I agree and added a sentence.}
 
 Estimates of a number of our model parameters were available from previous work.    
 $N_A$ was set to 150,000 using estimates of the composite parameter $4N_A\mu \sim 0.018$ from \emph{parviglumis}  \cite[]{Eyre-Walker_1998_9539756,Tenaillon_2001_11470895,Tenaillon_2004_15014173,Wright_2005_15919994,Ross-Ibarra_2009_19153259} and an estimate of the mutation rate $\mu \sim 3\times 10^{-8}$ \cite[]{Clark_2005_16079248} per site per generation.  
