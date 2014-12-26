@@ -57,7 +57,7 @@ We conducted three replicate runs of {\sf STRUCTURE} using the correlated allele
 Results across replicates were nearly identical.
 
 \subsection*{Historical population size}
-We tested three models in which maize was differentiated into highland and lowland populations subsequent to domestication (Figure~\ref{model}). We did not use the ``full'' model that incorporates all four populations because parameter estimation under this model is computationally infeasible.
+We tested three models in which maize was differentiated into highland and lowland populations subsequent to domestication (Figure~\ref{model}). 
 
 Observed joint frequency distributions (JFDs) were calculated using the GBS data set due to its lower level of ascertainment bias. 
 A subset of synonymous and noncoding SNPs were utilized that had $\geq15$ individuals without missing data in both lowland and highland populations and did not violate HWE.  
@@ -66,10 +66,10 @@ A HWE cut-off of $P<0.005$ was used for each subpopulation due to our under-call
 %\plr{this next sentence is confusing.  can just delete the ``for the X populations'', as this is explained later?}
 %In total, we included 18,745 synonymous and noncoding SNPs for the Mesoamerican populations in Models IA and IB, 14,508 for the S. American populations in Model I and 11,305 for the Mesoamerican lowland population and the S. American populations in Model II.  
 We obtained similar results under more or less stringent thresholds for significance ($P < 0.05 -- 0.0005$; data not shown), though the number of SNPs was very small at $P<0.05$.  
-\plr{PLoS has a new policy agains saying ``data not shown''; throw results into a supplement or strike that phrase?}
-\jri{can we just remove the phrase and leave the result w/o the data to back it up?}
+%\plr{PLoS has a new policy agains saying ``data not shown''; throw results into a supplement or strike that phrase?}
+\jri{if we go genetics: leave it in; if we go plos genetics, i vote for removing sentence entirely rather than putting everything in supp. though that would ideally be the better solution}
 
-Parameters were inferred with the software $\delta a \delta i$ \cite[]{Gutenkunst_2009_19851460}, which uses a diffusion method to calculate an expected JFD and evaluates the likelihood of the data assuming multinomial sampling.
+Parameters were inferred with the software $\delta a \delta i$ \cite[]{Gutenkunst_2009_19851460}, which uses a diffusion method to calculate an expected JFD and evaluates the likelihood of the data assuming multinomial sampling. We did not use the ``full'' model that incorporates all four populations because parameter estimation under this model is computationally infeasible.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE
 \begin{figure}[tb]   
@@ -97,6 +97,7 @@ The population size recovers to $N_C=\alpha N_A$ in the lowlands.
 Then, the highland population is differentiated from the lowland population at $t_F$ generations ago.  
 The size of the lowland and highland populations at time $t_F$ is determined by a parameter $\beta$ such that the population is divided by $\beta N_C$ and $(1-\beta)N_C$; our conclusions hold if we force lowland population size to remain at $N_C$ (data not shown).  
 %\plr{``data not shown''}
+\jri{ again, keep if Genetics, remove sentence or remove ``data not shown'' if we go to PLoS Gen.}
 
 We assume that the population size in the lowlands is constant but that the highland population experiences exponential expansion after divergence: its current population size is $\gamma$ times larger than that at $t_F$. \\
 
@@ -187,15 +188,11 @@ Genetic distances were obtained for the MaizeSNP50 data \cite[]{Ganal_2011_22174
 We build on results from \cite{ralph2014convergent} to assess whether the abundance and degree of coincidence of presumably adaptive high-$F_{ST}$ alleles is consistent with what is known about the population history of maize.
 To do this,
 we evaluated the rate at which we expect an allele that provides a selective advantage at higher elevation to arise by new mutation in a highland region ($\mutrate$), and the rate at which such an allele already present in the Mesoamerican highlands would transit the intervening lowlands and fix in the Andean highlands ($\migrate$).
-% We suggest below that many of the high-$F_{ST}$ alleles are locally adaptive, and the degree of coincidence between highland regions informs us about whether these adaptations occurred convergently, or if alleles were transmitted between the two by migration. 
 We first assume alleles adapted in the highlands are slightly deleterious at lower elevation, consistent with empirical findings in reciprocal transplant experiments in Mexico \cite[]{Mercer2008}.
-The resulting values of $\mutrate$ and $\migrate$ 
-depend most strongly on the population density, the selection coefficient, and the rate at which seed is transported long distances and replanted;
-we checked the results by evaluating several choices of these parameters
-as well as with simulations and more detailed computations, described in the Appendix.
+The resulting values of $\mutrate$ and $\migrate$ depend most strongly on the population density, the selection coefficient, and the rate at which seed is transported long distances and replanted;
+we checked the results by evaluating several choices of these parameters as well as with simulations and more detailed computations, described in the Appendix.
 Here we describe the mathematical details; readers may skip to the results without loss of continuity.
 
-%To calculate the rate at which new mutations appear and fix in a highland population, $\mutrate$, we multiplied the total population size of the highlands by the mutation rate per generation.
 \paragraph{Demographic model}
 Throughout, we followed \citet{vanHeerwaarden2010} in constructing a detailed demographic model for domesticated maize.
 We assume fields of $N=10^5$ plants are replanted each year from $N_f=561$ ears, either from completely new stock (with probability $p_e=0.068$), from partially new stock (a proportion $r_m=0.2$ with probability $p_m=0.02$), or  otherwise entirely from the same field.
@@ -210,8 +207,7 @@ except that heterozygotes have on average $(1+s_b)$ offspring that carry the sel
 Each ear has a small chance of being chosen for replanting, so the number of ears replanted of a given individual is Poisson, and assuming that pollen is well-mixed, the number of pollen-parent kernels is Poisson as well.
 Each of these numbers of offspring has a mean that depends on whether the field is replanted with new stock, and whether ears are chosen from this field to replant other fields, so the total number of offspring is a mixture of Poissons. 
 These means, and more details of the computations, are found in the Appendix. % \ref{apx:demographic_model}.}
-At the parameter values given, the variance in number of offspring, $\xi^2$, is between 20 (for wild-type) and 30 (for $s_b=0.1$), 
-and the dispersal distance (mean distance between parent and offspring) is $\sigma=3.5$km.
+At the parameter values given, the variance in number of offspring, $\xi^2$, is between 20 (for wild-type) and 30 (for $s_b=0.1$), and the dispersal distance (mean distance between parent and offspring) is $\sigma=3.5$km.
 
 \paragraph{New mutations}
 The rate at which new mutations appear and fix in a highland population, which we denote $\mutrate$, 
@@ -245,7 +241,6 @@ This calculation omits the probability that such an allele fixes ($\approx 2s_b/
 and the time to reach migration-selection balance
 (discussed in the next section);
 both of these omissions mean we underestimate $\Tmig$.
-
 
 %%%%%%%% %%%%%%%%
 \paragraph{Neutral alleles}
