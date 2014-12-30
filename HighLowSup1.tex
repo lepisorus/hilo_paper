@@ -5,6 +5,7 @@
 \newpage
 \renewcommand{\thefigure}{A\arabic{figure}}
 \renewcommand{\thetable}{A\arabic{table}}
+\renewcommand{\theequation}{A\arabic{equation}}
 
 \section*{Appendix} %\label{apx:demographic_model}
 
@@ -293,6 +294,10 @@ For larger $s_m$, the migration rate is much smaller.
 
 \newpage
 
+
+\setcounter{table}{0} %% DON'T REMOVE
+\setcounter{figure}{0}%% DON'T REMOVE
+
 %\clearpage
 
 % space of double hline in Table
@@ -318,7 +323,7 @@ For larger $s_m$, the migration rate is much smaller.
 	 ID$^a$	&	USDA ID	&	Population	&	Landrace	&	Locality	&	Latitude	&	Longitude	&	Elevation	&	Origin	\\[0.0cm]
 	\hline 
 	& & & \\[-4mm] 
-{\bf RIMMA0409}	&	PI 478968	&	Mexico 	&	Tepecintle	&	Chiapas, Mexico	&	15.4 	&	-92.9 	&	107	&	USDA	\\
+{\bf RIMMA0409}	&	PI 478968	&	Mesoamerican 	&	Tepecintle	&	Chiapas, Mexico	&	15.4 	&	-92.9 	&	107	&	USDA	\\
 RIMMA0410	&	PI 478970	&	Lowland	&	Vandeno	&	Chiapas, Mexico	&	15.4 	&	-92.9 	&	107	&	USDA	\\
 {\bf RIMMA0433}	&	PI 490825	&		&	Nal Tel ATB	&	Chiquimula, Guatemala	&	14.7 	&	-89.5 	&	457	&	USDA	\\
 {\bf RIMMA0441}	&	PI 515538	&		&	Coscomatepec	&	Veracruz, Mexico	&	19.2 	&	-97.0 	&	1320	&	USDA	\\
@@ -344,7 +349,7 @@ RIMMA0410	&	PI 478970	&	Lowland	&	Vandeno	&	Chiapas, Mexico	&	15.4 	&	-92.9 	&	1
 {\bf RIMMA0733}	&	PI 479054	&		&	Zapalote Chico	&	Oaxaca, Mexico	&	16.6 	&	-94.6 	&	107	&	Goodman	\\
 	\hline 
 	& & & \\[-4mm] 
-{\bf RIMMA0416}	&	PI 484428	&	Mexico	&	Cristalino de Chihuahua	&	Chihuahua, Mexico	&	29.4 	&	-107.8 	&	2140	&	NA	\\
+{\bf RIMMA0416}	&	PI 484428	&	Mesoamerican	&	Cristalino de Chihuahua	&	Chihuahua, Mexico	&	29.4 	&	-107.8 	&	2140	&	NA	\\
 {\bf RIMMA0417}	&	PI 484431	&	Highland	&	Azul	&	Chihuahua, Mexico	&	28.6 	&	-107.5 	&	2040	&	USDA	\\
 {\bf RIMMA0418}	&	PI 484476	&		&	Gordo	&	Chihuahua, Mexico	&	28.6 	&	-107.5 	&	2040	&	USDA	\\
 {\bf RIMMA0421}	&	PI 484595	&		&	Conico	&	Puebla, Mexico	&	19.9 	&	-98.0 	&	2250	&	USDA	\\
@@ -396,7 +401,7 @@ RIMMA0626	&	PI 645993	&		&	Arrocillo Amarillo	&	Puebla, Mexico	&	19.9 	&	-97.6 	
 	 ID	&	USDA ID	&	Population	&	Landrace	&	Locality	&	Latitude	&	Longitude	&	Elevation (m)	&	Origin	\\[0.0cm]
 	\hline 
 	& & & \\[-4mm] 
-{\bf RIMMA0388}	&	PI 443820	&	S. America	&	Amagaceno	&	Antioquia, Colombia	&	6.9 	&	-75.3 	&	1500	&	USDA	\\
+{\bf RIMMA0388}	&	PI 443820	&	S. American	&	Amagaceno	&	Antioquia, Colombia	&	6.9 	&	-75.3 	&	1500	&	USDA	\\
 {\bf RIMMA0389}	&	PI 444005	&	Lowland	&	Costeno	&	Atlantico, Colombia	&	10.4 	&	-74.9 	&	7	&	USDA	\\
 {\bf RIMMA0390}	&	PI 444254	&		&	Comun	&	Caldas, Colombia	&	4.5 	&	-75.6 	&	353	&	USDA	\\
 RIMMA0391	&	PI 444296	&		&	Andaqui	&	Caqueta, Colombia	&	1.4 	&	-75.8 	&	700	&	USDA	\\
@@ -421,7 +426,7 @@ RIMMA0407	&	PI 445528	&		&	Pira	&	Tolima, Colombia	&	4.2 	&	-74.9 	&	450	&	USDA	
 {\bf RIMMA0708}	&	PI 488376	&		&	Yunquillano F Andaqui	&	Ecuador	&	-3.5 	&	-78.6 	&	1098	&	Goodman	\\
 	\hline 
 	& & & \\[-4mm] 
-{\bf RIMMA0426}	&	PI 485151	&	S. America	&	Rabo de Zorro	&	Ancash, Peru	&	-9.1 	&	-77.8 	&	2500	&	NA	\\
+{\bf RIMMA0426}	&	PI 485151	&	S. American	&	Rabo de Zorro	&	Ancash, Peru	&	-9.1 	&	-77.8 	&	2500	&	NA	\\
 {\bf RIMMA0430}	&	PI 485362	&	Highland	&	Sarco	&	Ancash, Peru	&	-9.2 	&	-77.7 	&	2585	&	NA	\\
 {\bf RIMMA0431}	&	PI 485363	&	 	&	Perlilla	&	Huanuco, Peru	&	-8.7 	&	-77.1 	&	2900	&	NA	\\
 {\bf RIMMA0436}	&	PI 514723	&		&	Morocho Cajabambino	&	Amazonas, Peru	&	-6.2 	&	-77.9 	&	2200	&	NA	\\
@@ -470,7 +475,7 @@ RIMMA0668	&	Ames 28668	&		&	Granada	&	Puno, Peru	&	-14.9 	&	-70.6 	&	3925	&	Good
 {\fontsize{8}{11}\sf
     \begin{tabular}{ccccccccl} \hline\hline
        & & \\[-3mm]
-     Mexico  & \multicolumn{2}{c}{Model IA}  \\[0.1cm]
+     Mesoamerica  & \multicolumn{2}{c}{Model IA}  \\[0.1cm]
     \hline
     & & \\[-3mm]
    & Likelihood & $-$3052.34  \\
@@ -512,10 +517,10 @@ RIMMA0668	&	Ames 28668	&		&	Granada	&	Puno, Peru	&	-14.9 	&	-70.6 	&	3925	&	Good
 {\fontsize{8}{11}\sf
     \begin{tabular}{lllllcccccl} \hline\hline
        & & \\[-3mm]
-     Population  & Pattern of adaptation & No. SNPs & No. SNPs supported by PHS test \\[0.1cm]
+     Population  & Pattern of adaptation & No. of SNPs & No. of SNPs supported by PHS test \\[0.1cm]
     \hline
     & & \\[-3mm]
-   Mexico & Highland adaptation & 264 & 172 (65.2\%)  \\
+   Mesoamerica & Highland adaptation & 264 & 172 (65.2\%)  \\
                & Lowland adaptation & 101 & 66 (65.3\%)  \\
    S. America & Highland adaptation & 164 & 230 (71.3\%)  \\
                      & Lowland adaptation & 70 & 50 (71.4\%)  \\[0.1cm]
@@ -539,13 +544,13 @@ RIMMA0668	&	Ames 28668	&		&	Granada	&	Puno, Peru	&	-14.9 	&	-70.6 	&	3925	&	Good
     \begin{tabular}{lcccccccl} 
     \hline\hline
        
-Mexico     & \multicolumn{3}{c}{Number of SNPs}  \\
+Mesoamerica     & \multicolumn{3}{c}{No. of SNPs}  \\
                                   & Significant & NS          & Proportion  \\
 Significant $F_{CT}$ & 25              &   337       & 0.077\\ 
 NS                             & 299            &  18,493   & 0.018\\
       \hline
     & & \\[-3mm]
-S. America     & \multicolumn{3}{c}{Number of SNPs} \\
+S. America     & \multicolumn{3}{c}{No. of SNPs} \\
                                      & Significant & NS           & Proportion  \\
 Significant $F_{CT}$    & 10              &   327        & 0.070\\ 
 NS                                & 133            &  17,518    & 0.018\\[1mm]
@@ -572,9 +577,9 @@ NS                                & 133            &  17,518    & 0.018\\[1mm]
 		    & & \\[-3mm]
 		    Introgression status & Population & $F_{ST}$ outlier SNPs & All other SNPs \\
 		    \hline
-		   Introgressed & Mexico & 114 & 1953 \\
+		   Introgressed & Mesoamerica & 114 & 1953 \\
 		 	& S. America & 26 & 1721 \\
-		   Not introgressed & Mexico & 558 & 73892 \\
+		   Not introgressed & Mesoamerica & 558 & 73892 \\
 		 	& S. America & 379 & 60666 \\
 		      \hline\hline
 		    \end{tabular}
@@ -585,48 +590,48 @@ NS                                & 133            &  17,518    & 0.018\\[1mm]
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\arraystretch}{1.1}
-\begin{table}[h]
+%\renewcommand{\arraystretch}{1.1}
+%\begin{table}[h]
 
-\begin{center}
- \caption[]{ms command \st{you don't use this table?}\hspace*{13.3cm}}
-  \textbf{}\\[-2mm]
-{\fontsize{7}{11}\sf
-    \begin{tabular}{llcccccccl} \hline\hline
-       & & \\[-3mm]
-     Model I for Mexico  populations   \\
-     Population 1: Mexico lowland population   \\
-     Population 2: Mexico highland population   \\
-  -I 2 $n_{m1}$ $n_{m2}$ -n 1 0.3496 -n 2 0.5704 -ej 0.01 2 1 -en 0.01 1 0.92 -en 0.0133 1 0.0163 -en 0.015 1 1.0 \\ 
-      \hline
-    & & \\[-3mm]
-     Model II for Mexico  populations   \\
-     Population 1: Mexico lowland population   \\
-     Population 2: Mexico highland population   \\
-     Population 3: \emph{mexicane} population   \\
--I 2 $n_{m1}$ $n_{m2}$ -n 1 1.14 -n 2 0.36 -es 0.01 2 0.8 -en 0.01 3 1.0667 -ej 0.01 2 1 -en 0.01 1 1.5 -en 0.0133 1 0.0163 -en 0.015 1 1.0 -ej 0.1 3 1 \\ 
-      \hline
-    & & \\[-3mm]
-    Model I for SA  populations   \\
-     Population 1: SA lowland population   \\
-     Population 2: SA highland population   \\
-  -I 2 $n_{s1}$ $n_{s2}$ -n 1 0.5044 -n 2 1.3728 -g 2 671.60 -ej 0.006667 2 1 -eg 0.006667 2 0.0 -en 0.00667 1 0.52 -en 0.01333 1 0.0163 -en 0.015 1 1.0 \\ 
-      \hline
-    & & \\[-3mm]
-    Model III for SA  populations   \\
-    Population 1: Mexico lowland population   \\
-     Population 2: SA lowland population   \\
-     Population 3: SA highland population   \\
-  -I 3 $n_{m1}$ $n_{s1}$ $n_{s2}$ -n 1 0.64 -n 2 0.342 -n 3 0.972 -g 3 598.35 -ej 0.006667 3 2 -eg 0.006667 3 0.0 -en 0.006667 2 0.36 -ej 0.01 2 1\\
-   -en 0.01 1 1 -en 0.0133 1 0.0163 -en 0.015 1 1.0 \\  [1mm]
-    \hline\hline
-\multicolumn{1}{l}{Sample size of Mexico lowland, Mexico highland, SA lowland and SA highland populations are denoted by $n_{m1}$, $n_{m2}$, $n_{s1}$ and $n_{s2}$, respectively.}\\
-    \end{tabular}
-    \label{commandline}  % caption is needed to make this work
-}
-\end{center}
-\end{table}
-\renewcommand{\arraystretch}{1}
+%\begin{center}
+% \caption[]{ms command \st{you don't use this table?}\hspace*{13.3cm}}
+%  \textbf{}\\[-2mm]
+%{\fontsize{7}{11}\sf
+%    \begin{tabular}{llcccccccl} \hline\hline
+%       & & \\[-3mm]
+%     Model I for Mexico  populations   \\
+%     Population 1: Mexico lowland population   \\
+%     Population 2: Mexico highland population   \\
+%  -I 2 $n_{m1}$ $n_{m2}$ -n 1 0.3496 -n 2 0.5704 -ej 0.01 2 1 -en 0.01 1 0.92 -en 0.0133 1 0.0163 -en 0.015 1 1.0 \\ 
+%      \hline
+%    & & \\[-3mm]
+%     Model II for Mexico  populations   \\
+%     Population 1: Mexico lowland population   \\
+%     Population 2: Mexico highland population   \\
+%     Population 3: \emph{mexicane} population   \\
+%-I 2 $n_{m1}$ $n_{m2}$ -n 1 1.14 -n 2 0.36 -es 0.01 2 0.8 -en 0.01 3 1.0667 -ej 0.01 2 1 -en 0.01 1 1.5 -en 0.0133 1 0.0163 -en 0.015 1 1.0 -ej 0.1 3 1 \\ 
+%      \hline
+%    & & \\[-3mm]
+%    Model I for SA  populations   \\
+%     Population 1: SA lowland population   \\
+%     Population 2: SA highland population   \\
+%  -I 2 $n_{s1}$ $n_{s2}$ -n 1 0.5044 -n 2 1.3728 -g 2 671.60 -ej 0.006667 2 1 -eg 0.006667 2 0.0 -en 0.00667 1 0.52 -en 0.01333 1 0.0163 -en 0.015 1 %1.0 \\ 
+%      \hline
+%    & & \\[-3mm]
+%    Model III for SA  populations   \\
+%    Population 1: Mexico lowland population   \\
+%     Population 2: SA lowland population   \\
+%     Population 3: SA highland population   \\
+%  -I 3 $n_{m1}$ $n_{s1}$ $n_{s2}$ -n 1 0.64 -n 2 0.342 -n 3 0.972 -g 3 598.35 -ej 0.006667 3 2 -eg 0.006667 3 0.0 -en 0.006667 2 0.36 -ej 0.01 2 1\\
+%   -en 0.01 1 1 -en 0.0133 1 0.0163 -en 0.015 1 1.0 \\  [1mm]
+%    \hline\hline
+%\multicolumn{1}{l}{Sample size of Mexico lowland, Mexico highland, SA lowland and SA highland populations are denoted by $n_{m1}$, $n_{m2}$, $n_{s1}$ and $n_{s2}$, respectively.}\\
+%    \end{tabular}
+%    \label{commandline}  % caption is needed to make this work
+%}
+%\end{center}
+%\end{table}
+%\renewcommand{\arraystretch}{1}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -634,7 +639,7 @@ NS                                & 133            &  17,518    & 0.018\\[1mm]
   \begin{center}
     \includegraphics[width=0.5\columnwidth]{fig/bioclm.pdf}
     \caption{Annual mean temperature and annual precipitation in the sampling locations of the maize landraces across Americas.
-    Red, blue, yellow and light blue bars represent Mexican lowland, Mexican highland, S. American lowland and S. American highland
+    Red, blue, yellow and light blue bars represent Mesoamerican lowland, Mesoamerican highland, S. American lowland and S. American highland
     populations, respectively.  
     }
     \label{supp:colfreq}
@@ -682,7 +687,7 @@ NS                                & 133            &  17,518    & 0.018\\[1mm]
 \begin{figure}[h]
   \begin{center}
     \includegraphics[width=0.6\columnwidth]{fig/bot2.pdf}
-    \caption{Q-Q plot for $-$log$_{10}$-scaled \emph{P}-values of population differentiation between lowland and highland populations. (A) Model IA \emph{v.s.} Model IB in Mexico, (B) Model IA \emph{v.s.} Model II in S. America, (C) Model with \emph{v.s.} without bottleneck in Mexico and (D) Model with \emph{v.s.} without bottleneck in S. America.}
+    \caption{Q-Q plot for $-$log$_{10}$-scaled \emph{P}-values of population differentiation between lowland and highland populations. (A) Model IA \emph{v.s.} Model IB in Mesoamerica, (B) Model IA \emph{v.s.} Model II in S. America, (C) Model with \emph{v.s.} without bottleneck in Mesoamerica and (D) Model with \emph{v.s.} without bottleneck in S. America.}
     \label{fig:qq}
   \end{center}
 \end{figure}
@@ -694,7 +699,7 @@ NS                                & 133            &  17,518    & 0.018\\[1mm]
 \begin{figure}[h]
   \begin{center}
     \includegraphics[width=0.7\columnwidth]{fig/LD.pdf}
-    \caption{Pattern of decay of linkage equilibrium in Mexico (A) and South America (B).  Red and blue dots represent low- and highland population, respectively.  $r^2$ values were calculated as a statistics and averaged within 10-bp bins of distance between SNPs.  The \emph{x}- and \emph{y}-axes represent distance between SNPs (kb) and average $r^2$ values.}
+    \caption{Pattern of decay of linkage equilibrium in Mesoamerica (A) and S. America (B).  Red and blue dots represent low- and highland population, respectively.  $r^2$ values were calculated as a statistics and averaged within 10-bp bins of distance between SNPs.  The \emph{x}- and \emph{y}-axes represent distance between SNPs (kb) and average $r^2$ values.}
     \label{supp:LD}
   \end{center}
 \end{figure}
@@ -707,33 +712,33 @@ NS                                & 133            &  17,518    & 0.018\\[1mm]
 \section*{Directionality of adaptation} \label{sec:supptextsho}
 %\noindent {\Large \textit{Text~S1} }
 
-We classified the patterns of allelic differentiation among highland and lowland populations in Mexico and S. America together with the information of \emph{parviglumis} in an \emph{ad hoc} manner; the allelic differentiation pattern is consistent with highland or lowland adaptation scenario.  
+We classified the patterns of allelic differentiation among highland and lowland populations in Mesoamerica and S. America together with the information of \emph{parviglumis} in an \emph{ad hoc} manner; the allelic differentiation pattern is consistent with highland or lowland adaptation scenario.  
 In Figure~\ref{AllelePat}, we illustrate the frequency of putative ancestral and derived alleles in the five populations, drawn by red and blue, respectively.
 
-First, we focus on the SNPs with the signature of adaptation only in Mexican populations (Figure~\ref{AllelePat}A).  
+First, we focus on the SNPs with the signature of adaptation only in Mesoamerican populations (Figure~\ref{AllelePat}A).  
 The first and second rows shows the typical patterns of highland adaptation with \emph{parviglumis} data available.
 We simply assume that the allele in higher frequency in \emph{parviglumis} is ancestral.
 %\jri{we have decent Tripsacum data now, should we go back and re-assess this?}
 
-Both rows show the consistent pattern to highland adaptation in Mexico because the frequency of the putative derived allele in Mexican highlands is highly differentiated from those in both \emph{parviglumis} and Mexican lowlands.
+Both rows show the consistent pattern to highland adaptation in Mesoamerica because the frequency of the putative derived allele in Mesoamerican highlands is highly differentiated from those in both \emph{parviglumis} and Mesoamerican lowlands.
 The patterns in S. America are different between the first and second rows.
 However, we do not take the patterns in S. American populations into account because there is no adaptive signature in S. American.
 On the other hand, we should consider the allelic pattern in S. America in the case of the third row; we cannot utilize the information of \emph{parviglumis}.
-It is impossible to infer the ancestral allele, so we assume the pattern is consistent with highland adaptation if one allele is in higher frequency in Mexican lowlands and S. American populations and the others is in higher frequency in Mexican highlands.
+It is impossible to infer the ancestral allele, so we assume the pattern is consistent with highland adaptation if one allele is in higher frequency in Mesoamerican lowlands and S. American populations and the others is in higher frequency in Mesoamerican highlands.
 We classified the SNPs into lowland adaptation in the same way (from fourth to sixth rows in Figure~\ref{AllelePat}A).
 
-Next, we consider the SNPs with the signatures of adaptation in both Mexico and S. America (Figure~\ref{AllelePat}B).
+Next, we consider the SNPs with the signatures of adaptation in both Mesoamerica and S. America (Figure~\ref{AllelePat}B).
 The pattern in the first row is consistent with parallel highland adaptation, whereas the second row shows parallel lowland adaptation. 
 We cannot infer lowland or highland adaptation without the outgroup, so we ignore such SNPs.
-The pattern in the third row is the special case: the allele frequency is similar between Mexican lowlands and S. American highlands and similar between Mexican highlands and S. American lowlands.
+The pattern in the third row is the special case: the allele frequency is similar between Mesoamerican lowlands and S. American highlands and similar between Mesoamerican highlands and S. American lowlands.
 This pattern could be explained by that the SNP is linked to a read adaptive SNP and recombination breaks down the linkage between them.
 
 Finally, we tested whether PHS test supports highland and lowland adaptation scenario.
 Consider the case of highland adaptation.
 We assumed that the putative derived allele is adaptive in highlands and checked whether the haplotype length is longer in highlands than that in lowlands.
 However, haplotype length cannot be compared directly because the derived allele frequency is different between highlands and lowlands.
-Thus, we compared the \emph{P}-values of PHS test as a indicator of haplotype length given allele frequency (Pr($PHS_{xA}\leq PHS_{null|p}$ in Materials and Methods).
-We just say that the PHS test is consistent if the \emph{P}-value in highlands is smaller than the \emph{P}-value in lowlands (haplotype length is longer as \emph{P}-value is smaller).
+Thus, we compared the empirical quantile of PHS test as a indicator of haplotype length given allele frequency (Pr($PHS_{xA}\leq PHS_{null|p}$) in Materials and Methods).
+We just say that the PHS test is consistent if the empirical quantile in highlands is smaller than that in lowlands (haplotype length is longer as the empirical quantile is smaller).
 The result is summarized in Table~S3.
 
 \renewcommand{\thefigure}{\Roman{figure}}
@@ -743,7 +748,7 @@ The result is summarized in Table~S3.
 \begin{figure}[b]
   \begin{center}
     \includegraphics[width=0.9\columnwidth]{fig/AllelePat.pdf}
-    \caption{Illustration of allele frequency changes in maize and \emph{parviglumis}.  Red and blue bars represent the allele frequency of ancestral and derived, adaptive alleles, respectively.  The allele frequencies in the five populations are shown: \emph{parviglumis}, Mexican lowlands and highlands, and S. America lowlands and highlands. NA in \emph{parviglumis} indicates that there is no SNP data in the site.}
+    \caption{Illustration of allele frequency changes in maize and \emph{parviglumis}.  Red and blue bars represent the allele frequency of ancestral and derived, adaptive alleles, respectively.  The allele frequencies in the five populations are shown: \emph{parviglumis}, Mesoamerican lowlands and highlands, and S. America lowlands and highlands. NA in \emph{parviglumis} indicates that there is no SNP data in the site.}
     \label{AllelePat}
   \end{center}
 \end{figure}
