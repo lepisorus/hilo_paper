@@ -121,7 +121,7 @@ Different cutoff values (0.05, 0.001) gave qualitatively identical results (data
    \renewcommand{\baselinestretch}{0.9}
    \vspace{-3mm}
    \caption{Scatter plot of $-\log_{10} P$-values of observed $F_{ST}$ values based on simulation from estimated demographic models. $P$-values are shown for each SNP in both Mesoamerica (Model IB; $P_M$ on $x$-axis) and S. America (Model II; $P_S$ on $y$-axis).  
-   Red, blue, orange and gray dots represents SNPs showing significance in both Mesoamerica and S. America, only in Mesoamerica, only in S. America, respectively (see text for details).
+   Red, blue, orange and gray dots represents SNPs showing significance in both Mesoamerica and S. America, only in Mesoamerica, only in S. America, or in neither region, respectively (see text for details).
    The number of SNPs in each category is shown in the same color as the points.} 
 \vspace{-6mm}
     \label{PvDist}
@@ -163,11 +163,12 @@ Despite similar phenotypes and environments, we thus see little evidence for con
 
 Given the limited empirical evidence for convergent evolution at the molecular level, we took advantage of recent theoretical efforts \cite[]{ralph2014convergent} to assess the degree of convergence expected under a spatially explicit population genetic model (see Materials and Methods).
 Our modeling estimates assume a maize population density $\rho$ of the highlands to be around (0.5 ha field/person) $\times$ (0.5 people/km$^2$) $\times$ ($2\times 10^4$ plants per ha field) $=$ 5,000 plants per km$^2$.
-The area of the Andean highlands is around $A=500\text{km}^2$, leading to a total population of $A \rho = 2.5 \times 10^6$. %\mbh{this area seems way too small} \jri{agreed}
+The area of the Andean highlands currently under maize cultivation is estimated to be approximately $A=8400\text{km}^2$.  If the area under cultivation shortly after colonization was similar to this modern estimate, a total maize population of $A \rho = 4.2 \times 10^7$ is expected. %\mbh{this area seems way too small} \jri{agreed}
 Assuming an offspring variance of $\xi^2 = 30$, we can then compute the waiting time $\Tmut=1/\mutrate$ for a new beneficial mutation to appear and fix.
-We observe that even if there is relatively strong selection for an allele at high elevation ($s_b=0.01$), a single-base mutation with mutation rate $\mu=10^{-8}$ would take at least 60,000 generations to appear and fix.
-Because $\Tmut$ scales approximately linearly with both the selection coefficient and the mutation rate, strong selection and the existence of multiple equivalent mutable sites could reduce this time. 
-For example, if any one of 10 sites within a gene could have equivalent strong selective benefit ($s_b=0.1$), $\Tmut$ would be reduced to 600 generations. 
+We observe that even if there is relatively strong selection for an allele at high elevation ($s_b=0.01$), a single-base mutation with mutation rate $\mu=10^{-8}$ would take at least 3,571 generations to appear and fix.
+The number of generations required for fixation would increase dramatically if the area under cultivation ($A$) has expanded gradually and significantly from the time of colonization to the present.
+However, because $\Tmut$ scales approximately linearly with both the selection coefficient and the mutation rate, strong selection and the existence of multiple equivalent mutable sites could reduce this time. 
+For example, if any one of 10 sites within a gene could have equivalent strong selective benefit ($s_b=0.1$), $\Tmut$ would be reduced to 36 generations assuming constant $A$ over time. 
 
 % # Tmig computation:
 % A <- 500; rho <- 5000; xisq <- 30; sigma <- 3.5
