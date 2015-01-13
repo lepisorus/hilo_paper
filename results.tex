@@ -162,8 +162,8 @@ Despite similar phenotypes and environments, we thus see little evidence for con
 % sapply( 10^c(-5,-8), function (mu) mu * (2 * rho * A * sb)/xisq )
 
 Given the limited empirical evidence for convergent evolution at the molecular level, we took advantage of recent theoretical efforts \cite[]{ralph2014convergent} to assess the degree of convergence expected under a spatially explicit population genetic model (see Materials and Methods).
-Using current estimates of maize cultivation in S. America, we find a $270,200\text{km}^2$ area in which maize is cultivated in $\ge 1\%$ of the land area, for a total area of cultivation of $\sim 600,000 \text{ha}$.  
-At a planting density of $\sim 20,000$ plants per hectare, this gives a total maize population of $\sim 12$ billion. 
+Using current estimates of maize cultivation in S. America, we find a $270,200\text{km}^2$ area in which maize is cultivated in $\ge 1\%$ of the land area, for a total area of cultivation of $\approx 600,000 \text{ha}$.  
+At a planting density of $\rho \approx 20,000$ plants per hectare, this gives a total maize population of $\approx 12$ billion. 
 Assuming an offspring variance of $\xi^2 = 30$, we can then compute the waiting time $\Tmut=1/\mutrate$ for a new beneficial mutation to appear and fix.
 If we assume an average selection coefficient of $s_b=10^{-5}$ for each mutation, a single-base mutation with mutation rate $\mu=3*10^{-8}$ \citep{Clark_2005_16079248} would take an expected 4,162 generations to appear and fix.
 % code for this:
@@ -180,7 +180,7 @@ If we assume an average selection coefficient of $s_b=10^{-5}$ for each mutation
 % xisq <- 30; 1/sapply( 10^c(-8), function (mu) mu * (2 * rho * A * sb)/xisq );
 Our estimate of the maize population size uses the land area currently under cultivation and is likely an overestimate; $\Tmut$ scales linearly with the population size and lower estimates of $A$ will thus increase $\Tmut$ proportionally.
 However, because $\Tmut$ also scales approximately linearly with both the selection coefficient and the mutation rate, strong selection and the existence of multiple equivalent mutable sites could reduce this time. 
-For example, if any one of 10 sites within a gene were to have an equivalent selective benefit of $s_b=10{^-4}$, $\Tmut$ would be reduced to 42 generations assuming constant $A$ over time. 
+For example, if any one of 10 sites within a gene were to have an equivalent selective benefit of $s_b=10^{-4}$, $\Tmut$ would be reduced to 42 generations assuming constant $A$ over time. 
 
 % # Tmig computation:
 % A <- 500; rho <- 5000; xisq <- 30; sigma <- 3.5
