@@ -512,19 +512,21 @@ RIMMA0668	&	Ames 28668	&		&	Granada	&	Puno, Peru	&	-14.9 	&	-70.6 	&	3925	&	Good
 \begin{table}[h]
 
 \begin{center}
- \caption[]{Summary of PHS test\hspace*{6.1cm}}
+ \caption[]{Summary of PHS test\hspace*{9.1cm}}
   \textbf{}\\[-2mm]
 {\fontsize{8}{11}\sf
     \begin{tabular}{lllllcccccl} \hline\hline
        & & \\[-3mm]
-     Population  & Pattern of adaptation & No. of SNPs & No. of SNPs supported by PHS test \\[0.1cm]
+     Population  & Pattern of adaptation & No. of SNPs & No. of SNPs supported by PHS test & \st{Significance $^a$} \\[0.1cm]
     \hline
     & & \\[-3mm]
-   Mesoamerica & Highland adaptation & 264 & 172 (65.2\%)  \\
-               & Lowland adaptation & 101 & 66 (65.3\%)  \\
-   S. America & Highland adaptation & 164 & 230 (71.3\%)  \\
-                     & Lowland adaptation & 70 & 50 (71.4\%)  \\[0.1cm]
+   Mesoamerica & Highland adaptation & 264 & 172 (65.2\%) &  $P<10^{-3}$ \\
+               & Lowland adaptation & 101 & 66 (65.3\%) & $P<0.05$ \\
+   S. America & Highland adaptation & 164 & 230 (71.3\%) &  $P<10^{-5}$  \\
+                     & Lowland adaptation & 70 & 50 (71.4\%)  & $P<0.05$ \\[0.1cm]
     \hline\hline
+    \multicolumn{5}{l}{\st{$^a$ Departure from a null expectation that PHS \textit{P}-values as an index of haplotype length is not associated}}\\
+     \multicolumn{5}{l}{\st{with SNPs involved in highland adaptation.  The test was performed by Fisher's exact test.}}\\
     \end{tabular}
     \label{supp:phs}  % caption is needed to make this work
 }
@@ -716,30 +718,33 @@ We classified the patterns of allelic differentiation among highland and lowland
 In Figure~\ref{AllelePat}, we illustrate the frequency of putative ancestral and derived alleles in the five populations, drawn by red and blue, respectively.
 
 First, we focus on the SNPs with the signature of adaptation only in Mesoamerican populations (Figure~\ref{AllelePat}A).  
-The first and second rows shows the typical patterns of highland adaptation with \emph{parviglumis} data available.
-We simply assume that the allele in higher frequency in \emph{parviglumis} is ancestral.
+\st{In other words, the $F_{ST}$ $P$-value is significant in Mesoamerica but not in S. America.
+The first and second rows show the typical patterns of highland adaptation in Mesoamerica with \emph{parviglumis} data available.
+We simply assume that the allele in higher frequency in \emph{parviglumis} is ancestral. }
 %\jri{we have decent Tripsacum data now, should we go back and re-assess this?}
 
 Both rows show the consistent pattern to highland adaptation in Mesoamerica because the frequency of the putative derived allele in Mesoamerican highlands is highly differentiated from those in both \emph{parviglumis} and Mesoamerican lowlands.
 The patterns in S. America are different between the first and second rows.
-However, we do not take the patterns in S. American populations into account because there is no adaptive signature in S. American.
+\st{Actually, in the second row, the frequency of the derived allele is increased also in S. American highland population. 
+However, we do not take the patterns in S. American populations into account because there is no adaptive signature in S. America (i.e., the $F_{ST} P$-value is not significant in S. America).}
 On the other hand, we should consider the allelic pattern in S. America in the case of the third row; we cannot utilize the information of \emph{parviglumis}.
-It is impossible to infer the ancestral allele, so we assume the pattern is consistent with highland adaptation if one allele is in higher frequency in Mesoamerican lowlands and S. American populations and the others is in higher frequency in Mesoamerican highlands.
+It is impossible to infer the ancestral allele, so we assume the pattern is consistent with highland adaptation if one allele is in higher frequency in Mesoamerican lowlands and S. American populations and the other is in higher frequency in Mesoamerican highlands.
 We classified the SNPs into lowland adaptation in the same way (from fourth to sixth rows in Figure~\ref{AllelePat}A).
 
 Next, we consider the SNPs with the signatures of adaptation in both Mesoamerica and S. America (Figure~\ref{AllelePat}B).
 The pattern in the first row is consistent with parallel highland adaptation, whereas the second row shows parallel lowland adaptation. 
 We cannot infer lowland or highland adaptation without the outgroup, so we ignore such SNPs.
-The pattern in the third row is the special case: the allele frequency is similar between Mesoamerican lowlands and S. American highlands and similar between Mesoamerican highlands and S. American lowlands.
-This pattern could be explained by that the SNP is linked to a read adaptive SNP and recombination breaks down the linkage between them.
+%The pattern in the third row is the special case: the allele frequency is similar between Mesoamerican lowlands and S. American highlands and similar between Mesoamerican highlands and S. American lowlands.
+%This pattern could be explained by that the SNP is linked to a red adaptive SNP and recombination breaks down the linkage between them.}
 
-Finally, we tested whether PHS test supports highland and lowland adaptation scenario.
+Finally, we tested whether PHS test supports highland and lowland adaptation scenario (summarized in Table~S3).
 Consider the case of highland adaptation.
 We assumed that the putative derived allele is adaptive in highlands and checked whether the haplotype length is longer in highlands than that in lowlands.
 However, haplotype length cannot be compared directly because the derived allele frequency is different between highlands and lowlands.
-Thus, we compared the empirical quantile of PHS test as a indicator of haplotype length given allele frequency (Pr($PHS_{xA}\leq PHS_{null|p}$) in Materials and Methods).
+Thus, we compared the empirical \st{quantile} of PHS test as an indicator of haplotype length given allele frequency (Pr($PHS_{xA}\leq PHS_{null|p}$) in Materials and Methods).
 We just say that the PHS test is consistent if the empirical quantile in highlands is smaller than that in lowlands (haplotype length is longer as the empirical quantile is smaller).
-The result is summarized in Table~S3.
+\st{If we extract random SNPs, the probability that the haplotype length in highlands is longer than that in lowlands is expected to be 50\% by chance.
+However, we rejected the null hypothesis by a Fisher's exact test in all cases (Table~S3).}
 
 \renewcommand{\thefigure}{\Roman{figure}}
 \setcounter{figure}{0}
@@ -748,7 +753,7 @@ The result is summarized in Table~S3.
 \begin{figure}[b]
   \begin{center}
     \includegraphics[width=0.9\columnwidth]{fig/AllelePat.pdf}
-    \caption{Illustration of allele frequency changes in maize and \emph{parviglumis}.  Red and blue bars represent the allele frequency of ancestral and derived, adaptive alleles, respectively.  The allele frequencies in the five populations are shown: \emph{parviglumis}, Mesoamerican lowlands and highlands, and S. America lowlands and highlands. NA in \emph{parviglumis} indicates that there is no SNP data in the site.}
+    \caption{Illustration of allele frequency changes in maize and \emph{parviglumis}.  Red and blue bars represent the allele frequency of ancestral and derived, adaptive alleles, respectively.  The allele frequencies in the five populations are shown: \emph{parviglumis}, Mesoamerican lowlands and highlands, and S. America lowlands and highlands. NA in \emph{parviglumis} indicates that there is no SNP data in the site.  See the text for details. }
     \label{AllelePat}
   \end{center}
 \end{figure}

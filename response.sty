@@ -101,6 +101,22 @@
   %\vskip 1.5em
   }
 
+%\newenvironment{response}[1]{%
+%\setlength{\parskip}{-5.0pt}
+%\begin{itemize}
+%\item \textit{ #1 }
+%\end{itemize}
+%\setlength{\parskip}{10.0pt}
+%}
+
+\newcommand{\response}[1]{%
+\setlength{\parskip}{-5.0pt}
+\begin{itemize}
+\item \textit{ #1 }
+\end{itemize}
+\setlength{\parskip}{10.0pt}
+}
+
 \renewcommand\section{\@startsection {section}{1}{\z@}%
                                      {-3.5ex \@plus -1ex \@minus -.2ex}%
                                      {2.3ex \@plus.2ex}%
