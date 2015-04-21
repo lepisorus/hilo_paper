@@ -16,8 +16,8 @@ List of all SNPs used in study after filtering for quality, HWE, missing data, e
 9th: Freq allele 1 in Mex high
 10th: Freq allele 2 in Mex high
 11th: Fst between Mex low and high
-12th: Fst P-value under Model I
-13th: Fst P-value under Model II
+12th: Fst P-value under Model IB
+13th: Fst P-value under Model IB
 14th: allele 1/2 in SA pops (only allele 1 is shown if monomorphic)
 15th: Sample size in SA low
 16th: Sample size in SA high
@@ -26,8 +26,8 @@ List of all SNPs used in study after filtering for quality, HWE, missing data, e
 19th: Freq allele 1 in SA high
 20th: Freq allele 2 in SA high
 21th: Fst between SA low and high
-22th: Fst P-value under Model I
-23th: Fst P-value under Model III
+22th: Fst P-value under Model II
+23th: Fst P-value under Model II
 
 #Outlier SNPs
 
