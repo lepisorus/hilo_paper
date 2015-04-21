@@ -74,11 +74,7 @@ Thank you for soliciting these reviews, which were very helpful.   We believe we
 
 We provide detailed responses to the reviewers' comments below; the responses are in \textit{italics} and also bulleted for ease of identification.  
 Briefly, the revisions are as follows:  
-\st{Reviewer 1 made three non-compulsory suggestions, and we included analyses based on two of the three suggestions.  
-These additional represent a good deal of extra work, but we believe they strengthen the paper. 
-Reviewer 2 commented that the methods were unclear.  
-In a couple of places I was uncertain as to what, exactly, this reviewer required, but we did substantially revise the description of methods by: i) including them in the narrative of the Results section and ii) expanding the methods section.   
-Because the latter put the manuscript far over the page limit, some of the methods had to be moved to the SI Appendix.}  
+We revised the part of our diffusion approach, following the AE and the reviewers.  We also added the result of metabolic pathway analysis as the reviewer 2 suggested.  Finally, we fully incorporated the other minor comments into our revised version.  
 
 I hope that these revisions will make the paper suitable for publication in Genetics. 
 
@@ -136,7 +132,7 @@ Although I read the section on the theoretical evaluation of convergent evolutio
 
 I thought the use of the SNP array + GBS data to be slightly confusing, especially the high heterozygote error rate in the GBS data? However, the authors are aware of this and have treated the data accordingly.  
 \response{
- As we showed in Figure S2, despite the very high error rate of calling hererozygote SNPs in GBS, we found that estimated allele frequencies from both GBS and MaizeSNP50 are highly correlated.  Also, we carefully filtered out SNPs that showed the departure from Hardy-Weinberg equilibrium (HWE).  We tested different cut-offs of HWE, and obtained the similar results and conclusion.  Those were described in the left column in the page 3.  \comst{Did we clarify it in greater details in the text?} 
+ As we showed in Figure S2, despite the very high error rate of calling hererozygote SNPs in GBS, we found that estimated allele frequencies from both GBS and MaizeSNP50 are highly correlated.  Also, we carefully filtered out SNPs that showed the departure from Hardy-Weinberg equilibrium (HWE).  We tested different cut-offs of HWE, and obtained the similar results and conclusion.  Those have been already described in the left column in the page 3 and in the left column in the page 4.  \comst{Should we clarify it in greater details in the text?} 
  }
 
 Structure analyses:  Using only 3 replicate runs is relatively low, but the results should be robust to this and so I am not too worried.  
@@ -146,72 +142,80 @@ Structure analyses:  Using only 3 replicate runs is relatively low, but the resu
 
 The authors do not find much evidence of the same SNPs and genes underlying adaptation in highland south and meso-America. For personal interest, I would be interested to know if by comparing large segments of the genome (megabases scale), patterns would emerge.  This could imply that certain regions of the genome are more prone to be targets of selection  (because of factors such as variations in recombination or mutation rate). This question would be interesting, but not necessary for the current paper.    
 \response{
- We agreed, and have actually tried to test convergent adaptation by sliding window.  However, the density of our SNPs was not enough high to do this (1 SNP/10 or 20 kb).  Also, the very high recombination rate in the maize genome would limit the effect of selection to a narrow local genomic region (see also the rapid decay of LD in Figure S6), and therefore we thought this approach would not suitable in maize. 
+ We agreed, and have actually tried to test convergent adaptation by sliding window.  However, the density of our SNPs was not enough high to do this (1 SNP/20 kb).  Also, the very high recombination rate in the maize genome would limit the effect of selection to a narrow local genomic region (please see also the rapid decay of LD in Figure S6), and therefore we thought this approach would not suitable in maize. 
 }
 
 
 This is a minor detail, but you start the abstract by defining convergent evolution, then jump right away to talking about convergent ``adaptation".  Perhaps stick to one or another? 
 \response{
-We agreed and thank this comment.  \st{I modified Abstract, Jeff.  Please check!!} 
+We agreed and fixed the abstract.  Thanks!!  \st{I modified Abstract, Jeff.  Please check!!} 
 }
 
 Reviewer 2 Reviewer's Comments to Author
 
 \st{Tajuno} \comst{Ugh.  Reviewer 2 mistaked my name.  Should we correct this?} and colleagues use highland and lowland maize populations from sites in Mesoamerica and South America to search for loci involved in adaptation to high altitude.  They identify models to describe demographic history and then use these as the basis for defining putatively adaptive variants based on highland/lowland differentiation.  Somewhat surprisingly, although they find that highly differentiated SNPs tend to come from the standing variation, few of the most differentiated variants are shared among high altitude sites. Instead, the majority of the variants are identified in only one contrasting population set.   
-%\response{
-% Hello, my name is Takuno, but not Tajuno... 
-%}
+\response{
+We appreciate all your valuable suggestions!!
+}
 
 The authors put quite a lot of effort into modeling demographic histories and are thus able to use a model-based approach to identify candidate adaptive variants.  This is an improvement over a simple tail-based outlier approach.  However, since the main message of the paper is that convergent rather than parallel evolution drove adaptive response, it is important to ensure that this finding is robust and not simply due to false positives or model mis- specification.  In general, in studies of this sort, it is difficult to assess the relative importance of parallel and convergent adaptive shifts. This is because many of the signals will be due to false positives, and these are reduced in the set of variants that share signatures of divergence between the two altitude contrasts.  
 \response{
 We appreciate your comment.  
-To assess the effect of false positives, we tried to use more and less stringent cut-off; we used 0.05, 0.01 and 0.001 as cut-offs of $F_{ST}$ \textit{P} value.   
-We obtained qualitatively similar results in any cases, which are described in the left column in the page 8.  
+To assess the effect of false positives, we have already tried to use more and less stringent cut-offs; we used 0.05, 0.01 and 0.001 as cut-offs of $F_{ST}$ \textit{P} value.   
+We obtained qualitatively similar results in any cases, which have been described in the left column in the page 8.  
 }
 
 Information about variant/gene function could help to strengthen the argument -- or to ensure that the argument is the correct one.  There is really no attempt to provide biological context for the results, but this could complement the findings and could potentially help to make them more convincing.  For example, are the loci identified as adaptive enriched for candidate genes or pathways involved in altitude adaptation? How do the set of loci showing parallel versus convergent adaptive signals compare functionally?   
 \response{
- \st{In progress}. Sho will try this, but the annotation of maize is not as good as Arabidopsis... 
+We agreed this comment.  We analyzed the metabolic networks in maize, which are obtained from MaizeCyc database.  The result was described in the left column in the page 9 and Table S6.
  }
 
 Additional/specific comments:  
 
 To bolster the argument overall, it would be helpful to know whether there is any evidence of convergent adaptation to high altitude at the phenotypic level, for example from transplant experiments or from comparative phenotyping assays in a common garden or other shared environment.  
 \response{
- We like this idea.  Thanks!!  Unfortunately, it will take a long time, so we put this idea into future plans.  In the left column in the page 2, we summarized the previous works related to this comments.  We thought that these works provided the lines of evidence of convergent highland adaptation at the phenotypic level.  
+ We like this idea.  Thanks!!  Unfortunately, it will take a long time, so we put this idea into future plans.  In the left column in the page 2, we have already summarized the previous works related to this comments.  These works provided the lines of evidence of convergent highland adaptation at the phenotypic level.  
  }
 
 
 There are some very extreme outliers in the differentiation analysis (Figure 4). Do these make biological sense? Also, are relevant pathways/biological processes enriched in the less extreme tail?  Is there greater enrichment among the loci that are shared in the two high altitude populations? I suspect the number of false positive results among those differentiated in both high altitude populations would be lower than those that are differentiated in only one.  
 \response{
-\st{In progress} 
+Unfortunately, the annotation of the maize genome is not so good as the other model species such as Arabidopsis.
+So, we could not obtain the functions of the genes with very small $F_{ST}$ \textit{P}-values.
+As in our response to the above comment, we found some metabolic pathways including genes under selection in Mesoamerica and other genes in S. America.
 }
 
 There appears to be strong enrichment of variants with extreme PHS among the variants identified as adaptive. But as far as I could tell, no formal test was conducted. Moreover, I could not find the description of how the authors determined that these had signals from the PHS test. They write that they use the empirical quantile but do not say which quantile is used to define  significance.  
 \response{
 We clarified the part of PHS test in Table S3, File S1, and the text in the right column in the page 5.  
-We used PHS \textit{P}-values as an index of haplotype length.
+We used PHS test \textit{P}-values as an index of haplotype length.
 Consider the situation of highland adaptation.
-We expected that the PHS \textit{P}-value of a putative adaptive variant in the highland population ($PHS_1$) is longer than that in the lowland population ($PHS_2$), taking the frequency of the allele into account.  
+We expected that the PHS test \textit{P}-value of a putative adaptive variant in the highland population ($PHS_1$) is longer than that in the lowland population ($PHS_2$), taking the frequency of the allele into account.  
 Our null expectation is that the probability of $PHS_1>PHS_2$ is 50\% (by chance).  
-Apparently, in Table S3, we found that the null expectation is unlikely by a Fisher's exact test and the SNPs involved in highland adaptation have longer haplotype length.  \\
+Apparently, in Table S3, we found that the null expectation is unlikely by a Fisher's exact test and the SNPs involved in highland adaptation tend have longer haplotype length.  \\
 \st{The reviewer 2 doesn't like a term, "quantile".  What should we use?}
 }
 
 Please explain more about the model for fitting genetic distances.  How was it decided that a 10th degree polynomial curve was the best fit for the genetic distances, and how was this model used in the analysis? (Page 5)  
 \response{
- hoge 
- }
+For the PHS test, We do not need fine scale local recombination rates.  Rather than this, we need recombination rates in the broad scale.  So, we just decided to use a 10th degree polynomial curve by visualization. 
+}
 
 It was really interesting that the authors did not find evidence for a domestication bottleneck.  Since this is such a surprising result and one that is in stark contrast to the expectation, it would be helpful to see more about the robustness of this and to have a more complete comparison to previous work.  
 \response{
-hoge 
+Following this comment, we carefully check the presence/absence of the domestication bottleneck again.  
+Unfortunately, our SNP data are appropriate to infer the demography and highland/lowland populations, 
+but are inappropriate to infer the presence/absence of the domestication bottleneck and its strength in greater details.  
+Thus, we weakened our argument in the text, removed Table S2 and a part of Figure S5.  
+We used the published strength of the domestication bottleneck, but we added the sentence that our $F_{ST}$ outlier approach is fairly independent of the strength of the domestication bottleneck in the right column in the page 10).
 }
 
 Without some sort of evidence of functional significance, the result that different standing variants increase in frequency with altitude in different populations is not completely satisfying.  Since the variants that increase in frequency are as standing variation in both lowland populations, it seems surprising that the sets of putative adaptive variants are almost completely disjoint.  Without additional evidence for enrichment of the same or similar biological pathways or some other evidence that the outliers are involved in adaptation, this pattern seems most consistent with a finding of different sets of false positives in the two data sets.  
 \response{
- \st{In progress}  
- }
+Please see our response to the above comments as for biological significance.
+Even if adaptive variants are from standing genetic variations, all variants are not necessarily selected through a statistical process.   
+Let p be the fixation probability, and the probability that the same variant is fixed independently in Meso- and S. America is $p^2$. 
+}
 
 
 File S1: Directionality of adaptation contains several typos: \\

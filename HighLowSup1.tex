@@ -470,7 +470,7 @@ RIMMA0668	&	Ames 28668	&		&	Granada	&	Puno, Peru	&	-14.9 	&	-70.6 	&	3925	&	Good
 \begin{table}[h]
 
 \begin{center}
- \caption[]{Inference of demographic parameters\hspace*{0.3cm}}
+ \caption[]{Inference of demographic parameters \st{(Remove this table later.)}\hspace*{0.3cm}}
   \textbf{}\\[-2mm]
 {\fontsize{8}{11}\sf
     \begin{tabular}{ccccccccl} \hline\hline
@@ -525,8 +525,7 @@ RIMMA0668	&	Ames 28668	&		&	Granada	&	Puno, Peru	&	-14.9 	&	-70.6 	&	3925	&	Good
    S. America & Highland adaptation & 164 & 230 (71.3\%) &  $P<10^{-5}$  \\
                      & Lowland adaptation & 70 & 50 (71.4\%)  & $P<0.05$ \\[0.1cm]
     \hline\hline
-    \multicolumn{5}{l}{\st{$^a$ Departure from a null expectation that PHS \textit{P}-values as an index of haplotype length is not associated}}\\
-     \multicolumn{5}{l}{\st{with SNPs involved in highland adaptation.  The test was performed by Fisher's exact test.}}\\
+    \multicolumn{5}{l}{\st{$^a$ Association between haplotype length and adaptive signals by $F_{ST}$ analysis.  See Supporting File S1 for details.}}\\
     \end{tabular}
     \label{supp:phs}  % caption is needed to make this work
 }
@@ -590,6 +589,51 @@ NS                                & 133            &  17,518    & 0.018\\[1mm]
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%=
+\begin{table}[h]	
+	\caption[]{\st{List of metabolic pathways with the evidence of convergent adaptation}\hspace*{0.3cm}} 
+			\centering
+			\textbf{}\\[-2mm]
+			{\fontsize{7}{11}\sf
+		    \begin{tabular}{l} \hline\hline\\[-3mm]
+		    Colanic acid building blocks biosynthesis\\
+		    Purine nucleotides \textit{de novo} biosynthesis II\\	    
+		    Adenosine nucleotides \textit{de novo} biosynthesis\\
+NAD/NADH phosphorylation and dephosphorylation\\
+tRNA charging pathway\\
+Superpathway of phenylalanine biosynthesis\\
+Superpathway of tryptophan biosynthesis\\
+Aspartate biosynthesis\\
+Tryptophan biosynthesis\\
+Glutamine biosynthesis III\\
+Isoleucine biosynthesis I\\
+Threonine biosynthesis\\
+Galactose degradation III\\
+UDP-glucose biosynthesis (from glucose 6-phosphate)\\
+Triacylglycerol biosynthesis\\
+Phospholipid biosynthesis II\\
+Phosphatidylglycerol biosynthesis I (plastidic)\\
+Phosphatidylglycerol biosynthesis II (non-plastidic)\\
+CDP-diacylglycerol biosynthesis II\\
+CDP-diacylglycerol biosynthesis I\\
+Ethylene biosynthesis from methionine\\
+Stachyose degradation\\
+Homogalacturonan degradation\\
+Betanidin degradation\\
+Aspartate degradation II\\
+Phosphate utilization in cell wall regeneration\\
+Phosphate acquisition\\
+Superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle\\
+C4 photosynthetic carbon assimilation cycle\\
+Glycolysis IV (plant cytosol)\\
+Glycolysis I\\
+Glycolysis III\\
+		      \hline\hline
+		    \end{tabular}
+		    \label{supp:metabo}  % caption is needed to make this work
+		}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\renewcommand{\arraystretch}{1.1}
@@ -689,7 +733,8 @@ NS                                & 133            &  17,518    & 0.018\\[1mm]
 \begin{figure}[h]
   \begin{center}
     \includegraphics[width=0.6\columnwidth]{fig/bot2.pdf}
-    \caption{Q-Q plot for $-$log$_{10}$-scaled \emph{P}-values of population differentiation between lowland and highland populations. (A) Model IA \emph{v.s.} Model IB in Mesoamerica, (B) Model IA \emph{v.s.} Model II in S. America, (C) Model with \emph{v.s.} without bottleneck in Mesoamerica and (D) Model with \emph{v.s.} without bottleneck in S. America.}
+    \caption{Q-Q plot for $-$log$_{10}$-scaled \emph{P}-values of population differentiation between lowland and highland populations. (A) Model IA \emph{v.s.} Model IB in Mesoamerica, (B) Model IA \emph{v.s.} Model II in S. America.}
+%    \caption{Q-Q plot for $-$log$_{10}$-scaled \emph{P}-values of population differentiation between lowland and highland populations. (A) Model IA \emph{v.s.} Model IB in Mesoamerica, (B) Model IA \emph{v.s.} Model II in S. America, (C) Model with \emph{v.s.} without bottleneck in Mesoamerica and (D) Model with \emph{v.s.} without bottleneck in S. America.}
     \label{fig:qq}
   \end{center}
 \end{figure}
@@ -722,7 +767,6 @@ First, we focus on the SNPs with the signature of adaptation only in Mesoamerica
 The first and second rows show the typical patterns of highland adaptation in Mesoamerica with \emph{parviglumis} data available.
 We simply assume that the allele in higher frequency in \emph{parviglumis} is ancestral. }
 %\jri{we have decent Tripsacum data now, should we go back and re-assess this?}
-
 Both rows show the consistent pattern to highland adaptation in Mesoamerica because the frequency of the putative derived allele in Mesoamerican highlands is highly differentiated from those in both \emph{parviglumis} and Mesoamerican lowlands.
 The patterns in S. America are different between the first and second rows.
 \st{Actually, in the second row, the frequency of the derived allele is increased also in S. American highland population. 
