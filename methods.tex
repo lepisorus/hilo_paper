@@ -186,6 +186,9 @@ We first assume alleles adapted in the highlands are slightly deleterious at low
 The resulting values of $\mutrate$ and $\migrate$ depend most strongly on the population density, the selection coefficient, and the rate at which seed is transported long distances and replanted; \jri{add text about how likely this is, cite JvH and empriical estimates}
 we checked the results by evaluating several choices of these parameters as well as with simulations and more detailed computations, described in the Appendix.
 Here we describe the mathematical details; readers may skip to the results without loss of continuity.
+\plr{JRI:
+    Evidence that long-distance migration is rare and probably not very important.
+}
 
 \paragraph{Demographic model}
 Throughout, we followed \citet{vanHeerwaarden2010} in constructing a detailed demographic model for domesticated maize.
@@ -208,6 +211,8 @@ The rate at which new mutations appear and fix in a highland population, which w
 is approximately equal to the total population size of the highlands multiplied by the mutation rate per generation 
 and the chance that a single such mutation successfully fixes (i.e.\ is not lost to drift).
 The probability that a single new mutant allele providing benefit $s_b$ to heterozygotes at high elevation will fix locally in the high elevation population is approximately $2s_b$ divided by the variance in offspring number \citep{jagers1975branching}.
+\plr{Correct for diploidy.}
+\plr{Add note that this is $N_e/N$, for reviewer 1.}
 The calculation above is not quite correct, as it neglects migration across the altitudinal gradient, but exact numerical calculation of the chance of fixation of a mutation as a function of the location where it first appears indicates that the approximation is quite good (see Figure~\ref{sfig:prob_estab}); for theoretical treatment see \citet{barton1987establishment}.
 
 Concretely, the probability that a new mutation destined for fixation will arise in a patch of high-elevation habitat of area $A$ in a given generation is a function of the density of maize per unit area $\rho$, the selective benefit $s_b$ it provides, the mutation rate $\mu$, and the variance in offspring number $\xi^2$.
@@ -218,6 +223,7 @@ In terms of these parameters, the rate of appearance is
 For estimation of $A$ in South America we overlaid raster layers of altitude (\url{www.worldclim.org}) and extent of maize cultivation (\url{www.earthstat.org}) and calculated the total area of maize cultivated above 1700m using functions in the {\sf raster} package for {\sf R}.
 
 \paragraph{Migration}
+\plr{move this to appendix}
 A corresponding expression for the chance that an allele moves from one highland population to another is harder to intuit, and is addressed in more depth in \cite{ralph2014convergent}.
 If an allele is beneficial at high elevation and fixed in the Mesoamerican highlands but is deleterious at low elevations, then at equilibrium it will be present at low frequency at migration-selection balance in nearby lowland populations \citep{haldane1948theory,slatkin1973geneflow}.
 This equilibrium frequency decays exponentially with distance, so that the highland allele is present at distance $R$ from the highlands at frequency $C \exp(- R \sqrt{2s_m} / \sigma)$, where $s_m$ is the deleterious selection coefficient for the allele in low elevation, $\sigma$ is the mean dispersal distance, and $C$ is a constant depending on geography ($C\approx 1/2$ is close).
@@ -239,6 +245,7 @@ both of these omissions mean we underestimate $\Tmig$.
 
 %%%%%%%% %%%%%%%%
 \paragraph{Neutral alleles}
+\plr{retitle this ``Migration''}
 The above analysis required that alleles be deleterious in the lowlands, 
 and neglected the time to reach migration-selection equilibrium.
 It is therefore helpful to consider the complementary case of an allele that is neutral in the lowlands.
@@ -285,3 +292,5 @@ with $m=4000$ and $\sigma=3.5$km this is 1,328km.
 % lines( nvals, exp.95, lty=2 )
 % lines( nvals, exp.05, lty=2 )
 % lines( nvals, sqrt(2*log(nvals))+2/sqrt(2*log(nvals)), col='red' )
+
+\plr{Analysis of selection model in appendix.}
