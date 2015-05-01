@@ -69,7 +69,7 @@ or entirely from the same field.
 Plants have an average of $\mu_E$ ears per plant, and ears have an average of $N/N_f$ kernels; 
 so a plant has on average $\mu_E N/N_f$ kernels, and a field has on average $\mu_E N$ ears and $\mu_E N^2/N_f$ kernels. 
 %\jri{what happens if we change mean ears per plant from 3 to 1?}
-%\plr{huh, nothing: since we assume number of ears is Poisson and the chance of replanting each ear is independent; the number of replanted ears is Poisson with a mean that is determined by the number of ears needed to replant}
+%\plrnote{huh, nothing: since we assume number of ears is Poisson and the chance of replanting each ear is independent; the number of replanted ears is Poisson with a mean that is determined by the number of ears needed to replant}
 We suppose that a plant with the selected allele is pollen parent to $(1+s) \mu_E N/N_f$ kernels,
 and also seed parent to $(1+s)\mu_E N/N_f$ kernels, still in $\mu_E$ ears.
 The number of offspring a plant has depends on how many of its offspring kernels get replanted.
@@ -132,7 +132,7 @@ and otherwise $\mu_{KM} = 0$ and $\lambda_{PM} = m_g(1+s)$.
 \end{table}
 
 
-\subsection*{Math}
+\subsection*{The generating function}
 
 The generating function of a Poisson with mean $\lambda$ is $\phi(u;\lambda)=\exp(\lambda(u-1))$,
 and the generating function of a Poisson($\mu$) sum of Poisson($\lambda$) values is $\phi(\phi(u;\lambda);\mu)$.
@@ -262,7 +262,7 @@ the rate of adaptation by diffusive migration is more precisely
 \end{align*}
 
 %\jri{do we need to explain? not sure.}
-%\plr{we could just cut the remining discussion.}
+%\plrnote{we could just cut the remining discussion.}
 %But for now, let's interpret.
 
 First note that for $10^{-1} \le s_m \le 10^{-4}$, the value $1/\sqrt{2s_m}$ is between 2 and 70 --
@@ -288,6 +288,64 @@ if $s_m = 10^{-4}$ (very weak selection in the lowlands), then for $R=1,000$ km,
 i.e.\ it would take on the order of 100,000 generations (years) to get a successful migrant only 1,000 km away,
 under this model of undirected, diffusive dispersal.
 For larger $s_m$, the migration rate is much smaller.
+
+
+%%%%%%%%%%%%%
+\subsection*{Migration rate of deleterious alleles}
+
+\plr{
+In the main text we computed $\migrate$, the rate at which new adaptive alleles appeared by mutation.
+A corresponding expression for the chance that an allele moves from one highland population to another is harder to intuit.
+This problem is studied in more depth in \cite{ralph2014convergent},
+under the assumption that the alleles are deleterious between the highlands.
+Since such deleterious alleles are much less likely to transit than neutral ones,
+the analysis in the main text implies that gene flow is unlikely to have shared these alleles between highland regions.
+However, because spatially continuous models assuming selective effects are better understood than neutral ones,
+and we do expect a tradeoff between highland- and lowland-adaptation,
+it is useful to understand what happens in this case as well.
+}
+
+If an allele is beneficial at high elevation and fixed in the Mesoamerican highlands but is deleterious at low elevations, 
+then at equilibrium it will be present at low frequency at migration-selection balance in nearby lowland populations \citep{haldane1948theory,slatkin1973geneflow}.
+This equilibrium frequency decays exponentially with distance, so that the highland allele is present at distance $R$ from the highlands at frequency $C \exp(- R \sqrt{2s_m} / \sigma)$, where $s_m$ is the deleterious selection coefficient for the allele in low elevation, $\sigma$ is the mean dispersal distance, and $C$ is a constant depending on geography ($C\approx 1/2$ is close).
+Multiplying this frequency by a population size gets the predicted number (average density across a large number of generations) of individuals carrying the allele.
+Therefore, in a lowland population of size $N$ at distance $R$ from the highlands, $(N/2)  \exp(- R \sqrt{2s_m} / \sigma)$ 
+is equal to the probability that there are any highland alleles present, multiplied by the expected number of these given that some are present.
+Since we assume the allele is deleterious in the lowlands, if $R$ is large there are likely none present;
+but if there are, the expected number is of order $1/s_m$ \citep{geiger1999elementary,ralph2014convergent}.
+This therefore puts an upper bound on the rate of migration of
+\begin{align} \label{eqn:migrate}
+  \migrate \le (s_m N/2)  \exp(- R \sqrt{2s_m} / \sigma),
+\end{align}
+and we we would need to wait $\Tmig = 1/\migrate$ generations for a rare such excursion to occur.
+This calculation omits the probability that such an allele fixes ($\approx 2s_b/\xi^2$)
+(discussed above)
+and the time to reach migration-selection balance
+(discussed in the main text);
+both of these omissions mean we underestimate $\Tmig$.
+
+
+\paragraph{Results for gene flow of deleterious alleles:}
+From our demographic model we have estimated a mean dispersal distance of $\sigma \approx 3.5$ kilometers per generation.
+With selection against the highland allele in low elevations $10^{-1} \ge s_m \ge 10^{-4}$, 
+the distance $\sigma/\sqrt{2s_m}$ over which the frequency of a highland-adaptive, lowland-deleterious allele decays into the lowlands is still short: 
+between 7 and 250 kilometers.
+Since the Mesoamerican and Andean highlands are around 4,000 km apart, 
+the time needed for a rare allele with weak selective cost $s_m=10^{-4}$ in the lowlands 
+to transit between the two highland regions is $\Tmig \approx 8 \times 10^{4}$ generations. 
+While the exponential dependence on distance in equation \eqref{eqn:migrate} means that shorter distances could be transited more quickly, the waiting time $\Tmig$ is also strongly dependent on the magnitude of the deleterious selection coefficient: with $s_m=10^{-4}$, $\Tmig \approx 25$ generations over a distance of 2,000 km, but increases to $\approx 10^{8}$ generations with a still weak selective cost of $s_m=10^{-3}$.
+%, however: with the still weak selective cost of $s_m=10^{-3}$, for example, $\Tmig$ is $10^8$ generations over 2,000km,
+%-- if the distance between highland patches is 2,000 km (or if $\sigma$ is twice as large) then $\Tmig \approx 25$ generations, indicating that all alleles beneficial in both highlands but with such weak selection cost in the lowlands should be shared if they arose long enough ago for migration-selection balance to have been reached.
+%and much larger for longer distances.
+
+%\plrnote{The above has changed because I found an factor of 2 missed out in $\sigma$, 
+%and the R code has an factor of $2s_b/\xi^2$ that wasn't present in \eqref{eqn:migrate}.
+%This is an overestimate of the rate that is more correctly given in the supplement;
+%I didn't worry about this before, when migration was unlikely for all parameter values.
+%However, now $\Tmig$ is smallish for $R=1,000$ and $s_m=10^{-3}$ with the approximation \eqref{eqn:migrate},
+%but not with the better expression of the appendix.
+%This makes me want to put in the better expression, which I can't quickly motivate,
+%except that the next bit makes it not matter, I think.}
 
 
 

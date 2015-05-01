@@ -5,44 +5,44 @@ The style file: geneticsT2.bst
 Database file #1: MZpara1.bib.bib
 Database file #2: MZpara2.bib.bib
 Database file #3: plr-hilo.bib
-You've used 65 entries,
+You've used 66 entries,
             2295 wiz_defined-function locations,
-            955 strings with 21698 characters,
-and the built_in function-call counts, 34528 in all, are:
-= -- 3764
-> -- 2076
-< -- 21
-+ -- 819
-- -- 784
-* -- 2971
-:= -- 6210
-add.period$ -- 133
-call.type$ -- 65
-change.case$ -- 848
+            959 strings with 21819 characters,
+and the built_in function-call counts, 34994 in all, are:
+= -- 3817
+> -- 2092
+< -- 23
++ -- 826
+- -- 788
+* -- 2995
+:= -- 6279
+add.period$ -- 135
+call.type$ -- 66
+change.case$ -- 855
 chr.to.int$ -- 64
-cite$ -- 65
-duplicate$ -- 859
-empty$ -- 1757
-format.name$ -- 856
-if$ -- 6819
-int.to.chr$ -- 2
+cite$ -- 66
+duplicate$ -- 885
+empty$ -- 1784
+format.name$ -- 862
+if$ -- 6927
+int.to.chr$ -- 3
 int.to.str$ -- 0
-missing$ -- 68
-newline$ -- 329
-num.names$ -- 202
-pop$ -- 719
+missing$ -- 69
+newline$ -- 334
+num.names$ -- 206
+pop$ -- 726
 preamble$ -- 1
-purify$ -- 851
+purify$ -- 858
 quote$ -- 0
-skip$ -- 624
+skip$ -- 650
 stack$ -- 0
-substring$ -- 2178
-swap$ -- 16
-text.length$ -- 1
+substring$ -- 2204
+swap$ -- 29
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 384
+type$ -- 390
 warning$ -- 0
-while$ -- 195
+while$ -- 198
 width$ -- 0
-write$ -- 847
+write$ -- 860

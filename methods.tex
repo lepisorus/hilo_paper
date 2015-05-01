@@ -63,7 +63,7 @@ Observed joint frequency distributions (JFDs) were calculated using the GBS data
 A subset of synonymous and noncoding SNPs were utilized that had $\geq15$ individuals without missing data in both lowland and highland populations and did not violate HWE.  
 A HWE cut-off of $P<0.005$ was used for each subpopulation due to our under-calling of heterozygotes. 
 
-%\plr{this next sentence is confusing.  can just delete the ``for the X populations'', as this is explained later?}
+%\plrnote{this next sentence is confusing.  can just delete the ``for the X populations'', as this is explained later?}
 %In total, we included 18,745 synonymous and noncoding SNPs for the Mesoamerican populations in Models IA and IB, 14,508 for the S. American populations in Model I and 11,305 for the Mesoamerican lowland population and the S. American populations in Model II.  
 We obtained similar results under more or less stringent thresholds for significance ($P < 0.05 \sim 0.0005$; data not shown), though the number of SNPs was very small at $P<0.05$.  
 
@@ -175,18 +175,48 @@ $\bar{d_{ij}}$ is the genome-wide mean of distances over which individuals $i$ a
 and $\sigma_{ij}$ is the standard deviation of the distribution of distances.  
 To identify outlying PHS values, we used the empirical \st{quantile} \comst{I think the reviewers 2 does not like this term}, calculated as the proportion of alleles of the same frequency genome-wide that have a larger PHS value; \st{we calculated Pr($PHS_{xA}\leq PHS_{null|p}$), where $PHS_{null|p}$ is PHS values for alleles in frequency, $p$}.
 
-Genetic distances were obtained for the MaizeSNP50 data \cite[]{Ganal_2011_22174790} and fit using a tenth degree polynomial curve to all SNPs (data not shown).
+Genetic distances were obtained for the MaizeSNP50 data \citep{Ganal_2011_22174790} and fit using a tenth degree polynomial curve to all SNPs (data not shown).
 
 %%%% PLR:
 \subsection*{Theoretical evaluation of convergent evolution }
-We build on results from \cite{ralph2014convergent} to assess whether the abundance and degree of coincidence of presumably adaptive high-$F_{ST}$ alleles is consistent with what is known about the population history of maize.
-To do this,
-we evaluated the rate at which we expect an allele that provides a selective advantage at higher elevation to arise by new mutation in a highland region ($\mutrate$), and the rate at which such an allele already present in the Mesoamerican highlands would transit the intervening lowlands and fix in the Andean highlands ($\migrate$).
-We first assume alleles adapted in the highlands are slightly deleterious at lower elevation, consistent with empirical findings in reciprocal transplant experiments in Mexico \cite[]{Mercer2008}.
-The resulting values of $\mutrate$ and $\migrate$ depend most strongly on the population density, the selection coefficient, and the rate at which seed is transported long distances and replanted; \jri{add text about how likely this is, cite JvH and empriical estimates}
+
+\plr{
+We now turn to theory
+to assess whether the abundance and degree of coincidence of presumably adaptive high-$F_{ST}$ alleles is consistent with what is known about the population history of maize.
+There are three ways that adaptive alleles could be shared between highland populations:
+(a) by appearing in both locations as independent, \textit{de novo} mutations;
+(b) by moving from highland population to the other my migration;
+and 
+(c) through convergent selective forces acting on shared standing variation.
+In the text we provide fairly rough estimates,
+and develop more detailed, complementary models 
+that build on the work in \citet{ralph2014convergent} and \citet{ralph2014standing}
+in the Appendix.
+% PLR: to explain why we are using a complicated model.
+Much of the population genetics theory we use
+relies on universality results that reduce demographic models
+to two parameters: the dispersal distance (mean parent-offspring distance),
+and the variance in offspring number.
+However, these universality results do not hold if either distribution
+(of dispersal distribution or of offspring number)
+is sufficiently long-tailed,
+so we chose to implement a fairly detailed demographic model
+to both get a good idea of what part of parameter space we should focus on,
+and to verify that the approximation results we use are good.
+}
+
+To assess the likely importance of (a) and (b),
+we first evalute the rate at which we expect an allele that provides a selective advantage at higher elevation to arise by new mutation in a highland region ($\mutrate$), 
+and then use coalescent theory to show that even a highland-adapted allele that was neutral in the lowlands
+is unlikely to have had time to spread between highland populations under neutral gene flow.
+It may be more likely that alleles adapted in the highlands are slightly deleterious at lower elevation, 
+consistent with empirical findings in reciprocal transplant experiments in Mexico \cite[]{Mercer2008};
+in the Appendix we find the rate at which such an allele already present in the Mesoamerican highlands would transit the intervening lowlands and fix in the Andean highlands.
+The resulting values depend most strongly on the population density, the selection coefficient, and the rate at which seed is transported long distances and replanted; 
+\jri{add text about how likely this is, cite JvH and emprical estimates}
 we checked the results by evaluating several choices of these parameters as well as with simulations and more detailed computations, described in the Appendix.
 Here we describe the mathematical details; readers may skip to the results without loss of continuity.
-\plr{JRI:
+\plrnote{JRI:
     Evidence that long-distance migration is rare and probably not very important.
 }
 
@@ -211,8 +241,8 @@ The rate at which new mutations appear and fix in a highland population, which w
 is approximately equal to the total population size of the highlands multiplied by the mutation rate per generation 
 and the chance that a single such mutation successfully fixes (i.e.\ is not lost to drift).
 The probability that a single new mutant allele providing benefit $s_b$ to heterozygotes at high elevation will fix locally in the high elevation population is approximately $2s_b$ divided by the variance in offspring number \citep{jagers1975branching}.
-\plr{Correct for diploidy.}
-\plr{Add note that this is $N_e/N$, for reviewer 1.}
+\plrnote{Correct for diploidy.}
+\plrnote{Add note that this is $N_e/N$, for reviewer 1.}
 The calculation above is not quite correct, as it neglects migration across the altitudinal gradient, but exact numerical calculation of the chance of fixation of a mutation as a function of the location where it first appears indicates that the approximation is quite good (see Figure~\ref{sfig:prob_estab}); for theoretical treatment see \citet{barton1987establishment}.
 
 Concretely, the probability that a new mutation destined for fixation will arise in a patch of high-elevation habitat of area $A$ in a given generation is a function of the density of maize per unit area $\rho$, the selective benefit $s_b$ it provides, the mutation rate $\mu$, and the variance in offspring number $\xi^2$.
@@ -223,29 +253,8 @@ In terms of these parameters, the rate of appearance is
 For estimation of $A$ in South America we overlaid raster layers of altitude (\url{www.worldclim.org}) and extent of maize cultivation (\url{www.earthstat.org}) and calculated the total area of maize cultivated above 1700m using functions in the {\sf raster} package for {\sf R}.
 
 \paragraph{Migration}
-\plr{move this to appendix}
-A corresponding expression for the chance that an allele moves from one highland population to another is harder to intuit, and is addressed in more depth in \cite{ralph2014convergent}.
-If an allele is beneficial at high elevation and fixed in the Mesoamerican highlands but is deleterious at low elevations, then at equilibrium it will be present at low frequency at migration-selection balance in nearby lowland populations \citep{haldane1948theory,slatkin1973geneflow}.
-This equilibrium frequency decays exponentially with distance, so that the highland allele is present at distance $R$ from the highlands at frequency $C \exp(- R \sqrt{2s_m} / \sigma)$, where $s_m$ is the deleterious selection coefficient for the allele in low elevation, $\sigma$ is the mean dispersal distance, and $C$ is a constant depending on geography ($C\approx 1/2$ is close).
-Multiplying this frequency by a population size gets the predicted number (average density across a large number of generations) of individuals carrying the allele.
-Therefore, in a lowland population of size $N$ at distance $R$ from the highlands, $(N/2)  \exp(- R \sqrt{2s_m} / \sigma)$ 
-is equal to the probability that there are any highland alleles present, multiplied by the expected number of these given that some are present.
-Since we assume the allele is deleterious in the lowlands, if $R$ is large there are likely none present;
-but if there are, the expected number is of order $1/s_m$ \citep{geiger1999elementary,ralph2014convergent}.
-This therefore puts an upper bound on the rate of migration of
-\begin{align} \label{eqn:migrate}
-  \migrate \le (s_m N/2)  \exp(- R \sqrt{2s_m} / \sigma),
-\end{align}
-and we we would need to wait $\Tmig = 1/\migrate$ generations for a rare such excursion to occur.
-This calculation omits the probability that such an allele fixes ($\approx 2s_b/\xi^2$)
-(which is covered in the more complete form of the Appendix)
-and the time to reach migration-selection balance
-(discussed in the next section);
-both of these omissions mean we underestimate $\Tmig$.
+A corresponding expression for the chance that an allele moves from one highland population to another is harder to intuit.
 
-%%%%%%%% %%%%%%%%
-\paragraph{Neutral alleles}
-\plr{retitle this ``Migration''}
 The above analysis required that alleles be deleterious in the lowlands, 
 and neglected the time to reach migration-selection equilibrium.
 It is therefore helpful to consider the complementary case of an allele that is neutral in the lowlands.
@@ -293,4 +302,3 @@ with $m=4000$ and $\sigma=3.5$km this is 1,328km.
 % lines( nvals, exp.05, lty=2 )
 % lines( nvals, sqrt(2*log(nvals))+2/sqrt(2*log(nvals)), col='red' )
 
-\plr{Analysis of selection model in appendix.}
