@@ -87,48 +87,85 @@ Jeffrey Ross-Ibarra
 --------------------------------------------------------------------
 
 
-AE comments: 
+\textbf{AE comments:}
 
-The ``Demographic model" is too detailed.  These fine-scaled demographic factors influence just two parameters: the effective population density and the rate of local diffusion.  Given all the uncertainties, it may be best just to consider a wide range of more or less plausible values. 
+The ``Demographic model" is too detailed.  These fine-scaled demographic factors influence just two parameters: 
+the effective population density and the rate of local diffusion.  
+Given all the uncertainties, it may be best just to consider a wide range of more or less plausible values. 
 \response{
-    We think we cover the range pretty well?  
-    This should be better after removing the selection model.
+    We certainly agree that the demography should just come down to these parameters;
+    we decided to explicitly work through the full model to avoid making mistakes in the process of handwaving
+    (we find it hard to intuit the proper range of plausible offspring variances for a model like this!),
+    and to be able to check approximations like that we use for the probability of fixation
+    (as in Figure A1 in the appendix, which is done with the exact branching process).
+    Call us conservative, but we like having a nice, concrete model to feel solid about.
+    We've tried to make this more clear
+    (see first paragraph in ``Theoretical evaluation'', around ``Much of the population genetics theory we use relies on universality results \ldots''),
+    and tried in any case to discuss the effects of uncertainty in these critical parameters (in Comparison to Theory).
 }
 
-It is interesting to consider the relative plausibility that alleles that are favoured at high altitude either arose by mutation at high altitude, or moved from low altitudes where they are disfavoured.  However, the actual model is not spell out.  Are these habitats disjunct?  Or is there a continuous range? If the latter, does the selection coefficient change abruptly, or gradually?  It seems that there is a gap of distance R between the two habitats, but then, how does the maize get across?  This all seems obscure. 
+It is interesting to consider the relative plausibility that alleles that are favoured at high altitude either arose by mutation at high altitude, 
+or moved from low altitudes where they are disfavoured.  
+However, the actual model is not spelled out.  
+Are these habitats disjunct?  
+Or is there a continuous range? 
+If the latter, does the selection coefficient change abruptly, or gradually?  
+It seems that there is a gap of distance R between the two habitats, but then, how does the maize get across?  
+This all seems obscure. 
 \response{
-    Need to clarify.
+    Apologies, we were working with a continuous model,
+    approximating continuously-varying altitude by discrete patches of high/low elevation,
+    and checked this approximation in the Appendix (around Figure A1).
+    To make this more clear, we've separated out the geographic description into a paragraph ``Geographic distribution''.
 }
 
 
-More seriously, simple diffusion is not plausible for very long-term movement: assuming diffusion alone makes the chances of movement extremely sensitive to the parameters, as is apparent from the examples given.  Ultimately, what matters is the number of new mutations in the highland population, relative to the numbers of mutations that arise in the lowland, persist despite counter-selection, and move, one way or another, to the highlands.  It would be simpler just to say that rather than make over-elaborate diffusion models. 
+More seriously, simple diffusion is not plausible for very long-term movement: 
+assuming diffusion alone makes the chances of movement extremely sensitive to the parameters, 
+as is apparent from the examples given.  
+Ultimately, what matters is the number of new mutations in the highland population, 
+relative to the numbers of mutations that arise in the lowland, 
+persist despite counter-selection, and move, one way or another, to the highlands.  
+It would be simpler just to say that rather than make over-elaborate diffusion models. 
 \response{
-    Refocus on neutral calcs.  Also note discussion in Discussion of standing variation in founder pops, and unlikeliness of long-distance migration.
+    We realized that since the coalescent theory calculations come to the same conclusion, and are more general,
+    that the section involving migration-selection balance wasn't essential to the paper,
+    so we moved it to the appendix.
+    We've also rewritten the first paragraph to ``Theoretical evaluation'',
+    clarifying that we are interested in the three sources of convergence: new mutation, migration between highlands, and convergent selection on standing variation.
+    Also note the \plr{XXX add} section of the Discussion about shared standing variation in founder populations.
 }
 
 
 In any case, it seems more plausible that adaptation is from standing variation, but picks up different allelic combinations in different high-altitude populations.  That is not at all unlikely, either by chance or because of epistasis which allows the same phenotype to come from different (and incompatible) gene combinations.  Actually, crossing experiments between high-altitude populations would be most informative here. 
 \response{
-    As previous note.
+  Great points. See previous note, and our additions to the Discussion. \plr{XXX add}
 }
 
 
 The fixation probability result (attributed to Jagers 1975) is wrong.  Fixation probability is 2s(Ne/N).  For diploid sexualise, Ne=N if the offspring distribution is Poisson with mean 2, in which case the variance of offspring number is 2.  The error may have come from confusion between numbers of genes and numbers of offspring from a sexual pair.
 \response{
-    Need to fix.
+    Whoops!  We've taken the easy way out, redefining $\xi^2$ to the the ``haploid'' variance in offspring number.
+    Hopefully the intent of the reference to Jagers is more clear now;
+    probably there is a better reference, but we haven't been able to track it down.
 }
 
-Reviewer 1 Reviewer's Comments to Author
+\textbf{Reviewer 1: Reviewer's Comments to Author}
 
 I have reviewed the work of Takuno and colleagues on the independent genetic basis of adaptation in maize. The manuscript is well written, the questions that are addressed are well researched and are analyzed in a very thorough and complete fashion. I honestly don't have much to say about it, besides congratulating the authors on producing an excellent and thorough investigation of the demographics and genetic basic of adaptation in maize. The demonstration of the independent origin of highland maize is convincing and the role of adaptive introgression from Zea mays mexicana quite fascinating actually.  
 \response{
- We are grad that the reviewer likes our paper.  The comments are very helpful!! 
+   We are glad that the reviewer likes our paper.  The comments are very helpful!! 
 }
 
 Although I read the section on the theoretical evaluation of convergent evolution, followed its logical argument and agreed with it, I did not review it in details.  It is beyond my range of expertise.  I do wonder however how realistic these models are for domesticated species, where census sizes have probably little do to with effective population sizes, and where alleles could potentially be transported several hundreds (or more?) km away in a single generation by humans.  
 \response{
-\jri{PR to add sentence about N vs Ne. JRI to read text and add/modify to clarify. JRI to add text about long distance.}
-\plr{    (add sentence when introducing probability of fixation to say that this is equal to Ne/N)}
+    We are glad the theoretical argument was convincing even without the mathematical details.
+    The effective population size is properly accounted for here --
+    this is, for instance, what the calculation of $\xi^2$ is doing:
+    another (less intuitive, in our view) way to phrase this is, as the AE mentions above,
+    that the probability of fixation is $2s (N_e/N)$; and $N/N_e = \xi^2$.
+    We've also added a note to this effect in the text.
+\jri{JRI to read text and add/modify to clarify. JRI to add text about long distance.}
  }
 
 
@@ -153,9 +190,10 @@ This is a minor detail, but you start the abstract by defining convergent evolut
 We agreed and fixed the abstract.  Thanks!!  \st{I modified Abstract, Jeff.  Please check!!} 
 }
 
-Reviewer 2 Reviewer's Comments to Author
 
-\st{Tajuno} \comst{Ugh.  Reviewer 2 mistaked my name.  Should we correct this?} and colleagues use highland and lowland maize populations from sites in Mesoamerica and South America to search for loci involved in adaptation to high altitude.  They identify models to describe demographic history and then use these as the basis for defining putatively adaptive variants based on highland/lowland differentiation.  Somewhat surprisingly, although they find that highly differentiated SNPs tend to come from the standing variation, few of the most differentiated variants are shared among high altitude sites. Instead, the majority of the variants are identified in only one contrasting population set.   
+\textbf{Reviewer 2: Reviewer's Comments to Author}
+
+Takuno and colleagues use highland and lowland maize populations from sites in Mesoamerica and South America to search for loci involved in adaptation to high altitude.  They identify models to describe demographic history and then use these as the basis for defining putatively adaptive variants based on highland/lowland differentiation.  Somewhat surprisingly, although they find that highly differentiated SNPs tend to come from the standing variation, few of the most differentiated variants are shared among high altitude sites. Instead, the majority of the variants are identified in only one contrasting population set.   
 \response{
 We appreciate all your valuable suggestions!!
 }
@@ -196,6 +234,7 @@ We expected that the PHS test \textit{P}-value of a putative adaptive variant in
 Our null expectation is that the probability of $PHS_1>PHS_2$ is 50\% (by chance).  
 Apparently, in Table S3, we found that the null expectation is unlikely by a Fisher's exact test and the SNPs involved in highland adaptation tend have longer haplotype length.  \\
 \st{The reviewer 2 doesn't like a term, "quantile".  What should we use?}
+\plr{I don't think they disagree with the word ``quantile''; the complaint is that it's not clear how those quantiles are used? We just say ``to identify outlying $PHS$ values'', but we don't say what quantile was deemed ``outlying''.}
 }
 
 Please explain more about the model for fitting genetic distances.  How was it decided that a 10th degree polynomial curve was the best fit for the genetic distances, and how was this model used in the analysis? (Page 5)  

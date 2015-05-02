@@ -234,23 +234,47 @@ except that heterozygotes have on average $(1+s_b)$ offspring that carry the sel
 Each ear has a small chance of being chosen for replanting, so the number of ears replanted of a given individual is Poisson, and assuming that pollen is well-mixed, the number of pollen-parent kernels is Poisson as well.
 Each of these numbers of offspring has a mean that depends on whether the field is replanted with new stock, and whether ears are chosen from this field to replant other fields, so the total number of offspring is a mixture of Poissons. 
 These means, and more details of the computations, are found in the Appendix. % \ref{apx:demographic_model}.}
-At the parameter values given, the variance in number of offspring, $\xi^2$, is between 20 (for wild-type) and 30 (for $s_b=0.1$), and the dispersal distance (mean distance between parent and offspring) is $\sigma=3.5$km.
+At the parameter values given, 
+the dispersal distance (mean distance between parent and offspring) is $\sigma=3.5$km,
+\plr{
+and the haploid variance in number of offspring 
+($\xi^2$, the variance in number of inherited copies of a chosen parental allele)
+}
+is between 20 (for wild-type) and 30 (for $s_b=0.1$).
+\plr{
+(Note that in a panmictic population, $\xi^2 \approx N/N_e$.)
+}
 
 \paragraph{New mutations}
 The rate at which new mutations appear and fix in a highland population, which we denote $\mutrate$, 
 is approximately equal to the total population size of the highlands multiplied by the mutation rate per generation 
 and the chance that a single such mutation successfully fixes (i.e.\ is not lost to drift).
-The probability that a single new mutant allele providing benefit $s_b$ to heterozygotes at high elevation will fix locally in the high elevation population is approximately $2s_b$ divided by the variance in offspring number \citep{jagers1975branching}.
-\plrnote{Correct for diploidy.}
-\plrnote{Add note that this is $N_e/N$, for reviewer 1.}
-The calculation above is not quite correct, as it neglects migration across the altitudinal gradient, but exact numerical calculation of the chance of fixation of a mutation as a function of the location where it first appears indicates that the approximation is quite good (see Figure~\ref{sfig:prob_estab}); for theoretical treatment see \citet{barton1987establishment}.
+The probability that a single new mutant allele providing benefit $s_b$ to heterozygotes at high elevation 
+will fix locally in the high elevation population is approximately $2s_b$ divided by the 
+\plr{
+haploid variance in offspring number 
+(by expanding the generating function near 1, see \citep{jagers1975branching}; or \citet{lambert2006probability} for more sophisticated models).
+}
 
 Concretely, the probability that a new mutation destined for fixation will arise in a patch of high-elevation habitat of area $A$ in a given generation is a function of the density of maize per unit area $\rho$, the selective benefit $s_b$ it provides, the mutation rate $\mu$, and the variance in offspring number $\xi^2$.
 In terms of these parameters, the rate of appearance is 
 \begin{align} \label{eqn:mutrate}
   \mutrate = \frac{2 \mu \rho A s_b}{\xi^2} .
 \end{align}
-For estimation of $A$ in South America we overlaid raster layers of altitude (\url{www.worldclim.org}) and extent of maize cultivation (\url{www.earthstat.org}) and calculated the total area of maize cultivated above 1700m using functions in the {\sf raster} package for {\sf R}.
+
+\plr{
+\paragraph{Geographic distribution}
+Throughout we work with populations distributed continuously across geography,
+with two regions of high elevation, the Mesoamerican and Andean highlands, separated by about 4,000km.
+The value $A$ in equation \eqref{eqn:mutrate} is the total cultivated area in which the (highland-adapted) alleles in question are beneficial;
+for estimation of $A$ in South America we overlaid raster layers of altitude (\url{www.worldclim.org}) and extent of maize cultivation (\url{www.earthstat.org}) and calculated the total area of maize cultivated above 1700m using functions in the {\sf raster} package for {\sf R}.
+Of course, the selective benefit of highland alleles is not discrete, but likely changes continuously with altitude.
+The calculation above does not take this into account,
+but exact numerical calculation of the chance of fixation of a mutation 
+as a function of the location 
+where it first appears indicates that the approximation is quite good (see Figure~\ref{sfig:prob_estab}); 
+for theoretical treatment see \citet{barton1987establishment}.
+}
 
 \paragraph{Migration}
 A corresponding expression for the chance that an allele moves from one highland population to another is harder to intuit.
