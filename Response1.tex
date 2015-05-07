@@ -171,12 +171,12 @@ Although I read the section on the theoretical evaluation of convergent evolutio
 
 I thought the use of the SNP array + GBS data to be slightly confusing, especially the high heterozygote error rate in the GBS data? However, the authors are aware of this and have treated the data accordingly.  
 \response{
- As we showed in Figure S2, despite the very high error rate of calling hererozygote SNPs in GBS, we found that estimated allele frequencies from both GBS and MaizeSNP50 are highly correlated.  Also, we carefully filtered out SNPs that showed the departure from Hardy-Weinberg equilibrium (HWE).  We tested different cut-offs of HWE, and obtained the similar results and conclusion.  Those have been already described in the left column in the page 3 and in the left column in the page 4.  \comst{Should we clarify it in greater details in the text?} 
+ As we showed in Figure S2, despite the very high error rate of calling hererozygote SNPs in GBS, we found that estimated allele frequencies from both GBS and MaizeSNP50 are highly correlated.  Also, we carefully filtered out SNPs that showed the departure from Hardy-Weinberg equilibrium (HWE).  We tested different cut-offs of HWE, and obtained the similar results and conclusion.  Those have been already described \st{in the left column in the page 3 and in the left column in the page 4}\comst{check these page numbers before submission}.  \comst{Should we clarify it in greater details in the text?} 
  }
 
 Structure analyses:  Using only 3 replicate runs is relatively low, but the results should be robust to this and so I am not too worried.  
 \response{
- Actually, we ran STRUCTURE more than 3 times for preliminary surveys, and confirmed that our final result is robust.  Thanks for the comment, but we keep the text unedited. 
+ Actually, we ran STRUCTURE more than 3 times for preliminary surveys, and confirmed that our final result is robust.  We keep the text unedited, but thanks!!  
  }
 
 The authors do not find much evidence of the same SNPs and genes underlying adaptation in highland south and meso-America. For personal interest, I would be interested to know if by comparing large segments of the genome (megabases scale), patterns would emerge.  This could imply that certain regions of the genome are more prone to be targets of selection  (because of factors such as variations in recombination or mutation rate). This question would be interesting, but not necessary for the current paper.    
@@ -201,13 +201,13 @@ We appreciate all your valuable suggestions!!
 The authors put quite a lot of effort into modeling demographic histories and are thus able to use a model-based approach to identify candidate adaptive variants.  This is an improvement over a simple tail-based outlier approach.  However, since the main message of the paper is that convergent rather than parallel evolution drove adaptive response, it is important to ensure that this finding is robust and not simply due to false positives or model mis- specification.  In general, in studies of this sort, it is difficult to assess the relative importance of parallel and convergent adaptive shifts. This is because many of the signals will be due to false positives, and these are reduced in the set of variants that share signatures of divergence between the two altitude contrasts.  
 \response{
 We appreciate your comment.  
-To assess the effect of false positives, we have already tried to use more and less stringent cut-offs; we used 0.05, 0.01 and 0.001 as cut-offs of $F_{ST}$ \textit{P} value.   
-We obtained qualitatively similar results in any cases, which have been described in the left column in the page 8.  
+To assess the effect of false positives, we have already tried to use more or less stringent cut-offs; we used 0.05, 0.01 and 0.001 as cut-offs of $F_{ST}$ \textit{P} values.   
+We obtained qualitatively similar results in any cases, which have been described \st{in the left column in the page 8}.  
 }
 
 Information about variant/gene function could help to strengthen the argument -- or to ensure that the argument is the correct one.  There is really no attempt to provide biological context for the results, but this could complement the findings and could potentially help to make them more convincing.  For example, are the loci identified as adaptive enriched for candidate genes or pathways involved in altitude adaptation? How do the set of loci showing parallel versus convergent adaptive signals compare functionally?   
 \response{
-We agreed this comment.  We analyzed the metabolic networks in maize, which are obtained from MaizeCyc database.  The result was described in the left column in the page 9 and Table S6.
+We agreed this comment.  We analyzed the metabolic networks in maize, which are obtained from MaizeCyc database.  The result was described \st{in the left column in the page 9} and Table S6.
  }
 
 Additional/specific comments:  
@@ -227,14 +227,15 @@ As in our response to the above comment, we found some metabolic pathways includ
 
 There appears to be strong enrichment of variants with extreme PHS among the variants identified as adaptive. But as far as I could tell, no formal test was conducted. Moreover, I could not find the description of how the authors determined that these had signals from the PHS test. They write that they use the empirical quantile but do not say which quantile is used to define  significance.  
 \response{
-We clarified the part of PHS test in Table S3, File S1, and the text in the right column in the page 5.  
+We clarified the part of PHS test in Table S3, File S1, and the text \st{in the right column in the page 5}.  
 We used PHS test \textit{P}-values as an index of haplotype length.
 Consider the situation of highland adaptation.
-We expected that the PHS test \textit{P}-value of a putative adaptive variant in the highland population ($PHS_1$) is longer than that in the lowland population ($PHS_2$), taking the frequency of the allele into account.  
+We expected that the PHS test \textit{P}-value of a putative adaptive variant in the highland population ($PHS_1$) is longer than that in the lowland population ($PHS_2$), taking the frequency of the adaptive allele in each population into account.  
 Our null expectation is that the probability of $PHS_1>PHS_2$ is 50\% (by chance).  
 Apparently, in Table S3, we found that the null expectation is unlikely by a Fisher's exact test and the SNPs involved in highland adaptation tend have longer haplotype length.  \\
 \st{The reviewer 2 doesn't like a term, "quantile".  What should we use?}
 \plr{I don't think they disagree with the word ``quantile''; the complaint is that it's not clear how those quantiles are used? We just say ``to identify outlying $PHS$ values'', but we don't say what quantile was deemed ``outlying''.}
+\comst{OK.  Thank you, Peter!!  I tried to make it clearer in the main text and Supporting file S1. (not sure it's ok, though...)}
 }
 
 Please explain more about the model for fitting genetic distances.  How was it decided that a 10th degree polynomial curve was the best fit for the genetic distances, and how was this model used in the analysis? (Page 5)  
@@ -248,7 +249,7 @@ Following this comment, we carefully check the presence/absence of the domestica
 Unfortunately, our SNP data are appropriate to infer the demography and highland/lowland populations, 
 but are inappropriate to infer the presence/absence of the domestication bottleneck and its strength in greater details.  
 Thus, we weakened our argument in the text, removed Table S2 and a part of Figure S5.  
-We used the published strength of the domestication bottleneck, but we added the sentence that our $F_{ST}$ outlier approach is fairly independent of the strength of the domestication bottleneck in the right column in the page 10).
+We used the published strength of the domestication bottleneck, but we added the sentence that our $F_{ST}$ outlier approach is fairly independent of the strength of the domestication bottleneck \st{in the right column in the page 10}.
 }
 
 Without some sort of evidence of functional significance, the result that different standing variants increase in frequency with altitude in different populations is not completely satisfying.  Since the variants that increase in frequency are as standing variation in both lowland populations, it seems surprising that the sets of putative adaptive variants are almost completely disjoint.  Without additional evidence for enrichment of the same or similar biological pathways or some other evidence that the outliers are involved in adaptation, this pattern seems most consistent with a finding of different sets of false positives in the two data sets.  
@@ -270,7 +271,7 @@ I am not sure what the following sentence means: This pattern could be explained
 
 Figure I: The legend is insufficient to understand what is plotted here. Mainly, in panel A, I cannot find any description of what is represented in each row. Panel B is much more intuitive, but I am still not sure what parallel adaptation with recombination means.  
 \response{ 
-We explained the pattern of allele frequency changes in the text rather than in the legend.  We tried to make it clearer.  Hope it is understandable.   
+We explained the pattern of allele frequency changes in the text in File S1 rather than in the legend.  We tried to make it clearer.  Hope it is understandable.   
 }
 
 \jri{y'all gotta stop doing this dumb stuff we just did; look at phenotypes, make crosses.}

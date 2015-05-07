@@ -173,7 +173,7 @@ Z_{ijx} = \frac{ d_{ijx} - \bar{d_{ij}} }{ \sigma_{ij} }
 \noindent where $d_{ijx}$ is the genetic distance over which individuals $i$ and $j$ are identical surrounding position $x$, 
 $\bar{d_{ij}}$ is the genome-wide mean of distances over which individuals $i$ and $j$ are identical, 
 and $\sigma_{ij}$ is the standard deviation of the distribution of distances.  
-To identify outlying PHS values, we used the empirical \st{quantile} \comst{I think the reviewers 2 does not like this term}, calculated as the proportion of alleles of the same frequency genome-wide that have a larger PHS value; \st{we calculated Pr($PHS_{xA}\leq PHS_{null|p}$), where $PHS_{null|p}$ is PHS values for alleles in frequency, $p$}.
+To identify outlying PHS values, we used the empirical quantile, calculated as the proportion of alleles of the same frequency genome-wide that have a larger PHS value; \st{we calculated Pr($PHS_{xA}\leq PHS_{null|p}$), where $PHS_{null|p}$ is PHS values for alleles in frequency, $p$.  The smaller the statistics is, the longer the length of a haplotype around the allele is}.
 
 Genetic distances were obtained for the MaizeSNP50 data \citep{Ganal_2011_22174790} and fit using a tenth degree polynomial curve to all SNPs (data not shown).
 
