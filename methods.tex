@@ -28,7 +28,7 @@ Leaf tips were harvested from plants at the five leaf stage.
 Following storage at $-80^{\circ}$C overnight, leaf tips were lyophilized for 48 hours.  
 Tissue was then homogenized with a Mini-Beadbeater-8 (BioSpec Products, Inc., Bartlesville, OK, USA).  
 DNA was extracted using a modified CTAB protocol \cite[]{CTAB}.  
-The quality of DNA was ensured through inspection on a 2\% agarose gel and quantification of the ratio of light absorbance at 260 and 280 nm using a NanoDrop spectrophotometer (Thermo Scientific, NanoDrop Products, Wilmington, DE, USA).
+The quality of DNA was ensured through inspection on a 2\% agarose gel and a NanoDrop spectrophotometer (Thermo Scientific, NanoDrop Products, Wilmington, DE, USA).
 
 \subsection*{SNP data}
 We generated two complementary SNP data sets for the sampled maize landraces. 
@@ -48,7 +48,7 @@ We annotated SNPs using the filtered gene set from RefGen version 2 of the maize
 We excluded genes annotated as transposable elements (84) and pseudogenes (323) from the filtered gene set, resulting in a total of 38,842 genes.
 
 \subsection*{Structure analysis}
-We performed a {\sf STRUCTURE} analysis \cite[]{Pritchard_2000_10835412,Falush_2003_12930761} using synonymous and noncoding SNPs from the MaizeSNP50 data. 
+We performed a {\sf STRUCTURE} analysis \cite[]{Pritchard_2000_10835412,Falush_2003_12930761} using \rev{only} synonymous and noncoding SNPs from the MaizeSNP50 data \rev{due to its low error in identifying heterozygous genotypes}. 
 We randomly pruned SNPs closer than 10 kb and assumed free recombination between the remaining SNPs.
 Alternative distances were tried with nearly identical results. 
 We excluded SNPs in which the number of heterozygous individuals exceeded homozygotes and where the \emph{P}-value for departure from Hardy-Weinberg Equilibrium (HWE) using all individuals was smaller than 0.05 based on a \emph{G}-test. 
@@ -59,7 +59,7 @@ Results across replicates were nearly identical.
 \subsection*{Historical population size}
 We tested three models in which maize was differentiated into highland and lowland populations subsequent to domestication (Figure~\ref{model}). 
 
-Observed joint frequency distributions (JFDs) were calculated using the GBS data set due to its lower level of ascertainment bias. 
+\rev{We calculated the observed joint frequency distributions (JFDs) using only} the GBS data set due to its lower level of ascertainment bias. 
 A subset of synonymous and noncoding SNPs were utilized that had $\geq15$ individuals without missing data in both lowland and highland populations and did not violate HWE.  
 A HWE cut-off of $P<0.005$ was used for each subpopulation due to our under-calling of heterozygotes. 
 
