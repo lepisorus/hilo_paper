@@ -74,7 +74,10 @@ Thank you for soliciting these reviews, which were very helpful.   We believe we
 
 We provide detailed responses to the reviewers' comments below; the responses are in \textit{italics} and also bulleted for ease of identification and edits to the text are highlighted in red.
 Briefly, the revisions are as follows:  
-We revised the part of our diffusion approach, following the AE and the reviewers.  We also added the result of metabolic pathway analysis as reviewer 2 suggested.  Finally, we fully incorporated the other minor comments into our revised version.  
+We have moved the diffusion modeling to the appendix, as (as the AE pointed out)
+this was made semi-redundant by the coalescent theory arguments.
+We also added results regarding metabolic pathway analysis as reviewer 2 suggested.  
+Finally, we fully incorporated the other minor comments into our revised version.  
 
 I hope that these revisions will make the paper suitable for publication in Genetics. 
 
@@ -116,7 +119,7 @@ This all seems obscure.
     Apologies, we were working with a continuous model,
     approximating continuously-varying altitude by discrete patches of high/low elevation,
     and checked this approximation in the Appendix (around Figure A1).
-    To make this more clear, we've separated out the geographic description into a paragraph ``Geographic distribution''.
+    To make this more clear, we've separated out description of the geographic model into a paragraph ``Geographic distribution''.
 }
 
 
@@ -129,9 +132,10 @@ persist despite counter-selection, and move, one way or another, to the highland
 It would be simpler just to say that rather than make over-elaborate diffusion models. 
 
 \response{
-    We realized that since the coalescent theory calculations come to the same conclusion, and are more general,
-    that the section involving migration-selection balance wasn't essential to the paper,
-    so we moved it to the appendix.
+    Since the coalescent theory calculations come to the same conclusion, and are more general,
+    we've decided that the section involving migration-selection balance isn't essential to the paper,
+    so we moved it to the Appendix.
+    (We do think it's useful to include, as a further check and a comparison to the case of deleterious alleles, which we think is more realistic, as discussed in the paper.)
     We've also rewritten the first paragraph to ``Theoretical evaluation'',
     clarifying that we are interested in the three sources of convergence: new mutation, migration between highlands, and convergent selection on standing variation.
     Also note the section of the Discussion about shared standing variation in founder populations.
@@ -147,16 +151,16 @@ In any case, it seems more plausible that adaptation is from standing variation,
 The fixation probability result (attributed to Jagers 1975) is wrong.  Fixation probability is 2s(Ne/N).  For diploid sexualise, Ne=N if the offspring distribution is Poisson with mean 2, in which case the variance of offspring number is 2.  The error may have come from confusion between numbers of genes and numbers of offspring from a sexual pair.
 \response{
     Whoops!  We've taken the easy way out, redefining $\xi^2$ to be the ``haploid'' variance in offspring number.
-    Hopefully the intent of the reference to Jagers is more clear now;
+    Hopefully the intent of the reference to Jagers is more clear now 
+    (and added better citations, to Fisher 1922 and Lambert 2006);
     probably there is a better reference, but we haven't been able to track it down.
-    \st{We also cited Fisher 1922 and Lambert 2006?}
 }
 
 \textbf{Reviewer 1: Reviewer's Comments to Author}
 
 I have reviewed the work of Takuno and colleagues on the independent genetic basis of adaptation in maize. The manuscript is well written, the questions that are addressed are well researched and are analyzed in a very thorough and complete fashion. I honestly don't have much to say about it, besides congratulating the authors on producing an excellent and thorough investigation of the demographics and genetic basic of adaptation in maize. The demonstration of the independent origin of highland maize is convincing and the role of adaptive introgression from Zea mays mexicana quite fascinating actually.  
 \response{
-   We are glad that the reviewer likes our paper.  The comments are very helpful!! 
+   We are glad that the reviewer likes our paper.  The comments are very helpful! 
 }
 
 Although I read the section on the theoretical evaluation of convergent evolution, followed its logical argument and agreed with it, I did not review it in details.  It is beyond my range of expertise.  I do wonder however how realistic these models are for domesticated species, where census sizes have probably little do to with effective population sizes, and where alleles could potentially be transported several hundreds (or more?) km away in a single generation by humans.  
@@ -165,7 +169,7 @@ Although I read the section on the theoretical evaluation of convergent evolutio
     The effective population size is properly accounted for here --
     this is, for instance, what the calculation of $\xi^2$ is doing:
     another (less intuitive, in our view) way to phrase this is, as the AE mentions above,
-    that the probability of fixation is $2s (N_e/N)$; and $N/N_e = \xi^2$.
+    that the probability of fixation is $2s (N_e/N)$; and $N/N_e \approx \xi^2$.
     We've also added a note to this effect in the text.
 }
 \response{
@@ -177,7 +181,7 @@ I thought the use of the SNP array + GBS data to be slightly confusing, especial
 We apologize for the lack of clarity.  We have attempted to clarify in the methods that because of the high heterozygous error, we used only the MaizeSNP50 data for running STRUCTURE, but because of ascertainment bias we chose to use only the GBS data for our demographic model. Both data sets were used for identification of outliers.
 }
 \response{  
-It is worth noting, however, that as we showed in Figure S2, despite the very high error rate of calling hererozygote SNPs in GBS, we found that estimated allele frequencies from both GBS and MaizeSNP50 are highly correlated.  Also, we carefully filtered out SNPs that showed departure from Hardy-Weinberg equilibrium (HWE).  We tested different cut-offs of HWE, and obtained  similar results and conclusions. 
+It is worth noting, however, that as we showed in Figure S2, despite the very high error rate of calling heterozygote SNPs in GBS, we found that estimated allele frequencies from both GBS and MaizeSNP50 are highly correlated.  Also, we carefully filtered out SNPs that showed departure from Hardy-Weinberg equilibrium (HWE).  We tested different cut-offs of HWE, and obtained  similar results and conclusions. 
  }
 
 Structure analyses:  Using only 3 replicate runs is relatively low, but the results should be robust to this and so I am not too worried.  
