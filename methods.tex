@@ -185,7 +185,7 @@ We now turn to theory
 to assess whether the abundance and degree of coincidence of presumably adaptive high-$F_{ST}$ alleles is consistent with what is known about the population history of maize.
 There are three ways that adaptive alleles could be shared between highland populations:
 (a) by appearing in both locations as independent, \textit{de novo} mutations;
-(b) by moving from highland population to the other my migration;
+(b) by moving from one highland population to the other my migration;
 and 
 (c) through convergent selective forces acting on shared standing variation.
 In the text we provide fairly rough estimates,
@@ -206,18 +206,18 @@ and to verify that the approximation results we use are good.
 }
 
 To assess the likely importance of (a) and (b),
-we first evaluate the rate at which we expect an allele that provides a selective advantage at higher elevation to arise by new mutation in a highland region ($\mutrate$), 
+we first evaluate the rate at which we expect an allele that provides a selective advantage at higher elevation to arise by new mutation in \rev{or near} a highland region ($\mutrate$), 
 and then use coalescent theory to show that even a highland-adapted allele that was neutral in the lowlands
 is unlikely to have had time to spread between highland populations under neutral gene flow.
+\rev{
 It may be more likely that alleles adapted in the highlands are slightly deleterious at lower elevation, 
 consistent with empirical findings in reciprocal transplant experiments in Mexico \cite[]{Mercer2008};
 in the Appendix we find the rate at which such an allele already present in the Mesoamerican highlands would transit the intervening lowlands and fix in the Andean highlands.
 The resulting values depend most strongly on the population density, the selection coefficient, and the rate at which seed is transported long distances and replanted; 
 \jri{add text about how likely this is, cite JvH and emprical estimates}
-we checked the results by evaluating several choices of these parameters as well as with simulations and more detailed computations, described in the Appendix.
-Here we describe the mathematical details; readers may skip to the results without loss of continuity.
-\plrnote{JRI:
-    Evidence that long-distance migration is rare and probably not very important.
+we checked the results by evaluating several choices of these parameters as well as with simulations, described in the Appendix.
+Here we describe the mathematical details; 
+readers may skip to the results without loss of continuity.
 }
 
 \paragraph{Demographic model}
@@ -229,7 +229,7 @@ The mean number of pollen-parent kernels, and the mean number of kernels per ear
 (The fitness of homozygotes is assumed to not affect the probability of establishment.)
 Migration is mediated by seed exchange -- when fields are replanted from new stock, the seed is chosen from a random distance away with mean $\sigma_s=50$km, but plants only pollinate other plants belonging to the same village (distance 0).
 The mean numbers of each category of offspring (seed/pollen; migrant/nonmigrant) are determined by the condition that the population is stable 
-(i.e.\ wild-type, diploid individuals have on average 2 offspring) 
+(i.e., wild-type, diploid individuals have on average 2 offspring) 
 except that heterozygotes have on average $(1+s_b)$ offspring that carry the selected allele.
 Each ear has a small chance of being chosen for replanting, so the number of ears replanted of a given individual is Poisson, and assuming that pollen is well-mixed, the number of pollen-parent kernels is Poisson as well.
 Each of these numbers of offspring has a mean that depends on whether the field is replanted with new stock, and whether ears are chosen from this field to replant other fields, so the total number of offspring is a mixture of Poissons. 
@@ -242,13 +242,14 @@ and the haploid variance in number of offspring
 }
 is between 20 (for wild-type) and 30 (for $s_b=0.1$).
 \rev{
-(Note that in a panmictic population, $\xi^2 \approx N/N_e$.)
+(Note that in a panmictic population, the offspring variance
+is approximately the ratio of census size to effective population size, $\xi^2 \approx N/N_e$.)
 }
 
 \paragraph{New mutations}
 The rate at which new mutations appear and fix in a highland population, which we denote $\mutrate$, 
 is approximately equal to the total population size of the highlands multiplied by the mutation rate per generation 
-and the chance that a single such mutation successfully fixes (i.e.\ is not lost to drift).
+and the chance that a single such mutation successfully fixes (i.e., is not lost to drift).
 The probability that a single new mutant allele providing benefit $s_b$ to heterozygotes at high elevation 
 will fix locally in the high elevation population is approximately $2s_b$ divided by the 
 \rev{
@@ -268,20 +269,23 @@ Throughout we work with populations distributed continuously across geography,
 with two regions of high elevation, the Mesoamerican and Andean highlands, separated by about 4,000km.
 The value $A$ in equation \eqref{eqn:mutrate} is the total cultivated area in which the (highland-adapted) alleles in question are beneficial;
 for estimation of $A$ in South America we overlaid raster layers of altitude (\url{www.worldclim.org}) and extent of maize cultivation (\url{www.earthstat.org}) and calculated the total area of maize cultivated above 1700m using functions in the {\sf raster} package for {\sf R}.
-Of course, the selective benefit of highland alleles is not discrete, but likely changes continuously with altitude.
-The calculation above does not take this into account,
-but exact numerical calculation of the chance of fixation of a mutation 
-as a function of the location 
-where it first appears indicates that the approximation is quite good (see Figure~\ref{sfig:prob_estab}); 
+}
+
+\rev{
+Of course, the selective benefit of highland alleles is not discrete, but likely changes continuously with altitude,
+and it may be that the adaptive mutation occurs in a lowland area,
+subsequently migrating into the highlands.
+The calculation above does account for these points,
+but the approximation is quite good,
+as verified by exact numerical calculation of the chance of fixation of a mutation 
+as a function of the location where it first appears (see Figure~\ref{sfig:prob_estab}); 
 for theoretical treatment see \citet{barton1987establishment}.
 }
 
 \paragraph{Migration}
-A corresponding expression for the chance that an allele moves from one highland population to another is harder to intuit.
+It is harder to intuit
+a corresponding expression for the chance that an allele established by selection in one highland population moves to the other.
 
-The above analysis required that alleles be deleterious in the lowlands, 
-and neglected the time to reach migration-selection equilibrium.
-It is therefore helpful to consider the complementary case of an allele that is neutral in the lowlands.
 For maize in the Andean highlands to have inherited a highland-adapted allele from the Mesoamerican highlands, 
 those Andean plants must be directly descended from highland Mesoamerican plants that lived more recently than the appearance of the adaptive allele.
 In other words, the ancestral lineages along which the modern Andean plants have inherited at that locus must trace back to the Mesoamerican highlands.
