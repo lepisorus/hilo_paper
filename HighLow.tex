@@ -62,7 +62,9 @@
 \definecolor{mattgreen} {rgb} {0,0.6,0}
 \newcommand{\mbh}[1]{\textcolor{mattgreen}{ \em{\scriptsize  #1}} }
 \definecolor{peterpurple}{rgb}{.6,0,.6}
-\newcommand{\plr}[1]{\textcolor{peterpurple}{ \emph{\scriptsize (#1)}} }
+\newcommand{\plrnote}[1]{\textcolor{peterpurple}{ \emph{\scriptsize (#1)}} }
+\newcommand{\plr}[1]{\textcolor{peterpurple}{#1}}
+\newcommand{\rev}[1]{\textcolor{red}{ #1}}
 
 \usepackage[normalem]{ulem}
 \def\dt{\bgroup
@@ -85,15 +87,16 @@
 
 \title{Independent molecular basis of convergent highland adaptation in maize}
 \author{
- \small\sfbf{Shohei Takuno$^{\ast ,1}$, Peter Ralph$^{\dag, \ddag}$, Kelly Swarts$^{\S}$, Rob J. Elshire$^{\S}$, Jeffrey C. Glaubitz$^{\S}$,}\\
-   \small\sfbf{Edward S. Buckler$^{\S, \ast\ast}$, Matthew B. Hufford$^{\ast, \dag\dag}$, and Jeffrey Ross-Ibarra$^{\ast,\ddag\ddag,}$}\thanks{
+ \small\sfbf{Shohei Takuno$^{\ast ,1}$, Peter Ralph$^{\dag, \ddag}$, Kelly Swarts$^{\S}$, Rob J. Elshire$^{\ast\ast}$, Jeffrey C. Glaubitz$^{\ast\ast}$,}\\
+   \small\sfbf{Edward S. Buckler$^{\ast\ast, \S\S}$, Matthew B. Hufford$^{\ast, \dag\dag}$, and Jeffrey Ross-Ibarra$^{\ast,\ddag\ddag,}$}\thanks{
 Corresponding author:  Department of Plant Sciences, University of California, Davis, California 95616, USA. 
     E-mail: \mbox{rossibarra@ucdavis.edu}}\\[0.3cm]
    \small\sf $^{\ast}$Department of Plant Sciences, University of California, Davis, California 95616, USA,\\
    \small\sf $^\dag$Department of Evolution and Ecology, University of California, Davis, California 95616, USA,\\
    \small\sf $^\ddag$Molecular and Computational Biology, University of Southern California,  Los Angeles,California 90089-0371, USA,\\
-   \small\sf $^\S$Institute for Genomic Diversity, Cornell University, Ithaca, New York 14853-2703, USA,\\
-   \small\sf $^{\ast\ast}$United States Department of Agriculture Agricultural Research Service, Ithaca,
+   \small\sf $^\S$School of Plant Sciences, Section of Plant Breeding and Genetics, Cornell University, Ithaca, New York 14853-2703, USA,\\
+   \small\sf $^{\ast\ast}$Institute for Genomic Diversity, Cornell University, Ithaca, New York 14853-2703, USA,\\
+   \small\sf $^{\S\S}$United States Department of Agriculture Agricultural Research Service, Ithaca,
 NY 14853, USA,\\
    \small\sf $^{\dag\dag}$Department of Ecology, Evolution, and Organismal Biology, Iowa State University, Ames, Iowa 50011, USA,\\
    \small\sf $^{\ddag\ddag}$The Center for Population Biology and the Genome Center, University of California, Davis, California 95616 , USA,\\
@@ -106,8 +109,11 @@ NY 14853, USA,\\
 %\date{Revised manuscript for \emph{Genetics}, \today}
 
 \abstract{
-Convergent evolution occurs when multiple species/subpopulations adapt to similar environments via similar phenotypes. 
-We investigate here the molecular basis of convergent adaptation in maize to highland climates in Mexico and South America using genome-wide SNP data. 
+\rev{Convergent evolution is the independent evolution of similar traits in 
+different species or lineages of the same species;
+this often is a result of parallel adaptation to similar environments,
+a process referred to as as \textit{convergent adaptation}.}
+We investigate here the molecular basis of convergent adaptation in maize to highland climates in Mesoamerica and South America using genome-wide SNP data. 
 Taking advantage of archaeological data on the arrival of maize to the highlands, we infer demographic models for both populations, identifying evidence of a strong bottleneck and rapid expansion in South America.  
 We use these models to then identify loci showing an excess of differentiation as a means of identifying putative targets of natural selection, and compare our results to expectations from recently developed theory on convergent adaptation.  
 Consistent with predictions across a wide array of parameter space, we see limited evidence for convergent evolution at the nucleotide level in spite of strong similarities in overall phenotypes.  

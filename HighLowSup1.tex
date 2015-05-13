@@ -68,8 +68,8 @@ from partially new stock (a proportion $r_m$ with probability $p_m$),
 or entirely from the same field.
 Plants have an average of $\mu_E$ ears per plant, and ears have an average of $N/N_f$ kernels; 
 so a plant has on average $\mu_E N/N_f$ kernels, and a field has on average $\mu_E N$ ears and $\mu_E N^2/N_f$ kernels. 
-\jri{what happens if we change mean ears per plant from 3 to 1?}
-\plr{huh, nothing: since we assume number of ears is Poisson and the chance of replanting each ear is independent; the number of replanted ears is Poisson with a mean that is determined by the number of ears needed to replant}
+%\jri{what happens if we change mean ears per plant from 3 to 1?}
+%\plrnote{huh, nothing: since we assume number of ears is Poisson and the chance of replanting each ear is independent; the number of replanted ears is Poisson with a mean that is determined by the number of ears needed to replant}
 We suppose that a plant with the selected allele is pollen parent to $(1+s) \mu_E N/N_f$ kernels,
 and also seed parent to $(1+s)\mu_E N/N_f$ kernels, still in $\mu_E$ ears.
 The number of offspring a plant has depends on how many of its offspring kernels get replanted.
@@ -132,7 +132,7 @@ and otherwise $\mu_{KM} = 0$ and $\lambda_{PM} = m_g(1+s)$.
 \end{table}
 
 
-\subsection*{Math}
+\subsection*{The generating function}
 
 The generating function of a Poisson with mean $\lambda$ is $\phi(u;\lambda)=\exp(\lambda(u-1))$,
 and the generating function of a Poisson($\mu$) sum of Poisson($\lambda$) values is $\phi(\phi(u;\lambda);\mu)$.
@@ -222,7 +222,7 @@ on average $\sigma_s$ distance away in a random direction.
 The number of villages away the seed comes from could be geometric 
 (including the possibility of coming from the same village).
 
-\subsection{Dispersal distance}
+\subsection*{Dispersal distance}
 
 The dispersal distance
 -- the mean distance between parent and offspring --
@@ -261,8 +261,8 @@ the rate of adaptation by diffusive migration is more precisely
   \migrate = \frac{1}{2} \rho s_m \min(s_m,2s_b/\xi^2) \exp\left(- \frac{\sqrt{2 s_m}R}{\sigma} \right) .
 \end{align*}
 
-\jri{do we need to explain? not sure.}
-\plr{we could just cut the remining discussion.}
+%\jri{do we need to explain? not sure.}
+%\plrnote{we could just cut the remining discussion.}
 %But for now, let's interpret.
 
 First note that for $10^{-1} \le s_m \le 10^{-4}$, the value $1/\sqrt{2s_m}$ is between 2 and 70 --
@@ -288,6 +288,64 @@ if $s_m = 10^{-4}$ (very weak selection in the lowlands), then for $R=1,000$ km,
 i.e.\ it would take on the order of 100,000 generations (years) to get a successful migrant only 1,000 km away,
 under this model of undirected, diffusive dispersal.
 For larger $s_m$, the migration rate is much smaller.
+
+
+%%%%%%%%%%%%%
+\subsection*{Migration rate of deleterious alleles}
+
+\rev{
+In the main text we computed $\migrate$, the rate at which new adaptive alleles appeared by mutation.
+A corresponding expression for the chance that an allele moves from one highland population to another is harder to intuit.
+This problem is studied in more depth in \cite{ralph2014convergent},
+under the assumption that the alleles are deleterious between the highlands.
+Since such deleterious alleles are much less likely to transit than neutral ones,
+the analysis in the main text implies that gene flow is unlikely to have shared these alleles between highland regions.
+However, because spatially continuous models assuming selective effects are better understood than neutral ones,
+and we do expect a tradeoff between highland- and lowland-adaptation,
+it is useful to understand what happens in this case as well.
+}
+
+If an allele is beneficial at high elevation and fixed in the Mesoamerican highlands but is deleterious at low elevations, 
+then at equilibrium it will be present at low frequency at migration-selection balance in nearby lowland populations \citep{haldane1948theory,slatkin1973geneflow}.
+This equilibrium frequency decays exponentially with distance, so that the highland allele is present at distance $R$ from the highlands at frequency $C \exp(- R \sqrt{2s_m} / \sigma)$, where $s_m$ is the deleterious selection coefficient for the allele in low elevation, $\sigma$ is the mean dispersal distance, and $C$ is a constant depending on geography ($C\approx 1/2$ is close).
+Multiplying this frequency by a population size gets the predicted number (average density across a large number of generations) of individuals carrying the allele.
+Therefore, in a lowland population of size $N$ at distance $R$ from the highlands, $(N/2)  \exp(- R \sqrt{2s_m} / \sigma)$ 
+is equal to the probability that there are any highland alleles present, multiplied by the expected number of these given that some are present.
+Since we assume the allele is deleterious in the lowlands, if $R$ is large there are likely none present;
+but if there are, the expected number is of order $1/s_m$ \citep{geiger1999elementary,ralph2014convergent}.
+This therefore puts an upper bound on the rate of migration of
+\begin{align} \label{eqn:migrate}
+  \migrate \le (s_m N/2)  \exp(- R \sqrt{2s_m} / \sigma),
+\end{align}
+and we we would need to wait $\Tmig = 1/\migrate$ generations for a rare such excursion to occur.
+This calculation omits the probability that such an allele fixes ($\approx 2s_b/\xi^2$)
+(discussed above)
+and the time to reach migration-selection balance
+(discussed in the main text);
+both of these omissions mean we underestimate $\Tmig$.
+
+
+\paragraph{Results for gene flow of deleterious alleles:}
+From our demographic model we have estimated a mean dispersal distance of $\sigma \approx 3.5$ kilometers per generation.
+With selection against the highland allele in low elevations $10^{-1} \ge s_m \ge 10^{-4}$, 
+the distance $\sigma/\sqrt{2s_m}$ over which the frequency of a highland-adaptive, lowland-deleterious allele decays into the lowlands is still short: 
+between 7 and 250 kilometers.
+Since the Mesoamerican and Andean highlands are around 4,000 km apart, 
+the time needed for a rare allele with weak selective cost $s_m=10^{-4}$ in the lowlands 
+to transit between the two highland regions is $\Tmig \approx 8 \times 10^{4}$ generations. 
+While the exponential dependence on distance in equation \eqref{eqn:migrate} means that shorter distances could be transited more quickly, the waiting time $\Tmig$ is also strongly dependent on the magnitude of the deleterious selection coefficient: with $s_m=10^{-4}$, $\Tmig \approx 25$ generations over a distance of 2,000 km, but increases to $\approx 10^{8}$ generations with a still weak selective cost of $s_m=10^{-3}$.
+%, however: with the still weak selective cost of $s_m=10^{-3}$, for example, $\Tmig$ is $10^8$ generations over 2,000km,
+%-- if the distance between highland patches is 2,000 km (or if $\sigma$ is twice as large) then $\Tmig \approx 25$ generations, indicating that all alleles beneficial in both highlands but with such weak selection cost in the lowlands should be shared if they arose long enough ago for migration-selection balance to have been reached.
+%and much larger for longer distances.
+
+%\plrnote{The above has changed because I found an factor of 2 missed out in $\sigma$, 
+%and the R code has an factor of $2s_b/\xi^2$ that wasn't present in \eqref{eqn:migrate}.
+%This is an overestimate of the rate that is more correctly given in the supplement;
+%I didn't worry about this before, when migration was unlikely for all parameter values.
+%However, now $\Tmig$ is smallish for $R=1,000$ and $s_m=10^{-3}$ with the approximation \eqref{eqn:migrate},
+%but not with the better expression of the appendix.
+%This makes me want to put in the better expression, which I can't quickly motivate,
+%except that the next bit makes it not matter, I think.}
 
 
 
@@ -466,44 +524,44 @@ RIMMA0668	&	Ames 28668	&		&	Granada	&	Puno, Peru	&	-14.9 	&	-70.6 	&	3925	&	Good
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\arraystretch}{1.1}
-\begin{table}[h]
-
-\begin{center}
- \caption[]{Inference of demographic parameters\hspace*{0.3cm}}
-  \textbf{}\\[-2mm]
-{\fontsize{8}{11}\sf
-    \begin{tabular}{ccccccccl} \hline\hline
-       & & \\[-3mm]
-     Mesoamerica  & \multicolumn{2}{c}{Model IA}  \\[0.1cm]
-    \hline
-    & & \\[-3mm]
-   & Likelihood & $-$3052.34  \\
-  &$N_B$ & 148,500 \\
-  &$N_C$ & 148,500 \\   
-  &$N_1$ & 62,370 \\ 
-  &$N_2$ & 86,130 \\ 
-  &$N_{2P}$   & 86,130    \\ 
-      \hline
-    & & \\[-3mm]
-    S. America  & \multicolumn{2}{c}{Model IA}  \\[0.1cm]
-        \hline
-    & & \\[-3mm]
-     & Likelihood &  $-$2717.64  \\
-       &$N_B$ & 76,500 \\     	
-       &$N_C$ & 76,500 \\
-      &$N_1$ & 74,205           \\ 
-      &$N_2$ & 2,295       \\      
-      &$N_{2P}$   & 346,545   \\[1mm]
-    \hline\hline
-\multicolumn{3}{l}{The description of $\alpha, \beta$ and $\gamma$ is in Figure~3.}\\
-\multicolumn{3}{l}{$\sigma$ is a relative size of $N_B$ to $N_C$ ($N_B=\sigma N_C$).}\\
-    \end{tabular}
-    \label{supp:param}  % caption is needed to make this work
-}
-\end{center}
-\end{table}
-\renewcommand{\arraystretch}{1}
+%\renewcommand{\arraystretch}{1.1}
+%\begin{table}[h]
+%
+%\begin{center}
+% \caption[]{Inference of demographic parameters \st{(Remove this table later.)}\hspace*{0.3cm}}
+%  \textbf{}\\[-2mm]
+%{\fontsize{8}{11}\sf
+%    \begin{tabular}{ccccccccl} \hline\hline
+%       & & \\[-3mm]
+%     Mesoamerica  & \multicolumn{2}{c}{Model IA}  \\[0.1cm]
+%    \hline
+%    & & \\[-3mm]
+%   & Likelihood & $-$3052.34  \\
+%  &$N_B$ & 148,500 \\
+%  &$N_C$ & 148,500 \\   
+%  &$N_1$ & 62,370 \\ 
+%  &$N_2$ & 86,130 \\ 
+%  &$N_{2P}$   & 86,130    \\ 
+%      \hline
+%    & & \\[-3mm]
+%    S. America  & \multicolumn{2}{c}{Model IA}  \\[0.1cm]
+%        \hline
+%    & & \\[-3mm]
+%     & Likelihood &  $-$2717.64  \\
+%       &$N_B$ & 76,500 \\     	
+%       &$N_C$ & 76,500 \\
+%      &$N_1$ & 74,205           \\ 
+%      &$N_2$ & 2,295       \\      
+%      &$N_{2P}$   & 346,545   \\[1mm]
+%    \hline\hline
+%\multicolumn{3}{l}{The description of $\alpha, \beta$ and $\gamma$ is in Figure~3.}\\
+%\multicolumn{3}{l}{$\sigma$ is a relative size of $N_B$ to $N_C$ ($N_B=\sigma N_C$).}\\
+%    \end{tabular}
+%    \label{supp:param}  % caption is needed to make this work
+%}
+%\end{center}
+%\end{table}
+%\renewcommand{\arraystretch}{1}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -512,25 +570,72 @@ RIMMA0668	&	Ames 28668	&		&	Granada	&	Puno, Peru	&	-14.9 	&	-70.6 	&	3925	&	Good
 \begin{table}[h]
 
 \begin{center}
- \caption[]{Summary of PHS test\hspace*{6.1cm}}
+ \caption[]{Summary of PHS test\hspace*{9.1cm}}
   \textbf{}\\[-2mm]
 {\fontsize{8}{11}\sf
     \begin{tabular}{lllllcccccl} \hline\hline
        & & \\[-3mm]
-     Population  & Pattern of adaptation & No. of SNPs & No. of SNPs supported by PHS test \\[0.1cm]
+     Population  & Pattern of adaptation & No. of SNPs & No. of SNPs supported by PHS test & \st{Significance $^a$} \\[0.1cm]
     \hline
     & & \\[-3mm]
-   Mesoamerica & Highland adaptation & 264 & 172 (65.2\%)  \\
-               & Lowland adaptation & 101 & 66 (65.3\%)  \\
-   S. America & Highland adaptation & 164 & 230 (71.3\%)  \\
-                     & Lowland adaptation & 70 & 50 (71.4\%)  \\[0.1cm]
+   Mesoamerica & Highland adaptation & 264 & 172 (65.2\%) &  $P<10^{-3}$ \\
+               & Lowland adaptation & 101 & 66 (65.3\%) & $P<0.05$ \\
+   S. America & Highland adaptation & 164 & 230 (71.3\%) &  $P<10^{-5}$  \\
+                     & Lowland adaptation & 70 & 50 (71.4\%)  & $P<0.05$ \\[0.1cm]
     \hline\hline
+    \multicolumn{5}{l}{\st{$^a$ Association between haplotype length and adaptive signals by $F_{ST}$ analysis (need better phrase!!).  See the main text for details.}}\\
     \end{tabular}
     \label{supp:phs}  % caption is needed to make this work
 }
 \end{center}
 \end{table}
 \renewcommand{\arraystretch}{1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%=
+\begin{table}[h]	
+	\caption[]{\st{List of metabolic pathways showing evidence of convergent adaptation}\hspace*{0.3cm}} 
+			\centering
+			\textbf{}\\[-2mm]
+			{\fontsize{7}{11}\sf
+		    \begin{tabular}{l} \hline\hline\\[-3mm]
+		    Colanic acid building blocks biosynthesis\\
+		    Purine nucleotides \textit{de novo} biosynthesis II\\	    
+		    Adenosine nucleotides \textit{de novo} biosynthesis\\
+NAD/NADH phosphorylation and dephosphorylation\\
+tRNA charging pathway\\
+Superpathway of phenylalanine biosynthesis\\
+Superpathway of tryptophan biosynthesis\\
+Aspartate biosynthesis\\
+Tryptophan biosynthesis\\
+Glutamine biosynthesis III\\
+Isoleucine biosynthesis I\\
+Threonine biosynthesis\\
+Galactose degradation III\\
+UDP-glucose biosynthesis (from glucose 6-phosphate)\\
+Triacylglycerol biosynthesis\\
+Phospholipid biosynthesis II\\
+Phosphatidylglycerol biosynthesis I (plastidic)\\
+Phosphatidylglycerol biosynthesis II (non-plastidic)\\
+CDP-diacylglycerol biosynthesis II\\
+CDP-diacylglycerol biosynthesis I\\
+Ethylene biosynthesis from methionine\\
+Stachyose degradation\\
+Homogalacturonan degradation\\
+Betanidin degradation\\
+Aspartate degradation II\\
+Phosphate utilization in cell wall regeneration\\
+Phosphate acquisition\\
+Superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle\\
+C4 photosynthetic carbon assimilation cycle\\
+Glycolysis IV (plant cytosol)\\
+Glycolysis I\\
+Glycolysis III\\
+		      \hline\hline
+		    \end{tabular}
+		    \label{supp:metabo}  % caption is needed to make this work
+		}
+\end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -588,6 +693,9 @@ NS                                & 133            &  17,518    & 0.018\\[1mm]
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+
+\newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\renewcommand{\arraystretch}{1.1}
@@ -687,7 +795,8 @@ NS                                & 133            &  17,518    & 0.018\\[1mm]
 \begin{figure}[h]
   \begin{center}
     \includegraphics[width=0.6\columnwidth]{fig/bot2.pdf}
-    \caption{Q-Q plot for $-$log$_{10}$-scaled \emph{P}-values of population differentiation between lowland and highland populations. (A) Model IA \emph{v.s.} Model IB in Mesoamerica, (B) Model IA \emph{v.s.} Model II in S. America, (C) Model with \emph{v.s.} without bottleneck in Mesoamerica and (D) Model with \emph{v.s.} without bottleneck in S. America.}
+    \caption{Q-Q plot for $-$log$_{10}$-scaled \emph{P}-values of population differentiation between lowland and highland populations. (A) Model IA \emph{v.s.} Model IB in Mesoamerica, (B) Model IA \emph{v.s.} Model II in S. America.}
+%    \caption{Q-Q plot for $-$log$_{10}$-scaled \emph{P}-values of population differentiation between lowland and highland populations. (A) Model IA \emph{v.s.} Model IB in Mesoamerica, (B) Model IA \emph{v.s.} Model II in S. America, (C) Model with \emph{v.s.} without bottleneck in Mesoamerica and (D) Model with \emph{v.s.} without bottleneck in S. America.}
     \label{fig:qq}
   \end{center}
 \end{figure}
@@ -716,30 +825,32 @@ We classified the patterns of allelic differentiation among highland and lowland
 In Figure~\ref{AllelePat}, we illustrate the frequency of putative ancestral and derived alleles in the five populations, drawn by red and blue, respectively.
 
 First, we focus on the SNPs with the signature of adaptation only in Mesoamerican populations (Figure~\ref{AllelePat}A).  
-The first and second rows shows the typical patterns of highland adaptation with \emph{parviglumis} data available.
-We simply assume that the allele in higher frequency in \emph{parviglumis} is ancestral.
-%\jri{we have decent Tripsacum data now, should we go back and re-assess this?}
-
+\st{In other words, the $F_{ST}$ $P$-value is significant in Mesoamerica but not in S. America.
+The first and second rows show the typical patterns of highland adaptation in Mesoamerica with \emph{parviglumis} data available.
+We simply assume that the major allele in \emph{parviglumis} is ancestral. }
 Both rows show the consistent pattern to highland adaptation in Mesoamerica because the frequency of the putative derived allele in Mesoamerican highlands is highly differentiated from those in both \emph{parviglumis} and Mesoamerican lowlands.
 The patterns in S. America are different between the first and second rows.
-However, we do not take the patterns in S. American populations into account because there is no adaptive signature in S. American.
+\st{Actually, in the second row, the frequency of the derived allele is increased also in S. American highland population. 
+However, we do not take the patterns in S. American populations into account because there is no adaptive signature in S. America (i.e., the $F_{ST} P$-value is not significant in S. America).}
 On the other hand, we should consider the allelic pattern in S. America in the case of the third row; we cannot utilize the information of \emph{parviglumis}.
-It is impossible to infer the ancestral allele, so we assume the pattern is consistent with highland adaptation if one allele is in higher frequency in Mesoamerican lowlands and S. American populations and the others is in higher frequency in Mesoamerican highlands.
+It is impossible to infer the ancestral allele, so we assume the pattern is consistent with highland adaptation if one allele is in higher frequency in Mesoamerican lowlands and S. American populations and the other is in higher frequency in Mesoamerican highlands.
 We classified the SNPs into lowland adaptation in the same way (from fourth to sixth rows in Figure~\ref{AllelePat}A).
 
 Next, we consider the SNPs with the signatures of adaptation in both Mesoamerica and S. America (Figure~\ref{AllelePat}B).
 The pattern in the first row is consistent with parallel highland adaptation, whereas the second row shows parallel lowland adaptation. 
 We cannot infer lowland or highland adaptation without the outgroup, so we ignore such SNPs.
-The pattern in the third row is the special case: the allele frequency is similar between Mesoamerican lowlands and S. American highlands and similar between Mesoamerican highlands and S. American lowlands.
-This pattern could be explained by that the SNP is linked to a read adaptive SNP and recombination breaks down the linkage between them.
+%The pattern in the third row is the special case: the allele frequency is similar between Mesoamerican lowlands and S. American highlands and similar between Mesoamerican highlands and S. American lowlands.
+%This pattern could be explained by that the SNP is linked to a red adaptive SNP and recombination breaks down the linkage between them.}
 
-Finally, we tested whether PHS test supports highland and lowland adaptation scenario.
+\comst{move this to the main text}
+\st{Finally, we asked whether the PHS test supports highland and lowland adaptation scenario (summarized in Table~\ref{supp:phs}).
 Consider the case of highland adaptation.
-We assumed that the putative derived allele is adaptive in highlands and checked whether the haplotype length is longer in highlands than that in lowlands.
+We assumed that the putative derived allele is adaptive in highlands and checked whether the haplotype length is longer in the highlands than in the lowlands.
 However, haplotype length cannot be compared directly because the derived allele frequency is different between highlands and lowlands.
-Thus, we compared the empirical quantile of PHS test as a indicator of haplotype length given allele frequency (Pr($PHS_{xA}\leq PHS_{null|p}$) in Materials and Methods).
-We just say that the PHS test is consistent if the empirical quantile in highlands is smaller than that in lowlands (haplotype length is longer as the empirical quantile is smaller).
-The result is summarized in Table~S3.
+Thus, we compared the empirical \rev{quantile} of PHS test as an indicator of haplotype length given allele frequency (Pr($PHS_{xA}\leq PHS_{null|p}$) in Materials and Methods).
+We say that the PHS test is consistent if the empirical quantile in highlands is smaller than that in lowlands (haplotype length is longer as the empirical quantile is smaller).
+If we extract random SNPs, the probability that the haplotype length in highlands is longer than that in lowlands is expected to be 50\% by chance.
+However, we rejected the null hypothesis by a Fisher's exact test in all cases (Table~\ref{supp:phs}).}
 
 \renewcommand{\thefigure}{\Roman{figure}}
 \setcounter{figure}{0}
@@ -748,7 +859,7 @@ The result is summarized in Table~S3.
 \begin{figure}[b]
   \begin{center}
     \includegraphics[width=0.9\columnwidth]{fig/AllelePat.pdf}
-    \caption{Illustration of allele frequency changes in maize and \emph{parviglumis}.  Red and blue bars represent the allele frequency of ancestral and derived, adaptive alleles, respectively.  The allele frequencies in the five populations are shown: \emph{parviglumis}, Mesoamerican lowlands and highlands, and S. America lowlands and highlands. NA in \emph{parviglumis} indicates that there is no SNP data in the site.}
+    \caption{Illustration of allele frequency changes in maize and \emph{parviglumis}.  Red and blue bars represent the allele frequency of ancestral and derived, adaptive alleles, respectively.  The allele frequencies in the five populations are shown: \emph{parviglumis}, Mesoamerican lowlands and highlands, and S. America lowlands and highlands. NA in \emph{parviglumis} indicates that there is no SNP data in the site.  See the text for details. }
     \label{AllelePat}
   \end{center}
 \end{figure}
