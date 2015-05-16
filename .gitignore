@@ -2,6 +2,8 @@ dat5/*
 
 *.bbl
 
+*.blg
+
 *.log
 
 *.aux

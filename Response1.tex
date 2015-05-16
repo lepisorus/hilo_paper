@@ -74,7 +74,10 @@ Thank you for soliciting these reviews, which were very helpful.   We believe we
 
 We provide detailed responses to the reviewers' comments below; the responses are in \textit{italics} and also bulleted for ease of identification and edits to the text are highlighted in red.
 Briefly, the revisions are as follows:  
-We revised the part of our diffusion approach, following the AE and the reviewers.  We also added the result of metabolic pathway analysis as reviewer 2 suggested.  Finally, we fully incorporated the other minor comments into our revised version.  
+We have moved the diffusion modeling to the appendix, as (as the AE pointed out)
+this was made semi-redundant by the coalescent theory arguments.
+We also added results regarding metabolic pathway analysis as reviewer 2 suggested.  
+Finally, we fully incorporated the other minor comments into our revised version.  
 
 I hope that these revisions will make the paper suitable for publication in Genetics. 
 
@@ -116,7 +119,7 @@ This all seems obscure.
     Apologies, we were working with a continuous model,
     approximating continuously-varying altitude by discrete patches of high/low elevation,
     and checked this approximation in the Appendix (around Figure A1).
-    To make this more clear, we've separated out the geographic description into a paragraph ``Geographic distribution''.
+    To make this more clear, we've separated out description of the geographic model into a paragraph ``Geographic distribution''.
 }
 
 
@@ -129,9 +132,10 @@ persist despite counter-selection, and move, one way or another, to the highland
 It would be simpler just to say that rather than make over-elaborate diffusion models. 
 
 \response{
-    We realized that since the coalescent theory calculations come to the same conclusion, and are more general,
-    that the section involving migration-selection balance wasn't essential to the paper,
-    so we moved it to the appendix.
+    Since the coalescent theory calculations come to the same conclusion, and are more general,
+    we've decided that the section involving migration-selection balance isn't essential to the paper,
+    so we moved it to the Appendix.
+    (We do think it's useful to include, as a further check and a comparison to the case of deleterious alleles, which we think is more realistic, as discussed in the paper.)
     We've also rewritten the first paragraph to ``Theoretical evaluation'',
     clarifying that we are interested in the three sources of convergence: new mutation, migration between highlands, and convergent selection on standing variation.
     Also note the section of the Discussion about shared standing variation in founder populations.
@@ -147,7 +151,8 @@ In any case, it seems more plausible that adaptation is from standing variation,
 The fixation probability result (attributed to Jagers 1975) is wrong.  Fixation probability is 2s(Ne/N).  For diploid sexualise, Ne=N if the offspring distribution is Poisson with mean 2, in which case the variance of offspring number is 2.  The error may have come from confusion between numbers of genes and numbers of offspring from a sexual pair.
 \response{
     Whoops!  We've taken the easy way out, redefining $\xi^2$ to be the ``haploid'' variance in offspring number.
-    Hopefully the intent of the reference to Jagers is more clear now;
+    Hopefully the intent of the reference to Jagers is more clear now 
+    (and added better citations, to Fisher 1922 and Lambert 2006);
     probably there is a better reference, but we haven't been able to track it down.
 }
 
@@ -155,7 +160,7 @@ The fixation probability result (attributed to Jagers 1975) is wrong.  Fixation 
 
 I have reviewed the work of Takuno and colleagues on the independent genetic basis of adaptation in maize. The manuscript is well written, the questions that are addressed are well researched and are analyzed in a very thorough and complete fashion. I honestly don't have much to say about it, besides congratulating the authors on producing an excellent and thorough investigation of the demographics and genetic basic of adaptation in maize. The demonstration of the independent origin of highland maize is convincing and the role of adaptive introgression from Zea mays mexicana quite fascinating actually.  
 \response{
-   We are glad that the reviewer likes our paper.  The comments are very helpful!! 
+   We are glad that the reviewer likes our paper.  The comments are very helpful! 
 }
 
 Although I read the section on the theoretical evaluation of convergent evolution, followed its logical argument and agreed with it, I did not review it in details.  It is beyond my range of expertise.  I do wonder however how realistic these models are for domesticated species, where census sizes have probably little do to with effective population sizes, and where alleles could potentially be transported several hundreds (or more?) km away in a single generation by humans.  
@@ -164,7 +169,7 @@ Although I read the section on the theoretical evaluation of convergent evolutio
     The effective population size is properly accounted for here --
     this is, for instance, what the calculation of $\xi^2$ is doing:
     another (less intuitive, in our view) way to phrase this is, as the AE mentions above,
-    that the probability of fixation is $2s (N_e/N)$; and $N/N_e = \xi^2$.
+    that the probability of fixation is $2s (N_e/N)$; and $N/N_e \approx \xi^2$.
     We've also added a note to this effect in the text.
 }
 \response{
@@ -176,7 +181,7 @@ I thought the use of the SNP array + GBS data to be slightly confusing, especial
 We apologize for the lack of clarity.  We have attempted to clarify in the methods that because of the high heterozygous error, we used only the MaizeSNP50 data for running STRUCTURE, but because of ascertainment bias we chose to use only the GBS data for our demographic model. Both data sets were used for identification of outliers.
 }
 \response{  
-It is worth noting, however, that as we showed in Figure S2, despite the very high error rate of calling hererozygote SNPs in GBS, we found that estimated allele frequencies from both GBS and MaizeSNP50 are highly correlated.  Also, we carefully filtered out SNPs that showed departure from Hardy-Weinberg equilibrium (HWE).  We tested different cut-offs of HWE, and obtained  similar results and conclusions. 
+It is worth noting, however, that as we showed in Figure S2, despite the very high error rate of calling heterozygote SNPs in GBS, we found that estimated allele frequencies from both GBS and MaizeSNP50 are highly correlated.  Also, we carefully filtered out SNPs that showed departure from Hardy-Weinberg equilibrium (HWE).  We tested different cut-offs of HWE, and obtained  similar results and conclusions. 
  }
 
 Structure analyses:  Using only 3 replicate runs is relatively low, but the results should be robust to this and so I am not too worried.  
@@ -210,14 +215,14 @@ We agree with the reviewer that this is a potential concern. To assess the effec
 
 Information about variant/gene function could help to strengthen the argument -- or to ensure that the argument is the correct one.  There is really no attempt to provide biological context for the results, but this could complement the findings and could potentially help to make them more convincing.  For example, are the loci identified as adaptive enriched for candidate genes or pathways involved in altitude adaptation? How do the set of loci showing parallel versus convergent adaptive signals compare functionally?   
 \response{
-We agree.  We have now added an analysis of metabolic networks in maize, which are obtained from MaizeCyc database (see text and Table S6).
+We agree.  We have now added an analysis of metabolic networks in maize, which are obtained from MaizeCyc database (see text and Table S3).
  }
 
 Additional/specific comments:  
 
 To bolster the argument overall, it would be helpful to know whether there is any evidence of convergent adaptation to high altitude at the phenotypic level, for example from transplant experiments or from comparative phenotyping assays in a common garden or other shared environment.  
 \response{
- This is a great idea, and actually something we have underway. Our own preliminary common garden experiment suggest a number of phenotyps showing convergenet evolution.  We have applied for funding for a larger common garden experiment of crosses between highland and lowland parents, and have a paper underway applying the methods of Coopand Berg (2014 PLoS Genetics) to genotyping data to test for convergent evolution of a number of phenotypes from published GWAS.   Unfortunately, our current common garden analyses are not complete enough for publication.  We have, however included citations in the introduction to several sources documenting convergenet phenotypes in the two highland populations -- these include macrohairs, stem coloration, tassel architecture, and UV tolerance.  Our own common garden experiment shows convergence for flowering time, plant height, and ear height as well.
+ This is a great idea, and actually something we have underway. Our own preliminary common garden experiment suggest a number of phenotyps showing convergenet evolution.  We have applied for funding for a larger common garden experiment of crosses between highland and lowland parents, and have a paper underway applying the methods of Coop and Berg (2014 PLoS Genetics) to genotyping data to test for convergent evolution of a number of phenotypes from published GWAS.   Unfortunately, our current common garden analyses are not complete enough for publication.  We have, however included citations in the introduction to several sources documenting convergenet phenotypes in the two highland populations -- these include macrohairs, stem coloration, tassel architecture, and UV tolerance.  Our own common garden experiment shows convergence for flowering time, plant height, and ear height as well.
  }
 
 
@@ -230,12 +235,12 @@ We have included, however, an analysis of metabolic pathways including genes und
 
 There appears to be strong enrichment of variants with extreme PHS among the variants identified as adaptive. But as far as I could tell, no formal test was conducted. Moreover, I could not find the description of how the authors determined that these had signals from the PHS test. They write that they use the empirical quantile but do not say which quantile is used to define  significance.  
 \response{
-We clarified the part of PHS test in Table S3, and the text.  
+We clarified the part of PHS test in Table S2, and the text.  
 We used the PHS test \textit{P}-values as an index of haplotype length.
 Consider the situation of highland adaptation.
 We expected that the PHS test \textit{P}-value of a putative adaptive variant in the highland population ($PHS_1$) is longer than that in the lowland population ($PHS_2$), taking the frequency of the adaptive allele in each population into account.  
 Our null expectation is that the probability of $PHS_1>PHS_2$ is 50\% (by chance).  
-However, in Table S3, we find that the null expectation is unlikely by a Fisher's exact test and the SNPs involved in highland adaptation tend to have longer haplotype length.  \\
+However, in Table S2, we find that the null expectation is unlikely by a Fisher's exact test and the SNPs involved in highland adaptation tend to have longer haplotype length.  \\
 }
 
 Please explain more about the model for fitting genetic distances.  How was it decided that a 10th degree polynomial curve was the best fit for the genetic distances, and how was this model used in the analysis? (Page 5)  
@@ -245,7 +250,7 @@ The PHS test does not need extremely fine-scale recombination rates (nor is such
 
 It was really interesting that the authors did not find evidence for a domestication bottleneck.  Since this is such a surprising result and one that is in stark contrast to the expectation, it would be helpful to see more about the robustness of this and to have a more complete comparison to previous work.  
 \response{
-We apologize for the lack of clarity here.  We did not perform any formal testing of the domestication bottleneck, instead, fixing the length of the bottleneck to 1000 years following Wright et al. 2005. While our initial model assumed the length/width ratio of $\sim 2.5$ from Wright et al. 2005, we wanted to test how deviations from this would affect the robustness of our outlier analysis. The salient result is that our finding of little overlap is qualitatively very robust to variation in the details of the domesticaiton bottleneck.  While some of these models gave likelihoods as good or better than the model used in the paper, we felt that detailed estimation of the domestication bottleneck was somewhat outside the scope of the current paper.  We should not thus have made any real claims about the implications of this testing for models of maize domesticaiton; we have removed this section from the paper, leaving only text explaining that the results are robust to deviations from the bottleneck model. 
+We apologize for the lack of clarity here.  We did not perform any formal testing of the domestication bottleneck, instead, fixing the length of the bottleneck to 1000 years following Wright et al. 2005. While our initial model assumed the length/width ratio of $\sim 2.5$ from Wright et al. 2005, we wanted to test how deviations from this would affect the robustness of our outlier analysis. The salient result is that our finding of little overlap is qualitatively very robust to variation in the details of the domesticaiton bottleneck.  While some of these models gave likelihoods as good or better than the model used in the paper, we felt that detailed estimation of the domestication bottleneck was somewhat outside the scope of the current paper.  We should not thus have made any real claims about the implications of this testing for models of maize domesticaiton; we have removed this section from the paper, leaving only text explaining that the results are robust to deviations from the bottleneck model in Discussion. 
 }
 
 Without some sort of evidence of functional significance, the result that different standing variants increase in frequency with altitude in different populations is not completely satisfying.  Since the variants that increase in frequency are as standing variation in both lowland populations, it seems surprising that the sets of putative adaptive variants are almost completely disjoint.  Without additional evidence for enrichment of the same or similar biological pathways or some other evidence that the outliers are involved in adaptation, this pattern seems most consistent with a finding of different sets of false positives in the two data sets.  
