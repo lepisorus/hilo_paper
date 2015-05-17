@@ -49,6 +49,9 @@
 	\fancyhf{}
 }
 
+\usepackage{natbib}
+\bibpunct{(}{)}{;}{a}{}{,}
+
 % space of double hline in Table
 \doublerulesep = 0.4pt
 
@@ -152,7 +155,7 @@ The fixation probability result (attributed to Jagers 1975) is wrong.  Fixation 
 \response{
     Whoops!  We've taken the easy way out, redefining $\xi^2$ to be the ``haploid'' variance in offspring number.
     Hopefully the intent of the reference to Jagers is more clear now 
-    (and added better citations, to Fisher 1922 and Lambert 2006);
+    (and added better citations, to \cite{fisher1922dominance} and \cite{lambert2006probability};
     probably there is a better reference, but we haven't been able to track it down.
 }
 
@@ -173,7 +176,7 @@ Although I read the section on the theoretical evaluation of convergent evolutio
     We've also added a note to this effect in the text.
 }
 \response{
-While long-distance dispersal is certainly possible, evidence from traditional seed systems in Mexico suggests even today it is rare: when farmers excahnge seed (a minority of the time) $\sim 90\%$ of seed lots come from $<10$km away and from a site with altitudinal difference of $<50$m, though farmers in highland locales exchange seeds over a greater range than average (Bellon et al. 2011 PNAS). These numbers represent exchange among modern villages with access to improved means of transportation and a high population density.  While of course it is difficult to estimate ancient patterns of seed migration, these data strongly suggest to us that long-distance transportation (100's of km or greater) must have been exceedingly rare.  Moreover, our previous genetic analysis of an Americas-wide sample of landraces finds no evidence of unusual relatedness among geographically distant samples (van Heerwaarden 2011 PNAS).}
+While long-distance dispersal is certainly possible, evidence from traditional seed systems in Mexico suggests even today it is rare: when farmers exchange seed (a minority of the time) $\sim 90\%$ of seed lots come from $<10$km away and from a site with altitudinal difference of $<50$m, though farmers in highland locales exchange seeds over a greater range than average \citep{bellon2011}. These numbers represent exchange among modern villages with access to improved means of transportation and a high population density.  While of course it is difficult to estimate ancient patterns of seed migration, these data strongly suggest to us that long-distance transportation (100's of km or greater) must have been exceedingly rare.  Moreover, our previous genetic analysis of an Americas-wide sample of landraces finds no evidence of unusual relatedness among geographically distant samples \citep{vanHeerwaarden_2011_21189301}.}
 
 
 I thought the use of the SNP array + GBS data to be slightly confusing, especially the high heterozygote error rate in the GBS data? However, the authors are aware of this and have treated the data accordingly.  
@@ -222,7 +225,7 @@ Additional/specific comments:
 
 To bolster the argument overall, it would be helpful to know whether there is any evidence of convergent adaptation to high altitude at the phenotypic level, for example from transplant experiments or from comparative phenotyping assays in a common garden or other shared environment.  
 \response{
- This is a great idea, and actually something we have underway. Our own preliminary common garden experiment suggest a number of phenotyps showing convergenet evolution.  We have applied for funding for a larger common garden experiment of crosses between highland and lowland parents, and have a paper underway applying the methods of Coop and Berg (2014 PLoS Genetics) to genotyping data to test for convergent evolution of a number of phenotypes from published GWAS.   Unfortunately, our current common garden analyses are not complete enough for publication.  We have, however included citations in the introduction to several sources documenting convergenet phenotypes in the two highland populations -- these include macrohairs, stem coloration, tassel architecture, and UV tolerance.  Our own common garden experiment shows convergence for flowering time, plant height, and ear height as well.
+ This is a great idea, and actually something we have underway. Our own preliminary common garden experiment suggest a number of phenotyps showing convergenet evolution.  We have applied for funding for a larger common garden experiment of crosses between highland and lowland parents, and have a paper underway applying the methods of \citet{berg2013population} to genotyping data to test for convergent evolution of a number of phenotypes from published GWAS.   Unfortunately, our current common garden analyses are not complete enough for publication.  We have, however included citations in the introduction to several sources documenting convergent phenotypes in the two highland populations -- these include macrohairs, stem coloration, tassel architecture, and UV tolerance.  Our own common garden experiment shows convergence for flowering time, plant height, and ear height as well.
  }
 
 
@@ -255,7 +258,7 @@ We apologize for the lack of clarity here.  We did not perform any formal testin
 
 Without some sort of evidence of functional significance, the result that different standing variants increase in frequency with altitude in different populations is not completely satisfying.  Since the variants that increase in frequency are as standing variation in both lowland populations, it seems surprising that the sets of putative adaptive variants are almost completely disjoint.  Without additional evidence for enrichment of the same or similar biological pathways or some other evidence that the outliers are involved in adaptation, this pattern seems most consistent with a finding of different sets of false positives in the two data sets.  
 \response{
-Even if a variant is adaptive and in the standing variation, there is no guarantee it will be selected in both populations.  For a detailed analysis, see Ralph and Coop 2015 (http://dx.doi.org/10.1101/009803). We also note that we see a similar lack of convergence regardless of the p-value cutoff we used, suggesting that the observed pattern is unlikely due to the proportion of false positives in our outlier SNPs.  Of course, if all of our results were false positives this would still be the case, but the observed enrichment in regions shown to be introgressed from ssp. \emph{mexicana} and identified as QTL for differences in hig/low teosinte subspecies suggests that we have identified at least some biologically meaningful SNPs.  Please also see our response to the above comments as for biological significance.
+Even if a variant is adaptive and in the standing variation, there is no guarantee it will be selected in both populations.  For a detailed analysis, see \citet{ralph2014role}. We also note that we see a similar lack of convergence regardless of the p-value cutoff we used, suggesting that the observed pattern is unlikely due to the proportion of false positives in our outlier SNPs.  Of course, if all of our results were false positives this would still be the case, but the observed enrichment in regions shown to be introgressed from ssp. \emph{mexicana} and identified as QTL for differences in hig/low teosinte subspecies suggests that we have identified at least some biologically meaningful SNPs.  Please also see our response to the above comments as for biological significance.
 }
 
 File S1: Directionality of adaptation contains several typos: \\
@@ -269,12 +272,13 @@ I am not sure what the following sentence means: This pattern could be explained
 
 Figure I: The legend is insufficient to understand what is plotted here. Mainly, in panel A, I cannot find any description of what is represented in each row. Panel B is much more intuitive, but I am still not sure what parallel adaptation with recombination means.  
 \response{ 
-We explained the pattern of allele frequency changes in the text in File S1 rather than in the legend.  We tried to make it clearer.  Hope it is understandable.   
+We explained the pattern of allele frequency changes in the text in File S1 rather than in the legend.  We have tried to clarify this text.
 }
 
 %\clearpage
 
-
+\bibliography{MZpara1.bib}
+\bibliographystyle{geneticsT2}
 
 \end{document}
 
