@@ -176,7 +176,7 @@ Although I read the section on the theoretical evaluation of convergent evolutio
     We've also added a note to this effect in the text.
 }
 \response{
-While long-distance dispersal is certainly possible, evidence from traditional seed systems in Mexico suggests even today it is rare: when farmers exchange seed (a minority of the time) $\sim 90\%$ of seed lots come from $<10$km away and from a site with altitudinal difference of $<50$m, though farmers in highland locales exchange seeds over a greater range than average \citep{bellon2011}. These numbers represent exchange among modern villages with access to improved means of transportation and a high population density.  While of course it is difficult to estimate ancient patterns of seed migration, these data strongly suggest to us that long-distance transportation (100's of km or greater) must have been exceedingly rare.  Moreover, our previous genetic analysis of an Americas-wide sample of landraces finds no evidence of unusual relatedness among geographically distant samples \citep{vanHeerwaarden_2011_21189301}.}
+While long-distance dispersal is certainly possible, evidence from traditional seed systems in Mexico suggests even today it is rare: when farmers exchange seed (a minority of the time) $\sim 90\%$ of seed lots come from $<10$km away and from a site with altitudinal difference of $<50$m, though farmers in highland locales exchange seeds over a greater range than average \citep{bellon2011}. These numbers represent exchange among modern villages with access to improved means of transportation and a high population density.  While of course it is difficult to estimate ancient patterns of seed migration, these data strongly suggest to us that long-distance transportation (100's of km or greater) must have been exceedingly rare.  Moreover, our previous genetic analysis of an Americas-wide sample of landraces finds no evidence of unusual relatedness among geographically distant samples \citep{vanHeerwaarden_2011_21189301}. We have added reference to \citet{bellon2011} in the text.}
 
 
 I thought the use of the SNP array + GBS data to be slightly confusing, especially the high heterozygote error rate in the GBS data? However, the authors are aware of this and have treated the data accordingly.  
@@ -194,9 +194,8 @@ Structure analyses:  Using only 3 replicate runs is relatively low, but the resu
 
 The authors do not find much evidence of the same SNPs and genes underlying adaptation in highland south and meso-America. For personal interest, I would be interested to know if by comparing large segments of the genome (megabases scale), patterns would emerge.  This could imply that certain regions of the genome are more prone to be targets of selection  (because of factors such as variations in recombination or mutation rate). This question would be interesting, but not necessary for the current paper.    
 \response{
- We agreed, and have actually tried to test convergent adaptation by sliding window.  However, the density of our SNPs was not high enough to do this (1 SNP/20 kb).  Also, the very high recombination rate in the maize genome would limit the effect of selection to a narrow local genomic region (please see also the rapid decay of LD in Figure S6), and therefore we thought this approach would not be suitable for identifying outliers (but would likely be informative about genome-wide patterns of the efficacy of selection, as the reviwere notes). 
+ We agree this is interesting, and have actually tried to test convergent adaptation by sliding window.  However, the density of our SNPs was not high enough to do this (1 SNP/20 kb).  It is very likely that certain genomic regions are more prone to be targets of selection, as low recombination limits the efficacy of selection in some regions.  We suspect careful study of this approach would be better suited for full-genome resequencing, and are currently working on just such an analysis (see \url{https://gcbias.files.wordpress.com/2014/12/beissinger-bapg-2014.pdf}). 
 }
-
 
 This is a minor detail, but you start the abstract by defining convergent evolution, then jump right away to talking about convergent ``adaptation".  Perhaps stick to one or another? 
 \response{
@@ -213,12 +212,12 @@ We appreciate all your valuable suggestions!!
 
 The authors put quite a lot of effort into modeling demographic histories and are thus able to use a model-based approach to identify candidate adaptive variants.  This is an improvement over a simple tail-based outlier approach.  However, since the main message of the paper is that convergent rather than parallel evolution drove adaptive response, it is important to ensure that this finding is robust and not simply due to false positives or model mis- specification.  In general, in studies of this sort, it is difficult to assess the relative importance of parallel and convergent adaptive shifts. This is because many of the signals will be due to false positives, and these are reduced in the set of variants that share signatures of divergence between the two altitude contrasts.  
 \response{
-We agree with the reviewer that this is a potential concern. To assess the effect of false positives, we tried cut-offs of varying stringency.  Using  $F_{ST}$ \textit{P} cutoffs of 0.05, 0.01 and 0.001 we obtained qualitatively similar results, suggesting that the lack of convergent signal is unlikely to be driven by the proportion of false positive hits. We also note that we see enrichment in Mexico for SNPs in regions having been identified as introgressed from ssp. \emph{mexicana} and identified in QTL mapping studies as regions controlling phenotypic differences between high and low elevation teosinte.
+We agree with the reviewer that this is a potential concern. To assess the effect of false positives, we tried cut-offs of varying stringency.  Using  $F_{ST}$ \textit{P} cutoffs of 0.05, 0.01 and 0.001 we obtained qualitatively similar results, suggesting that the lack of convergent signal is unlikely to be driven by the proportion of false positive hits. We also note that we see enrichment in Mexico for SNPs in regions having been identified as introgressed from ssp. \emph{mexicana} and identified in QTL mapping studies as regions controlling phenotypic differences between high and low elevation teosinte. We have modified text in the discussion to highlight reasons why we believe our results are reflective of genome-wide patterns of adaptation.
 }
 
 Information about variant/gene function could help to strengthen the argument -- or to ensure that the argument is the correct one.  There is really no attempt to provide biological context for the results, but this could complement the findings and could potentially help to make them more convincing.  For example, are the loci identified as adaptive enriched for candidate genes or pathways involved in altitude adaptation? How do the set of loci showing parallel versus convergent adaptive signals compare functionally?   
 \response{
-We agree.  We have now added an analysis of metabolic networks in maize, which are obtained from MaizeCyc database (see text and Table S3).
+We agree.  We have now added an analysis of metabolic networks in maize, which are obtained from MaizeCyc database (see text and Table S3). While we see some shared pathways, we do not see more than expected by chance. Unfortunately, gene annotations in the maize reference are somewhate incomplete, such that many of the most interesting loci (red dots on Figure 4) are loci of unknown function, limiting our ability to perform more detailed functional evaluation.
  }
 
 Additional/specific comments:  
@@ -267,12 +266,12 @@ American $<$- America \\
 others $<$- other \\
 I am not sure what the following sentence means: This pattern could be explained by that the SNP is linked to a read adaptive SNP and recombination breaks down the linkage between them.  
 \response{
- We fixed typos.  Thanks!!   And we apologize for our goof about SNPs showing the pattern described in "Parallel adaptation with recombination".  We found such SNPs in the old version of our data, but after filtering out low-quality SNPs, these were gone.  We removed the corresponding text and panel. 
+ We fixed typos.  Thanks!!   And we apologize for our goof about SNPs showing the pattern described in "Parallel adaptation with recombination".  We found such SNPs in the old version of our data, but after filtering out low-quality SNPs, these were gone.  We have now removed S1, and simplified and clarified our approach here in a new section in the Methods ("Polarizing Adaptation"). 
  }
 
 Figure I: The legend is insufficient to understand what is plotted here. Mainly, in panel A, I cannot find any description of what is represented in each row. Panel B is much more intuitive, but I am still not sure what parallel adaptation with recombination means.  
 \response{ 
-We explained the pattern of allele frequency changes in the text in File S1 rather than in the legend.  We have tried to clarify this text.
+We have now removed S1, and simplified and clarified our approach here in a new section in the Methods ("Polarizing Adaptation")
 }
 
 %\clearpage
