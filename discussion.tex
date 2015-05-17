@@ -1,30 +1,18 @@
  \section*{Discussion}
 
-\plrnote{
-    JRI: Somewhere, put discussion of future work with crosses
-    for figuring out what's going on in selection on standing variation
-    (what are questions? (pleiotropy?) methods?)
-    framed in part like "what should everyone else do".
-}
-
 Our analysis of diversity and population structure in maize landraces from Mesoamerica and S. America points to an independent origin of S. American highland maize, in line with earlier archaeological \cite[]{Piperno_2006_69,Perry_2006_16511492,Grobman_2012_22307642} and genetic \citep{vanHeerwaarden_2011_21189301} work. 
 We use our genetic data to fit a model of historical population size change, and find 
 %no evidence of a bottleneck in Mesoamerica but 
 evidence of a strong bottleneck followed by expansion in the highlands of S. America. 
-\st{In our model, the domestication bottleneck was also incorporated, following \cite{Wright_2005_15919994}.
-Note that we relied on the previous estimation of the strength of the domestication bottleneck, but
-we also confirmed that the change of the strength of the bottleneck had almost no influence on the null distributions of $F_{ST}$ values (not shown).  In other words, our conclusion of rare convergent adaptation at the molecular level is robust against the strength of the domestication bottleneck.}
+%\st{ {\bf Delete this para later} Surprisingly, our models showed no support for a maize domestication bottleneck, apparently contradicting earlier work \cite[]{Eyre-Walker_1998_9539756,Tenaillon_2004_15014173,Wright_2005_15919994}. 
+%One factor contributing to these differences is the set of loci sampled. 
+%Previous efforts focused on data exclusively from protein-coding regions, while our data set includes a large number of noncoding variants.
+%Diversity differences between maize and teosinte are greatest in protein-coding regions \citep{Hufford_2012_22660546}, presumably due to the effects of background selection \citep{Charlesworth_1993_8375663}, and demographic estimates using only protein-coding loci should thus overestimate the strength of a domestication bottleneck.
+%While a more detailed comparison with data from teosinte will be required to validate these results, they nonetheless suggest the value of a reassessment of the combined impacts of demography and selection on genome-wide patterns of diversity during maize domestication.}
+We identified SNPs deviating from patterns of allele frequencies determined by our demographic model as loci putatively under selection for highland adaptation. 
 
-
-\st{ {\bf Delete this para later} Surprisingly, our models showed no support for a maize domestication bottleneck, apparently contradicting earlier work \cite[]{Eyre-Walker_1998_9539756,Tenaillon_2004_15014173,Wright_2005_15919994}. 
-One factor contributing to these differences is the set of loci sampled. 
-Previous efforts focused on data exclusively from protein-coding regions, while our data set includes a large number of noncoding variants.
-Diversity differences between maize and teosinte are greatest in protein-coding regions \citep{Hufford_2012_22660546}, presumably due to the effects of background selection \citep{Charlesworth_1993_8375663}, and demographic estimates using only protein-coding loci should thus overestimate the strength of a domestication bottleneck.
-While a more detailed comparison with data from teosinte will be required to validate these results, they nonetheless suggest the value of a reassessment of the combined impacts of demography and selection on genome-wide patterns of diversity during maize domestication.}
-
-We identified SNPs deviating from patterns of allele frequencies determined by our demographic model as loci putatively under selection for highland adaptation.
-These conclusions are supported by evidence of haplotype differentiation (Table~\ref{supp:phs}) and the directionality of allele frequency change (Supporting Information, File S1).
-Consistent with results from both GWAS \citep{Wallace_2014_25474422} and local adaptation in teosinte \citep{Pyhajarvi2013}, we find that putatively adaptive SNPs are enriched in intergenic regions of the genome, further suggesting an important role for regulatory variation in maize evolution. 
+\rev{Though the rapid decay of linkage disequilibrium in maize (Figure~\ref{supp:LD}) makes it likely we have identified only a subset of selected loci \cite[]{tiffin2014advances}, several lines of evidence suggest our results are likely representative of genome-wide patterns. SNPs identified as $F_{ST}$ outliers by our method show evidence of longer haplotypes and patterns of among-population allele frequency consistent with adaptation (Table~\ref{supp:phs}). 
+Consistent with previous work suggesting adaptive introgression from teosinte, the Mesoamerican highland population shares a larger proportion of SNPs identified as adaptive in teosinte \citep{Pyhajarvi2013}.  We also see more $F_{ST}$ outliers Mesoamerica in regions introgressed from teosinte and which overlap with QTL for differences between \emph{parviglumis} and \emph{mexicana} \citep{Lauter_2004_15342532, Profford_2013}.  Finally, though our SNP data are enriched in low-copy genic regions, our results are consistent with both GWAS in maize  \citep{Wallace_2014_25474422} and local adaptation in teosinte \citep{Pyhajarvi2013} in finding an excess of putatively adaptive SNPs in intergenic regions of the genome.}
 
 Although our data identify hundreds of loci that may have been targeted by natural selection in Mesoamerica and S. America, 
 fewer than 1.8\% of SNPs and 2.1\% of genes show evidence for convergent evolution between the two highland populations.
@@ -42,47 +30,23 @@ Future quantitative genetic analysis of highland traits using genome-wide associ
 Our observation of little convergent evolution is also consistent with the possibility that much of the adaptation to highland environments made use of standing genetic variation in lowland populations. 
 Indeed, we find that as much as 90\% of the putatively adaptive variants in Mesoamerica and S. America are segregating in lowland populations, 
 and the vast majority are also segregating in teosinte.  
-Selection from standing variation should be common when the scaled mutation rate $\Theta$ 
+Selection from standing variation should be common when the scaled mutation rate $\theta$ 
 (product of the effective population size, mutation rate and target size) is greater than 1,
 as long as the scaled selection coefficient $Ns$ 
 (product of the effective population size and selection coefficient) is reasonably large \cite[]{Hermisson_2005_15716498}.
-Estimates of $\theta$ from synonymous nucleotide diversity in maize are around 0.014, \citep{Tenaillon_2004_15014173,Wright_2005_15919994,Ross-Ibarra_2009_19153259}, 
-suggesting that adaptation from standing genetic variation may be likely for target sizes larger than a few hundred nucleotides.
+Estimates of $\theta$ from synonymous nucleotide diversity in maize  \citep{Tenaillon_2004_15014173,Wright_2005_15919994,Ross-Ibarra_2009_19153259}, 
+suggest that adaptation from standing genetic variation may be likely for target sizes larger than a few hundred nucleotides.
 In maize, such a scenario has been recently shown for the locus \emph{grassy tillers1} \cite[]{Wills_2013_23825971}, at which adaptive variants in both an upstream control region and the 3' UTR are segregating in teosinte but show evidence of recent selection in maize, presumably due to the effects of this locus on branching and ear number.
 
-\plr{
-\paragraph{Standing variation}
-From the theoretical arguments above,
-it seems that adaptation to high elevation
-probably occured either  
-through a combination of 
-selection on standing variation,
-and independent \textit{de novo} mutation.
-The fact that we do not see evidence in the data of convergent responses to selection
-suggests that selection acted on different loci in the two regions;
-since the selected phenotypes are similar \plrnote{could we say ``the same''?},
-either would require a fairly large target for selection, spread across many genes.
-This agrees with our intuition that the traits under selection could easily be highly polygenic.
-In fact, if the traits were not sufficiently polygenic, 
-the calculations above suggest that adaptation by \textit{de novo} mutation would not have occurred at all.
-As for standing variation,
-since cultivated maize has retained high levels of diversity,
+\rev{Both our empirical and theoretical results suggest that adaptation to high elevation probably occured through some combination of selection on standing variation and independent \textit{de novo} mutation at highly quantitative traits. 
+Because cultivated maize has retained high levels of diversity,
 much of the ancestral variation present in the populations that founded each of the two highlands was likely shared,
 allowing for the possibility of shared signals due to selection on the same ancestral variants.
 However, initial frequencies of alleles present as standing variation will be highly stochastic,
-leading to a significant role of chance in which alleles are selected on,
+leading to a significant role of chance in which alleles are selected,
 as well the strength of the signal of $F_{ST}$.
-This is particularly true for the rare end of the frequency spectrum, 
-where we expect most weakly deleterious standing variation.
-Epistasis could make it even less likely that the same allele is shared between regions.
-}
-
-\plrnote{``crossing experiments between high-altitude populations would be most informative here'' --nick}
-
-Finally, although we evaluated a genome-wide sample of more than 90,000 SNPs, this sampling is likely insufficient to capture all of the signals of selection across the genome.  
-Linkage disequilibrium in maize decays rapidly \citep{Chia_2012_22660545}, reaching a plateau in only a few hundred bp (Figure~\ref{supp:LD}) and a much greater density of SNPs would be needed to effectively identify the majority of selective sweeps in the history of these populations \cite[]{tiffin2014advances}.
-SNP density alone does not explain the lack of convergent evolution seen at SNPs showing evidence of selection, however.  
-Our genomic sampling may have thus identified only a subset of all loci targeted by natural selection, but there is no reason to believe that the percentage of selected loci showing convergent selection should change with higher genotyping density. 
+This is particularly true for alleles likely to be adaptive in the highlands and thus weakly deleterious in lowland populations, as these should be rare in individual populations. 
+Epistasis could make it even less likely that the same allele is shared between regions. Overall, our results highlight the complexity of studying convergent evolution for quantitative traits in highly diverse species. Our future efforts will take advantage of reciprocal transplant experiments to identify specific phenotypes under selection. We are also developing mapping populations in both Mesoamerica and S. America that should allow identification of genomic regions underlying phenotypes of interest and estimation of the proportion of adaptive variation shared between populations.  }
 
 %\label{other taxa}
 %The rarity of convergent evolution in maize contrasts with data from humans \citep{Tennessen_2011_21698142} showing selection on the same genes in multiple pairs of tropical and temperate populations.  

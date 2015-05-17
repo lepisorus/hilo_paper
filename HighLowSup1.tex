@@ -570,7 +570,7 @@ RIMMA0668	&	Ames 28668	&		&	Granada	&	Puno, Peru	&	-14.9 	&	-70.6 	&	3925	&	Good
 \begin{table}[h]
 
 \begin{center}
- \caption[]{Summary of PHS test\hspace*{9.1cm}}
+ \caption[]{Patterns of adaptation\hspace*{9.1cm}}
   \textbf{}\\[-2mm]
 {\fontsize{8}{11}\sf
     \begin{tabular}{lllllcccccl} \hline\hline
@@ -583,7 +583,7 @@ RIMMA0668	&	Ames 28668	&		&	Granada	&	Puno, Peru	&	-14.9 	&	-70.6 	&	3925	&	Good
    S. America & Highland adaptation & 164 & 230 (71.3\%) &  $P<10^{-5}$  \\
                      & Lowland adaptation & 70 & 50 (71.4\%)  & $P<0.05$ \\[0.1cm]
     \hline\hline
-    \multicolumn{5}{l}{\st{$^a$ Association between haplotype length and adaptive signals by $F_{ST}$ analysis (need better phrase!!).  See the main text for details.}}\\
+    \multicolumn{5}{l}{\rev{$^a$ Probability of the observed percent of SNPs showing a lower empirical quantile. Under neutrality, 50\% of SNPs should have lower PHS values in the focal population; higher values indicate evidence of selection.  See the main text for details. }}\\
     \end{tabular}
     \label{supp:phs}  % caption is needed to make this work
 }
@@ -746,7 +746,7 @@ NS                                & 133            &  17,518    & 0.018\\[1mm]
 \begin{figure}[h]
   \begin{center}
     \includegraphics[width=0.5\columnwidth]{fig/bioclm.pdf}
-    \caption{Annual mean temperature and annual precipitation in the sampling locations of the maize landraces across Americas.
+    \caption{Annual mean temperature and annual precipitation of the  locations of the maize samples used in this study.
     Red, blue, yellow and light blue bars represent Mesoamerican lowland, Mesoamerican highland, S. American lowland and S. American highland
     populations, respectively.  
     }
@@ -759,7 +759,7 @@ NS                                & 133            &  17,518    & 0.018\\[1mm]
 \begin{figure}[h]
   \begin{center}
     \includegraphics[width=0.4\columnwidth]{fig/Col.pdf}
-    \caption{Correlation of allele frequencies between GBS (\emph{x}-axes) and MaizeSNP50 (\emph{y}-axes) data.  We used overlapped SNPs with $n\geq40$ for both data sets.  Correlation coefficient is 0.890 ($P<10^{-5}$ by permutation test with $10^5$ replications).}
+    \caption{Correlation of allele frequencies between GBS and MaizeSNP50  data.  We used overlapping SNPs with $n\geq40$ for both data sets.  The correlation coefficient is 0.890 ($P<10^{-5}$ by permutation test with $10^5$ replications).}
     \label{supp:correl_freq}
   \end{center}
 \end{figure}
@@ -769,7 +769,7 @@ NS                                & 133            &  17,518    & 0.018\\[1mm]
 \begin{figure}[h]
   \begin{center}
     \includegraphics[width=0.4\columnwidth]{fig/kk.pdf}
-    \caption{Likelihood of STRUCTURE analysis given $K$.  The \emph{x}-axes represents $K$ and the \emph{y}-axes represents likelihood.}
+    \caption{Likelihood of STRUCTURE analyses given the number of populations $K$.}
     \label{supp:struct}
   \end{center}
 \end{figure}
@@ -783,7 +783,7 @@ NS                                & 133            &  17,518    & 0.018\\[1mm]
    \includegraphics[width=0.45\textwidth]{fig/Fig5}
    \renewcommand{\baselinestretch}{0.9}
    \vspace{-3mm}
-   \caption{Observed and expected distributions of $F_{ST}$ values in GBS (A) and MaizeSNP50 data (B).  The \emph{x}-axes represent $F_{ST}$ values.  The \emph{y}-axes represent the frequency of SNPs with $F_{ST}$ values within a bin of 0.05 size.  Red dots and solid lines indicate observed and expected distributions. 
+   \caption{Observed and expected distributions of $F_{ST}$ values in GBS (A) and MaizeSNP50 data (B).   The \emph{y}-axes represent the expected (solid lines) and observed (red dots) frequency of SNPs for a range of $F_{ST}$ values in bins of 0.05. 
    }
 \vspace{-6mm}
     \label{FstDist}
@@ -808,61 +808,51 @@ NS                                & 133            &  17,518    & 0.018\\[1mm]
 \begin{figure}[h]
   \begin{center}
     \includegraphics[width=0.7\columnwidth]{fig/LD.pdf}
-    \caption{Pattern of decay of linkage equilibrium in Mesoamerica (A) and S. America (B).  Red and blue dots represent low- and highland population, respectively.  $r^2$ values were calculated as a statistics and averaged within 10-bp bins of distance between SNPs.  The \emph{x}- and \emph{y}-axes represent distance between SNPs (kb) and average $r^2$ values.}
+    \caption{Pattern of decay of linkage disequilibrium in Mesoamerica (A) and S. America (B).  Red and blue dots represent lowland and highland populations, respectively.  $r^2$ values are reported as averages within 10-bp distance bins. }
     \label{supp:LD}
   \end{center}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newpage
-\suppl
-\section*{File S1}
-
-\section*{Directionality of adaptation} \label{sec:supptextsho}
+%\newpage
+%\suppl
+%\section*{File S1}
+%
+%\section*{Directionality of adaptation} \label{sec:supptextsho}
 %\noindent {\Large \textit{Text~S1} }
-
-We classified the patterns of allelic differentiation among highland and lowland populations in Mesoamerica and S. America together with the information of \emph{parviglumis} in an \emph{ad hoc} manner; the allelic differentiation pattern is consistent with highland or lowland adaptation scenario.  
-In Figure~\ref{AllelePat}, we illustrate the frequency of putative ancestral and derived alleles in the five populations, drawn by red and blue, respectively.
-
-First, we focus on the SNPs with the signature of adaptation only in Mesoamerican populations (Figure~\ref{AllelePat}A).  
-\st{In other words, the $F_{ST}$ $P$-value is significant in Mesoamerica but not in S. America.
-The first and second rows show the typical patterns of highland adaptation in Mesoamerica with \emph{parviglumis} data available.
-We simply assume that the major allele in \emph{parviglumis} is ancestral. }
-Both rows show the consistent pattern to highland adaptation in Mesoamerica because the frequency of the putative derived allele in Mesoamerican highlands is highly differentiated from those in both \emph{parviglumis} and Mesoamerican lowlands.
-The patterns in S. America are different between the first and second rows.
-\st{Actually, in the second row, the frequency of the derived allele is increased also in S. American highland population. 
-However, we do not take the patterns in S. American populations into account because there is no adaptive signature in S. America (i.e., the $F_{ST} P$-value is not significant in S. America).}
-On the other hand, we should consider the allelic pattern in S. America in the case of the third row; we cannot utilize the information of \emph{parviglumis}.
-It is impossible to infer the ancestral allele, so we assume the pattern is consistent with highland adaptation if one allele is in higher frequency in Mesoamerican lowlands and S. American populations and the other is in higher frequency in Mesoamerican highlands.
-We classified the SNPs into lowland adaptation in the same way (from fourth to sixth rows in Figure~\ref{AllelePat}A).
-
-Next, we consider the SNPs with the signatures of adaptation in both Mesoamerica and S. America (Figure~\ref{AllelePat}B).
-The pattern in the first row is consistent with parallel highland adaptation, whereas the second row shows parallel lowland adaptation. 
-We cannot infer lowland or highland adaptation without the outgroup, so we ignore such SNPs.
+%
+%We classified the patterns of allelic differentiation among highland and lowland populations in Mesoamerica and S. America together with the information of \emph{parviglumis} in an \emph{ad hoc} manner; the allelic differentiation pattern is consistent with highland or lowland adaptation scenario.  
+%In Figure~\ref{AllelePat}, we illustrate the frequency of putative ancestral and derived alleles in the five populations, drawn by red and blue, respectively.
+%
+%First, we focus on the SNPs with the signature of adaptation only in Mesoamerican populations (Figure~\ref{AllelePat}A).  
+%\st{In other words, the $F_{ST}$ $P$-value is significant in Mesoamerica but not in S. America.
+%The first and second rows show the typical patterns of highland adaptation in Mesoamerica with \emph{parviglumis} data available.
+%We simply assume that the major allele in \emph{parviglumis} is ancestral. }
+%Both rows show the consistent pattern to highland adaptation in Mesoamerica because the frequency of the putative derived allele in Mesoamerican highlands is highly differentiated from those in both \emph{parviglumis} and Mesoamerican lowlands.
+%The patterns in S. America are different between the first and second rows.
+%\st{Actually, in the second row, the frequency of the derived allele is increased also in S. American highland population. 
+%However, we do not take the patterns in S. American populations into account because there is no adaptive signature in S. America (i.e., the $F_{ST} P$-value is not significant in S. America).}
+%On the other hand, we should consider the allelic pattern in S. America in the case of the third row; we cannot utilize the information of \emph{parviglumis}.
+%It is impossible to infer the ancestral allele, so we assume the pattern is consistent with highland adaptation if one allele is in higher frequency in Mesoamerican lowlands and S. American populations and the other is in higher frequency in Mesoamerican highlands.
+%We classified the SNPs into lowland adaptation in the same way (from fourth to sixth rows in Figure~\ref{AllelePat}A).
+%
+%Next, we consider the SNPs with the signatures of adaptation in both Mesoamerica and S. America (Figure~\ref{AllelePat}B).
+%The pattern in the first row is consistent with parallel highland adaptation, whereas the second row shows parallel lowland adaptation. 
+%We cannot infer lowland or highland adaptation without the outgroup, so we ignore such SNPs.
 %The pattern in the third row is the special case: the allele frequency is similar between Mesoamerican lowlands and S. American highlands and similar between Mesoamerican highlands and S. American lowlands.
 %This pattern could be explained by that the SNP is linked to a red adaptive SNP and recombination breaks down the linkage between them.}
 
-\comst{move this to the main text}
-\st{Finally, we asked whether the PHS test supports highland and lowland adaptation scenario (summarized in Table~\ref{supp:phs}).
-Consider the case of highland adaptation.
-We assumed that the putative derived allele is adaptive in highlands and checked whether the haplotype length is longer in the highlands than in the lowlands.
-However, haplotype length cannot be compared directly because the derived allele frequency is different between highlands and lowlands.
-Thus, we compared the empirical \rev{quantile} of PHS test as an indicator of haplotype length given allele frequency (Pr($PHS_{xA}\leq PHS_{null|p}$) in Materials and Methods).
-We say that the PHS test is consistent if the empirical quantile in highlands is smaller than that in lowlands (haplotype length is longer as the empirical quantile is smaller).
-If we extract random SNPs, the probability that the haplotype length in highlands is longer than that in lowlands is expected to be 50\% by chance.
-However, we rejected the null hypothesis by a Fisher's exact test in all cases (Table~\ref{supp:phs}).}
-
-\renewcommand{\thefigure}{\Roman{figure}}
-\setcounter{figure}{0}
+%\renewcommand{\thefigure}{\Roman{figure}}
+%\setcounter{figure}{0}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[b]
-  \begin{center}
-    \includegraphics[width=0.9\columnwidth]{fig/AllelePat.pdf}
-    \caption{Illustration of allele frequency changes in maize and \emph{parviglumis}.  Red and blue bars represent the allele frequency of ancestral and derived, adaptive alleles, respectively.  The allele frequencies in the five populations are shown: \emph{parviglumis}, Mesoamerican lowlands and highlands, and S. America lowlands and highlands. NA in \emph{parviglumis} indicates that there is no SNP data in the site.  See the text for details. }
-    \label{AllelePat}
-  \end{center}
-\end{figure}
+%\begin{figure}[b]
+%  \begin{center}
+%    \includegraphics[width=0.9\columnwidth]{fig/AllelePat.pdf}
+%    \caption{Illustration of allele frequency changes in maize and \emph{parviglumis}.  Red and blue bars represent the allele frequency of ancestral and derived, adaptive alleles, respectively.  The allele frequencies in the five populations are shown: \emph{parviglumis}, Mesoamerican lowlands and highlands, and S. America lowlands and highlands. NA in \emph{parviglumis} indicates that there is no SNP data in the site.  See the text for details. }
+%    \label{AllelePat}
+%  \end{center}
+%\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 

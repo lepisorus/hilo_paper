@@ -19,7 +19,7 @@
 \section*{Materials and Methods}
 
 \subsection*{Materials and DNA extraction}
-We included one individual from each of 94 open-pollinated landrace maize accessions from high and low elevation sites in Mesoamerica and S. America (Table \ref{srkid}).   
+We included one individual from each of 94 landrace maize accessions from high and low elevation sites in Mesoamerica and S. America (Table \ref{srkid}).   
 Accessions were provided by the USDA germplasm repository or kindly donated by Major Goodman (North Carolina State University).  
 Sampling locations are shown in Figure~\ref{map}A.  
 Landraces sampled from elevations $<1,700$ m were considered lowland, while accessions from $>1,700$ m were considered highland.  
@@ -118,9 +118,7 @@ We further assumed $t_F=6,000$ for Mesoamerican populations in Models IA and IB 
 For both Models IA and IB, we inferred three parameters ($\alpha$, $\beta$ and $\gamma$), and, for Model II, we fixed $t_F=6,000$ and $t_G=4,000$ \cite[]{Piperno_2006_69,Perry_2006_16511492,Grobman_2012_22307642}  and estimated the remaining four parameters ($\alpha$, $\beta_1$, $\beta_2$ and $\gamma$).
 
 \subsection*{Population differentiation}
-We used our inferred models of population size change to generate a null distribution of $F_{ST}$.
-As implemented in $\delta a \delta i$ \cite[]{Gutenkunst_2009_19851460}, we calculated an expected JFD given estimated model parameters and the sample sizes from our highland and lowland populations.
-Then, we converted the JFD into the distribution of $F_{ST}$ values.
+We used our inferred models of population size change to generate a null distribution of $F_{ST}$ from the expected JFD estimated in $\delta a \delta i$ \cite[]{Gutenkunst_2009_19851460}.
 The \emph{P}-value of a SNP was calculated by $P(F_{ST\_E}\geq F_{ST\_O}|p\pm 0.025) = P(F_{ST\_E}\geq F_{ST\_O} \cap p\pm 0.025)/P(p\pm 0.025)$, 
 where $F_{ST\_O}$ and $F_{ST\_E}$ are observed and expected $F_{ST}$ values and $p\pm 0.025$ is the set of loci with mean allele frequency across both highland and lowland populations within 0.025 of the SNP in question. 
 
@@ -128,15 +126,9 @@ Generating the null distribution of differentiation for the MaizeSNP50 data requ
 Evaluation of genetic clustering in our data (not shown) coincides with previous work \cite[]{Hufford_2012_22660546} in suggesting that the two inbred lines most important in the ascertainment panel (B73 and Mo17) are most closely related to Mesoamerican lowland maize.  
 We thus added two additional individuals to the Mesoamerican lowland population and generated our null distribution using only SNPs for which the two individuals had different alleles.
 For model IA in S. America we added two individuals at time $t_F$ to the ancestral population of the S. American lowland and highland populations because the Mesoamerican lowland population was not incorporated into this model. 
-For each combination of sample sizes in lowland and highland populations, we generated a JFD from $10^7$  SNPs using the software {\sf ms} \cite[]{Hudson_2002_11847089}.
+For each combination of sample sizes in lowland and highland populations, we generated a JFD from $10^7$ SNPs using the software {\sf ms} \cite[]{Hudson_2002_11847089}.
 Then, we calculated \emph{P}-values from the JFD in the same way.
 We calculated $F_{ST}$ values for all SNPs that had $\geq10$ individuals with no missing data in all four populations and showed no departure from HWE at the 0.5\% (GBS) or 5\% (MaizeSNP50) level. 
-
-%\jri{we don't correct for allele frequency (or heterozygosity) in our Fst outlier analysis do we?  if not, this is a problem I think.}
-%\st{I did.  No essential change}
-
-%\jri{do we use all GBS data in the Fst outlier test, or just silent SNPs? we should be able to use nonsynonymous too, right?}
-%\st{I used all.}
 
 \subsection*{Haplotype sharing test}
 We performed a \underline{p}airwise \underline{h}aplotype \underline{s}haring (PHS) test to detect further evidence of selection, following \cite{Toomajian_2006_16623598}.  
@@ -173,9 +165,13 @@ Z_{ijx} = \frac{ d_{ijx} - \bar{d_{ij}} }{ \sigma_{ij} }
 \noindent where $d_{ijx}$ is the genetic distance over which individuals $i$ and $j$ are identical surrounding position $x$, 
 $\bar{d_{ij}}$ is the genome-wide mean of distances over which individuals $i$ and $j$ are identical, 
 and $\sigma_{ij}$ is the standard deviation of the distribution of distances.  
-To identify outlying PHS values, we used the empirical quantile, calculated as the proportion of alleles of the same frequency genome-wide that have a larger PHS value; \st{we calculated Pr($PHS_{xA}\leq PHS_{null|p}$), where $PHS_{null|p}$ is PHS values for alleles in frequency, $p$.  The smaller the statistics is, the longer the length of a haplotype around the allele is}.
-
 Genetic distances were obtained for the MaizeSNP50 data \citep{Ganal_2011_22174790} and fit using a tenth degree polynomial curve to all SNPs (data not shown).
+
+\rev{\subsection*{Polarizing adaptive alleles}
+To polarize the ancestral state of alleles and help identify adaptive alleles, we retrieved SNP data from 14 \emph{parviglumis} inbred lines included in the Hapmap v2 data set, using only SNPs with $n\geq10$ \cite[]{Chia_2012_22660545,Hufford_2012_22660546}.  
+Alleles were called ancestral if they were at higher frequency in \emph{parviglumis} or uncalled in \emph{parviglumis} but at higher frequency in all populations but one.} 
+
+\rev{For SNPs identified as putative outliers by our $F_{ST}$ approach, we then used patterns of allele frequency across populations to infer which allele was likely adaptive. For SNPs with a significant $F_{ST}$ only in Mesoamerica, for example, we characterized them as adaptive if they were at high frequency in one Mesoamerican population (lowland or highland) and low frequency in the other as well as low frequency in \emph{parviglumis} and at most intermediate frequency (or low frequency if missing in \emph {parviglumis}) in S. American populations. SNPs were inferred to show convergent adaptation if they were at high frequency in both highland (or lowland) populations, and at low frequency in the other two populations and \emph{parviglumis}.}
 
 %%%% PLR:
 \subsection*{Theoretical evaluation of convergent evolution }
@@ -185,7 +181,7 @@ We now turn to theory
 to assess whether the abundance and degree of coincidence of presumably adaptive high-$F_{ST}$ alleles is consistent with what is known about the population history of maize.
 There are three ways that adaptive alleles could be shared between highland populations:
 (a) by appearing in both locations as independent, \textit{de novo} mutations;
-(b) by moving from one highland population to the other my migration;
+(b) by moving from one highland population to the other by migration;
 and 
 (c) through convergent selective forces acting on shared standing variation.
 In the text we provide fairly rough estimates,
@@ -198,7 +194,7 @@ relies on universality results that reduce demographic models
 to two parameters: the dispersal distance (mean parent-offspring distance),
 and the variance in offspring number.
 However, these universality results do not hold if either distribution
-(of dispersal distribution or of offspring number)
+(dispersal or offspring)
 is sufficiently long-tailed,
 so we chose to implement a fairly detailed demographic model
 to both get a good idea of what part of parameter space we should focus on,
@@ -213,9 +209,9 @@ is unlikely to have had time to spread between highland populations under neutra
 It may be more likely that alleles adapted in the highlands are slightly deleterious at lower elevation, 
 consistent with empirical findings in reciprocal transplant experiments in Mexico \cite[]{Mercer2008};
 in the Appendix we find the rate at which such an allele already present in the Mesoamerican highlands would transit the intervening lowlands and fix in the Andean highlands.
-The resulting values depend most strongly on the population density, the selection coefficient, and the rate at which seed is transported long distances and replanted; 
-\jri{add text about how likely this is, cite JvH and emprical estimates}
-we checked the results by evaluating several choices of these parameters as well as with simulations, described in the Appendix.
+The resulting values depend most strongly on the population density, the selection coefficient, and the rate at which seed is transported long distances and replanted.
+While long-distance dispersal is certainly possible, evidence from traditional seed systems in Mexico suggests even today it is rare: when farmers exchange seed (a minority of the time) $\sim 90\%$ of seed lots come from $<10$km away and from a site with altitudinal difference of $<50$m, although farmers in highland locales exchange seeds over a greater range than average \citep{bellon2011}.
+We checked the results by evaluating several choices of these parameters as well as with simulations, described in the Appendix.
 Here we describe the mathematical details; 
 readers may skip to the results without loss of continuity.
 }
@@ -225,8 +221,7 @@ Throughout, we followed \citet{vanHeerwaarden2010} in constructing a detailed de
 We assume fields of $N=10^5$ plants are replanted each year from $N_f=561$ ears, either from completely new stock (with probability $p_e=0.068$), from partially new stock (a proportion $r_m=0.2$ with probability $p_m=0.02$), or  otherwise entirely from the same field.
 Each plant is seed parent to all kernels of its own ears, but can be pollen parent to kernels in many other ears; a proportion $m_g=0.0083$ of the pollen-parent kernels are in other fields.
 Wild-type plants have an average of $\mu_E=3$ ears per plant, and ears have an average of $N/N_f$ kernels; each of these numbers are Poisson distributed.
-The mean number of pollen-parent kernels, and the mean number of kernels per ear, is assumed to be $(1+s_b)$ times larger for individuals heterozygous for the selected allele.
-(The fitness of homozygotes is assumed to not affect the probability of establishment.)
+The mean number of pollen-parent kernels, and the mean number of kernels per ear, is assumed to be $(1+s_b)$ times larger for individuals heterozygous for the selected allele (the fitness of homozygotes is assumed to not affect the probability of establishment).
 Migration is mediated by seed exchange -- when fields are replanted from new stock, the seed is chosen from a random distance away with mean $\sigma_s=50$km, but plants only pollinate other plants belonging to the same village (distance 0).
 The mean numbers of each category of offspring (seed/pollen; migrant/nonmigrant) are determined by the condition that the population is stable 
 (i.e., wild-type, diploid individuals have on average 2 offspring) 
@@ -253,8 +248,7 @@ and the chance that a single such mutation successfully fixes (i.e., is not lost
 The probability that a single new mutant allele providing benefit $s_b$ to heterozygotes at high elevation 
 will fix locally in the high elevation population is approximately $2s_b$ divided by the 
 \rev{
-haploid variance in offspring number 
-(by expanding the generating function near 1, as in \citep{fisher1922dominance,jagers1975branching}; see \citet{lambert2006probability} for more sophisticated models).
+haploid variance in offspring number.  This can be shown by expanding the generating function near 1, as in \citet{fisher1922dominance} and \citet{jagers1975branching}; see \citet{lambert2006probability} for more sophisticated models).
 }
 
 Concretely, the probability that a new mutation destined for fixation will arise in a patch of high-elevation habitat of area $A$ in a given generation is a function of the density of maize per unit area $\rho$, the selective benefit $s_b$ it provides, the mutation rate $\mu$, and the variance in offspring number $\xi^2$.
@@ -268,14 +262,14 @@ In terms of these parameters, the rate of appearance is
 Throughout we work with populations distributed continuously across geography,
 with two regions of high elevation, the Mesoamerican and Andean highlands, separated by about 4,000km.
 The value $A$ in equation \eqref{eqn:mutrate} is the total cultivated area in which the (highland-adapted) alleles in question are beneficial;
-for estimation of $A$ in South America we overlaid raster layers of altitude (\url{www.worldclim.org}) and extent of maize cultivation (\url{www.earthstat.org}) and calculated the total area of maize cultivated above 1700m using functions in the {\sf raster} package for {\sf R}.
+for estimation of $A$ in South America we overlaid raster layers of altitude (\url{www.worldclim.org}) and extent of maize cultivation (\url{www.earthstat.org}) and calculated the total area of maize cultivated above 1700m using functions in the {\sf raster} package for {\sf R} \citep{hijmans2014raster}.
 }
 
 \rev{
 Of course, the selective benefit of highland alleles is not discrete, but likely changes continuously with altitude,
 and it may be that the adaptive mutation occurs in a lowland area,
 subsequently migrating into the highlands.
-The calculation above does account for these points,
+The calculation above does not account for these points,
 but the approximation is quite good,
 as verified by exact numerical calculation of the chance of fixation of a mutation 
 as a function of the location where it first appears (see Figure~\ref{sfig:prob_estab}); 
@@ -309,10 +303,7 @@ the practical upshot of this is that the most distant lineage
 is very unlikely to be more than about 6 times more distant than the typical lineage,
 even among $10^7$ lineages.
 Lineages are not independent, but this only makes this calculation conservative.
-Therefore, an area today (say, the Andean highlands)
-is very unlikely to draw any ancestry from a region more than about $6 \sigma \sqrt{m}$ kilometers away from $m$ generations ago
-in a part of the genome that is neutral in the lowlands;
-with $m=4000$ and $\sigma=3.5$km this is 1,328km.
+
 
 % # code to verify this: (and, see maize_calcs.R to verify this random walk is close to Gaussian after 2,000 generations)
 % x <- rnorm(1e6)  # independent
