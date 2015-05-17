@@ -165,9 +165,67 @@ Z_{ijx} = \frac{ d_{ijx} - \bar{d_{ij}} }{ \sigma_{ij} }
 \noindent where $d_{ijx}$ is the genetic distance over which individuals $i$ and $j$ are identical surrounding position $x$, 
 $\bar{d_{ij}}$ is the genome-wide mean of distances over which individuals $i$ and $j$ are identical, 
 and $\sigma_{ij}$ is the standard deviation of the distribution of distances.  
-\rev{We identified outlier PHS values using an empirical quantile, calculated as Pr($PHS_{xA}\leq PHS_{null|p}$), where $PHS_{null|p}$ are PHS values for alleles at frequency, $p$.  The smaller the statistic is, the longer the length of a haplotype around the allele is}.
-
 Genetic distances were obtained for the MaizeSNP50 data \citep{Ganal_2011_22174790} and fit using a tenth degree polynomial curve to all SNPs (data not shown).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection*{Polarizing adaptive alleles}
+To polarize the ancestral state of alleles and help identify adaptive alleles, we retrieved SNP data from 14 \emph{parviglumis} inbred lines included in the Hapmap v2 data set, using only SNPs with $n\geq10$ \cite[]{Chia_2012_22660545,Hufford_2012_22660546}.  
+Alleles were called ancestral if they were at higher frequency in \emph{parviglumis} or uncalled in \emph{parviglumis} but at higher frequency in all populations but one. 
+
+
+
+SNPs were consistent with Mesoamerica-specific adaptation if one allele was at high frequency in one Mesoamerican population, low frequency in the other Mesoamerican population, and either: low frequency in \emph{parviglumis} and at most intermediate frequency in S. American populations, or missing in \emph{parviglumis} and at low frequency in S. American populations.
+On the other hand, SNPs were consistent with adaptation to highlands in both regions if they were at high frequency in both highland populations, and at low frequency in the lowland populations and \emph{parviglumis}; and vice-versa for adaptation to lowlands in both regions.
+%SNPs with an allele at high frequency in one highland and the alternate lowland population are suggestive of adaptation in both populations but on different haplotypes created by recombination.
+
+We classified the patterns of allelic differentiation among highland and lowland populations in Mesoamerica and S. America together with the information of \emph{parviglumis} in an \emph{ad hoc} manner; the allelic differentiation pattern is consistent with highland or lowland adaptation scenario.  
+In Figure~\ref{AllelePat}, we illustrate the frequency of putative ancestral and derived alleles in the five populations, drawn by red and blue, respectively.
+
+First, we focus on the SNPs with the signature of adaptation only in Mesoamerican populations (Figure~\ref{AllelePat}A).  
+\st{In other words, the $F_{ST}$ $P$-value is significant in Mesoamerica but not in S. America.
+The first and second rows show the typical patterns of highland adaptation in Mesoamerica with \emph{parviglumis} data available.
+We simply assume that the major allele in \emph{parviglumis} is ancestral. }
+Both rows show the consistent pattern to highland adaptation in Mesoamerica because the frequency of the putative derived allele in Mesoamerican highlands is highly differentiated from those in both \emph{parviglumis} and Mesoamerican lowlands.
+The patterns in S. America are different between the first and second rows.
+\st{Actually, in the second row, the frequency of the derived allele is increased also in S. American highland population. 
+However, we do not take the patterns in S. American populations into account because there is no adaptive signature in S. America (i.e., the $F_{ST} P$-value is not significant in S. America).}
+On the other hand, we should consider the allelic pattern in S. America in the case of the third row; we cannot utilize the information of \emph{parviglumis}.
+It is impossible to infer the ancestral allele, so we assume the pattern is consistent with highland adaptation if one allele is in higher frequency in Mesoamerican lowlands and S. American populations and the other is in higher frequency in Mesoamerican highlands.
+We classified the SNPs into lowland adaptation in the same way (from fourth to sixth rows in Figure~\ref{AllelePat}A).
+
+Next, we consider the SNPs with the signatures of adaptation in both Mesoamerica and S. America (Figure~\ref{AllelePat}B).
+The pattern in the first row is consistent with parallel highland adaptation, whereas the second row shows parallel lowland adaptation. 
+We cannot infer lowland or highland adaptation without the outgroup, so we ignore such SNPs.
+%The pattern in the third row is the special case: the allele frequency is similar between Mesoamerican lowlands and S. American highlands and similar between Mesoamerican highlands and S. American lowlands.
+%This pattern could be explained by that the SNP is linked to a red adaptive SNP and recombination breaks down the linkage between them.}
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 %%%% PLR:
 \subsection*{Theoretical evaluation of convergent evolution }
@@ -299,10 +357,7 @@ the practical upshot of this is that the most distant lineage
 is very unlikely to be more than about 6 times more distant than the typical lineage,
 even among $10^7$ lineages.
 Lineages are not independent, but this only makes this calculation conservative.
-Therefore, an area today (say, the Andean highlands)
-is very unlikely to draw any ancestry from a region more than about $6 \sigma \sqrt{m}$ kilometers away from $m$ generations ago
-in a part of the genome that is neutral in the lowlands;
-with $m=4000$ and $\sigma=3.5$km this is 1,328km.
+
 
 % # code to verify this: (and, see maize_calcs.R to verify this random walk is close to Gaussian after 2,000 generations)
 % x <- rnorm(1e6)  # independent
