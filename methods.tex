@@ -177,25 +177,30 @@ Alleles were called ancestral if they were at higher frequency in \emph{parviglu
 \subsection*{Theoretical evaluation of convergent evolution }
 
 \rev{
-In addition to our analysis of empirical SNP data, we utilized theory to assess whether the abundance and degree of coincidence of presumably adaptive high-$F_{ST}$ alleles is consistent with what is known about the population history of maize.
+We next asked whether 
+the abundance and degree of coincidence of presumably adaptive high-$F_{ST}$ alleles seen in the SNP data
+is consistent with what is known about the population history of maize.
 There are three ways that adaptive alleles could be shared between highland populations:
 (a) by appearing in both locations as independent, \textit{de novo} mutations;
 (b) by moving from one highland population to the other by migration;
 and 
 (c) through convergent selective forces acting on shared standing variation.
-In the text we provide rough estimates
-and develop more detailed, complementary models 
-that build on the work in \citet{ralph2014convergent} and \citet{ralph2014standing}
-in the Appendix.
-% PLR: to explain why we are using a complicated model.
-Much of the population genetics theory we use
+Here, we provide rough estimates of these rates,
+and develop in the Appendix more detailed, complementary models 
+that build on the work in \citet{ralph2014convergent} and \citet{ralph2014standing}.
+}
+
+\rev{
+We chose to implement a fairly detailed demographic model.
+This is because
+much of the population genetics theory we use
 relies on universality results that reduce demographic models
 to two parameters: the dispersal distance (mean parent-offspring distance),
 and the variance in offspring number.
 However, these universality results do not hold if either distribution
 (dispersal or offspring)
-is sufficiently long-tailed,
-so we chose to implement a fairly detailed demographic model
+is sufficiently long-tailed;
+the detailed model allows us
 to both get a good idea of what part of parameter space we should focus on,
 and to verify that the approximation results we use are robust.
 }
@@ -247,7 +252,7 @@ and the chance that a single such mutation successfully fixes (i.e., is not lost
 The probability that a single new mutant allele providing benefit $s_b$ to heterozygotes at high elevation 
 will fix locally in the high elevation population is approximately $2s_b$ divided by the 
 \rev{
-haploid variance in offspring number.  This can be shown by expanding the generating function near 1, as in \citet{fisher1922dominance} and \citet{jagers1975branching}; see \citet{lambert2006probability} for more sophisticated models).
+haploid variance in offspring number.  This can be shown by expanding the generating function near 1, as in \citet{fisher1922dominance} and \citet{jagers1975branching}; see \citet{lambert2006probability} for more sophisticated models.
 }
 
 Concretely, the probability that a new mutation destined for fixation will arise in a patch of high-elevation habitat of area $A$ in a given generation is a function of the density of maize per unit area $\rho$, the selective benefit $s_b$ it provides, the mutation rate $\mu$, and the variance in offspring number $\xi^2$.
