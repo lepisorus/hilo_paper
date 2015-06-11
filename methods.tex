@@ -48,7 +48,7 @@ We annotated SNPs using the filtered gene set from RefGen version 2 of the maize
 We excluded genes annotated as transposable elements (84) and pseudogenes (323) from the filtered gene set, resulting in a total of 38,842 genes.
 
 \subsection*{Structure analysis}
-We performed a {\sf STRUCTURE} analysis \cite[]{Pritchard_2000_10835412,Falush_2003_12930761} using \rev{only} synonymous and noncoding SNPs from the MaizeSNP50 data \rev{due to its low error in identifying heterozygous genotypes}. 
+We performed a {\sf STRUCTURE} analysis \cite[]{Pritchard_2000_10835412,Falush_2003_12930761} using {only} synonymous and noncoding SNPs from the MaizeSNP50 data {due to its low error in identifying heterozygous genotypes}. 
 We randomly pruned SNPs closer than 10 kb and assumed free recombination between the remaining SNPs.
 Alternative distances were tried with nearly identical results. 
 We excluded SNPs in which the number of heterozygous individuals exceeded homozygotes and where the \emph{P}-value for departure from Hardy-Weinberg Equilibrium (HWE) using all individuals was smaller than 0.05 based on a \emph{G}-test. 
@@ -59,7 +59,7 @@ Results across replicates were nearly identical.
 \subsection*{Historical population size}
 We tested three models in which maize was differentiated into highland and lowland populations subsequent to domestication (Figure~\ref{model}). 
 
-\rev{We calculated the observed joint frequency distributions (JFDs) using only} the GBS data set due to its lower level of ascertainment bias. 
+{We calculated the observed joint frequency distributions (JFDs) using only} the GBS data set due to its lower level of ascertainment bias. 
 A subset of synonymous and noncoding SNPs were utilized that had $\geq15$ individuals without missing data in both lowland and highland populations and did not violate HWE.  
 A HWE cut-off of $P<0.005$ was used for each subpopulation due to our under-calling of heterozygotes. 
 
@@ -167,16 +167,16 @@ $\bar{d_{ij}}$ is the genome-wide mean of distances over which individuals $i$ a
 and $\sigma_{ij}$ is the standard deviation of the distribution of distances.  
 Genetic distances were obtained for the MaizeSNP50 data \citep{Ganal_2011_22174790} and fit using a tenth degree polynomial curve to all SNPs (data not shown).
 
-\rev{\subsection*{Polarizing adaptive alleles}
+{\subsection*{Polarizing adaptive alleles}
 To polarize the ancestral state of alleles and help identify adaptive alleles, we retrieved SNP data from 14 \emph{parviglumis} inbred lines included in the Hapmap v2 data set, using only SNPs with $n\geq10$ \cite[]{Chia_2012_22660545,Hufford_2012_22660546}.  
 Alleles were called ancestral if they were at higher frequency in \emph{parviglumis} or uncalled in \emph{parviglumis} but at higher frequency in all populations but one.} 
 
-\rev{For SNPs identified as putative outliers by our $F_{ST}$ approach, we then used patterns of allele frequency across populations to infer which allele was likely adaptive. For SNPs with a significant $F_{ST}$ only in Mesoamerica, for example, we characterized them as adaptive if they were at high frequency in one Mesoamerican population (lowland or highland) and low frequency in the other as well as low frequency in \emph{parviglumis} and at most intermediate frequency (or low frequency if missing in \emph {parviglumis}) in S. American populations. SNPs were inferred to show convergent adaptation if they were at high frequency in both highland (or lowland) populations, and at low frequency in the other two populations and \emph{parviglumis}.}
+{For SNPs identified as putative outliers by our $F_{ST}$ approach, we then used patterns of allele frequency across populations to infer which allele was likely adaptive. For SNPs with a significant $F_{ST}$ only in Mesoamerica, for example, we characterized them as adaptive if they were at high frequency in one Mesoamerican population (lowland or highland) and low frequency in the other as well as low frequency in \emph{parviglumis} and at most intermediate frequency (or low frequency if missing in \emph {parviglumis}) in S. American populations. SNPs were inferred to show convergent adaptation if they were at high frequency in both highland (or lowland) populations, and at low frequency in the other two populations and \emph{parviglumis}.}
 
 %%%% PLR:
 \subsection*{Theoretical evaluation of convergent evolution }
 
-\rev{
+{
 We next asked whether 
 the abundance and degree of coincidence of presumably adaptive high-$F_{ST}$ alleles seen in the SNP data
 is consistent with what is known about the population history of maize.
@@ -190,7 +190,7 @@ and develop in the Appendix more detailed, complementary models
 that build on the work in \citet{ralph2014convergent} and \citet{ralph2014standing}.
 }
 
-\rev{
+{
 We chose to implement a fairly detailed demographic model.
 This is because
 much of the population genetics theory we use
@@ -206,10 +206,10 @@ and to verify that the approximation results we use are robust.
 }
 
 To assess the likely importance of (a) and (b),
-we first evaluate the rate at which we expect an allele that provides a selective advantage at higher elevation to arise by new mutation in \rev{or near} a highland region ($\mutrate$), 
+we first evaluate the rate at which we expect an allele that provides a selective advantage at higher elevation to arise by new mutation in {or near} a highland region ($\mutrate$), 
 and then use coalescent theory to show that even a highland-adapted allele that was neutral in the lowlands
 is unlikely to have had time to spread between highland populations under neutral gene flow.
-\rev{
+{
 It may be more likely that alleles adapted in the highlands are slightly deleterious at lower elevation, 
 consistent with empirical findings in reciprocal transplant experiments in Mexico \cite[]{Mercer2008};
 in the Appendix we find the rate at which such an allele already present in the Mesoamerican highlands would transit the intervening lowlands and fix in the Andean highlands.
@@ -235,12 +235,12 @@ Each of these numbers of offspring has a mean that depends on whether the field 
 These means, and more details of the computations, are found in the Appendix. % \ref{apx:demographic_model}.}
 At the parameter values given, 
 the dispersal distance (mean distance between parent and offspring) is $\sigma=3.5$km,
-\rev{
+{
 and the haploid variance in number of offspring 
 ($\xi^2$, the variance in number of inherited copies of a chosen parental allele)
 }
 is between 20 (for wild-type) and 30 (for $s_b=0.1$).
-\rev{
+{
 (Note that in a panmictic population, the offspring variance
 is approximately the ratio of census size to effective population size, $\xi^2 \approx N/N_e$.)
 }
@@ -251,7 +251,7 @@ is approximately equal to the total population size of the highlands multiplied 
 and the chance that a single such mutation successfully fixes (i.e., is not lost to drift).
 The probability that a single new mutant allele providing benefit $s_b$ to heterozygotes at high elevation 
 will fix locally in the high elevation population is approximately $2s_b$ divided by the 
-\rev{
+{
 haploid variance in offspring number.  This can be shown by expanding the generating function near 1, as in \citet{fisher1922dominance} and \citet{jagers1975branching}; see \citet{lambert2006probability} for more sophisticated models.
 }
 
@@ -261,7 +261,7 @@ In terms of these parameters, the rate of appearance is
   \mutrate = \frac{2 \mu \rho A s_b}{\xi^2} .
 \end{align}
 
-\rev{
+{
 \paragraph{Geographic distribution}
 Throughout we work with populations distributed continuously across geography,
 with two regions of high elevation, the Mesoamerican and Andean highlands, separated by about 4,000km.
@@ -269,7 +269,7 @@ The value $A$ in equation \eqref{eqn:mutrate} is the total cultivated area in wh
 for estimation of $A$ in South America we overlaid raster layers of altitude (\url{www.worldclim.org}) and extent of maize cultivation (\url{www.earthstat.org}) and calculated the total area of maize cultivated above 1700m using functions in the {\sf raster} package for {\sf R} \citep{hijmans2014raster}.
 }
 
-\rev{
+{
 Of course, the selective benefit of highland alleles is not discrete, but likely changes continuously with altitude,
 and it may be that the adaptive mutation occurs in a lowland area,
 subsequently migrating into the highlands.

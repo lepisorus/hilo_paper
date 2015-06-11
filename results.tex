@@ -98,7 +98,7 @@ Most landraces were assigned to groups consistent with \emph{a priori} populatio
 \subsection*{Population differentiation}
 
 To provide a null expectation for allele frequency differentiation, we used the joint site frequency distribution (JFD) of lowland and highland populations to estimate parameters of two demographic models  using the maximum likelihood method implemented in $\delta a \delta i$ \cite[]{Gutenkunst_2009_19851460}.  
-All models incorporate a domestication bottleneck and population differentiation between lowland and highland populations, but differ in their consideration of admixture and ascertainment bias (Figure~\ref{model}; see Materials and Methods for details). \rev{We used published estimates of the strength of the domestication bottleneck \cite[]{Eyre-Walker_1998_9539756,Tenaillon_2004_15014173,Wright_2005_15919994}, but confirmed that changing the strength of the bottleneck had little influence on the null distributions of $F_{ST}$ values (not shown).} 
+All models incorporate a domestication bottleneck and population differentiation between lowland and highland populations, but differ in their consideration of admixture and ascertainment bias (Figure~\ref{model}; see Materials and Methods for details). {We used published estimates of the strength of the domestication bottleneck \cite[]{Eyre-Walker_1998_9539756,Tenaillon_2004_15014173,Wright_2005_15919994}, but confirmed that changing the strength of the bottleneck had little influence on the null distributions of $F_{ST}$ values (not shown).} 
 
 Estimated parameter values are listed in Table~\ref{param}; while the observed and expected JFDs were quite similar for both models,  residuals indicated an excess of rare variants in the observed JFDs in all cases (Figure~\ref{JFD}). 
 Under both models IA and IB,  we found expansion in the highland population in Mesoamerica to be unlikely, but a strong bottleneck followed by population expansion is supported in S. American highland maize in both models IA and II.  
@@ -134,7 +134,7 @@ Given the historical spread of maize from an origin in the lowlands, it is tempt
 To test this hypothesis, we sought to identify the adaptive allele at each locus using comparisons between Mesoamerica and S. America as well as to \emph{parviglumis} (see Methods). 
 Consistent with predictions, we infer that differentiation at 72.3\% (264) and 76.7\% (230) of SNPs in Mesoamerica and S. America is due to adaptation in the highlands after excluding  SNPs with ambiguous patterns likely due to recombination (Table \ref{supp:phs}). 
 
-\rev{As further evidence of selection, we asked whether alleles showing excess differentiation also exhibit longer haplotypes than expected.  We calculated the empirical quantile of the pairwise haplotype score from \cite{Toomajian_2006_16623598} for each putatively adaptive SNP as the proportion of all SNPs at a similar frequency with PHS scores greater than or equal to the PHS score observed at the focal SNP (Table~\ref{supp:phs}).
+{As further evidence of selection, we asked whether alleles showing excess differentiation also exhibit longer haplotypes than expected.  We calculated the empirical quantile of the pairwise haplotype score from \cite{Toomajian_2006_16623598} for each putatively adaptive SNP as the proportion of all SNPs at a similar frequency with PHS scores greater than or equal to the PHS score observed at the focal SNP (Table~\ref{supp:phs}).
 If $F_{ST}$ outliers have indeed been targeted by selection in a particular population, we expect this empirical quantile to be smaller (i.e., fewer random SNPs of similar frequency have as large a PHS score) than in other populations.  Indeed, we find that SNPs identified as putatively adaptive in each of the four populations show smaller empirical PHS quantiles more often than the 50\% expected by chance (Table~\ref{supp:phs}).} 
 
 % 
@@ -147,7 +147,7 @@ If $F_{ST}$ outliers have indeed been targeted by selection in a particular popu
 %Consider the case of highland adaptation.
 %We assumed that the putative derived allele is adaptive in highlands and checked whether the haplotype length is longer in the highlands than in the lowlands.
 %However, haplotype length cannot be compared directly because the derived allele frequency is different between highlands and lowlands.
-%Thus, we compared the empirical \rev{quantile} of PHS test as an indicator of haplotype length given allele frequency (Pr($PHS_{xA}\leq PHS_{null|p}$) in Materials and Methods).
+%Thus, we compared the empirical {quantile} of PHS test as an indicator of haplotype length given allele frequency (Pr($PHS_{xA}\leq PHS_{null|p}$) in Materials and Methods).
 %We say that the PHS test is consistent if the empirical quantile in highlands is smaller than that in lowlands (haplotype length is longer as the empirical quantile is smaller).
 %If we extract random SNPs, the probability that the haplotype length in highlands is longer than that in lowlands is expected to be 50\% by chance.
 %However, we rejected the null hypothesis by a Fisher's exact test in all cases (Table~\ref{supp:phs}).
@@ -165,7 +165,7 @@ We classified SNPs showing significant $F_{ST}$ in Mesoamerica, S. America or in
 Of these, 485 and 277 genes showed Mesoamerica-specific and SA-specific significant SNPs, while 14 genes contained at least one SNP with a pattern of differentiation suggesting convergent evolution and 2 genes contained both Mesoamerica-specific and SA-specific significant SNPs. 
 Overall, however, fewer genes showed evidence of convergent evolution than expected by chance (permutation test; $P<10^{-5}$). 
 
-\rev{
+{
 Finally, we tested whether genes showing evidence of selection in both highland populations were enriched for particular metabolic pathways using data on 481 metabolic pathways from the MaizeCyc database \cite[ver. 2.2;][]{maizecyc2013}.
 We found 92 pathways that include a selected gene from only one of the highland populations, but no significant excess of shared pathways: only 32 pathways included a selected gene in both populations  ($P=0.0961$; Table~\ref{supp:metabo}).  Despite similar phenotypes and environments, we thus see little evidence for convergent evolution at the SNP, gene, and metabolic-pathway levels.  }
 
@@ -204,11 +204,11 @@ For example, if any one of 10 sites within a gene were to have an equivalent sel
 % print(params)
 
 Gene flow between highland regions could also generate patterns of shared adaptive SNPs.
-\rev{The coalescent calculations described above suggest that highland area today is unlikely to draw any ancestry from a region more than $6\sigma\sqrt{m}$ kilometers away from $m$ generations ago in any part of the genome that is neutral in the lowlands.  Our estimated dispersal of $\sigma=3.5$km thus provides an estimate of 1,328km. The Mesoamerican and Andean highlands are approximately 4,000 km apart, and neutral alleles are therefore not expected to transit between the Mesoamerican and Andean highlands within 4,000 generations.
+{The coalescent calculations described above suggest that highland area today is unlikely to draw any ancestry from a region more than $6\sigma\sqrt{m}$ kilometers away from $m$ generations ago in any part of the genome that is neutral in the lowlands.  Our estimated dispersal of $\sigma=3.5$km thus provides an estimate of 1,328km. The Mesoamerican and Andean highlands are approximately 4,000 km apart, and neutral alleles are therefore not expected to transit between the Mesoamerican and Andean highlands within 4,000 generations.
 Changing the typical distance over which farmers share seed by a factor of 10 would change this conclusion,
 but data from field surveys do not lend support to such high dispersal distances \citep{bellon2011}.}
 
-\rev{These results for neutral alleles put a lower bound on the time for deleterious alleles to transit as well, suggesting that we should not expect even weakly deleterious alleles (e.g., $s_m=10^{-5}$) to have moved between highlands.
+{These results for neutral alleles put a lower bound on the time for deleterious alleles to transit as well, suggesting that we should not expect even weakly deleterious alleles (e.g., $s_m=10^{-5}$) to have moved between highlands.
 We expect many of the alleles adaptive in the highlands to be deleterious in the lowlands,
 and analyze this case in more detail in the Appendix.}
 
